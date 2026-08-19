@@ -1,0 +1,46 @@
+# A workspace of its own, like `bindings/python` and `bindings/node`. Here the
+# reason is the target rather than the panic strategy: `wasm32-unknown-emscripten`
+# needs its own linker flags and its own `skia-safe` feature set, and neither
+# belongs in the main workspace.
+[workspace]
+
+[package]
+name = "sone-wasm"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+publish = false
+
+# A `bin`, not a `cdylib`: emscripten only runs its link step — and so only
+# emits the `.js` loader beside the `.wasm` — for an executable. A cdylib would
+# be a side module needing dynamic linking. `fn main()` is empty; the module is
+# driven entirely through its exported functions.
+[[bin]]
+name = "sone"
+path = "src/main.rs"
+
+# The feature set is chosen to hit the one published emscripten prebuilt,
+# `wasm32-unknown-emscripten-gl-jpegd-jpege-pdf-svg-textlayout-webpd-webpe`:
+#   + `gpu-gl`, because no variant without `gl` is published for this target
+#   - `embed-freetype`, because with it the key becomes `…-ftembed-gl-…`
+# Get either wrong and the build quietly compiles Skia from source for an hour.
+#
+# `sone-ffi` is deliberately *not* a dependency even though its C ABI is the
+# right shape. Its lib declares `crate-type = ["cdylib", …]`, and cargo builds
+# every declared crate type — so depending on it makes rustc link a cdylib,
+# which on emscripten means `-sSIDE_MODULE=2`, which means a PIC link, which the
+# published non-PIC Skia archives cannot satisfy. This crate carries its own
+# thin layer instead, the same way `bindings/node` and `bindings/python` do.
+[dependencies]
+sone-core = { path = "../../crates/sone-core" }
+sone-skia = { path = "../../crates/sone-skia", default-features = false, features = [
+  "gpu-gl",
+] }
+serde_json = "1"
+
+[profile.release]
+opt-level = "z"
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"

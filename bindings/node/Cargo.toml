@@ -1,0 +1,30 @@
+# A workspace of its own, for the same reason `bindings/python` is one: the main
+# workspace sets `panic = "abort"`, which is correct for a C ABI but wrong here —
+# napi-rs needs unwinding to turn a Rust panic into a JavaScript exception.
+[workspace]
+
+[package]
+name = "sone-node"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+publish = false
+
+[lib]
+name = "sone"
+crate-type = ["cdylib"]
+
+[dependencies]
+sone-core = { path = "../../crates/sone-core" }
+sone-skia = { path = "../../crates/sone-skia" }
+napi = { version = "3", default-features = false, features = ["napi4"] }
+napi-derive = "3"
+
+[build-dependencies]
+napi-build = "2"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = "symbols"

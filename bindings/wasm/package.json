@@ -1,0 +1,44 @@
+{
+  "name": "@sonejs/sone-wasm",
+  "version": "0.1.0",
+  "description": "The sone layout engine compiled to WebAssembly — the browser backend for @sonejs/sone.",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Seanghay Yath",
+    "url": "https://github.com/seanghay"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanghay/sone.git",
+    "directory": "bindings/wasm"
+  },
+  "keywords": ["canvas", "layout", "skia", "wasm", "webassembly", "pdf", "svg"],
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./sone.wasm": "./dist/sone.wasm",
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "./build.sh",
+    "build:ts": "tsdown",
+    "test": "vitest --run",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.0",
+    "tsdown": "^0.19.0",
+    "typescript": "^5.9.2",
+    "vitest": "^4.1.2"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}

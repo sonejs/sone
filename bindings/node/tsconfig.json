@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "module": "Preserve",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": false,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "ts",
+    "__test__",
+    "tsdown.config.ts",
+    "binding.d.ts"
+  ],
+  "exclude": [
+    "__test__/deno.test.ts",
+    "__test__/bun.test.ts",
+    "dist",
+    "node_modules"
+  ]
+}

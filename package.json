@@ -1,0 +1,14 @@
+{
+  "name": "sone-monorepo",
+  "private": true,
+  "description": "Workspace root. The published packages live in bindings/node, bindings/wasm and packages/.",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "bindings/node",
+    "bindings/wasm"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace @sonejs/sone-wasm && npm run build --workspace @sonejs/sone",
+    "test": "npm run test --workspace @sonejs/sone"
+  }
+}

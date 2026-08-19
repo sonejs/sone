@@ -1,0 +1,104 @@
+<!doctype html>
+<!--
+  The WebAssembly engine, running with no bundler.
+
+  Serve this directory from the repository root so the relative module paths
+  resolve, then open http://localhost:8000/bindings/node/examples/browser/:
+
+      npm run build --workspace @sonejs/sone-wasm
+      npm run build --workspace @sonejs/sone
+      python3 -m http.server
+
+  A bundler needs none of the import map below — `import { sone } from
+  "@sonejs/sone"` picks the browser build through the package's exports map.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>sone in the browser</title>
+    <style>
+      :root { color-scheme: light dark; }
+      body {
+        margin: 0;
+        padding: 2rem;
+        font: 15px/1.5 ui-sans-serif, system-ui, sans-serif;
+        display: grid;
+        gap: 1.5rem;
+        justify-items: start;
+      }
+      #status { font-variant-numeric: tabular-nums; opacity: 0.7; }
+      #out { max-width: 100%; border-radius: 12px; }
+      pre { margin: 0; font-size: 13px; overflow-x: auto; max-width: 100%; }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "@sonejs/sone": "../../dist/browser.js",
+          "@sonejs/sone-wasm": "../../../wasm/dist/index.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>sone in the browser</h1>
+    <p id="status">loading the engine…</p>
+    <img id="out" alt="the rendered card" />
+    <pre id="meta"></pre>
+
+    <script type="module">
+      import { Column, Font, Row, Text, sone, version } from "@sonejs/sone";
+
+      const status = document.getElementById("status");
+      const out = document.getElementById("out");
+      const meta = document.getElementById("meta");
+
+      const started = performance.now();
+
+      // Skia has no system fonts, and there is no filesystem here — so fonts
+      // arrive as bytes. `Font.load` accepts a URL and fetches it for you.
+      await Font.load("GeistMono", "../../../../fixtures/font/GeistMono-Regular.ttf");
+      await Font.load("NotoSansKhmer", "../../../../fixtures/font/NotoSansKhmer.ttf");
+
+      status.textContent = `engine ${version()} ready in ${Math.round(
+        performance.now() - started,
+      )} ms`;
+
+      const card = Column(
+        Text("Hello ភាសាខ្មែរ")
+          .size(28)
+          .weight("bold")
+          .font("GeistMono", "NotoSansKhmer")
+          .color("black"),
+        Text("Rendered by Rust and Skia, compiled to WebAssembly.")
+          .size(14)
+          .font("GeistMono")
+          .color("#444"),
+        Row(
+          Column().bg("lightgreen").size(48).rounded(14),
+          Column().bg("salmon").height(48).rounded(14).flex(1),
+          Column().bg("orange").size(48).rounded(14),
+        ).gap(10),
+      )
+        .gap(16)
+        .padding(24)
+        .width(460)
+        .bg("khaki")
+        .cornerRadius(28)
+        .cornerSmoothing(0.7);
+
+      const rendered = sone(card);
+
+      const drawn = performance.now();
+      const png = await rendered.png({ density: window.devicePixelRatio || 2 });
+      out.src = URL.createObjectURL(new Blob([png], { type: "image/png" }));
+
+      const layout = await rendered.layout();
+      meta.textContent = [
+        `png     ${png.length.toLocaleString()} bytes in ${Math.round(performance.now() - drawn)} ms`,
+        `layout  ${layout.width} × ${layout.height}`,
+        `fonts   ${Font.families().join(", ")}`,
+      ].join("\n");
+    </script>
+  </body>
+</html>

@@ -71,20 +71,29 @@ Entry: `crates/sone-core/src/metadata.rs`.
 
 ---
 
-## M7: browser
+## M7: browser — done
 
-`wasm32-unknown-emscripten` build of skia-safe. Isolated by design — if it
-proves too fragile the TypeScript package remains the browser story.
+`wasm32-unknown-emscripten`, shipping as `@sonejs/sone-wasm` and consumed by
+`@sonejs/sone` through its `browser` export condition.
 
-Gate: a demo page rendering a Khmer text fixture, and a recorded binary size.
+Gate met: `bindings/node/examples/browser/index.html` renders a Khmer card in
+Chrome — engine ready in 42 ms, 14.6 KB PNG. Binary size **6.1 MB** of `.wasm`,
+about 2.5 MB over the wire, still dominated by the ICU table.
+
+Skia is built from source for this target; `bindings/wasm/build.sh` and the
+emscripten section of [porting-notes.md](porting-notes.md) explain the four
+reasons the published prebuilt cannot be used. It takes about two minutes.
+
+Left over: `render_pages` on a worker pool, and a `tiny-skia` backend if the
+6 MB ever needs to be 600 KB.
 
 ---
 
 ## M8: the remaining bindings
 
-Design and syntax for each is in [bindings.md](bindings.md). Order by demand;
-Node is the most obvious next one since it doubles as the native fast path for
-the existing npm package.
+Design and syntax for each is in [bindings.md](bindings.md). Node is done —
+`@sonejs/sone` covers Node, Bun, Deno and the browser from one package — so
+order the rest by demand.
 
 Every one of them should ship with the CLI-parity test the Python binding has.
 
@@ -104,9 +113,11 @@ CPU render of the same document.
 
 ## Smaller things
 
-- **`packages/`** — the TypeScript engine moves in, and the npm workspace with
-  it. `@sonejs/sone` is free for the native Node binding; `sone` stays the
-  TypeScript package.
+- **`packages/`** — the TypeScript engine moves in. The npm workspace now
+  exists at the repository root and already covers `bindings/node` and
+  `bindings/wasm`; `packages/sone` joins it. When it does, it can import the
+  builder from `bindings/node/ts` instead of the two copies living side by side
+  — `__test__/ir-parity.test.ts` is what makes that swap safe to attempt.
 - **Font licensing** — `fixtures/font/GoogleSans-VariableFont` is not
   redistributable. Swap it for an open face before this repo goes public, and
   regenerate the affected goldens.

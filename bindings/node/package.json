@@ -1,0 +1,115 @@
+{
+  "name": "@sonejs/sone",
+  "version": "0.1.0",
+  "description": "Declarative canvas layout engine with rich international text \u2014 Skia rendering, PNG / JPEG / WebP / PDF / SVG output. Native on Node, Bun and Deno; WebAssembly in the browser.",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Seanghay Yath",
+    "url": "https://github.com/seanghay"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanghay/sone.git",
+    "directory": "bindings/node"
+  },
+  "keywords": [
+    "canvas",
+    "layout",
+    "skia",
+    "flexbox",
+    "pdf",
+    "svg",
+    "text-rendering",
+    "khmer",
+    "wasm"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "browser": {
+        "types": "./dist/browser.d.ts",
+        "default": "./dist/browser.js"
+      },
+      "workerd": {
+        "types": "./dist/browser.d.ts",
+        "default": "./dist/browser.js"
+      },
+      "deno": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "bun": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "default": {
+        "types": "./dist/browser.d.ts",
+        "default": "./dist/browser.js"
+      }
+    },
+    "./wasm": {
+      "types": "./dist/browser.d.ts",
+      "default": "./dist/browser.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "binding.cjs",
+    "binding.d.ts",
+    "README.md"
+  ],
+  "napi": {
+    "binaryName": "sone",
+    "packageName": "@sonejs/sone",
+    "targets": [
+      "aarch64-apple-darwin",
+      "x86_64-apple-darwin",
+      "x86_64-unknown-linux-gnu",
+      "aarch64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "aarch64-unknown-linux-musl",
+      "x86_64-pc-windows-msvc",
+      "aarch64-pc-windows-msvc"
+    ]
+  },
+  "scripts": {
+    "build": "napi build --platform --release --manifest-path Cargo.toml --js binding.cjs --dts binding.d.ts && tsdown",
+    "build:debug": "napi build --platform --manifest-path Cargo.toml --js binding.cjs --dts binding.d.ts && tsdown",
+    "build:ts": "tsdown",
+    "artifacts": "napi artifacts",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "vitest --run",
+    "test:bun": "bun test __test__/bun.test.ts",
+    "test:deno": "deno test --allow-read --allow-write --allow-env --allow-ffi --allow-run --node-modules-dir=auto __test__/deno.test.ts",
+    "lint": "tsc --noEmit",
+    "version": "napi version"
+  },
+  "optionalDependencies": {
+    "@sonejs/sone-wasm": "0.1.0"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^3.8.6",
+    "@types/node": "^24.12.0",
+    "tsdown": "^0.19.0",
+    "typescript": "^5.9.2",
+    "vitest": "^4.1.2"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

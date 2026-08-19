@@ -17,7 +17,6 @@ skia-safe = { version = "0.99", default-features = false, features = [
   "svg",
   "webp-encode",
   "webp-decode",
-  "embed-freetype",
 ] }
 thiserror.workspace = true
 lru.workspace = true
@@ -28,7 +27,14 @@ serde = { workspace = true }
 serde_json = { workspace = true }
 
 [features]
-default = []
+default = ["embed-freetype"]
+# Skia's bundled FreeType rather than the host's. On by default because a
+# native build should not depend on what the machine happens to have installed.
+# Turn it off for `wasm32-unknown-emscripten`: it is what the emscripten
+# prebuilt was built without, and leaving it on turns the binary-cache key into
+# `…-ftembed-gl-…`, which nobody publishes — so the build silently falls back to
+# compiling Skia from source for an hour.
+embed-freetype = ["skia-safe/embed-freetype"]
 gpu-metal = ["skia-safe/metal"]
 gpu-gl = ["skia-safe/gl"]
 gpu-vulkan = ["skia-safe/vulkan"]

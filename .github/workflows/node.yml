@@ -1,0 +1,99 @@
+name: node
+
+on:
+  push:
+    branches: [main]
+    paths:
+      ["crates/**", "bindings/node/**", "bindings/wasm/**", "fixtures/**", ".github/workflows/node.yml"]
+  pull_request:
+    paths:
+      ["crates/**", "bindings/node/**", "bindings/wasm/**", "fixtures/**", ".github/workflows/node.yml"]
+
+jobs:
+  # The native addon, on every runtime that speaks Node-API.
+  native:
+    name: native · ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-24.04, windows-2022]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: bindings/node
+      - name: Install Linux build dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev
+      - run: npm ci
+
+      # Only Apple targets have a published skia binary matching sone's feature
+      # set, so the Linux and Windows legs compile Skia from source. That is
+      # pre-existing, not something this binding introduced — but it is why
+      # those legs take the best part of an hour on a cold cache.
+      - run: npm run build --workspace @sonejs/sone
+      - run: npm run lint --workspace @sonejs/sone
+
+      - name: vitest (Node)
+        run: npm test --workspace @sonejs/sone
+
+      - uses: oven-sh/setup-bun@v2
+      - name: bun
+        run: npm run test:bun --workspace @sonejs/sone
+
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - name: deno
+        run: npm run test:deno --workspace @sonejs/sone
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: addon-${{ matrix.os }}
+          path: bindings/node/*.node
+
+  # The browser build, plus the cross-engine parity suite that needs both.
+  wasm:
+    name: wasm
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-emscripten
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: 4.0.7
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: bindings/wasm
+      - run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev
+      - run: npm ci
+
+      # Skia is compiled from source for this target — see bindings/wasm/build.sh
+      # for the two independent reasons the published prebuilt cannot be used.
+      - run: npm run build --workspace @sonejs/sone-wasm
+      - run: npm run lint --workspace @sonejs/sone-wasm
+
+      # The native addon too: __test__/wasm.test.ts diffs the two engines
+      # against each other, so both have to be present.
+      - run: npm run build --workspace @sonejs/sone
+      - run: npm test --workspace @sonejs/sone
+
+      - name: Report the binary size
+        run: ls -l bindings/wasm/dist/sone.wasm
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wasm
+          path: |
+            bindings/wasm/dist/sone.js
+            bindings/wasm/dist/sone.wasm

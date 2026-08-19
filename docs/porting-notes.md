@@ -216,6 +216,101 @@ unwind regardless of the release profile.
 
 It is `Python::detach` now. Nothing else in the binding was affected.
 
+### The Node binding unwinds too, for the same reason
+
+napi-rs turns a Rust panic into a JavaScript exception, which needs unwinding.
+`bindings/node` is therefore a **separate workspace**, exactly like
+`bindings/python`.
+
+### Node-API cannot carry a custom error code
+
+A thrown error's `code` comes from the napi status, and `napi::Status` is a
+closed enum. So the failure class travels as a `sone:ir:` / `sone:asset:` /
+`sone:render:` prefix on the message, which `ts/errors.ts` strips while
+constructing the matching class. Symptom if you skip it: every failure arrives
+as a bare `Error` with `code: "GenericFailure"` and callers cannot tell a bad
+document from a missing font.
+
+While mapping it: a font that will not load reports `exit_code() == 4`
+(`SoneError::Font` is not `SoneError::Asset`), but every binding surfaces it as
+an *asset* failure — the C ABI has returned `SoneStatus::AssetError` there since
+it was written. The Node binding matches the C ABI rather than the exit code.
+Worth reconciling in `sone-core` one day; until then, do not "fix" it by
+following `exit_code()`.
+
+### Four things stand between skia-safe and `wasm32-unknown-emscripten`
+
+All four were found the slow way while building `bindings/wasm`, and none of
+them announces itself clearly.
+
+**1. napi-rs's WebAssembly target is the wrong one.** napi-rs v3 compiles to
+`wasm32-wasip1-threads`; skia-safe only builds for `wasm32-unknown-emscripten`.
+There is no overlap, so the browser build cannot be a napi-rs target — it is a
+separate crate and a separate npm package.
+
+**2. `embed-freetype` changes the binary-cache key on this target and nothing
+else.** The key becomes `…-ftembed-gl-…`, which is not published, so the build
+silently falls back to compiling Skia from source. On Apple targets the same
+feature does not appear in the key at all, which is why nobody noticed. It is
+now a `sone-skia` feature, on by default and off for wasm.
+
+Also on the key: `skia-binaries` publishes
+`wasm32-unknown-emscripten-gl-jpegd-jpege-pdf-svg-textlayout-webpd-webpe` but no
+variant of that set *without* `gl` — so the wasm build enables `gpu-gl` even
+though it never touches the GPU.
+
+**3. …and none of that matters, because the prebuilt cannot be used anyway.**
+Two independent blockers:
+
+- `skia-bindings` 0.99's `commit_to_cargo` copies `lib*.wasm.a` to `lib*.a` for
+  emscripten unconditionally, but the downloaded archive already ships `.a`
+  files. The build panics with *"failed to prepare emscripten archive for
+  linking … No such file or directory"*. Only the source-build path produces the
+  `.wasm.a` names it expects.
+- The prebuilt was linked with emscripten's legacy JavaScript exception
+  handling; current Rust emits `-fwasm-exceptions` for this target. Mixing them
+  fails at the JS-emit phase with *"invoke_ functions exported but exceptions and
+  longjmp are both disabled"*, and `-sSUPPORT_LONGJMP=emscripten` is rejected as
+  *"not compatible with -fwasm-exceptions"*. `-Zemscripten-wasm-eh=false` used to
+  opt Rust out; it has been removed.
+
+So `build.sh` sets `FORCE_SKIA_BUILD=1` and puts `-fwasm-exceptions` in
+`EMCC_CFLAGS`, which reaches every emcc invocation including Skia's own. The
+build takes about two minutes — the wasm Skia build is much lighter than a
+desktop one, so the usual "an hour from source" instinct is wrong here.
+
+**4. Depending on `sone-ffi` breaks the link.** Its lib declares
+`crate-type = ["cdylib", "staticlib", "rlib"]`, and cargo builds *every*
+declared crate type for a dependency, not just the rlib it needs. On emscripten
+the cdylib links as `-sSIDE_MODULE=2`, which is a PIC link, and the static Skia
+archives are not PIC — hundreds of *"relocation … cannot be used against symbol;
+recompile with -fPIC"*. `bindings/wasm` therefore carries its own thin layer
+over `sone-core`/`sone-skia`, like every other binding.
+
+One smaller thing: `#[no_mangle]` in a dependency rlib is not enough to survive
+to `-sEXPORTED_FUNCTIONS`; symbols defined in the crate being linked are. That
+is a second reason the ABI lives in `bindings/wasm/src/main.rs`.
+
+### The wasm and native engines agree everywhere except glyph coverage
+
+At density 2, every non-text primitive — fills, borders, squircles, gradients,
+shadows, SVG paths — is pixel-identical between the macOS native build and the
+emscripten one, and the layout trees match field for field. Text does not:
+macOS rasterizes glyphs through CoreText, the wasm build through Skia's bundled
+FreeType, so antialiasing coverage differs by a hair along the edges (~2% of
+bytes on a text-heavy card). `bindings/node/__test__/wasm.test.ts` asserts the
+exact half exactly and bounds the other, rather than lowering both to a
+tolerance.
+
+### Strict mode does not reject unknown fields
+
+`Document::from_json_strict` is documented as rejecting them and `include/sone.h`
+repeats the claim, but the implementation only swaps `serde_json` for
+`serde_path_to_error` — the acceptances are identical and only the error message
+improves, naming the offending path. An unknown key in `config` is ignored in
+both modes. Either the doc comment or the implementation should change; until
+one does, do not write a binding test asserting the documented behaviour.
+
 ---
 
 ## Deliberate divergences from the TypeScript engine

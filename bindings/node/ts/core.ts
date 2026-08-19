@@ -1,0 +1,1797 @@
+import { colors } from "./color.ts";
+import type {
+  GradientNode,
+  SoneImage,
+  SoneParagraphBlock,
+} from "./foreign.ts";
+import type { CssShadowProperties } from "./shadow.ts";
+
+/**
+ * Utility type to ensure non-undefined values
+ */
+export type NonUndefined<T> = T extends undefined ? never : T;
+
+/**
+ * Color values - predefined color names or CSS color strings
+ */
+export type ColorValue = keyof typeof colors | "transparent" | (string & {});
+
+/**
+ * Layout positioning types (similar to CSS position)
+ */
+export type LayoutPositionType = "static" | "relative" | "absolute";
+/**
+ * Flexbox direction - same as CSS flex-direction
+ */
+export type FlexDirection = "column" | "column-reverse" | "row" | "row-reverse";
+
+/**
+ * Flexbox align-content values
+ */
+export type AlignContent =
+  | "flex-start"
+  | "flex-end"
+  | "center"
+  | "stretch"
+  | "space-between"
+  | "space-around"
+  | "space-evenly";
+
+export type AlignItems =
+  | "flex-start"
+  | "flex-end"
+  | "center"
+  | "stretch"
+  | "baseline";
+
+export type JustifyContent =
+  | "flex-start"
+  | "flex-end"
+  | "center"
+  | "space-between"
+  | "space-around"
+  | "space-evenly";
+
+export type GridTrack = number | "auto" | `${number}fr`;
+
+/**
+ * Core layout properties - mirrors CSS Flexbox/Grid with additional visual styling
+ */
+export interface LayoutProps {
+  /** Debug identifier for development */
+  tag?: string;
+  alignContent?: AlignContent;
+  alignItems?: AlignItems;
+  alignSelf?: AlignItems;
+  aspectRatio?: number;
+  borderBottomWidth?: number;
+  borderEndWidth?: number;
+  borderLeftWidth?: number;
+  borderRightWidth?: number;
+  borderStartWidth?: number;
+  borderTopWidth?: number;
+  borderWidth?: number;
+  borderInlineWidth?: number;
+  borderBlockWidth?: number;
+  bottom?: number | `${number}%`;
+  boxSizing?: "border-box" | "content-box";
+  direction?: "ltr" | "rtl";
+  display?: "none" | "flex" | "contents";
+  end?: number | `${number}%`;
+  flex?: number;
+  flexBasis?: number | "auto" | `${number}%`;
+  flexDirection?: "row" | "column" | "row-reverse" | "column-reverse";
+  rowGap?: number;
+  gap?: number;
+  columnGap?: number;
+  flexGrow?: number;
+  flexShrink?: number;
+  flexWrap?: "wrap" | "nowrap" | "wrap-reverse";
+  height?: number | "auto" | `${number}%`;
+  justifyContent?: JustifyContent;
+  left?: number | `${number}%`;
+  margin?: number | "auto" | `${number}%`;
+  marginBottom?: number | "auto" | `${number}%`;
+  marginEnd?: number | "auto" | `${number}%`;
+  marginLeft?: number | "auto" | `${number}%`;
+  marginRight?: number | "auto" | `${number}%`;
+  marginStart?: number | "auto" | `${number}%`;
+  marginTop?: number | "auto" | `${number}%`;
+  marginInline?: number | "auto" | `${number}%`;
+  marginBlock?: number | "auto" | `${number}%`;
+  maxHeight?: number | `${number}%`;
+  maxWidth?: number | `${number}%`;
+  minHeight?: number | `${number}%`;
+  minWidth?: number | `${number}%`;
+  overflow?: "visible" | "hidden" | "scroll";
+  /** Page breaking hint — only meaningful when pageHeight is set in render config */
+  pageBreak?: "before" | "after" | "avoid";
+  padding?: number | `${number}%`;
+  paddingBottom?: number | `${number}%`;
+  paddingEnd?: number | `${number}%`;
+  paddingLeft?: number | `${number}%`;
+  paddingRight?: number | `${number}%`;
+  paddingStart?: number | `${number}%`;
+  paddingTop?: number | `${number}%`;
+  paddingInline?: number | `${number}%`;
+  paddingBlock?: number | `${number}%`;
+  position?: "absolute" | "relative" | "static";
+  right?: number | `${number}%`;
+  start?: number | `${number}%`;
+  top?: number | `${number}%`;
+  insetInline?: number | `${number}%`;
+  insetBlock?: number | `${number}%`;
+  inset?: number | `${number}%`;
+  width?: number | "auto" | `${number}%`;
+
+  borderColor?: ColorValue;
+  background?: Array<ColorValue | PhotoNode | GradientNode>;
+  rotation?: number;
+  scale?: [number, number];
+  translateX?: number;
+  translateY?: number;
+  cornerRadius?: number[];
+  cornerSmoothing?: number;
+  corner?: "cut" | "round";
+  opacity?: number;
+  shadows?: Array<CssShadowProperties | string>;
+  filters?: string[];
+  gridColumnStart?: number;
+  gridColumnSpan?: number;
+  gridRowStart?: number;
+  gridRowSpan?: number;
+}
+
+/**
+ * Fluent API builder for layout properties
+ */
+interface LayoutPropsBuilder<T, P = LayoutProps> {
+  props: P;
+
+  /** Apply multiple properties at once */
+  apply(value: LayoutProps): T;
+  /** Set debug tag */
+  tag(value: NonUndefined<LayoutProps["tag"]>): T;
+
+  // methods
+  alignContent(value: NonUndefined<LayoutProps["alignContent"]>): T;
+  alignItems(value: NonUndefined<LayoutProps["alignItems"]>): T;
+  alignSelf(value: NonUndefined<LayoutProps["alignSelf"]>): T;
+  aspectRatio(value: NonUndefined<LayoutProps["aspectRatio"]>): T;
+
+  /**
+   * Border width with CSS-like shorthand values
+   * @example borderWidth(10) // all sides
+   * @example borderWidth(10, 20) // top/bottom, left/right
+   * @example borderWidth(10, 20, 30) // top, left/right, bottom
+   * @example borderWidth(10, 20, 30, 40) // top, right, bottom, left
+   */
+  borderWidth(all: number): T;
+  borderWidth(topBottom: number, leftRight: number): T;
+  borderWidth(top: number, leftRight: number, bottom: number): T;
+  borderWidth(top: number, right: number, bottom: number, left: number): T;
+
+  borderColor(value: NonUndefined<LayoutProps["borderColor"]>): T;
+
+  /** Margin with CSS-like shorthand (same pattern as borderWidth) */
+  margin(all: NonUndefined<LayoutProps["margin"]>): T;
+  margin(
+    topBottom: NonUndefined<LayoutProps["marginTop"]>,
+    leftRight: NonUndefined<LayoutProps["marginLeft"]>,
+  ): T;
+
+  margin(
+    top: NonUndefined<LayoutProps["marginTop"]>,
+    leftRight: NonUndefined<LayoutProps["marginRight"]>,
+    bottom: NonUndefined<LayoutProps["marginBottom"]>,
+  ): T;
+
+  margin(
+    top: NonUndefined<LayoutProps["marginTop"]>,
+    right: NonUndefined<LayoutProps["marginRight"]>,
+    bottom: NonUndefined<LayoutProps["marginBottom"]>,
+    left: NonUndefined<LayoutProps["marginLeft"]>,
+  ): T;
+
+  marginTop(value: NonUndefined<LayoutProps["marginTop"]>): T;
+  marginBottom(value: NonUndefined<LayoutProps["marginBottom"]>): T;
+  marginLeft(value: NonUndefined<LayoutProps["marginLeft"]>): T;
+  marginRight(value: NonUndefined<LayoutProps["marginRight"]>): T;
+
+  /** Padding with CSS-like shorthand (same pattern as borderWidth) */
+  padding(all: NonUndefined<LayoutProps["padding"]>): T;
+  padding(
+    topBottom: NonUndefined<LayoutProps["paddingTop"]>,
+    leftRight: NonUndefined<LayoutProps["paddingLeft"]>,
+  ): T;
+
+  padding(
+    top: NonUndefined<LayoutProps["paddingTop"]>,
+    leftRight: NonUndefined<LayoutProps["paddingRight"]>,
+    bottom: NonUndefined<LayoutProps["paddingBottom"]>,
+  ): T;
+
+  padding(
+    top: NonUndefined<LayoutProps["paddingTop"]>,
+    right: NonUndefined<LayoutProps["paddingRight"]>,
+    bottom: NonUndefined<LayoutProps["paddingBottom"]>,
+    left: NonUndefined<LayoutProps["paddingLeft"]>,
+  ): T;
+
+  paddingTop(value: NonUndefined<LayoutProps["paddingTop"]>): T;
+  paddingBottom(value: NonUndefined<LayoutProps["paddingBottom"]>): T;
+  paddingLeft(value: NonUndefined<LayoutProps["paddingLeft"]>): T;
+  paddingRight(value: NonUndefined<LayoutProps["paddingRight"]>): T;
+
+  boxSizing(value: NonUndefined<LayoutProps["boxSizing"]>): T;
+  display(value: NonUndefined<LayoutProps["display"]>): T;
+  flex(value: NonUndefined<LayoutProps["flex"]>): T;
+  basis(value: NonUndefined<LayoutProps["flexBasis"]>): T;
+  flexDirection(value: NonUndefined<LayoutProps["flexDirection"]>): T;
+  /** Text/box writing direction (CSS `direction`: `"ltr"` | `"rtl"`). */
+  direction(value: NonUndefined<LayoutProps["direction"]>): T;
+  rowGap(value: NonUndefined<LayoutProps["rowGap"]>): T;
+  gap(value: NonUndefined<LayoutProps["gap"]>): T;
+  columnGap(value: NonUndefined<LayoutProps["columnGap"]>): T;
+  grow(value: NonUndefined<LayoutProps["flexGrow"]>): T;
+  shrink(value: NonUndefined<LayoutProps["flexShrink"]>): T;
+  wrap(value: NonUndefined<LayoutProps["flexWrap"]>): T;
+  justifyContent(value: NonUndefined<LayoutProps["justifyContent"]>): T;
+  gridColumn(
+    start: NonUndefined<LayoutProps["gridColumnStart"]>,
+    span?: NonUndefined<LayoutProps["gridColumnSpan"]>,
+  ): T;
+  gridRow(
+    start: NonUndefined<LayoutProps["gridRowStart"]>,
+    span?: NonUndefined<LayoutProps["gridRowSpan"]>,
+  ): T;
+
+  // position
+  left(value: NonUndefined<LayoutProps["left"]>): T;
+  right(value: NonUndefined<LayoutProps["right"]>): T;
+  bottom(value: NonUndefined<LayoutProps["bottom"]>): T;
+  top(value: NonUndefined<LayoutProps["top"]>): T;
+  start(value: NonUndefined<LayoutProps["start"]>): T;
+  end(value: NonUndefined<LayoutProps["end"]>): T;
+
+  /**
+   * Set width and height together - height defaults to width if omitted (square)
+   */
+  size(
+    width: NonUndefined<LayoutProps["width"]>,
+    height?: NonUndefined<LayoutProps["height"]>,
+  ): T;
+
+  width(value: NonUndefined<LayoutProps["width"]>): T;
+  height(value: NonUndefined<LayoutProps["height"]>): T;
+
+  maxWidth(value: NonUndefined<LayoutProps["maxWidth"]>): T;
+  maxHeight(value: NonUndefined<LayoutProps["maxHeight"]>): T;
+
+  minWidth(value: NonUndefined<LayoutProps["minWidth"]>): T;
+  minHeight(value: NonUndefined<LayoutProps["minHeight"]>): T;
+
+  position(value: NonUndefined<LayoutProps["position"]>): T;
+  inset(value: NonUndefined<LayoutProps["inset"]>): T;
+  overflow(value: NonUndefined<LayoutProps["overflow"]>): T;
+  pageBreak(value: NonUndefined<LayoutProps["pageBreak"]>): T;
+
+  /** CSS-like transforms */
+  translateX(value: number): T;
+  translateY(value: number): T;
+  /** @param value rotation in degrees */
+  rotate(value: number): T;
+  /** uniform scaling */
+  scale(value: number): T;
+  /** separate x/y scaling */
+  scale(x: number, y: number): T;
+
+  /**
+   * Background - supports colors, gradients, images
+   * @example .bg("red")
+   * @example .bg("linear-gradient(...)")
+   * @example .bg(Photo("url"))
+   */
+  bg(...values: NonUndefined<LayoutProps["background"]>): T;
+  background(...values: NonUndefined<LayoutProps["background"]>): T;
+  opacity(value: NonUndefined<LayoutProps["opacity"]>): T;
+
+  // border radius
+  rounded(...values: NonUndefined<LayoutProps["cornerRadius"]>): T;
+  borderRadius(...values: NonUndefined<LayoutProps["cornerRadius"]>): T;
+  borderSmoothing(value: NonUndefined<LayoutProps["cornerSmoothing"]>): T;
+
+  cornerRadius(...values: NonUndefined<LayoutProps["cornerRadius"]>): T;
+  cornerSmoothing(value: NonUndefined<LayoutProps["cornerSmoothing"]>): T;
+  corner(value: NonUndefined<LayoutProps["corner"]>): T;
+
+  /**
+   * CSS box-shadow
+   * @example .shadow("2px 2px 4px rgba(0,0,0,0.3)")
+   */
+  shadow(...values: string[]): T;
+  /** @param value blur radius in pixels */
+  blur(value: number): T;
+  /** @param value 1.0 = normal, 2.0 = twice as bright */
+  brightness(value: number): T;
+  /** @param value 1.0 = normal */
+  contrast(value: number): T;
+  /** @param value 0.0 to 1.0 */
+  grayscale(value: number): T;
+  /** @param value hue rotation in degrees */
+  hueRotate(value: number): T;
+  /** @param value 0.0 to 1.0 */
+  invert(value: number): T;
+  /** @param value 1.0 = normal */
+  saturate(value: number): T;
+  /** @param value 0.0 to 1.0 */
+  sepia(value: number): T;
+}
+
+/**
+ * Image display properties
+ */
+export interface PhotoProps extends LayoutProps {
+  /** maintain original width/height ratio */
+  preserveAspectRatio?: boolean;
+  /** how image fits container */
+  scaleType?: "cover" | "fill" | "contain";
+  scaleAlignment?: number;
+  flipHorizontal?: boolean;
+  flipVertical?: boolean;
+  fill?: ColorValue;
+
+  /** image source */
+  src?: string | Uint8Array | SoneImage;
+
+  /** resolved image (set during compilation) */
+  image?: SoneImage;
+
+  /** SVG path string to clip the image (path coords relative to photo top-left) */
+  clipPath?: string;
+}
+
+export interface PhotoPropsBuilder<T>
+  extends LayoutPropsBuilder<T, PhotoProps> {
+  scaleType(
+    value: NonUndefined<PhotoProps["scaleType"]>,
+    alignment?: NonUndefined<PhotoProps["scaleAlignment"]>,
+  ): T;
+
+  scaleType(
+    value: NonUndefined<PhotoProps["scaleType"]>,
+    alignment?: "center" | "end" | "start",
+  ): T;
+
+  preserveAspectRatio(
+    value?: NonUndefined<PhotoProps["preserveAspectRatio"]>,
+  ): T;
+  flipHorizontal(value?: NonUndefined<PhotoProps["flipHorizontal"]>): T;
+  flipVertical(value?: NonUndefined<PhotoProps["flipVertical"]>): T;
+  fill(value: NonUndefined<PhotoProps["fill"]>): T;
+  clipPath(value: string): T;
+}
+
+/**
+ * Image display node
+ */
+export interface PhotoNode extends PhotoPropsBuilder<PhotoNode> {
+  id: number;
+  type: "photo";
+}
+
+/**
+ * Font family - system fonts or custom font names
+ */
+export type FontValue = "sans-serif" | "serif" | "monospace" | (string & {});
+
+/**
+ * Text styling properties for spans and text
+ */
+export interface SpanProps {
+  /** Debug identifier for development */
+  tag?: string;
+  /** font size in pixels */
+  size?: number;
+  /** text color or gradient */
+  color?: ColorValue | GradientNode[];
+  /** font family stack @example ["Arial", "sans-serif"] */
+  font?: FontValue[];
+  style?: "normal" | "italic" | "oblique";
+  /** font weight @example 100-900 or "bold" */
+  weight?: "normal" | "bold" | "lighter" | "bolder" | (string & {}) | number;
+  /** spacing between characters */
+  letterSpacing?: number;
+  /** spacing between words */
+  wordSpacing?: number;
+  /** text shadows */
+  dropShadows?: Array<CssShadowProperties | string>;
+  /** text outline color */
+  strokeColor?: ColorValue;
+  /** text outline width */
+  strokeWidth?: number;
+
+  /** vertical offset for baseline adjustment */
+  offsetY?: number;
+
+  /**
+   * Text rendering direction for this span.
+   * Overrides the paragraph-level baseDir for this specific span.
+   * Use "rtl" for RTL scripts (Arabic, Hebrew) embedded in LTR text,
+   * or "ltr" for LTR text embedded in RTL paragraphs.
+   */
+  textDir?: "ltr" | "rtl";
+
+  /** underline thickness */
+  underline?: number;
+  underlineColor?: ColorValue | null;
+
+  /** strikethrough thickness */
+  lineThrough?: number;
+  lineThroughColor?: ColorValue | null;
+
+  /** overline thickness */
+  overline?: number;
+  overlineColor?: ColorValue | null;
+
+  /** background highlight */
+  highlightColor?: ColorValue | null;
+}
+
+/**
+ * Text block properties extending span properties
+ */
+export interface TextProps extends SpanProps, LayoutProps {
+  /** prevent text wrapping */
+  nowrap?: boolean;
+  /** clamp visible lines before drawing */
+  maxLines?: number;
+  /** line breaking algorithm used for wrapped text */
+  lineBreak?: "greedy" | "knuth-plass";
+  /** overflow treatment for truncated text */
+  textOverflow?: "clip" | "ellipsis";
+  /** line height multiplier @example 1.5 = 150% */
+  lineHeight?: number;
+  /** first line indent in pixels */
+  indentSize?: number;
+  /** subsequent lines indent */
+  hangingIndentSize?: number;
+  /** tab stop positions in pixels, relative to the text content left edge */
+  tabStops?: number[];
+  /** character used to fill tab stop gaps, e.g. "." for dot leader (MS Word style) */
+  tabLeader?: string;
+  /** text alignment */
+  align?: "left" | "right" | "center" | "justify";
+
+  /**
+   * Text wrap mode.
+   * - "wrap": default line-breaking (greedy or knuth-plass)
+   * - "balance": balance line lengths so all lines are roughly equal width
+   */
+  textWrap?: "wrap" | "balance";
+
+  autofit?: boolean;
+
+  /**
+   * Base paragraph direction for bidirectional text rendering.
+   * - "ltr": left-to-right (default)
+   * - "rtl": right-to-left (Arabic, Hebrew, etc.)
+   * - "auto": auto-detect from the first strong directional character
+   *
+   * When set to "rtl" or resolved "rtl" via "auto", text segments are
+   * rendered from right to left and the default alignment becomes "right".
+   */
+  baseDir?: "ltr" | "rtl" | "auto";
+
+  /** text orientation in degrees — affects layout dimensions */
+  orientation?: 0 | 90 | 180 | 270;
+
+  /** image to display through text letterforms (clip-image effect) */
+  clipImage?: PhotoNode;
+
+  /** resolved paragraph (internal) */
+  blocks?: SoneParagraphBlock[];
+}
+
+export type RequiredNonNullValues<T> = {
+  [K in keyof T]-?: NonUndefined<T[K]>;
+};
+
+export type DefaultTextProps = RequiredNonNullValues<
+  Omit<
+    TextProps,
+    keyof LayoutProps | "clipImage" | "textWrap" | "baseDir" | "textDir"
+  >
+> &
+  Pick<TextProps, "clipImage" | "textWrap" | "baseDir" | "textDir">;
+
+export interface SpanPropsBuilder<T> {
+  props: SpanProps;
+  color: (value: NonUndefined<TextProps["color"]>) => T;
+  size: (value: NonUndefined<TextProps["size"]>) => T;
+  font: (...values: NonUndefined<TextProps["font"]>) => T;
+  style: (value: NonUndefined<TextProps["style"]>) => T;
+  weight: (value: NonUndefined<TextProps["weight"]>) => T;
+  letterSpacing: (value: NonUndefined<TextProps["letterSpacing"]>) => T;
+  wordSpacing: (value: NonUndefined<TextProps["wordSpacing"]>) => T;
+
+  underline: (value?: NonUndefined<TextProps["underline"]>) => T;
+  underlineColor: (value?: TextProps["underlineColor"]) => T;
+
+  lineThrough: (value?: NonUndefined<TextProps["lineThrough"]>) => T;
+  lineThroughColor: (value?: TextProps["lineThroughColor"]) => T;
+
+  overline: (value?: NonUndefined<TextProps["overline"]>) => T;
+  overlineColor: (value?: TextProps["overlineColor"]) => T;
+
+  highlight: (value?: TextProps["highlightColor"]) => T;
+
+  dropShadow: (...values: NonUndefined<TextProps["dropShadows"]>) => T;
+  strokeColor: (value: NonUndefined<TextProps["strokeColor"]>) => T;
+  strokeWidth: (value: NonUndefined<TextProps["strokeWidth"]>) => T;
+  offsetY: (value: NonUndefined<TextProps["offsetY"]>) => T;
+  textDir: (value: NonUndefined<SpanProps["textDir"]>) => T;
+  tag: (value: NonUndefined<SpanProps["tag"]>) => T;
+}
+
+/**
+ * Styled text span within a text block
+ */
+export interface SpanNode extends SpanPropsBuilder<SpanNode> {
+  type: "span";
+  /** the text content */
+  children: string;
+}
+
+export interface TextPropsBuilder<T>
+  extends Omit<
+      LayoutPropsBuilder<T, TextProps>,
+      | "size"
+      | "alignContent"
+      | "alignItems"
+      | "justifyContent"
+      | "gap"
+      | "rowGap"
+      | "columnGap"
+      | "wrap"
+      | "direction"
+      | "display"
+      | "overflow"
+    >,
+    Omit<SpanPropsBuilder<T>, "props"> {
+  nowrap(): T;
+  maxLines(value: NonUndefined<TextProps["maxLines"]>): T;
+  wrap(value?: boolean): T;
+  lineBreak(value: NonUndefined<TextProps["lineBreak"]>): T;
+  textOverflow(value: NonUndefined<TextProps["textOverflow"]>): T;
+  lineHeight(value: NonUndefined<TextProps["lineHeight"]>): T;
+  align(value: NonUndefined<TextProps["align"]>): T;
+  indent(value: NonUndefined<TextProps["indentSize"]>): T;
+  hangingIndent(value: NonUndefined<TextProps["hangingIndentSize"]>): T;
+  tabStops(...values: number[]): T;
+  tabLeader(char: NonUndefined<TextProps["tabLeader"]>): T;
+  autofit(value?: NonUndefined<TextProps["autofit"]>): T;
+  orientation(value: 0 | 90 | 180 | 270): T;
+  clipImage(value: PhotoNode): T;
+  baseDir(value: NonUndefined<TextProps["baseDir"]>): T;
+  textWrap(value: NonUndefined<TextProps["textWrap"]>): T;
+}
+
+/**
+ * Text block containing styled spans and plain strings
+ */
+export interface TextNode extends TextPropsBuilder<TextNode> {
+  id: number;
+  type: "text";
+  /** mixed content */
+  children: Array<string | SpanNode>;
+}
+
+export type TextDefaultProps = Omit<TextProps, keyof LayoutProps>;
+
+export interface TextDefaultPropsBuilder<T>
+  extends Omit<SpanPropsBuilder<T>, "props"> {
+  props: TextDefaultProps;
+  nowrap(): T;
+  maxLines(value: NonUndefined<TextProps["maxLines"]>): T;
+  wrap(value?: boolean): T;
+  lineBreak(value: NonUndefined<TextProps["lineBreak"]>): T;
+  textOverflow(value: NonUndefined<TextProps["textOverflow"]>): T;
+  lineHeight(value: NonUndefined<TextProps["lineHeight"]>): T;
+  align(value: NonUndefined<TextProps["align"]>): T;
+  indent(value: NonUndefined<TextProps["indentSize"]>): T;
+}
+
+/**
+ * Text defaults container - sets text properties for child nodes
+ */
+export interface TextDefaultNode
+  extends TextDefaultPropsBuilder<TextDefaultNode> {
+  type: "text-default";
+  children: SoneNode[];
+}
+
+/**
+ * Horizontal layout container (flexDirection: row)
+ */
+export interface RowNode extends LayoutPropsBuilder<RowNode> {
+  id: number;
+  type: "row";
+  children: SoneNode[];
+}
+
+/**
+ * Vertical layout container (flexDirection: column)
+ */
+export interface ColumnNode extends LayoutPropsBuilder<ColumnNode> {
+  id: number;
+  type: "column";
+  children: SoneNode[];
+}
+
+export interface GridProps extends LayoutProps {
+  columns?: GridTrack[];
+  rows?: GridTrack[];
+  autoRows?: GridTrack[];
+  autoColumns?: GridTrack[];
+}
+
+export interface GridPropsBuilder<T> extends LayoutPropsBuilder<T, GridProps> {
+  columns(...values: GridTrack[]): T;
+  rows(...values: GridTrack[]): T;
+  autoRows(...values: GridTrack[]): T;
+  autoColumns(...values: GridTrack[]): T;
+}
+
+export interface GridNode extends GridPropsBuilder<GridNode> {
+  id: number;
+  type: "grid";
+  children: SoneNode[];
+}
+
+/**
+ * Union of all possible Sone node types
+ */
+export type SoneNode =
+  | ColumnNode
+  | RowNode
+  | GridNode
+  | TextNode
+  | TextDefaultNode
+  | PhotoNode
+  | PathNode
+  | TableNode
+  | TableRowNode
+  | TableCellNode
+  | ListNode
+  | ListItemNode
+  | ClipGroupNode
+  | null
+  | undefined;
+
+/** The five prop keys a CSS box shorthand (border/margin/padding) writes to. */
+interface BoxKeys {
+  all: keyof LayoutProps;
+  top: keyof LayoutProps;
+  right: keyof LayoutProps;
+  bottom: keyof LayoutProps;
+  left: keyof LayoutProps;
+}
+
+const BORDER_BOX: BoxKeys = {
+  all: "borderWidth",
+  top: "borderTopWidth",
+  right: "borderRightWidth",
+  bottom: "borderBottomWidth",
+  left: "borderLeftWidth",
+};
+const MARGIN_BOX: BoxKeys = {
+  all: "margin",
+  top: "marginTop",
+  right: "marginRight",
+  bottom: "marginBottom",
+  left: "marginLeft",
+};
+const PADDING_BOX: BoxKeys = {
+  all: "padding",
+  top: "paddingTop",
+  right: "paddingRight",
+  bottom: "paddingBottom",
+  left: "paddingLeft",
+};
+
+/**
+ * Apply a CSS 1–4 value box shorthand.
+ *
+ * With a single value the shorthand prop (`margin`/`padding`/`borderWidth`) is
+ * set directly; otherwise the four sides expand by the CSS rule
+ * `[top, right, bottom ?? top, left ?? right]`.
+ */
+function applyBoxShorthand<V>(
+  props: LayoutProps,
+  keys: BoxKeys,
+  top: V,
+  right?: V,
+  bottom?: V,
+  left?: V,
+): void {
+  const target = props as unknown as Record<keyof LayoutProps, V>;
+  if (right == null && bottom == null && left == null) {
+    target[keys.all] = top;
+    return;
+  }
+  target[keys.top] = top;
+  target[keys.right] = right as V;
+  target[keys.bottom] = bottom ?? top;
+  target[keys.left] = left ?? (right as V);
+}
+
+function layoutPropsBuilder<T>(props: LayoutProps = {}): LayoutPropsBuilder<T> {
+  const addFilter = (value: string) => {
+    if (props.filters == null) {
+      props.filters = [];
+    }
+    props.filters.push(value);
+  };
+
+  const addBackground = (
+    ...values: NonUndefined<LayoutProps["background"]>
+  ) => {
+    if (props.background == null) {
+      props.background = [];
+    }
+    props.background.push(...values);
+  };
+  return {
+    props,
+    tag(value) {
+      props.tag = value;
+      return this as unknown as T;
+    },
+    apply(value) {
+      Object.assign(props, value);
+      return this as unknown as T;
+    },
+    alignContent(value: NonUndefined<LayoutProps["alignContent"]>): T {
+      props.alignContent = value;
+      return this as unknown as T;
+    },
+    alignItems(value: NonUndefined<LayoutProps["alignItems"]>): T {
+      props.alignItems = value;
+      return this as unknown as T;
+    },
+    alignSelf(value: NonUndefined<LayoutProps["alignSelf"]>): T {
+      props.alignSelf = value;
+      return this as unknown as T;
+    },
+    aspectRatio(value: NonUndefined<LayoutProps["aspectRatio"]>): T {
+      props.aspectRatio = value;
+      return this as unknown as T;
+    },
+    corner(value) {
+      props.corner = value;
+      return this as unknown as T;
+    },
+    borderWidth(
+      top: number,
+      right?: number,
+      bottom?: number,
+      left?: number,
+    ): T {
+      applyBoxShorthand(props, BORDER_BOX, top, right, bottom, left);
+      return this as unknown as T;
+    },
+    borderColor(value: NonUndefined<LayoutProps["borderColor"]>): T {
+      props.borderColor = value;
+      return this as unknown as T;
+    },
+    margin(
+      top: NonUndefined<LayoutProps["marginTop"]>,
+      right?: NonUndefined<LayoutProps["marginRight"]>,
+      bottom?: NonUndefined<LayoutProps["marginBottom"]>,
+      left?: NonUndefined<LayoutProps["marginLeft"]>,
+    ): T {
+      applyBoxShorthand(props, MARGIN_BOX, top, right, bottom, left);
+      return this as unknown as T;
+    },
+    marginTop(value: NonUndefined<LayoutProps["marginTop"]>): T {
+      props.marginTop = value;
+      return this as unknown as T;
+    },
+    marginBottom(value: NonUndefined<LayoutProps["marginBottom"]>): T {
+      props.marginBottom = value;
+      return this as unknown as T;
+    },
+    marginLeft(value: NonUndefined<LayoutProps["marginLeft"]>): T {
+      props.marginLeft = value;
+      return this as unknown as T;
+    },
+    marginRight(value: NonUndefined<LayoutProps["marginRight"]>): T {
+      props.marginRight = value;
+      return this as unknown as T;
+    },
+    padding(
+      top: NonUndefined<LayoutProps["paddingTop"]>,
+      right?: NonUndefined<LayoutProps["paddingRight"]>,
+      bottom?: NonUndefined<LayoutProps["paddingBottom"]>,
+      left?: NonUndefined<LayoutProps["paddingLeft"]>,
+    ): T {
+      applyBoxShorthand(props, PADDING_BOX, top, right, bottom, left);
+      return this as unknown as T;
+    },
+    paddingTop(value: NonUndefined<LayoutProps["paddingTop"]>): T {
+      props.paddingTop = value;
+      return this as unknown as T;
+    },
+    paddingBottom(value: NonUndefined<LayoutProps["paddingBottom"]>): T {
+      props.paddingBottom = value;
+      return this as unknown as T;
+    },
+    paddingLeft(value: NonUndefined<LayoutProps["paddingLeft"]>): T {
+      props.paddingLeft = value;
+      return this as unknown as T;
+    },
+    paddingRight(value: NonUndefined<LayoutProps["paddingRight"]>): T {
+      props.paddingRight = value;
+      return this as unknown as T;
+    },
+    boxSizing(value: NonUndefined<LayoutProps["boxSizing"]>): T {
+      props.boxSizing = value;
+      return this as unknown as T;
+    },
+    display(value: NonUndefined<LayoutProps["display"]>): T {
+      props.display = value;
+      return this as unknown as T;
+    },
+    flex(value: NonUndefined<LayoutProps["flex"]>): T {
+      props.flex = value;
+      return this as unknown as T;
+    },
+    basis(value: NonUndefined<LayoutProps["flexBasis"]>): T {
+      props.flexBasis = value;
+      return this as unknown as T;
+    },
+    flexDirection(value: NonUndefined<LayoutProps["flexDirection"]>): T {
+      props.flexDirection = value;
+      return this as unknown as T;
+    },
+    direction(value: NonUndefined<LayoutProps["direction"]>): T {
+      props.direction = value;
+      return this as unknown as T;
+    },
+    rowGap(value: NonUndefined<LayoutProps["rowGap"]>): T {
+      props.rowGap = value;
+      return this as unknown as T;
+    },
+    gap(value: NonUndefined<LayoutProps["gap"]>): T {
+      props.gap = value;
+      return this as unknown as T;
+    },
+    columnGap(value: NonUndefined<LayoutProps["columnGap"]>): T {
+      props.columnGap = value;
+      return this as unknown as T;
+    },
+    grow(value: NonUndefined<LayoutProps["flexGrow"]>): T {
+      props.flexGrow = value;
+      return this as unknown as T;
+    },
+    shrink(value: NonUndefined<LayoutProps["flexShrink"]>): T {
+      props.flexShrink = value;
+      return this as unknown as T;
+    },
+    wrap(value: NonUndefined<LayoutProps["flexWrap"]>): T {
+      props.flexWrap = value;
+      return this as unknown as T;
+    },
+    justifyContent(value: NonUndefined<LayoutProps["justifyContent"]>): T {
+      props.justifyContent = value;
+      return this as unknown as T;
+    },
+    gridColumn(
+      start: NonUndefined<LayoutProps["gridColumnStart"]>,
+      span: NonUndefined<LayoutProps["gridColumnSpan"]> = 1,
+    ): T {
+      props.gridColumnStart = start;
+      props.gridColumnSpan = span;
+      return this as unknown as T;
+    },
+    gridRow(
+      start: NonUndefined<LayoutProps["gridRowStart"]>,
+      span: NonUndefined<LayoutProps["gridRowSpan"]> = 1,
+    ): T {
+      props.gridRowStart = start;
+      props.gridRowSpan = span;
+      return this as unknown as T;
+    },
+    left(value: NonUndefined<LayoutProps["left"]>): T {
+      props.left = value;
+      return this as unknown as T;
+    },
+    right(value: NonUndefined<LayoutProps["right"]>): T {
+      props.right = value;
+      return this as unknown as T;
+    },
+    bottom(value: NonUndefined<LayoutProps["bottom"]>): T {
+      props.bottom = value;
+      return this as unknown as T;
+    },
+    top(value: NonUndefined<LayoutProps["top"]>): T {
+      props.top = value;
+      return this as unknown as T;
+    },
+    start(value: NonUndefined<LayoutProps["start"]>): T {
+      props.start = value;
+      return this as unknown as T;
+    },
+    end(value: NonUndefined<LayoutProps["end"]>): T {
+      props.end = value;
+      return this as unknown as T;
+    },
+    size(width: number, height?: number): T {
+      props.width = width;
+      props.height = height == null ? width : height;
+      return this as unknown as T;
+    },
+    width(value: NonUndefined<LayoutProps["width"]>): T {
+      props.width = value;
+      return this as unknown as T;
+    },
+    height(value: NonUndefined<LayoutProps["height"]>): T {
+      props.height = value;
+      return this as unknown as T;
+    },
+    maxWidth(value: NonUndefined<LayoutProps["maxWidth"]>): T {
+      props.maxWidth = value;
+      return this as unknown as T;
+    },
+    maxHeight(value: NonUndefined<LayoutProps["maxHeight"]>): T {
+      props.maxHeight = value;
+      return this as unknown as T;
+    },
+    minWidth(value: NonUndefined<LayoutProps["minWidth"]>): T {
+      props.minWidth = value;
+      return this as unknown as T;
+    },
+    minHeight(value: NonUndefined<LayoutProps["minHeight"]>): T {
+      props.minHeight = value;
+      return this as unknown as T;
+    },
+    position(value: NonUndefined<LayoutProps["position"]>): T {
+      props.position = value;
+      return this as unknown as T;
+    },
+    inset(value: NonUndefined<LayoutProps["inset"]>): T {
+      props.inset = value;
+      return this as unknown as T;
+    },
+    overflow(value: NonUndefined<LayoutProps["overflow"]>): T {
+      props.overflow = value;
+      return this as unknown as T;
+    },
+    pageBreak(value: NonUndefined<LayoutProps["pageBreak"]>): T {
+      props.pageBreak = value;
+      return this as unknown as T;
+    },
+    rotate(value: number): T {
+      props.rotation = value;
+      return this as unknown as T;
+    },
+    scale(x: number, y?: number): T {
+      props.scale = [x, y ?? x];
+      return this as unknown as T;
+    },
+    translateX(value) {
+      props.translateX = value;
+      return this as unknown as T;
+    },
+    translateY(value) {
+      props.translateY = value;
+      return this as unknown as T;
+    },
+    bg(...values: NonUndefined<LayoutProps["background"]>): T {
+      addBackground(...values);
+      return this as unknown as T;
+    },
+    background(...values: NonUndefined<LayoutProps["background"]>): T {
+      addBackground(...values);
+      return this as unknown as T;
+    },
+    opacity(value: number): T {
+      props.opacity = value;
+      return this as unknown as T;
+    },
+    borderRadius(...values: NonUndefined<LayoutProps["cornerRadius"]>): T {
+      props.cornerRadius = values;
+      return this as unknown as T;
+    },
+    borderSmoothing(value: number): T {
+      props.cornerSmoothing = value;
+      return this as unknown as T;
+    },
+    rounded(...values: NonUndefined<LayoutProps["cornerRadius"]>): T {
+      props.cornerRadius = values;
+      return this as unknown as T;
+    },
+    cornerRadius(...values: NonUndefined<LayoutProps["cornerRadius"]>): T {
+      props.cornerRadius = values;
+      return this as unknown as T;
+    },
+    cornerSmoothing(value: number): T {
+      props.cornerSmoothing = value;
+      return this as unknown as T;
+    },
+    shadow(...values: string[]): T {
+      if (props.shadows == null) {
+        props.shadows = [];
+      }
+      props.shadows.push(...values);
+      return this as unknown as T;
+    },
+    blur(value: number): T {
+      addFilter(`blur(${value}px)`);
+      return this as unknown as T;
+    },
+    brightness(value: number): T {
+      addFilter(`brightness(${value})`);
+      return this as unknown as T;
+    },
+    contrast(value: number): T {
+      addFilter(`contrast(${value})`);
+      return this as unknown as T;
+    },
+    grayscale(value: number): T {
+      addFilter(`grayscale(${value})`);
+      return this as unknown as T;
+    },
+    hueRotate(value: number): T {
+      addFilter(`hue-rotate(${value})`);
+      return this as unknown as T;
+    },
+    invert(value: number): T {
+      addFilter(`invert(${value})`);
+      return this as unknown as T;
+    },
+    saturate(value: number): T {
+      addFilter(`saturate(${value})`);
+      return this as unknown as T;
+    },
+    sepia(value: number): T {
+      addFilter(`sepia(${value})`);
+      return this as unknown as T;
+    },
+  };
+}
+
+function spanPropsBuilder<T>(props: SpanProps = {}): SpanPropsBuilder<T> {
+  return {
+    props,
+    underline(value?: NonUndefined<TextProps["underline"]>) {
+      props.underline = value == null ? 1.0 : value;
+      return this as unknown as T;
+    },
+    underlineColor(value) {
+      props.underlineColor = value;
+      return this as unknown as T;
+    },
+    overline(value?: NonUndefined<TextProps["overline"]>) {
+      props.overline = value == null ? 1.0 : value;
+      return this as unknown as T;
+    },
+    overlineColor(value) {
+      props.overlineColor = value;
+      return this as unknown as T;
+    },
+    lineThrough(value?: NonUndefined<TextProps["lineThrough"]>) {
+      props.lineThrough = value == null ? 1.0 : value;
+      return this as unknown as T;
+    },
+    lineThroughColor(value) {
+      props.lineThroughColor = value;
+      return this as unknown as T;
+    },
+
+    highlight(value) {
+      props.highlightColor = value;
+      return this as unknown as T;
+    },
+    offsetY(value) {
+      props.offsetY = value;
+      return this as unknown as T;
+    },
+    color(value: NonUndefined<TextProps["color"]>): T {
+      props.color = value;
+      return this as unknown as T;
+    },
+    size(value: NonUndefined<TextProps["size"]>): T {
+      props.size = value;
+      return this as unknown as T;
+    },
+    font(...values: NonUndefined<TextProps["font"]>): T {
+      props.font = values;
+      return this as unknown as T;
+    },
+    style(value: NonUndefined<TextProps["style"]>): T {
+      props.style = value;
+      return this as unknown as T;
+    },
+    weight(value: NonUndefined<TextProps["weight"]>): T {
+      props.weight = value;
+      return this as unknown as T;
+    },
+    letterSpacing(value: NonUndefined<TextProps["letterSpacing"]>): T {
+      props.letterSpacing = value;
+      return this as unknown as T;
+    },
+    wordSpacing(value: NonUndefined<TextProps["wordSpacing"]>): T {
+      props.wordSpacing = value;
+      return this as unknown as T;
+    },
+    strokeColor(value: NonUndefined<TextProps["strokeColor"]>): T {
+      props.strokeColor = value;
+      return this as unknown as T;
+    },
+    strokeWidth(value: NonUndefined<TextProps["strokeWidth"]>): T {
+      props.strokeWidth = value;
+      return this as unknown as T;
+    },
+    textDir(value: NonUndefined<SpanProps["textDir"]>): T {
+      props.textDir = value;
+      return this as unknown as T;
+    },
+    tag(value: NonUndefined<SpanProps["tag"]>): T {
+      props.tag = value;
+      return this as unknown as T;
+    },
+    dropShadow(...values: NonUndefined<TextProps["dropShadows"]>): T {
+      if (props.dropShadows == null) {
+        props.dropShadows = [];
+      }
+      props.dropShadows.push(...values);
+      return this as unknown as T;
+    },
+  };
+}
+
+function textPropsBuilder<T>(props: TextProps = {}): TextPropsBuilder<T> {
+  return {
+    ...layoutPropsBuilder<T>(props),
+    ...spanPropsBuilder(props),
+    nowrap(): T {
+      props.nowrap = true;
+      return this as unknown as T;
+    },
+    maxLines(value) {
+      props.maxLines = value;
+      return this as unknown as T;
+    },
+    autofit(value) {
+      props.autofit = value ?? true;
+      return this as unknown as T;
+    },
+    wrap(value?: boolean): T {
+      props.nowrap = !value;
+      return this as unknown as T;
+    },
+    lineBreak(value: NonUndefined<TextProps["lineBreak"]>): T {
+      props.lineBreak = value;
+      return this as unknown as T;
+    },
+    textOverflow(value: NonUndefined<TextProps["textOverflow"]>): T {
+      props.textOverflow = value;
+      return this as unknown as T;
+    },
+    lineHeight(value: NonUndefined<TextProps["lineHeight"]>): T {
+      props.lineHeight = value;
+      return this as unknown as T;
+    },
+    align(value: NonUndefined<TextProps["align"]>): T {
+      props.align = value;
+      return this as unknown as T;
+    },
+    indent(value: NonUndefined<TextProps["indentSize"]>): T {
+      props.indentSize = value;
+      return this as unknown as T;
+    },
+    hangingIndent(value: NonUndefined<TextProps["hangingIndentSize"]>): T {
+      props.hangingIndentSize = value;
+      return this as unknown as T;
+    },
+    tabStops(...values: number[]): T {
+      props.tabStops = values;
+      return this as unknown as T;
+    },
+    tabLeader(char: NonUndefined<TextProps["tabLeader"]>): T {
+      props.tabLeader = char;
+      return this as unknown as T;
+    },
+    orientation(value: 0 | 90 | 180 | 270): T {
+      props.orientation = value;
+      return this as unknown as T;
+    },
+    baseDir(value: NonUndefined<TextProps["baseDir"]>): T {
+      props.baseDir = value;
+      return this as unknown as T;
+    },
+    clipImage(value: PhotoNode): T {
+      props.clipImage = value;
+      return this as unknown as T;
+    },
+    textWrap(value: NonUndefined<TextProps["textWrap"]>): T {
+      props.textWrap = value;
+      return this as unknown as T;
+    },
+    props,
+  };
+}
+
+/**
+ * Creates a styled text span
+ * @param children - the text content
+ * @example Span("Hello").color("red").size(16)
+ */
+export function Span(children: string): SpanNode {
+  return {
+    type: "span",
+    children,
+    ...spanPropsBuilder(),
+  };
+}
+
+function textDefaultPropsBuilder<T>(
+  props: TextDefaultProps,
+): TextDefaultPropsBuilder<T> {
+  return {
+    ...spanPropsBuilder(props),
+    nowrap(): T {
+      props.nowrap = true;
+      return this as unknown as T;
+    },
+    maxLines(value) {
+      props.maxLines = value;
+      return this as unknown as T;
+    },
+    wrap(value?: boolean): T {
+      props.nowrap = !value;
+      return this as unknown as T;
+    },
+    lineBreak(value: NonUndefined<TextProps["lineBreak"]>): T {
+      props.lineBreak = value;
+      return this as unknown as T;
+    },
+    textOverflow(value: NonUndefined<TextProps["textOverflow"]>): T {
+      props.textOverflow = value;
+      return this as unknown as T;
+    },
+    lineHeight(value: NonUndefined<TextProps["lineHeight"]>): T {
+      props.lineHeight = value;
+      return this as unknown as T;
+    },
+    align(value: NonUndefined<TextProps["align"]>): T {
+      props.align = value;
+      return this as unknown as T;
+    },
+    indent(value: NonUndefined<TextProps["indentSize"]>): T {
+      props.indentSize = value;
+      return this as unknown as T;
+    },
+
+    props,
+  };
+}
+
+/**
+ * Creates a text defaults container for cascading text properties
+ * @param children - child nodes that will inherit text properties
+ * @example TextDefault(Text("Hello")).color("blue") // all child text inherits blue color
+ */
+export function TextDefault(...children: SoneNode[]): TextDefaultNode {
+  return {
+    type: "text-default",
+    children,
+    ...textDefaultPropsBuilder({}),
+  };
+}
+
+/**
+ * Creates a text block with mixed content
+ * @param children - strings and span nodes
+ * @example Text("Hello ", Span("world").color("red")).size(14)
+ */
+export function Text(
+  ...children: Array<SpanNode | string | undefined | null>
+): TextNode {
+  return {
+    id: -1,
+    type: "text",
+    children: children.filter((c) => c != null),
+    ...textPropsBuilder(),
+  };
+}
+
+/**
+ * Creates a vertical layout container
+ * @param children - child nodes to layout vertically
+ * @example Column(Text("Top"), Text("Bottom")).gap(10)
+ */
+export function Column(...children: SoneNode[]): ColumnNode {
+  return {
+    id: -1,
+    type: "column",
+    children,
+    ...layoutPropsBuilder(),
+  };
+}
+
+/**
+ * Inserts an explicit page break at this position in the layout.
+ * Only takes effect when rendering with a pageHeight config.
+ * @example
+ *   Column(
+ *     Text("Page 1 content"),
+ *     PageBreak(),
+ *     Text("Page 2 content"),
+ *   )
+ */
+export function PageBreak(): ColumnNode {
+  return Column().height(0).pageBreak("before");
+}
+
+/**
+ * Creates a horizontal layout container
+ * @param children - child nodes to layout horizontally
+ * @example Row(Text("Left"), Text("Right")).gap(10)
+ */
+export function Row(...children: SoneNode[]): RowNode {
+  return {
+    id: -1,
+    type: "row",
+    children,
+    ...layoutPropsBuilder(),
+  };
+}
+
+/**
+ * Creates a grid layout container with row-major auto placement.
+ * @param children - child nodes placed into the grid
+ * @example Grid(Text("A"), Text("B")).columns("1fr", "1fr").columnGap(10)
+ */
+export function Grid(...children: SoneNode[]): GridNode {
+  const props: GridProps = {};
+  return {
+    id: -1,
+    type: "grid",
+    children,
+    ...layoutPropsBuilder(props),
+    columns(...values) {
+      props.columns = values;
+      return this;
+    },
+    rows(...values) {
+      props.rows = values;
+      return this;
+    },
+    autoRows(...values) {
+      props.autoRows = values;
+      return this;
+    },
+    autoColumns(...values) {
+      props.autoColumns = values;
+      return this;
+    },
+  };
+}
+
+/**
+ * Creates an image display node
+ * @param src - image URL or buffer data, resolved before rendering
+ * @example Photo("./image.jpg").size(200, 100).scaleType("cover")
+ */
+export function Photo(src: string | Uint8Array): PhotoNode {
+  const props: PhotoProps = { src };
+
+  return {
+    id: -1,
+    type: "photo",
+    ...layoutPropsBuilder(props),
+    scaleType(value, alignment) {
+      props.scaleType = value;
+      if (typeof alignment === "string") {
+        switch (alignment) {
+          case "center":
+            props.scaleAlignment = 1 / 2;
+            break;
+          case "end":
+            props.scaleAlignment = 1;
+            break;
+          case "start":
+            props.scaleAlignment = 0;
+            break;
+        }
+      } else {
+        props.scaleAlignment = alignment;
+      }
+      return this;
+    },
+    preserveAspectRatio(value = true) {
+      props.preserveAspectRatio = value;
+      return this;
+    },
+    flipVertical(value = true) {
+      props.flipVertical = value;
+      return this;
+    },
+    flipHorizontal(value = true) {
+      props.flipHorizontal = value;
+      return this;
+    },
+    fill(value) {
+      props.fill = value;
+      return this;
+    },
+    clipPath(value: string) {
+      props.clipPath = value;
+      return this;
+    },
+  };
+}
+
+/**
+ * SVG path drawing properties
+ */
+export interface PathProps extends LayoutProps {
+  /** SVG path data @example "M10,10 L20,20 Z" */
+  d: string;
+  /** path bounding box [left, top, right, bottom] (computed) */
+  bounds?: number[];
+  /** outline color */
+  stroke?: ColorValue;
+  strokeWidth?: number;
+  strokeLineCap?: "butt" | "round" | "square";
+  strokeLineJoin?: "bevel" | "miter" | "round";
+  strokeMiterLimit?: number;
+  /** dash pattern @example [5, 5] = 5px dash, 5px gap */
+  strokeDashArray?: number[];
+  strokeDashOffset?: number;
+  /** fill color */
+  fill?: ColorValue;
+  /** @param value 0.0 to 1.0 */
+  fillOpacity?: number;
+  fillRule?: "evenodd" | "nonzero";
+  /** uniform scaling of the path */
+  scalePath?: number;
+}
+
+export interface PathPropsBuilder<T> extends LayoutPropsBuilder<T, PathProps> {
+  stroke(value: NonUndefined<PathProps["stroke"]>): T;
+  strokeWidth(value: NonUndefined<PathProps["strokeWidth"]>): T;
+  strokeLineCap(value: NonUndefined<PathProps["strokeLineCap"]>): T;
+  strokeLineJoin(value: NonUndefined<PathProps["strokeLineJoin"]>): T;
+  strokeMiterLimit(value: NonUndefined<PathProps["strokeMiterLimit"]>): T;
+  strokeDashArray(...values: NonUndefined<PathProps["strokeDashArray"]>): T;
+  strokeDashOffset(value: NonUndefined<PathProps["strokeDashOffset"]>): T;
+  fill(value: NonUndefined<PathProps["fill"]>): T;
+  fillOpacity(value: NonUndefined<PathProps["fillOpacity"]>): T;
+  fillRule(value: NonUndefined<PathProps["fillRule"]>): T;
+  scalePath(value: NonUndefined<PathProps["scalePath"]>): T;
+}
+
+/**
+ * SVG path drawing node
+ */
+export interface PathNode extends PathPropsBuilder<PathNode> {
+  id: number;
+  type: "path";
+}
+
+export function pathPropsBuilder<T>(props: PathProps): PathPropsBuilder<T> {
+  return {
+    ...layoutPropsBuilder(props),
+    props,
+    stroke(value: NonUndefined<PathProps["stroke"]>): T {
+      props.stroke = value;
+      return this as unknown as T;
+    },
+    strokeWidth(value: NonUndefined<PathProps["strokeWidth"]>): T {
+      props.strokeWidth = value;
+      return this as unknown as T;
+    },
+    strokeLineCap(value: NonUndefined<PathProps["strokeLineCap"]>): T {
+      props.strokeLineCap = value;
+      return this as unknown as T;
+    },
+    strokeLineJoin(value: NonUndefined<PathProps["strokeLineJoin"]>): T {
+      props.strokeLineJoin = value;
+      return this as unknown as T;
+    },
+    strokeMiterLimit(value: NonUndefined<PathProps["strokeMiterLimit"]>): T {
+      props.strokeMiterLimit = value;
+      return this as unknown as T;
+    },
+    strokeDashArray(...values: NonUndefined<PathProps["strokeDashArray"]>): T {
+      props.strokeDashArray = values;
+      return this as unknown as T;
+    },
+    strokeDashOffset(value: NonUndefined<PathProps["strokeDashOffset"]>): T {
+      props.strokeDashOffset = value;
+      return this as unknown as T;
+    },
+    fill(value: NonUndefined<PathProps["fill"]>): T {
+      props.fill = value;
+      return this as unknown as T;
+    },
+    fillOpacity(value: NonUndefined<PathProps["fillOpacity"]>): T {
+      props.fillOpacity = value;
+      return this as unknown as T;
+    },
+    fillRule(value: NonUndefined<PathProps["fillRule"]>): T {
+      props.fillRule = value;
+      return this as unknown as T;
+    },
+    scalePath(value: NonUndefined<PathProps["scalePath"]>): T {
+      props.scalePath = value;
+      return this as unknown as T;
+    },
+  };
+}
+
+/**
+ * Creates an SVG path drawing node
+ * @param d - SVG path data string
+ * @example Path("M10,10 L50,50 Z").fill("red").stroke("black").strokeWidth(2)
+ */
+export function Path(d: string): PathNode {
+  const props: PathProps = { d };
+  return {
+    id: -1,
+    type: "path",
+    ...pathPropsBuilder(props),
+    props,
+  };
+}
+
+// FIXME: Table doesn't support children layout similar to Text component
+export interface TableProps extends LayoutProps {
+  spacing?: number[];
+}
+
+export interface TablePropsBuilder<T>
+  extends LayoutPropsBuilder<T, TableProps> {
+  spacing(...values: NonUndefined<TableProps["spacing"]>): T;
+}
+
+export interface TableNode extends TablePropsBuilder<TableNode> {
+  id: number;
+  type: "table";
+  children: Array<TableRowNode | undefined | null>;
+}
+
+export interface TableRowProps extends LayoutProps {}
+
+export interface TableRowPropsBuilder<T>
+  extends LayoutPropsBuilder<T, TableRowProps> {}
+
+export interface TableRowNode extends TableRowPropsBuilder<TableRowNode> {
+  id: number;
+  type: "table-row";
+  children: Array<TextDefaultNode | TableCellNode | null | undefined>;
+}
+
+export function Table(...children: TableRowNode[]): TableNode {
+  const props: TableProps = {};
+  return {
+    id: -1,
+    type: "table",
+    children,
+    ...layoutPropsBuilder(props),
+    spacing(...values) {
+      props.spacing = values;
+      return this;
+    },
+  };
+}
+
+export function TableRow(
+  ...children: Array<TextDefaultNode | TableCellNode | null | undefined>
+): TableRowNode {
+  const props: TableRowProps = {};
+
+  return {
+    id: -1,
+    type: "table-row",
+    children,
+    ...layoutPropsBuilder(props),
+  };
+}
+
+export interface TableCellProps extends LayoutProps {
+  colspan?: number;
+  rowspan?: number;
+}
+
+export interface TableCellPropsBuilder<T>
+  extends LayoutPropsBuilder<T, TableCellProps> {
+  colspan: (value: NonUndefined<TableCellProps["colspan"]>) => T;
+  rowspan: (value: NonUndefined<TableCellProps["rowspan"]>) => T;
+}
+
+export interface TableCellNode extends TableCellPropsBuilder<TableCellNode> {
+  id: number;
+  type: "table-cell";
+  children: SoneNode[];
+}
+
+export function TableCell(...children: SoneNode[]): TableCellNode {
+  const props: TableCellProps = {};
+
+  return {
+    id: -1,
+    type: "table-cell",
+    children,
+    ...layoutPropsBuilder(props),
+    colspan(value) {
+      props.colspan = value;
+      return this;
+    },
+    rowspan(value) {
+      props.rowspan = value;
+      return this;
+    },
+    props,
+  };
+}
+
+/**
+ * List marker and container customization properties
+ */
+export interface ListProps extends LayoutProps {
+  /** Bullet/numbering style: "disc" (•), "circle" (◦), "square" (▪), "dash" (–), "decimal", "none", custom string, a SpanNode for full styling, or an arrow function `(index: number) => SpanNode` for dynamic per-item markers (index is 0-based) */
+  listStyle?:
+    | "disc"
+    | "circle"
+    | "square"
+    | "decimal"
+    | "dash"
+    | "none"
+    | (string & {})
+    | SpanNode
+    | ((index: number) => SpanNode);
+  /** Gap between marker and item content (default: 8) */
+  markerGap?: number;
+  /** Top and bottom padding applied to each marker (default: 0) */
+  markerOffset?: number;
+  /** Starting number for decimal lists — named startIndex because "start" is taken by LayoutProps (CSS inset-inline-start) */
+  startIndex?: number;
+}
+
+export interface ListPropsBuilder<T> extends LayoutPropsBuilder<T, ListProps> {
+  listStyle(value: NonUndefined<ListProps["listStyle"]>): T;
+  markerGap(value: NonUndefined<ListProps["markerGap"]>): T;
+  markerOffset(value: NonUndefined<ListProps["markerOffset"]>): T;
+  startIndex(value: NonUndefined<ListProps["startIndex"]>): T;
+}
+
+/**
+ * Vertical list container — like HTML ul/ol
+ */
+export interface ListNode extends ListPropsBuilder<ListNode> {
+  id: number;
+  type: "list";
+  children: Array<ListItemNode | null | undefined>;
+}
+
+/**
+ * List item with auto-generated marker — like HTML li
+ */
+export interface ListItemNode extends LayoutPropsBuilder<ListItemNode> {
+  id: number;
+  type: "list-item";
+  children: SoneNode[];
+}
+
+function listPropsBuilder<T>(props: ListProps = {}): ListPropsBuilder<T> {
+  return {
+    ...layoutPropsBuilder<T>(props),
+    props,
+    listStyle(value) {
+      props.listStyle = value;
+      return this as unknown as T;
+    },
+    markerGap(value) {
+      props.markerGap = value;
+      return this as unknown as T;
+    },
+    markerOffset(value) {
+      props.markerOffset = value;
+      return this as unknown as T;
+    },
+    startIndex(value) {
+      props.startIndex = value;
+      return this as unknown as T;
+    },
+  };
+}
+
+/**
+ * Creates a vertical list container — like HTML ul/ol
+ * @param children - ListItem nodes
+ * @example
+ * List(
+ *   ListItem(Text("First")),
+ *   ListItem(Text("Second")),
+ * ).listStyle("disc").markerGap(10).gap(6)
+ */
+export function List(
+  ...children: Array<ListItemNode | null | undefined>
+): ListNode {
+  const props: ListProps = {};
+  return {
+    id: -1,
+    type: "list",
+    children,
+    ...listPropsBuilder<ListNode>(props),
+    props,
+  };
+}
+
+/**
+ * Creates a list item with auto-generated marker — like HTML li
+ * @param children - content nodes
+ * @example
+ * ListItem(Text("Hello world"))
+ */
+export function ListItem(...children: SoneNode[]): ListItemNode {
+  return {
+    id: -1,
+    type: "list-item",
+    children,
+    ...layoutPropsBuilder<ListItemNode>(),
+  };
+}
+
+/**
+ * Layout props for a clip-group container
+ */
+export interface ClipGroupProps extends LayoutProps {
+  /** SVG path data that defines the clip region for all children */
+  clipPath?: string;
+}
+
+/**
+ * A layout container that clips all its children to an arbitrary SVG path shape.
+ */
+export interface ClipGroupNode
+  extends LayoutPropsBuilder<ClipGroupNode, ClipGroupProps> {
+  id: number;
+  type: "clip-group";
+  children: SoneNode[];
+  /** Update the clip path after construction */
+  clipPath(value: string): ClipGroupNode;
+}
+
+/**
+ * Creates a layout container that clips all children to an SVG path shape.
+ * Useful for shape-masked composites: photo collages, custom avatar frames, etc.
+ * @param path - SVG path string defining the clip region (coordinates relative to the node's top-left corner)
+ * @param children - content nodes rendered inside the clip
+ * @example
+ * ClipGroup("M 75 0 L 150 150 L 0 150 Z",
+ *   Photo(img).size(150, 150),
+ * ).size(150, 150)
+ */
+export function ClipGroup(
+  path: string,
+  ...children: SoneNode[]
+): ClipGroupNode {
+  const props: ClipGroupProps = { clipPath: path };
+  return {
+    id: -1,
+    type: "clip-group",
+    children,
+    ...layoutPropsBuilder<ClipGroupNode>(props),
+    props,
+    clipPath(value: string) {
+      props.clipPath = value;
+      return this;
+    },
+  };
+}
