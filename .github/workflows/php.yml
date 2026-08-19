@@ -57,19 +57,42 @@ jobs:
         run: php bindings/php/tools/generate-header.php && git diff --exit-code bindings/php/sone.h
       # The suite dies on Linux at the first native call with nothing but a
       # segfault. This narrows it to a single line before the suite runs.
+      # The suite dies on Linux with nothing but a segfault. This walks the
+      # same path one call at a time so the log names the line.
       - name: Probe the native boundary
+        shell: bash
         working-directory: bindings/php
         run: |
           php -r '
             require "src/autoload.php";
+            $root = Sone\Native::checkoutRoot();
             fwrite(STDERR, "library: " . Sone\Native::locate() . "\n");
             $ffi = Sone\Native::ffi();
             fwrite(STDERR, "cdef: ok\n");
             fwrite(STDERR, "version: " . $ffi->sone_version() . "\n");
-            $engine = $ffi->sone_engine_new(getcwd());
-            fwrite(STDERR, "engine: " . ($engine === null ? "null" : "ok") . "\n");
-            $ffi->sone_engine_free($engine);
-            fwrite(STDERR, "freed: ok\n");
+
+            $engine = new Sone\Engine($root);
+            fwrite(STDERR, "engine: ok\n");
+
+            $engine->registerFontFile("Geist Mono", "$root/fixtures/font/GeistMono-Regular.ttf");
+            fwrite(STDERR, "font: ok\n");
+
+            fwrite(STDERR, "families: " . implode(",", $engine->fontFamilies()) . "\n");
+
+            $node = Sone\Column()->size(16)->bg("red");
+            $png = Sone\Sone::render($node, engine: $engine)->png();
+            fwrite(STDERR, "png: " . strlen($png) . " bytes\n");
+
+            $text = Sone\Text("hi")->font("Geist Mono")->size(12);
+            $png = Sone\Sone::render($text, engine: $engine)->png();
+            fwrite(STDERR, "text png: " . strlen($png) . " bytes\n");
+
+            $pages = Sone\Sone::render($node, engine: $engine, width: 40, pageHeight: 200)->pages();
+            fwrite(STDERR, "pages: " . count($pages) . "\n");
+
+            fwrite(STDERR, "layout: " . strlen($engine->dumpLayout(Sone\Sone::render($node)->toJson())) . "\n");
+            $engine->close();
+            fwrite(STDERR, "closed: ok\n");
           '
 
       - name: Test

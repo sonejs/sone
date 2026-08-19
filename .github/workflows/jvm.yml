@@ -48,13 +48,20 @@ jobs:
       # One backend per JVM first. BackendTest exercises both in a single
       # process, so when it crashes the log cannot say which half did it —
       # these two steps can.
+      # bash on every platform: PowerShell is the default on windows runners and
+      # it split -Dsurefire.failIfNoSpecifiedTests=false into two arguments,
+      # which Maven then read as a lifecycle phase.
       - name: Test with the Panama backend
         working-directory: bindings/jvm
-        run: mvn --batch-mode test -Dtest=SoneTest -Dsurefire.failIfNoSpecifiedTests=false -Dsone.backend=dev.sone.panama.PanamaBackend
+        continue-on-error: true
+        shell: bash
+        run: mvn --batch-mode test -Dtest=SoneTest "-Dsurefire.failIfNoSpecifiedTests=false" "-Dsone.backend=dev.sone.panama.PanamaBackend"
 
       - name: Test with the JNA backend
         working-directory: bindings/jvm
-        run: mvn --batch-mode test -Dtest=SoneTest -Dsurefire.failIfNoSpecifiedTests=false -Dsone.backend=dev.sone.jna.JnaBackend
+        continue-on-error: true
+        shell: bash
+        run: mvn --batch-mode test -Dtest=SoneTest "-Dsurefire.failIfNoSpecifiedTests=false" "-Dsone.backend=dev.sone.jna.JnaBackend"
 
       # Then the whole suite, including the cross-backend comparison.
       - name: Test
