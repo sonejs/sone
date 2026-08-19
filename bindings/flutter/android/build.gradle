@@ -1,0 +1,73 @@
+// Packages prebuilt sone libraries into the consuming app.
+//
+// There is no CMake build here on purpose: Skia takes an hour to compile from
+// source, so the .so files are cross-compiled ahead of time by
+// `tools/build-android.sh` and dropped into src/main/jniLibs. This module only
+// has to hand them to the Android Gradle Plugin.
+
+group = "dev.sone.sone_flutter"
+version = "1.0"
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.11.1")
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: "com.android.library"
+
+android {
+    namespace = "dev.sone.sone_flutter"
+    compileSdk = 36
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        // 21 is what every published rust-skia Android prebuilt targets.
+        minSdk = 21
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ["src/main/jniLibs"]
+        }
+    }
+
+    // The prebuilts are already stripped; letting Gradle strip them again just
+    // spends NDK time to no effect.
+    packagingOptions {
+        jniLibs {
+            keepDebugSymbols += ["**/libsone.so"]
+        }
+    }
+}
+
+// Fail with something readable rather than an APK that crashes on first render.
+tasks.register("verifySoneNatives") {
+    doFirst {
+        def abis = ["arm64-v8a", "x86_64"]
+        def missing = abis.findAll { !file("src/main/jniLibs/$it/libsone.so").exists() }
+        if (!missing.isEmpty()) {
+            throw new GradleException(
+                "sone_flutter: no native library for ${missing.join(', ')}.\n" +
+                "Build them first:\n" +
+                "    tools/build-android.sh bindings/flutter/android/src/main/jniLibs")
+        }
+    }
+}
+preBuild.dependsOn("verifySoneNatives")

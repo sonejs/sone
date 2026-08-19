@@ -1,0 +1,29 @@
+name: sone_flutter
+description: >-
+  Flutter packaging for sone — a declarative canvas layout engine with rich
+  international text. Bundles the native library; the API is package:sone.
+version: 0.1.0
+homepage: https://github.com/seanghay/sone
+repository: https://github.com/seanghay/sone
+
+environment:
+  sdk: ^3.4.0
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # The whole API lives here. This package exists only to carry the natives.
+  sone:
+    path: ../dart
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        ffiPlugin: true
