@@ -27,7 +27,7 @@ bindings/        one directory per language
 packages/        npm workspace — the TypeScript engine lands here
 fixtures/        the parity corpus, generated from the TypeScript engine
 tools/           sync-fixtures.sh
-docs/            engine.md — architecture, parity results, known divergences
+docs/            architecture · porting-notes · parity · bindings · roadmap · status
 ```
 
 ## Quick start
@@ -79,11 +79,22 @@ and drawing logic exists exactly once, in Rust.
 `TextEngine` and `Backend` traits over plain value types, so the engine is
 testable without a rasterizer and a second backend stays possible.
 
+## Documentation
+
+| | |
+|---|---|
+| [architecture.md](docs/architecture.md) | how a document becomes pixels, and why the crates split where they do |
+| [porting-notes.md](docs/porting-notes.md) | every non-obvious behaviour, with the symptom that found it — **read before changing layout or text** |
+| [parity.md](docs/parity.md) | the four harnesses, how to diagnose a moved golden, how waivers work |
+| [bindings.md](docs/bindings.md) | how a binding is built, plus the surface design for each language |
+| [roadmap.md](docs/roadmap.md) | what is left, ordered, with entry points |
+| [status.md](docs/status.md) | milestone state and where the binary weight is |
+
 ## Parity
 
 The Rust engine is held to the TypeScript one by four gates, all runnable
-locally and in CI. Current results, with detail and every known divergence in
-[`docs/engine.md`](docs/engine.md):
+locally and in CI. Current results; every known divergence is explained in
+[parity.md](docs/parity.md):
 
 | Gate | Result |
 |---|---|
