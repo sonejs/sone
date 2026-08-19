@@ -22,6 +22,18 @@ thiserror.workspace = true
 lru.workspace = true
 kurbo.workspace = true
 
+# Windows only, and not optional there: skia-safe calls `icu::init()` from
+# ParagraphBuilder::new only under this feature, so without it every paragraph
+# panics with "Unicode initialization error". Skia's ICU *code* is already
+# linked by `textlayout`; what Windows cannot find at runtime is the data table,
+# which this embeds into the binary.
+#
+# Scoped to windows rather than added to the list above because the feature set
+# is also skia-bindings' cache key: enabling it everywhere would stop the
+# Android and Apple cross-builds matching a published prebuilt.
+[target.'cfg(windows)'.dependencies]
+skia-safe = { version = "0.99", default-features = false, features = ["embed-icudtl"] }
+
 [dev-dependencies]
 serde = { workspace = true }
 serde_json = { workspace = true }
