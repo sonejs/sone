@@ -1,0 +1,24 @@
+[package]
+name = "sone"
+description = "A declarative canvas layout engine with rich international text — flexbox layout, Skia rendering, and PNG / JPEG / WebP / PDF / SVG output."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+keywords = ["layout", "flexbox", "skia", "typography", "pdf"]
+categories = ["graphics", "text-processing"]
+
+[dependencies]
+sone-core = { path = "../sone-core" }
+sone-skia = { path = "../sone-skia", optional = true }
+serde_json.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
+
+[features]
+# Rendering pulls in Skia. Without it the crate still builds every document and
+# serializes it, which is all a program that only produces IR needs.
+default = ["render"]
+render = ["dep:sone-skia"]

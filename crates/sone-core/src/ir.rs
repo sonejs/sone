@@ -48,6 +48,33 @@ impl<'de> Deserialize<'de> for Dim {
     }
 }
 
+// Conversions that let a builder take a bare number where the IR wants a
+// length. `Dim::Percent` and `Dim::Auto` stay explicit — a string like "50%" is
+// a JavaScript affordance, and Rust has a better one already.
+impl From<f32> for Dim {
+    fn from(value: f32) -> Dim {
+        Dim::Px(value)
+    }
+}
+
+impl From<f64> for Dim {
+    fn from(value: f64) -> Dim {
+        Dim::Px(value as f32)
+    }
+}
+
+impl From<i32> for Dim {
+    fn from(value: i32) -> Dim {
+        Dim::Px(value as f32)
+    }
+}
+
+impl From<u32> for Dim {
+    fn from(value: u32) -> Dim {
+        Dim::Px(value as f32)
+    }
+}
+
 /// A grid track: a fixed pixel size, `auto`, or an `fr` share.
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub enum GridTrack {
@@ -138,6 +165,18 @@ kw_enum!(StrokeCap { Butt => "butt", Round => "round", Square => "square" });
 kw_enum!(StrokeJoin { Bevel => "bevel", Miter => "miter", Round => "round" });
 kw_enum!(FillRule { EvenOdd => "evenodd", NonZero => "nonzero" });
 
+impl From<f32> for GridTrack {
+    fn from(value: f32) -> GridTrack {
+        GridTrack::Fixed(value)
+    }
+}
+
+impl From<i32> for GridTrack {
+    fn from(value: i32) -> GridTrack {
+        GridTrack::Fixed(value as f32)
+    }
+}
+
 /// `weight` accepts CSS keywords or a number.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -161,12 +200,54 @@ impl Weight {
     }
 }
 
+impl From<f32> for Weight {
+    fn from(value: f32) -> Weight {
+        Weight::Num(value)
+    }
+}
+
+impl From<i32> for Weight {
+    fn from(value: i32) -> Weight {
+        Weight::Num(value as f32)
+    }
+}
+
+impl From<&str> for Weight {
+    fn from(value: &str) -> Weight {
+        Weight::Kw(value.to_string())
+    }
+}
+
+impl From<String> for Weight {
+    fn from(value: String) -> Weight {
+        Weight::Kw(value)
+    }
+}
+
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum Background {
     /// A CSS colour or gradient string.
     Css(String),
     Photo(Box<Node>),
+}
+
+impl From<&str> for Background {
+    fn from(value: &str) -> Background {
+        Background::Css(value.to_string())
+    }
+}
+
+impl From<String> for Background {
+    fn from(value: String) -> Background {
+        Background::Css(value)
+    }
+}
+
+impl From<Node> for Background {
+    fn from(value: Node) -> Background {
+        Background::Photo(Box::new(value))
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -176,6 +257,24 @@ pub enum ListStyle {
     Name(String),
     /// A styled marker; `{}` is replaced with the item number.
     Span(Box<Node>),
+}
+
+impl From<&str> for ListStyle {
+    fn from(value: &str) -> ListStyle {
+        ListStyle::Name(value.to_string())
+    }
+}
+
+impl From<String> for ListStyle {
+    fn from(value: String) -> ListStyle {
+        ListStyle::Name(value)
+    }
+}
+
+impl From<Node> for ListStyle {
+    fn from(value: Node) -> ListStyle {
+        ListStyle::Span(Box::new(value))
+    }
 }
 
 /// `null` must survive as `Some(None)`: an explicit null clears a decoration
