@@ -68,7 +68,10 @@ fn backgrounds_accumulate_and_take_a_photo() {
 
 #[test]
 fn corner_radius_takes_one_or_four() {
-    assert_eq!(props(column().corner_radius(8))["cornerRadius"], json!([8.0]));
+    assert_eq!(
+        props(column().corner_radius(8))["cornerRadius"],
+        json!([8.0])
+    );
     assert_eq!(
         props(column().corner_radius([1, 2, 3, 4]))["cornerRadius"],
         json!([1.0, 2.0, 3.0, 4.0])
@@ -155,8 +158,14 @@ fn page_break_is_a_zero_height_column() {
 
 #[test]
 fn photo_bytes_become_a_data_url() {
-    let src = props(photo_bytes(b"hello world"))["src"].as_str().unwrap().to_string();
-    assert!(src.starts_with("data:application/octet-stream;base64,"), "{src}");
+    let src = props(photo_bytes(b"hello world"))["src"]
+        .as_str()
+        .unwrap()
+        .to_string();
+    assert!(
+        src.starts_with("data:application/octet-stream;base64,"),
+        "{src}"
+    );
     assert!(src.ends_with("aGVsbG8gd29ybGQ="), "{src}");
 }
 
@@ -168,8 +177,7 @@ fn raw_props_are_the_escape_hatch() {
 
 #[test]
 fn the_document_carries_the_schema_version() {
-    let json: serde_json::Value =
-        serde_json::from_str(&sone::render(column()).to_json()).unwrap();
+    let json: serde_json::Value = serde_json::from_str(&sone::render(column()).to_json()).unwrap();
     assert_eq!(json["sone"], json!(1));
     assert_eq!(json["root"]["type"], json!("column"));
 }

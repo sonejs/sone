@@ -85,7 +85,11 @@ impl SoneRenderOptions {
             } else {
                 doc.config.density.unwrap_or(1.0)
             },
-            quality: if self.quality > 0.0 { self.quality } else { 1.0 },
+            quality: if self.quality > 0.0 {
+                self.quality
+            } else {
+                1.0
+            },
             strict: self.strict != 0,
             debug_layout: false,
             debug_text: false,
@@ -691,7 +695,8 @@ mod tests {
             let engine = sone_engine_new(ptr::null());
             let json = CString::new(PAGED).unwrap();
             let mut pages = SoneBufferList::empty();
-            let status = sone_render_pages(engine, json.as_ptr(), options(SoneFormat::Png), &mut pages);
+            let status =
+                sone_render_pages(engine, json.as_ptr(), options(SoneFormat::Png), &mut pages);
             assert_eq!(status, SoneStatus::Ok);
             assert_eq!(pages.len, 3, "one page per declared break");
             for index in 0..pages.len {

@@ -83,8 +83,16 @@ fn renders_every_format() {
     let svg = sone::render(card()).engine(&engine).svg().unwrap();
     assert!(String::from_utf8_lossy(&svg).contains("<svg"));
 
-    assert!(!sone::render(card()).engine(&engine).jpeg().unwrap().is_empty());
-    assert!(!sone::render(card()).engine(&engine).webp().unwrap().is_empty());
+    assert!(!sone::render(card())
+        .engine(&engine)
+        .jpeg()
+        .unwrap()
+        .is_empty());
+    assert!(!sone::render(card())
+        .engine(&engine)
+        .webp()
+        .unwrap()
+        .is_empty());
 }
 
 #[test]
@@ -92,7 +100,12 @@ fn one_page_per_declared_break() {
     let engine = engine();
     let root = column()
         .child(column().height(60).bg("red"))
-        .child(column().height(60).bg("green").page_break(PageBreak::Before))
+        .child(
+            column()
+                .height(60)
+                .bg("green")
+                .page_break(PageBreak::Before),
+        )
         .child(column().height(60).bg("blue").page_break(PageBreak::Before));
 
     let pages = sone::render(root)
@@ -164,10 +177,12 @@ fn an_unregistered_font_falls_back_rather_than_failing() {
     // Worth pinning down: the engine substitutes rather than erroring, so a
     // typo in a family name is a visual bug, not a caught one.
     let engine = engine();
-    assert!(sone::render(text("hello").font_family("Nothing Here").size(12))
-        .engine(&engine)
-        .png()
-        .is_ok());
+    assert!(
+        sone::render(text("hello").font_family("Nothing Here").size(12))
+            .engine(&engine)
+            .png()
+            .is_ok()
+    );
 }
 
 #[test]

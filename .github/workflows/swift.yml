@@ -10,6 +10,12 @@ on:
 # macOS only. The package links an XCFramework of Apple slices, so there is
 # nothing for a Linux or Windows runner to build — swift-corelibs exists, but
 # the native library it would need is not part of this package.
+# A newer push supersedes an older one: these runs are long, and two
+# generations of them competing for runners helps nobody.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     name: macOS

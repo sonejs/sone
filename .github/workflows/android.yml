@@ -23,6 +23,12 @@ on:
       - "tools/build-android.sh"
       - ".github/workflows/android.yml"
 
+# A newer push supersedes an older one: these runs are long, and two
+# generations of them competing for runners helps nobody.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   natives:
     name: cross-compile

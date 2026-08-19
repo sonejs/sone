@@ -9,6 +9,12 @@ on:
     paths:
       ["crates/**", "bindings/node/**", "bindings/wasm/**", "fixtures/**", ".github/workflows/node.yml"]
 
+# A newer push supersedes an older one: these runs are long, and two
+# generations of them competing for runners helps nobody.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # The native addon, on every runtime that speaks Node-API.
   native:

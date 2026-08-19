@@ -47,13 +47,13 @@ mod render;
 use sone_core::ir::{self, Node};
 
 pub use nodes::*;
-pub use sone_core::text::bidi::BaseDir;
 pub use sone_core::ir::{
-    AlignContent, AlignItems, BoxSizing, Corner, Dim, Direction, Display, FillRule,
-    FlexDirection, FlexWrap, FontStyle, GridTrack, JustifyContent, LastPageHeight, LineBreakMode,
-    Overflow, PageBreak, Position, ScaleType, StrokeCap, StrokeJoin, TextAlign, TextOverflow,
-    TextWrap, Weight,
+    AlignContent, AlignItems, BoxSizing, Corner, Dim, Direction, Display, FillRule, FlexDirection,
+    FlexWrap, FontStyle, GridTrack, JustifyContent, LastPageHeight, LineBreakMode, Overflow,
+    PageBreak, Position, ScaleType, StrokeCap, StrokeJoin, TextAlign, TextOverflow, TextWrap,
+    Weight,
 };
+pub use sone_core::text::bidi::BaseDir;
 pub use sone_core::{Result, SoneError};
 
 #[cfg(feature = "render")]
@@ -121,11 +121,19 @@ pub fn photo_bytes(data: &[u8]) -> Photo {
     const ALPHABET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
     let mut encoded = String::with_capacity(data.len().div_ceil(3) * 4);
     for chunk in data.chunks(3) {
-        let b = [chunk[0], *chunk.get(1).unwrap_or(&0), *chunk.get(2).unwrap_or(&0)];
+        let b = [
+            chunk[0],
+            *chunk.get(1).unwrap_or(&0),
+            *chunk.get(2).unwrap_or(&0),
+        ];
         let triple = ((b[0] as u32) << 16) | ((b[1] as u32) << 8) | b[2] as u32;
         for i in 0..4 {
             if i <= chunk.len() {
-                let _ = write!(encoded, "{}", ALPHABET[((triple >> (18 - i * 6)) & 0x3f) as usize] as char);
+                let _ = write!(
+                    encoded,
+                    "{}",
+                    ALPHABET[((triple >> (18 - i * 6)) & 0x3f) as usize] as char
+                );
             } else {
                 encoded.push('=');
             }
@@ -187,13 +195,13 @@ pub mod prelude {
     };
     // The types too, so a helper function can name what it returns.
     pub use crate::{
-        Bullets, ClipGroup, Column, Grid, ListItem, Photo, Row, Span, SvgPath, Table, TableCell,
-        TableRow, Text, TextDefault,
-    };
-    pub use crate::{
         AlignContent, AlignItems, BaseDir, Corner, Dim, Direction, FillRule, FlexDirection,
         FlexWrap, FontStyle, GridTrack, JustifyContent, LastPageHeight, LineBreakMode, PageBreak,
         ScaleType, StrokeCap, StrokeJoin, TextAlign, TextOverflow, TextWrap, Weight,
+    };
+    pub use crate::{
+        Bullets, ClipGroup, Column, Grid, ListItem, Photo, Row, Span, SvgPath, Table, TableCell,
+        TableRow, Text, TextDefault,
     };
 
     #[cfg(feature = "render")]

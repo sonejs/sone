@@ -106,7 +106,9 @@ impl Engine {
 
     fn render(&self, document: &Document, options: &RenderOptions) -> Result<Vec<u8>> {
         let inner = self.inner.lock().unwrap();
-        inner.engine.load_document_fonts(document, &inner.base_dir)?;
+        inner
+            .engine
+            .load_document_fonts(document, &inner.base_dir)?;
         if options.format == OutputFormat::Pdf {
             return inner.engine.render_pdf(document, &inner.base_dir, options);
         }
@@ -116,8 +118,12 @@ impl Engine {
 
     fn render_pages(&self, document: &Document, options: &RenderOptions) -> Result<Vec<Vec<u8>>> {
         let inner = self.inner.lock().unwrap();
-        inner.engine.load_document_fonts(document, &inner.base_dir)?;
-        inner.engine.render_pages(document, &inner.base_dir, options)
+        inner
+            .engine
+            .load_document_fonts(document, &inner.base_dir)?;
+        inner
+            .engine
+            .render_pages(document, &inner.base_dir, options)
     }
 }
 
@@ -331,9 +337,14 @@ impl<'a> Rendering<'a> {
         let document = self.document();
         let engine = self.resolved_engine();
         let inner = engine.inner.lock().unwrap();
-        inner.engine.load_document_fonts(&document, &inner.base_dir)?;
+        inner
+            .engine
+            .load_document_fonts(&document, &inner.base_dir)?;
         let prepared = inner.engine.prepare_with_assets(&document, &inner.assets)?;
-        Ok(sone_core::dump::layout_json(&prepared.root, &prepared.layout))
+        Ok(sone_core::dump::layout_json(
+            &prepared.root,
+            &prepared.layout,
+        ))
     }
 
     /// Dataset-style boxes at node, line or word granularity.
@@ -341,7 +352,9 @@ impl<'a> Rendering<'a> {
         let document = self.document();
         let engine = self.resolved_engine();
         let inner = engine.inner.lock().unwrap();
-        inner.engine.load_document_fonts(&document, &inner.base_dir)?;
+        inner
+            .engine
+            .load_document_fonts(&document, &inner.base_dir)?;
         let prepared = inner.engine.prepare_with_assets(&document, &inner.assets)?;
         Ok(sone_core::metadata::build(
             &prepared.root,

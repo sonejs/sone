@@ -7,6 +7,12 @@ on:
   pull_request:
     paths: ["crates/**", "include/**", "fixtures/**", "Cargo.*", ".github/workflows/rust.yml"]
 
+# A newer push supersedes an older one: these runs are long, and two
+# generations of them competing for runners helps nobody.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     name: ${{ matrix.os }}

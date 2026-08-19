@@ -7,6 +7,12 @@ on:
   pull_request:
     paths: ["bindings/ruby/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/ruby.yml"]
 
+# A newer push supersedes an older one: these runs are long, and two
+# generations of them competing for runners helps nobody.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     name: ${{ matrix.os }} · ruby ${{ matrix.ruby }}
@@ -18,10 +24,13 @@ jobs:
         os: [macos-14, ubuntu-24.04, windows-2022]
         ruby: ["3.3"]
         include:
-          # The gem claims >= 2.6, so hold one job near the floor. 22.04 rather
-          # than 24.04 because setup-ruby ships no 2.7 for the newer image.
-          - os: ubuntu-22.04
-            ruby: "2.7"
+          # A second, older Ruby to catch syntax that only newer versions
+          # accept. It has to stay on ubuntu-24.04: no Skia prebuilt matches
+          # this feature set on Linux, so the native library is compiled from
+          # source, and Skia does not build with 22.04's toolchain — SkPDFTag.cpp
+          # fails on gcc-12's <ranges> headers.
+          - os: ubuntu-24.04
+            ruby: "3.1"
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable

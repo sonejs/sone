@@ -84,7 +84,16 @@ impl_box_size!(
 impl_span_props!(Text, Span, TextDefault);
 impl_text_block_props!(Text, TextDefault);
 impl_children!(
-    Column, Row, Grid, TextDefault, Table, TableRow, TableCell, Bullets, ListItem, ClipGroup,
+    Column,
+    Row,
+    Grid,
+    TextDefault,
+    Table,
+    TableRow,
+    TableCell,
+    Bullets,
+    ListItem,
+    ClipGroup,
 );
 
 impl Text {
