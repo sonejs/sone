@@ -11,6 +11,7 @@ jobs:
   test:
     name: ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
@@ -21,7 +22,13 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - name: Install Linux build dependencies
         if: runner.os == 'Linux'
-        run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev
+        run: |
+          # noninteractive and a lock timeout: the plain form hung for
+          # hours on a runner waiting for the dpkg lock.
+          sudo apt-get update -o Acquire::Retries=3
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
+            --no-install-recommends -o DPkg::Lock::Timeout=180 \
+            libfontconfig1-dev
 
       # Debug, so the binding and the CLI its parity test spawns come from the
       # same profile.
