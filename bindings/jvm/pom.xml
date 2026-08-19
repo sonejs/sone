@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>dev.sone</groupId>
+  <artifactId>sone-parent</artifactId>
+  <version>0.1.0</version>
+  <packaging>pom</packaging>
+
+  <name>sone</name>
+  <description>
+    A declarative canvas layout engine with rich international text — flexbox
+    layout, Skia rendering, and PNG / JPEG / WebP / PDF / SVG output.
+  </description>
+  <url>https://github.com/seanghay/sone</url>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <!--
+    Four modules rather than one, because the backend is a platform fact.
+
+    java.lang.foreign only exists from Java 22, and Android does not have it at
+    any version — ART does not implement Panama, and it cannot be desugared
+    because it needs VM support. So Android reaches the same C ABI through JNA.
+
+    A single artifact would technically work: D8 dexes the Panama classes with
+    warnings, and Backends would fall through to JNA at runtime when they fail
+    to load. It is split anyway so that an Android build never sees a reference
+    to a missing java.lang.foreign type (which R8 otherwise needs a -dontwarn
+    for), and so a desktop consumer never inherits JNA it will not use.
+
+    sone-core is Java 17 rather than 22 for the same reason: it is the half that
+    dexes, and there is no benefit to it carrying a newer class file version
+    than the Android toolchain expects.
+  -->
+  <modules>
+    <module>sone-core</module>
+    <module>sone-panama</module>
+    <module>sone-jna</module>
+    <module>sone-tests</module>
+  </modules>
+
+  <properties>
+    <kotlin.version>2.3.21</kotlin.version>
+    <jna.version>5.15.0</jna.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!--
+        kotlin-test-junit5 drags in an older junit-platform, and
+        junit-jupiter-params then fails to resolve its own parameters. The BOM
+        keeps every JUnit artifact on one version.
+      -->
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.11.3</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.5.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.jetbrains.kotlin</groupId>
+          <artifactId>kotlin-maven-plugin</artifactId>
+          <version>${kotlin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

@@ -1,0 +1,18 @@
+{
+  "name": "seanghay/sone",
+  "description": "A declarative canvas layout engine with rich international text — flexbox layout, Skia rendering, and PNG / JPEG / WebP / PDF / SVG output.",
+  "type": "library",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/seanghay/sone",
+  "require": {
+    "php": ">=8.1",
+    "ext-ffi": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "files": ["src/autoload.php"]
+  },
+  "scripts": {
+    "test": "php tests/run.php"
+  }
+}

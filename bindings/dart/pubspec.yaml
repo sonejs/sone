@@ -1,0 +1,17 @@
+name: sone
+version: 0.1.0
+description: >-
+  A declarative canvas layout engine with rich international text — flexbox
+  layout, Skia rendering, and PNG / JPEG / WebP / PDF / SVG output.
+homepage: https://github.com/seanghay/sone
+repository: https://github.com/seanghay/sone
+
+environment:
+  sdk: ^3.4.0
+
+dependencies:
+  ffi: ^2.1.0
+
+dev_dependencies:
+  lints: ^4.0.0
+  test: ^1.25.0

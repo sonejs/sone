@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- The IR is written straight to UTF-8 through a pinned buffer. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Doc comments carry the interesting decisions; they are not required on
+         every keyword constant and exception constructor. -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+
+    <!-- LibraryImport plus source-generated JSON, so nothing needs reflection. -->
+    <IsAotCompatible>true</IsAotCompatible>
+    <IsTrimmable>true</IsTrimmable>
+
+    <RootNamespace>Sone</RootNamespace>
+    <AssemblyName>Sone</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Sone</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Seanghay Yath</Authors>
+    <Description>A declarative canvas layout engine with rich international text — flexbox layout, Skia rendering, and PNG / JPEG / WebP / PDF / SVG output.</Description>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/seanghay/sone</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/seanghay/sone</RepositoryUrl>
+    <PackageTags>layout;flexbox;skia;canvas;pdf;text;typography</PackageTags>
+    <!--
+      The native library ships in per-RID packages: one static Skia is ~17 MB,
+      so bundling every platform here would make a ~70 MB package that every
+      consumer downloads in full.
+    -->
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+</Project>
