@@ -6,11 +6,15 @@ license.workspace = true
 
 [lib]
 name = "sone"
-crate-type = ["cdylib", "staticlib", "rlib"]
+# No `rlib`: nothing depends on this crate from Rust — the `sone` crate is the
+# Rust-facing API — and producing one collided with `sone`'s own libsone.rlib,
+# since both lib targets are named `sone`.
+crate-type = ["cdylib", "staticlib"]
 
 [dependencies]
 sone-core = { path = "../sone-core" }
-sone-skia = { path = "../sone-skia" }
+sone-skia = { path = "../sone-skia", default-features = false }
+serde_json.workspace = true
 
 [[bin]]
 name = "sone-header"
@@ -22,5 +26,16 @@ version = "0.29"
 optional = true
 
 [features]
-default = []
+default = ["embed-freetype"]
 generate-header = ["dep:cbindgen"]
+# Forwarded so a consumer can turn them off for one target without every crate
+# in the graph having to agree — see `bindings/wasm`, which drops
+# `embed-freetype` and adds `gpu-gl` to match the published emscripten prebuilt.
+embed-freetype = ["sone-skia/embed-freetype"]
+gpu-gl = ["sone-skia/gpu-gl"]
+# Android needs `gpu-vulkan` for the same reason wasm needs `gpu-gl`: it is not
+# that the backend is used, but that the published Android prebuilt was built
+# with it. The only 0.99.0 asset carrying svg and webp is
+# `…-jpegd-jpege-pdf-svg-textlayout-vulkan-webpd-webpe`, so the cache key has to
+# say `vulkan` and must not say `ftembed`.
+gpu-vulkan = ["sone-skia/gpu-vulkan"]

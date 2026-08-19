@@ -145,11 +145,20 @@ fn header_declares_the_public_surface() {
         "sone_engine_last_error",
         "sone_register_font",
         "sone_register_image",
+        "sone_register_font_file",
+        "sone_has_font",
+        "sone_font_families",
+        "sone_reset_fonts",
         "sone_render_json",
+        "sone_render_pages",
+        "sone_dump_layout",
+        "sone_dump_metadata",
         "sone_buffer_free",
+        "sone_buffer_list_free",
         "sone_version",
         "SoneRenderOptions",
         "SoneBuffer",
+        "SoneBufferList",
     ] {
         assert!(header.contains(symbol), "sone.h is missing {symbol}");
     }

@@ -80,6 +80,16 @@ typedef struct {
   uintptr_t capacity;
 } SoneBuffer;
 
+/**
+ * A list of owned byte buffers — one per page. Release the whole list with
+ * `sone_buffer_list_free`; the individual buffers must not be freed.
+ */
+typedef struct {
+  SoneBuffer *items;
+  uintptr_t len;
+  uintptr_t capacity;
+} SoneBufferList;
+
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
@@ -144,6 +154,85 @@ SoneStatus sone_render_json(SoneEngine *engine,
                             const char *json,
                             SoneRenderOptions options,
                             SoneBuffer *out);
+
+/**
+ * Register a font family from a file on disk. `path` is used as given, so
+ * relative paths resolve against the process working directory, not the
+ * engine's `base_dir`.
+ *
+ * # Safety
+ * `engine` must be live, and `name`/`path` valid NUL-terminated UTF-8 strings.
+ */
+SoneStatus sone_register_font_file(SoneEngine *engine, const char *name, const char *path);
+
+/**
+ * Whether a family has been registered. False for a null handle or name.
+ *
+ * # Safety
+ * `engine` must be live and `name` a valid NUL-terminated UTF-8 string.
+ */
+bool sone_has_font(const SoneEngine *engine, const char *name);
+
+/**
+ * Every registered family name, written to `out` as a UTF-8 JSON array of
+ * strings. Release `out` with `sone_buffer_free`.
+ *
+ * # Safety
+ * `engine` must be live and `out` writable.
+ */
+SoneStatus sone_font_families(const SoneEngine *engine, SoneBuffer *out);
+
+/**
+ * Drop every registered font and the shaping caches that depend on them.
+ *
+ * # Safety
+ * `engine` must be live.
+ */
+void sone_reset_fonts(SoneEngine *engine);
+
+/**
+ * Render one raster image per page. Requires `config.pageHeight` in the
+ * document; without it the result is a single page. On success `out` owns a
+ * list the caller must release with `sone_buffer_list_free`.
+ *
+ * # Safety
+ * `engine` must be live, `json` a valid UTF-8 C string, and `out` writable.
+ */
+SoneStatus sone_render_pages(SoneEngine *engine,
+                             const char *json,
+                             SoneRenderOptions options,
+                             SoneBufferList *out);
+
+/**
+ * The computed layout tree, written to `out` as UTF-8 JSON. Release with
+ * `sone_buffer_free`.
+ *
+ * # Safety
+ * `engine` must be live, `json` a valid UTF-8 C string, and `out` writable.
+ */
+SoneStatus sone_dump_layout(SoneEngine *engine, const char *json, SoneBuffer *out);
+
+/**
+ * Dataset-style metadata, written to `out` as UTF-8 JSON. `granularity` is
+ * `"node"`, `"line"` or `"word"`; NULL means `"node"`. Release with
+ * `sone_buffer_free`.
+ *
+ * # Safety
+ * `engine` must be live, `json` a valid UTF-8 C string, `granularity` NULL or
+ * a valid UTF-8 C string, and `out` writable.
+ */
+SoneStatus sone_dump_metadata(SoneEngine *engine,
+                              const char *json,
+                              const char *granularity,
+                              SoneBuffer *out);
+
+/**
+ * Release a buffer list returned by the library, and every buffer in it.
+ *
+ * # Safety
+ * `list` must be a list this library produced and not already freed.
+ */
+void sone_buffer_list_free(SoneBufferList *list);
 
 /**
  * Release a buffer returned by the library.
