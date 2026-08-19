@@ -45,8 +45,18 @@ jobs:
           distribution: temurin
           java-version: "22"
           cache: maven
-      # Runs the suite against both backends: Panama and JNA. The JNA half is
-      # the Android call path, exercised here without an Android device.
+      # One backend per JVM first. BackendTest exercises both in a single
+      # process, so when it crashes the log cannot say which half did it —
+      # these two steps can.
+      - name: Test with the Panama backend
+        working-directory: bindings/jvm
+        run: mvn --batch-mode test -Dtest=SoneTest -Dsurefire.failIfNoSpecifiedTests=false -Dsone.backend=dev.sone.panama.PanamaBackend
+
+      - name: Test with the JNA backend
+        working-directory: bindings/jvm
+        run: mvn --batch-mode test -Dtest=SoneTest -Dsurefire.failIfNoSpecifiedTests=false -Dsone.backend=dev.sone.jna.JnaBackend
+
+      # Then the whole suite, including the cross-backend comparison.
       - name: Test
         working-directory: bindings/jvm
         run: mvn --batch-mode test
@@ -63,4 +73,7 @@ jobs:
             bindings/jvm/**/target/surefire-reports/**
             bindings/jvm/**/*.dump
             bindings/jvm/**/*.dumpstream
+            bindings/jvm/**/hs_err_pid*.log
+            bindings/jvm/**/hs_err_pid*.mdmp
+            bindings/jvm/**/replay_pid*.log
           retention-days: 7

@@ -55,6 +55,23 @@ jobs:
       - name: Check the generated header is current
         if: runner.os == 'Linux'
         run: php bindings/php/tools/generate-header.php && git diff --exit-code bindings/php/sone.h
+      # The suite dies on Linux at the first native call with nothing but a
+      # segfault. This narrows it to a single line before the suite runs.
+      - name: Probe the native boundary
+        working-directory: bindings/php
+        run: |
+          php -r '
+            require "src/autoload.php";
+            fwrite(STDERR, "library: " . Sone\Native::locate() . "\n");
+            $ffi = Sone\Native::ffi();
+            fwrite(STDERR, "cdef: ok\n");
+            fwrite(STDERR, "version: " . $ffi->sone_version() . "\n");
+            $engine = $ffi->sone_engine_new(getcwd());
+            fwrite(STDERR, "engine: " . ($engine === null ? "null" : "ok") . "\n");
+            $ffi->sone_engine_free($engine);
+            fwrite(STDERR, "freed: ok\n");
+          '
+
       - name: Test
         working-directory: bindings/php
         run: php tests/run.php

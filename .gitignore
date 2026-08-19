@@ -23,6 +23,10 @@ bindings/dart/card.png
 
 # JVM binding
 bindings/jvm/target/
+bindings/jvm/**/target/
+hs_err_pid*.log
+hs_err_pid*.mdmp
+replay_pid*.log
 
 # Swift binding. The XCFramework is a ~200 MB build artifact; make it with
 # tools/build-apple.sh.
