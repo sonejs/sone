@@ -10,6 +10,7 @@ reference; it will move into `packages/` in time.
 
 ```
 crates/          the Rust engine
+  sone           the Rust-facing fluent builder — no FFI, no IR string
   sone-core      no Skia dependency — IR, CSS parsers, compile, taffy layout,
                  text engine, grid/table/list, pagination, draw traits
   sone-skia      Skia backend — painter, fonts, shaping, images, exports
@@ -18,15 +19,18 @@ crates/          the Rust engine
   sone-goldens   parity harnesses: raster dssim diff, numeric layout diff
 bindings/        one directory per language
   python         PyO3 + maturin, abi3 wheel                        ready
-  node           napi-rs                                           planned
-  php            FFI over include/sone.h                           planned
-  ruby           magnus + rb-sys                                   planned
-  jvm            Java and Kotlin over Panama                       planned
-  dart           dart:ffi + ffigen                                 planned
-  wasm           emscripten                                        planned
+  csharp         P/Invoke over include/sone.h                      built
+  ruby           ffi gem over include/sone.h, block DSL            built
+  node           napi-rs — Node, Bun, Deno   @sonejs/sone          ready
+  php            FFI over include/sone.h                           built
+  jvm            Java over Panama · Kotlin DSL · Android via JNA    built
+  dart           dart:ffi, named arguments                         built
+  flutter        sone_flutter plugin — Android, off-isolate        built
+  swift          XCFramework — macOS, iPhone, iPad                 built
+  wasm           emscripten — browsers       @sonejs/sone-wasm     ready
 packages/        npm workspace — the TypeScript engine lands here
 fixtures/        the parity corpus, generated from the TypeScript engine
-tools/           sync-fixtures.sh
+tools/           sync-fixtures.sh · build-android.sh · build-apple.sh
 docs/            architecture · porting-notes · parity · bindings · roadmap · status
 ```
 
@@ -40,6 +44,31 @@ cargo run -p sone-cli -- render fixtures/visual/ir/a4-report.json -o /tmp/a4.pdf
 cargo run --release -p sone-goldens --bin sone-goldens   # raster dssim + HTML report
 cargo run --release -p sone-goldens --bin layout-diff    # numeric layout diff
 cargo run --release -p sone-goldens --bin render-all     # render every fixture
+```
+
+Node, Bun, Deno and the browser:
+
+```bash
+npm install
+npm run build --workspace @sonejs/sone-wasm   # needs emscripten; browsers only
+npm run build --workspace @sonejs/sone
+npm test  --workspace @sonejs/sone
+```
+
+```ts
+import { Column, Font, Row, Text, sone } from "@sonejs/sone";
+
+await Font.load("Inter", "fonts/Inter-Regular.ttf");
+
+const root = Column(
+  Text("Hello").size(28).weight("bold"),
+  Row(
+    Column().bg("salmon").size(50).rounded(14),
+    Column().bg("orange").size(50).rounded(14),
+  ).gap(10),
+).gap(20).padding(20).bg("khaki").cornerRadius(28);
+
+await sone(root).save("card.png", { density: 2 });
 ```
 
 Python:
@@ -74,6 +103,11 @@ produces the same JSON **IR document**; the native layer is document-in,
 bytes-out. That keeps each surface idiomatic — Python gets snake_case aliases,
 Kotlin gets a DSL receiver, Dart gets named arguments — while the layout, text
 and drawing logic exists exactly once, in Rust.
+
+The Node binding is the exception that proves the rule: there, the host language
+*is* the reference language, so `bindings/node/ts/core.ts` is the TypeScript
+engine's own builder — vendored rather than rewritten, with a test asserting
+both copies still serialize to identical documents.
 
 `sone-core` carries no Skia dependency at all: it talks to `Painter`,
 `TextEngine` and `Backend` traits over plain value types, so the engine is
