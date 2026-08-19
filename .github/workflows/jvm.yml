@@ -50,3 +50,17 @@ jobs:
       - name: Test
         working-directory: bindings/jvm
         run: mvn --batch-mode test
+
+      # A VM crash writes its reason to a dump file rather than to stdout, so
+      # without this the log says only "terminated without properly saying
+      # goodbye".
+      - name: Keep the surefire reports
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-${{ matrix.os }}
+          path: |
+            bindings/jvm/**/target/surefire-reports/**
+            bindings/jvm/**/*.dump
+            bindings/jvm/**/*.dumpstream
+          retention-days: 7

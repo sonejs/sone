@@ -36,6 +36,14 @@ fn have_cc() -> bool {
 
 #[test]
 fn c_abi_matches_the_cli_byte_for_byte() {
+    // Unix only, and visibly so: `platform_link_flags` has a macOS branch and a
+    // Linux branch and nothing else, and the archive this looks for is
+    // `libsone.a` rather than MSVC's `sone.lib`. Teaching it MSVC is a real
+    // piece of work; skipping is honest until someone does it.
+    if cfg!(windows) {
+        eprintln!("the C smoke test links with Unix flags; skipping on Windows");
+        return;
+    }
     if !have_cc() {
         eprintln!("no C compiler on PATH; skipping");
         return;
