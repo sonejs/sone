@@ -1,0 +1,892 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "width": 1200,
+      "height": 900,
+      "background": [
+        "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%)"
+      ],
+      "padding": 60,
+      "borderColor": "#d4af37",
+      "borderWidth": 8,
+      "cornerRadius": [
+        16
+      ],
+      "cornerSmoothing": 0.6
+    },
+    "children": [
+      {
+        "type": "column",
+        "children": [
+          {
+            "type": "row",
+            "props": {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "marginBottom": 20
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 24,
+                  "color": "#d4af37"
+                },
+                "inline": [
+                  "◆"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "color": "#b8860b",
+                  "marginTop": 0,
+                  "marginRight": 4,
+                  "marginBottom": 0,
+                  "marginLeft": 4
+                },
+                "inline": [
+                  "◇"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 24,
+                  "color": "#d4af37"
+                },
+                "inline": [
+                  "◆"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "color": "#b8860b",
+                  "marginTop": 0,
+                  "marginRight": 4,
+                  "marginBottom": 0,
+                  "marginLeft": 4
+                },
+                "inline": [
+                  "◇"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 24,
+                  "color": "#d4af37"
+                },
+                "inline": [
+                  "◆"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "color": "#b8860b",
+                  "marginTop": 0,
+                  "marginRight": 4,
+                  "marginBottom": 0,
+                  "marginLeft": 4
+                },
+                "inline": [
+                  "◇"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 24,
+                  "color": "#d4af37"
+                },
+                "inline": [
+                  "◆"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "color": "#b8860b",
+                  "marginTop": 0,
+                  "marginRight": 4,
+                  "marginBottom": 0,
+                  "marginLeft": 4
+                },
+                "inline": [
+                  "◇"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 24,
+                  "color": "#d4af37"
+                },
+                "inline": [
+                  "◆"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 42,
+              "weight": "bold",
+              "font": [
+                "Inter Khmer"
+              ],
+              "color": "linear-gradient(45deg, #d4af37, #ffd700, #b8860b)",
+              "align": "center",
+              "dropShadows": [
+                "3px 3px 6px rgba(0,0,0,0.3)"
+              ],
+              "strokeColor": "#8b4513",
+              "strokeWidth": 1,
+              "marginBottom": 8
+            },
+            "inline": [
+              "SONE CERTIFIED ACADEMY"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 16,
+              "weight": "500",
+              "font": [
+                "Inter Khmer"
+              ],
+              "color": "#8b4513",
+              "align": "center",
+              "letterSpacing": 3,
+              "marginBottom": 4
+            },
+            "inline": [
+              "CERTIFICATE OF ACHIEVEMENT"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 20,
+              "weight": "bold",
+              "font": [
+                "Inter Khmer"
+              ],
+              "color": "white",
+              "background": [
+                "linear-gradient(135deg, #8b4513, #a0522d)"
+              ],
+              "paddingTop": 8,
+              "paddingRight": 16,
+              "paddingBottom": 8,
+              "paddingLeft": 16,
+              "cornerRadius": [
+                12
+              ],
+              "alignSelf": "center",
+              "borderColor": "#d4af37",
+              "borderWidth": 2,
+              "dropShadows": [
+                "2px 2px 4px rgba(0,0,0,0.2)"
+              ]
+            },
+            "inline": [
+              "2025"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "size": 18,
+              "font": [
+                "Inter Khmer"
+              ],
+              "color": "#2c2c2c",
+              "align": "center",
+              "style": "italic",
+              "marginBottom": 20
+            },
+            "inline": [
+              "This is to certify that"
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "marginBottom": 25
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 36,
+                  "weight": "bold",
+                  "font": [
+                    "Inter Khmer"
+                  ],
+                  "color": "linear-gradient(45deg, #1e3a8a, #3b82f6)",
+                  "align": "center",
+                  "dropShadows": [
+                    "2px 2px 4px rgba(0,0,0,0.2)"
+                  ],
+                  "marginBottom": 8
+                },
+                "inline": [
+                  "LEAV CHANDARA"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "justifyContent": "center",
+                  "gap": 2
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 24,
+                      "color": "#d4af37"
+                    },
+                    "inline": [
+                      "―"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 24,
+                      "color": "#d4af37"
+                    },
+                    "inline": [
+                      "―"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 16,
+                      "color": "#8b4513"
+                    },
+                    "inline": [
+                      "◆"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 24,
+                      "color": "#d4af37"
+                    },
+                    "inline": [
+                      "―"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 24,
+                      "color": "#d4af37"
+                    },
+                    "inline": [
+                      "―"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 16,
+                      "color": "#8b4513"
+                    },
+                    "inline": [
+                      "◆"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 24,
+                      "color": "#d4af37"
+                    },
+                    "inline": [
+                      "―"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 24,
+                      "color": "#d4af37"
+                    },
+                    "inline": [
+                      "―"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 16,
+              "font": [
+                "Inter Khmer"
+              ],
+              "color": "#2c2c2c",
+              "align": "center",
+              "lineHeight": 1.5,
+              "maxWidth": 600,
+              "alignSelf": "center",
+              "marginBottom": 30
+            },
+            "inline": [
+              "has successfully completed the comprehensive program in",
+              {
+                "type": "span",
+                "props": {
+                  "weight": "bold",
+                  "color": "#8b4513",
+                  "highlightColor": "rgba(255, 215, 0, 0.2)"
+                },
+                "inline": [
+                  " Advanced Software Architecture & Design Patterns"
+                ]
+              },
+              " and has demonstrated exceptional proficiency in modern development methodologies, ",
+              {
+                "type": "span",
+                "props": {
+                  "weight": "bold",
+                  "color": "#8b4513"
+                },
+                "inline": [
+                  "system design principles"
+                ]
+              },
+              ", and leadership skills required for senior-level software engineering roles."
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "background": [
+                "rgba(255, 255, 255, 0.8)"
+              ],
+              "padding": 20,
+              "cornerRadius": [
+                12
+              ],
+              "borderColor": "#d4af37",
+              "borderWidth": 1,
+              "marginBottom": 30
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "weight": "bold",
+                  "font": [
+                    "Inter Khmer"
+                  ],
+                  "color": "#8b4513",
+                  "align": "center",
+                  "letterSpacing": 1,
+                  "marginBottom": 12
+                },
+                "inline": [
+                  "CORE COMPETENCIES ACHIEVED:"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 40,
+                  "justifyContent": "center"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 4,
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#2c2c2c"
+                        },
+                        "inline": [
+                          "• Microservices Architecture"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#2c2c2c"
+                        },
+                        "inline": [
+                          "• Cloud-Native Development"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#2c2c2c"
+                        },
+                        "inline": [
+                          "• DevOps & CI/CD Pipelines"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#2c2c2c"
+                        },
+                        "inline": [
+                          "• Database Design & Optimization"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 4,
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#2c2c2c"
+                        },
+                        "inline": [
+                          "• API Design & Documentation"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#2c2c2c"
+                        },
+                        "inline": [
+                          "• Security Best Practices"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#2c2c2c"
+                        },
+                        "inline": [
+                          "• Performance Optimization"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#2c2c2c"
+                        },
+                        "inline": [
+                          "• Technical Leadership"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "children": [
+          {
+            "type": "row",
+            "props": {
+              "marginBottom": 30
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 12,
+                      "color": "#666",
+                      "align": "center"
+                    },
+                    "inline": [
+                      "Issued on this day"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 16,
+                      "weight": "bold",
+                      "color": "#8b4513",
+                      "align": "center"
+                    },
+                    "inline": [
+                      "March 15, 2025"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 12,
+                      "color": "#666",
+                      "align": "center"
+                    },
+                    "inline": [
+                      "At"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 16,
+                      "weight": "bold",
+                      "color": "#8b4513",
+                      "align": "center"
+                    },
+                    "inline": [
+                      "Sone Academy Headquarters"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 16,
+                      "weight": "bold",
+                      "color": "#2c2c2c",
+                      "align": "center"
+                    },
+                    "inline": [
+                      "Dr. Seanghay Yath"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 14,
+                      "color": "#8b4513",
+                      "align": "center"
+                    },
+                    "inline": [
+                      "―――――――――――"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 12,
+                      "color": "#666",
+                      "align": "center"
+                    },
+                    "inline": [
+                      "Academy Director"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 80,
+                      "color": "linear-gradient(45deg, #d4af37, #ffd700)",
+                      "alignSelf": "center",
+                      "dropShadows": [
+                        "4px 4px 8px rgba(0,0,0,0.3)"
+                      ],
+                      "strokeColor": "#8b4513",
+                      "strokeWidth": 2
+                    },
+                    "inline": [
+                      "★"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 18,
+                      "weight": "bold",
+                      "font": [
+                        "Inter Khmer"
+                      ],
+                      "color": "#8b4513",
+                      "align": "center",
+                      "offsetY": -45
+                    },
+                    "inline": [
+                      "SONE"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "500",
+                      "font": [
+                        "Inter Khmer"
+                      ],
+                      "color": "#8b4513",
+                      "align": "center",
+                      "offsetY": -40,
+                      "letterSpacing": 1
+                    },
+                    "inline": [
+                      "ACADEMY"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 16,
+                      "weight": "bold",
+                      "color": "#2c2c2c",
+                      "align": "center"
+                    },
+                    "inline": [
+                      "Prof. Torn Kanan"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 14,
+                      "color": "#8b4513",
+                      "align": "center"
+                    },
+                    "inline": [
+                      "―――――――――――"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 12,
+                      "color": "#666",
+                      "align": "center"
+                    },
+                    "inline": [
+                      "Chief Technology Officer"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 10,
+              "color": "#999",
+              "align": "center",
+              "marginTop": 20,
+              "font": [
+                "Inter Khmer"
+              ]
+            },
+            "inline": [
+              "Certificate ID: SCA-2025-ADV-001247"
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "alignItems": "center",
+              "justifyContent": "center",
+              "marginTop": 20
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 20,
+                  "color": "#d4af37"
+                },
+                "inline": [
+                  "◆"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 16,
+                  "color": "#b8860b",
+                  "marginTop": 0,
+                  "marginRight": 3,
+                  "marginBottom": 0,
+                  "marginLeft": 3
+                },
+                "inline": [
+                  "◇"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 20,
+                  "color": "#d4af37"
+                },
+                "inline": [
+                  "◆"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 16,
+                  "color": "#b8860b",
+                  "marginTop": 0,
+                  "marginRight": 3,
+                  "marginBottom": 0,
+                  "marginLeft": 3
+                },
+                "inline": [
+                  "◇"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 20,
+                  "color": "#d4af37"
+                },
+                "inline": [
+                  "◆"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 16,
+                  "color": "#b8860b",
+                  "marginTop": 0,
+                  "marginRight": 3,
+                  "marginBottom": 0,
+                  "marginLeft": 3
+                },
+                "inline": [
+                  "◇"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 20,
+                  "color": "#d4af37"
+                },
+                "inline": [
+                  "◆"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

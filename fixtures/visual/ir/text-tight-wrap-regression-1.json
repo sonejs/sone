@@ -1,0 +1,226 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "gap": 22,
+      "padding": 36,
+      "background": [
+        "#f8fbff"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 30,
+          "weight": "bold",
+          "color": "#172554"
+        },
+        "inline": [
+          "Tight no-space wrap regression board"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 16,
+          "lineHeight": 1.45,
+          "color": "#334155",
+          "maxWidth": 920
+        },
+        "inline": [
+          "Long runs without spaces should still wrap inside very narrow widths instead of overflowing on a single line."
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 20,
+          "flexWrap": "wrap"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 300,
+              "padding": 18,
+              "background": [
+                "white"
+              ],
+              "borderWidth": 2,
+              "borderColor": "#bfdbfe",
+              "cornerRadius": [
+                22
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#172554"
+                },
+                "inline": [
+                  "latin-tight-wrap"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "lineHeight": 1.4,
+                  "color": "#334155"
+                },
+                "inline": [
+                  "ASCII text should split into short wrapped segments at grapheme boundaries."
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 22,
+                  "width": 72,
+                  "lineHeight": 1.35,
+                  "background": [
+                    "#eff6ff"
+                  ],
+                  "padding": 14,
+                  "cornerRadius": [
+                    16
+                  ],
+                  "color": "#0f172a"
+                },
+                "inline": [
+                  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 300,
+              "padding": 18,
+              "background": [
+                "white"
+              ],
+              "borderWidth": 2,
+              "borderColor": "#bfdbfe",
+              "cornerRadius": [
+                22
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#172554"
+                },
+                "inline": [
+                  "khmer-tight-wrap"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "lineHeight": 1.4,
+                  "color": "#334155"
+                },
+                "inline": [
+                  "Khmer without spaces should still wrap on a very narrow width."
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "NotoSansKhmer"
+                  ],
+                  "size": 22,
+                  "width": 72,
+                  "lineHeight": 1.35,
+                  "background": [
+                    "#eff6ff"
+                  ],
+                  "padding": 14,
+                  "cornerRadius": [
+                    16
+                  ],
+                  "color": "#0f172a"
+                },
+                "inline": [
+                  "កកកកកកកកកកកកកកកកកកកកកកកកកកកកកក"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

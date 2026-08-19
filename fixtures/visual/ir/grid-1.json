@@ -1,0 +1,837 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "linear-gradient(180deg, #020617 0%, #111827 100%)"
+      ],
+      "padding": 30,
+      "gap": 26
+    },
+    "children": [
+      {
+        "type": "row",
+        "props": {
+          "justifyContent": "space-between"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 10
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#f97316"
+                },
+                "inline": [
+                  "GRID SYSTEM / 01"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 42,
+                  "weight": "bold",
+                  "color": "#f8fafc"
+                },
+                "inline": [
+                  "Night Shift Control Room"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 14,
+              "lineHeight": 1.5,
+              "color": "#94a3b8",
+              "width": 320
+            },
+            "inline": [
+              "Auto placement, spans, and fixed/fr tracks rendered as a live dashboard."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "grid",
+        "props": {
+          "columns": [
+            250,
+            "1fr",
+            230
+          ],
+          "columnGap": 18,
+          "rowGap": 18,
+          "width": 980
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "padding": 22,
+              "cornerRadius": [
+                24
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(255,255,255,0.12)",
+              "shadows": [
+                "0 18px 48px rgba(15,23,42,0.22)"
+              ],
+              "gridColumnStart": 1,
+              "gridColumnSpan": 2,
+              "height": 250,
+              "gap": 18,
+              "background": [
+                "linear-gradient(135deg, #7c2d12 0%, #111827 55%, #0f172a 100%)"
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#fdba74"
+                },
+                "inline": [
+                  "OVERVIEW"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 30,
+                  "weight": "bold",
+                  "lineHeight": 1.25,
+                  "color": "#fff7ed"
+                },
+                "inline": [
+                  "All systems stable. Dispatch pressure is down 18% from yesterday."
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "lineHeight": 1.6,
+                  "color": "rgba(255,247,237,0.8)"
+                },
+                "inline": [
+                  "This hero block spans two columns and anchors the composition with a higher-contrast background and a denser typographic rhythm."
+                ]
+              },
+              {
+                "type": "grid",
+                "props": {
+                  "columns": [
+                    "1fr",
+                    "1fr",
+                    "1fr"
+                  ],
+                  "columnGap": 12,
+                  "width": "100%"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 10
+                    },
+                    "children": [
+                      {
+                        "type": "row",
+                        "props": {
+                          "justifyContent": "space-between"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "font": [
+                                "monospace"
+                              ],
+                              "color": "#64748b"
+                            },
+                            "inline": [
+                              "Response"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "color": "#e2e8f0"
+                            },
+                            "inline": [
+                              "89%"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "column",
+                        "props": {
+                          "height": 10,
+                          "background": [
+                            "#fb923c"
+                          ],
+                          "cornerRadius": [
+                            999
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 10
+                    },
+                    "children": [
+                      {
+                        "type": "row",
+                        "props": {
+                          "justifyContent": "space-between"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "font": [
+                                "monospace"
+                              ],
+                              "color": "#64748b"
+                            },
+                            "inline": [
+                              "Routing"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "color": "#e2e8f0"
+                            },
+                            "inline": [
+                              "74%"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "column",
+                        "props": {
+                          "height": 10,
+                          "background": [
+                            "#facc15"
+                          ],
+                          "cornerRadius": [
+                            999
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 10
+                    },
+                    "children": [
+                      {
+                        "type": "row",
+                        "props": {
+                          "justifyContent": "space-between"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "font": [
+                                "monospace"
+                              ],
+                              "color": "#64748b"
+                            },
+                            "inline": [
+                              "Staffing"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "color": "#e2e8f0"
+                            },
+                            "inline": [
+                              "63%"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "column",
+                        "props": {
+                          "height": 10,
+                          "background": [
+                            "#38bdf8"
+                          ],
+                          "cornerRadius": [
+                            999
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 22,
+              "cornerRadius": [
+                24
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(255,255,255,0.12)",
+              "shadows": [
+                "0 18px 48px rgba(15,23,42,0.22)"
+              ],
+              "gap": 12,
+              "background": [
+                "linear-gradient(180deg, #0f172a 0%, #111827 100%)"
+              ],
+              "gridColumnStart": 3,
+              "gridColumnSpan": 1,
+              "gridRowStart": 1,
+              "gridRowSpan": 1
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#94a3b8"
+                },
+                "inline": [
+                  "REVENUE"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 34,
+                  "weight": "bold",
+                  "color": "#f8fafc"
+                },
+                "inline": [
+                  "$82.4K"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 8,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "width": 9,
+                      "height": 9,
+                      "background": [
+                        "#34d399"
+                      ],
+                      "cornerRadius": [
+                        999
+                      ]
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#cbd5e1"
+                    },
+                    "inline": [
+                      "Night window +6.3%"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 22,
+              "cornerRadius": [
+                24
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(255,255,255,0.12)",
+              "shadows": [
+                "0 18px 48px rgba(15,23,42,0.22)"
+              ],
+              "gap": 12,
+              "background": [
+                "linear-gradient(180deg, #0f172a 0%, #111827 100%)"
+              ],
+              "gridColumnStart": 3,
+              "gridColumnSpan": 1,
+              "gridRowStart": 2,
+              "gridRowSpan": 1
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#94a3b8"
+                },
+                "inline": [
+                  "QUEUE"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 34,
+                  "weight": "bold",
+                  "color": "#f8fafc"
+                },
+                "inline": [
+                  "148"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 8,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "width": 9,
+                      "height": 9,
+                      "background": [
+                        "#f59e0b"
+                      ],
+                      "cornerRadius": [
+                        999
+                      ]
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#cbd5e1"
+                    },
+                    "inline": [
+                      "Backlog cleared"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 22,
+              "cornerRadius": [
+                24
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(255,255,255,0.12)",
+              "shadows": [
+                "0 18px 48px rgba(15,23,42,0.22)"
+              ],
+              "gap": 12,
+              "background": [
+                "linear-gradient(160deg, #0f172a 0%, #172554 100%)"
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#94a3b8"
+                },
+                "inline": [
+                  "ACTIVE USERS"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 34,
+                  "weight": "bold",
+                  "color": "#f8fafc"
+                },
+                "inline": [
+                  "12.8K"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "lineHeight": 1.5,
+                  "color": "#cbd5e1"
+                },
+                "inline": [
+                  "Blue shift occupancy peaks at 03:20."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 22,
+              "cornerRadius": [
+                24
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(255,255,255,0.12)",
+              "shadows": [
+                "0 18px 48px rgba(15,23,42,0.22)"
+              ],
+              "gridColumnStart": 1,
+              "gridColumnSpan": 2,
+              "height": 158,
+              "gap": 16,
+              "background": [
+                "linear-gradient(180deg, #111827 0%, #1f2937 100%)"
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#94a3b8"
+                },
+                "inline": [
+                  "PIPELINE"
+                ]
+              },
+              {
+                "type": "grid",
+                "props": {
+                  "columns": [
+                    150,
+                    150,
+                    "1fr"
+                  ],
+                  "columnGap": 14
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 10
+                    },
+                    "children": [
+                      {
+                        "type": "row",
+                        "props": {
+                          "justifyContent": "space-between"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "font": [
+                                "monospace"
+                              ],
+                              "color": "#64748b"
+                            },
+                            "inline": [
+                              "Ingest"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "color": "#e2e8f0"
+                            },
+                            "inline": [
+                              "96%"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "column",
+                        "props": {
+                          "height": 10,
+                          "background": [
+                            "#38bdf8"
+                          ],
+                          "cornerRadius": [
+                            999
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 10
+                    },
+                    "children": [
+                      {
+                        "type": "row",
+                        "props": {
+                          "justifyContent": "space-between"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "font": [
+                                "monospace"
+                              ],
+                              "color": "#64748b"
+                            },
+                            "inline": [
+                              "Transform"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "color": "#e2e8f0"
+                            },
+                            "inline": [
+                              "71%"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "column",
+                        "props": {
+                          "height": 10,
+                          "background": [
+                            "#818cf8"
+                          ],
+                          "cornerRadius": [
+                            999
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 10
+                    },
+                    "children": [
+                      {
+                        "type": "row",
+                        "props": {
+                          "justifyContent": "space-between"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "font": [
+                                "monospace"
+                              ],
+                              "color": "#64748b"
+                            },
+                            "inline": [
+                              "Publish"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "weight": "bold",
+                              "color": "#e2e8f0"
+                            },
+                            "inline": [
+                              "54%"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "column",
+                        "props": {
+                          "height": 10,
+                          "background": [
+                            "#f472b6"
+                          ],
+                          "cornerRadius": [
+                            999
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "lineHeight": 1.6,
+                  "color": "#cbd5e1"
+                },
+                "inline": [
+                  "Three differently sized tracks make the lower span feel more editorial than strictly tabular."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 22,
+              "cornerRadius": [
+                24
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(146,64,14,0.18)",
+              "shadows": [
+                "0 18px 48px rgba(15,23,42,0.22)"
+              ],
+              "height": 158,
+              "gap": 12,
+              "background": [
+                "linear-gradient(180deg, #fed7aa 0%, #ffedd5 100%)"
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#78350f"
+                },
+                "inline": [
+                  "NOTES"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "lineHeight": 1.6,
+                  "color": "#451a03"
+                },
+                "inline": [
+                  "Auto-placed into the last slot to prove the grid can mix explicit placement with regular flow."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

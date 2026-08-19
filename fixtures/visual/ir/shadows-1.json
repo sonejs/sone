@@ -1,0 +1,343 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%)"
+      ],
+      "padding": 40,
+      "gap": 0
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 30,
+          "weight": "bold",
+          "color": "#0f172a"
+        },
+        "inline": [
+          "Box Shadows"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 13,
+          "color": "#475569",
+          "marginTop": 4
+        },
+        "inline": [
+          "Offsets, blur, colour, and layered multi-shadows."
+        ]
+      },
+      {
+        "type": "grid",
+        "props": {
+          "columns": [
+            "1fr",
+            "1fr",
+            "1fr"
+          ],
+          "columnGap": 18,
+          "rowGap": 18,
+          "marginTop": 24
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "padding": 14
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 110,
+                  "cornerRadius": [
+                    16
+                  ],
+                  "background": [
+                    "#ffffff"
+                  ],
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "shadows": [
+                    "0 8px 24px rgba(15,23,42,0.18)"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#334155"
+                    },
+                    "inline": [
+                      "soft"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 14
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 110,
+                  "cornerRadius": [
+                    16
+                  ],
+                  "background": [
+                    "#ffffff"
+                  ],
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "shadows": [
+                    "0 2px 4px rgba(15,23,42,0.30)"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#334155"
+                    },
+                    "inline": [
+                      "tight"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 14
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 110,
+                  "cornerRadius": [
+                    16
+                  ],
+                  "background": [
+                    "#ffffff"
+                  ],
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "shadows": [
+                    "0 28px 60px rgba(15,23,42,0.28)"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#334155"
+                    },
+                    "inline": [
+                      "far"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 14
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 110,
+                  "cornerRadius": [
+                    16
+                  ],
+                  "background": [
+                    "#ffffff"
+                  ],
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "shadows": [
+                    "18px 18px 0 rgba(2,132,199,0.35)"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#334155"
+                    },
+                    "inline": [
+                      "directional"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 14
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 110,
+                  "cornerRadius": [
+                    16
+                  ],
+                  "background": [
+                    "#ffffff"
+                  ],
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "shadows": [
+                    "0 12px 32px rgba(219,39,119,0.45)"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#334155"
+                    },
+                    "inline": [
+                      "coloured"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 14
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 110,
+                  "cornerRadius": [
+                    16
+                  ],
+                  "background": [
+                    "#ffffff"
+                  ],
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "shadows": [
+                    "0 1px 2px rgba(15,23,42,0.20)",
+                    "0 8px 16px rgba(15,23,42,0.14)",
+                    "0 24px 48px rgba(15,23,42,0.12)"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#334155"
+                    },
+                    "inline": [
+                      "layered"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,836 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "linear-gradient(180deg, #fffaf2 0%, #f8efe2 100%)"
+      ],
+      "padding": 30,
+      "gap": 24
+    },
+    "children": [
+      {
+        "type": "row",
+        "props": {
+          "justifyContent": "space-between"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 10
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#b45309"
+                },
+                "inline": [
+                  "GRID SYSTEM / 02"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 40,
+                  "weight": "bold",
+                  "color": "#3f1d14"
+                },
+                "inline": [
+                  "Editorial Planning Board"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 14,
+              "lineHeight": 1.5,
+              "color": "#7c5a46",
+              "width": 320
+            },
+            "inline": [
+              "Nested grids with explicit spans, softer contrast, and a warmer material palette."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "grid",
+        "props": {
+          "columns": [
+            220,
+            "1fr",
+            "1fr"
+          ],
+          "columnGap": 18,
+          "rowGap": 18,
+          "width": 980
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "padding": 20,
+              "cornerRadius": [
+                22
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(91,33,24,0.10)",
+              "shadows": [
+                "0 14px 36px rgba(120,53,15,0.10)"
+              ],
+              "gridColumnStart": 1,
+              "gridColumnSpan": 1,
+              "gridRowStart": 1,
+              "gridRowSpan": 2,
+              "height": 356,
+              "gap": 16,
+              "background": [
+                "linear-gradient(180deg, #fef3c7 0%, #fff7ed 100%)"
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#92400e"
+                },
+                "inline": [
+                  "STATUS"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 42,
+                  "weight": "bold",
+                  "color": "#3f1d14"
+                },
+                "inline": [
+                  "Stable"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 10,
+                  "flexWrap": "wrap"
+                },
+                "children": [
+                  {
+                    "type": "row",
+                    "props": {
+                      "paddingTop": 7,
+                      "paddingRight": 11,
+                      "paddingBottom": 7,
+                      "paddingLeft": 11,
+                      "background": [
+                        "#dcfce7"
+                      ],
+                      "cornerRadius": [
+                        999
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "weight": "bold",
+                          "font": [
+                            "monospace"
+                          ],
+                          "color": "#166534"
+                        },
+                        "inline": [
+                          "API OK"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "paddingTop": 7,
+                      "paddingRight": 11,
+                      "paddingBottom": 7,
+                      "paddingLeft": 11,
+                      "background": [
+                        "#dbeafe"
+                      ],
+                      "cornerRadius": [
+                        999
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "weight": "bold",
+                          "font": [
+                            "monospace"
+                          ],
+                          "color": "#1d4ed8"
+                        },
+                        "inline": [
+                          "Queue Normal"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "paddingTop": 7,
+                      "paddingRight": 11,
+                      "paddingBottom": 7,
+                      "paddingLeft": 11,
+                      "background": [
+                        "#fee2e2"
+                      ],
+                      "cornerRadius": [
+                        999
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "weight": "bold",
+                          "font": [
+                            "monospace"
+                          ],
+                          "color": "#b91c1c"
+                        },
+                        "inline": [
+                          "Alerts 2"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "lineHeight": 1.6,
+                  "color": "#7c5a46"
+                },
+                "inline": [
+                  "A tall single-column span creates the left-hand anchor for the entire page."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 20,
+              "cornerRadius": [
+                22
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(91,33,24,0.10)",
+              "shadows": [
+                "0 14px 36px rgba(120,53,15,0.10)"
+              ],
+              "gridColumnStart": 2,
+              "gridColumnSpan": 2,
+              "gridRowStart": 1,
+              "gridRowSpan": 1,
+              "gap": 14,
+              "background": [
+                "white"
+              ]
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "justifyContent": "space-between"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "monospace"
+                      ],
+                      "color": "#9a3412"
+                    },
+                    "inline": [
+                      "WEEKLY SUMMARY"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "color": "#b45309"
+                    },
+                    "inline": [
+                      "Issue 18"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "grid",
+                "props": {
+                  "columns": [
+                    "1fr",
+                    "1fr"
+                  ],
+                  "columnGap": 14,
+                  "rowGap": 14
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "padding": 20,
+                      "cornerRadius": [
+                        22
+                      ],
+                      "borderWidth": 1,
+                      "borderColor": "rgba(91,33,24,0.10)",
+                      "shadows": [
+                        "0 14px 36px rgba(120,53,15,0.10)"
+                      ],
+                      "gap": 8,
+                      "background": [
+                        "#fffaf2"
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "weight": "bold",
+                          "font": [
+                            "monospace"
+                          ],
+                          "color": "#9a3412"
+                        },
+                        "inline": [
+                          "Deploys"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 28,
+                          "weight": "bold",
+                          "color": "#431407"
+                        },
+                        "inline": [
+                          "18"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "lineHeight": 1.5,
+                          "color": "#15803d"
+                        },
+                        "inline": [
+                          "Compared to last week"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "padding": 20,
+                      "cornerRadius": [
+                        22
+                      ],
+                      "borderWidth": 1,
+                      "borderColor": "rgba(91,33,24,0.10)",
+                      "shadows": [
+                        "0 14px 36px rgba(120,53,15,0.10)"
+                      ],
+                      "gap": 8,
+                      "background": [
+                        "#fffaf2"
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "weight": "bold",
+                          "font": [
+                            "monospace"
+                          ],
+                          "color": "#9a3412"
+                        },
+                        "inline": [
+                          "Errors"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 28,
+                          "weight": "bold",
+                          "color": "#431407"
+                        },
+                        "inline": [
+                          "3"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "lineHeight": 1.5,
+                          "color": "#b91c1c"
+                        },
+                        "inline": [
+                          "Escalated but contained"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "padding": 20,
+                      "cornerRadius": [
+                        22
+                      ],
+                      "borderWidth": 1,
+                      "borderColor": "rgba(91,33,24,0.10)",
+                      "shadows": [
+                        "0 14px 36px rgba(120,53,15,0.10)"
+                      ],
+                      "gap": 8,
+                      "background": [
+                        "#fffaf2"
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "weight": "bold",
+                          "font": [
+                            "monospace"
+                          ],
+                          "color": "#9a3412"
+                        },
+                        "inline": [
+                          "Latency"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 28,
+                          "weight": "bold",
+                          "color": "#431407"
+                        },
+                        "inline": [
+                          "187ms"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "lineHeight": 1.5,
+                          "color": "#1d4ed8"
+                        },
+                        "inline": [
+                          "Holding steady"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "padding": 20,
+                      "cornerRadius": [
+                        22
+                      ],
+                      "borderWidth": 1,
+                      "borderColor": "rgba(91,33,24,0.10)",
+                      "shadows": [
+                        "0 14px 36px rgba(120,53,15,0.10)"
+                      ],
+                      "gap": 8,
+                      "background": [
+                        "#fffaf2"
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "weight": "bold",
+                          "font": [
+                            "monospace"
+                          ],
+                          "color": "#9a3412"
+                        },
+                        "inline": [
+                          "Uptime"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 28,
+                          "weight": "bold",
+                          "color": "#431407"
+                        },
+                        "inline": [
+                          "99.98%"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "lineHeight": 1.5,
+                          "color": "#7c3aed"
+                        },
+                        "inline": [
+                          "No action required"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 20,
+              "cornerRadius": [
+                22
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(91,33,24,0.10)",
+              "shadows": [
+                "0 14px 36px rgba(120,53,15,0.10)"
+              ],
+              "height": 164,
+              "gap": 14,
+              "background": [
+                "#fffaf2"
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#9a3412"
+                },
+                "inline": [
+                  "TIMELINE"
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "gap": 14
+                },
+                "children": [
+                  {
+                    "type": "row",
+                    "props": {
+                      "gap": 10,
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "column",
+                        "props": {
+                          "width": 12,
+                          "height": 12,
+                          "background": [
+                            "#22c55e"
+                          ],
+                          "cornerRadius": [
+                            999
+                          ]
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#44403c"
+                        },
+                        "inline": [
+                          "Backup completed"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "gap": 10,
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "column",
+                        "props": {
+                          "width": 12,
+                          "height": 12,
+                          "background": [
+                            "#3b82f6"
+                          ],
+                          "cornerRadius": [
+                            999
+                          ]
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#44403c"
+                        },
+                        "inline": [
+                          "Release candidate deployed"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "gap": 10,
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "column",
+                        "props": {
+                          "width": 12,
+                          "height": 12,
+                          "background": [
+                            "#f59e0b"
+                          ],
+                          "cornerRadius": [
+                            999
+                          ]
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#44403c"
+                        },
+                        "inline": [
+                          "Review scheduled for 14:00"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 20,
+              "cornerRadius": [
+                22
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(91,33,24,0.10)",
+              "shadows": [
+                "0 14px 36px rgba(120,53,15,0.10)"
+              ],
+              "height": 164,
+              "gap": 14,
+              "background": [
+                "linear-gradient(180deg, #ffffff 0%, #fff7ed 100%)"
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "monospace"
+                  ],
+                  "color": "#9a3412"
+                },
+                "inline": [
+                  "AUTO-PLACED NOTE"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "lineHeight": 1.7,
+                  "color": "#6b4f3f"
+                },
+                "inline": [
+                  "This card is intentionally left unpositioned so it falls into the next open slot after the timeline panel."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 20,
+              "cornerRadius": [
+                22
+              ],
+              "borderWidth": 1,
+              "borderColor": "rgba(91,33,24,0.10)",
+              "shadows": [
+                "0 14px 36px rgba(120,53,15,0.10)"
+              ],
+              "gridColumnStart": 1,
+              "gridColumnSpan": 3,
+              "height": 120,
+              "background": [
+                "linear-gradient(90deg, #fcd34d 0%, #fed7aa 45%, #fff7ed 100%)"
+              ]
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "justifyContent": "space-between"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "weight": "bold",
+                          "font": [
+                            "monospace"
+                          ],
+                          "color": "#9a3412"
+                        },
+                        "inline": [
+                          "FOOTER STRIP"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#6b4f3f"
+                        },
+                        "inline": [
+                          "Three-column span across the closing row."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 12,
+                      "lineHeight": 1.6,
+                      "color": "#7c5a46",
+                      "width": 260
+                    },
+                    "inline": [
+                      "Layout remains readable even with a wide spanning block."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

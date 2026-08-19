@@ -1,0 +1,127 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "padding": 24,
+      "gap": 4,
+      "width": 440,
+      "background": [
+        "white"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 24,
+          "weight": "bold",
+          "marginBottom": 12
+        },
+        "inline": [
+          "Tab Stops Demo"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            200,
+            280
+          ],
+          "weight": "bold",
+          "color": "slategray"
+        },
+        "inline": [
+          "Product\tQty\tPrice"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            200,
+            280
+          ]
+        },
+        "inline": [
+          "Widget A\t2\t$10.00"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            200,
+            280
+          ]
+        },
+        "inline": [
+          "Widget B\t10\t$5.00"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            200,
+            280
+          ]
+        },
+        "inline": [
+          "Widget C\t1\t$99.99"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            200,
+            280
+          ],
+          "weight": "bold"
+        },
+        "inline": [
+          "Grand Total\t\t$134.99"
+        ]
+      }
+    ]
+  }
+}

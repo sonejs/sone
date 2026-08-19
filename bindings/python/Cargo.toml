@@ -1,0 +1,26 @@
+# A workspace of its own: a Python extension module must be built with
+# unwinding panics so PyO3 can turn them into exceptions, while the main
+# workspace aborts (correct for its C ABI).
+[workspace]
+
+[package]
+name = "sone-py"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+publish = false
+
+[lib]
+name = "sone"
+crate-type = ["cdylib"]
+
+[dependencies]
+sone-core = { path = "../../crates/sone-core" }
+sone-skia = { path = "../../crates/sone-skia" }
+pyo3 = { version = "0.29", features = ["abi3-py39"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = "symbols"

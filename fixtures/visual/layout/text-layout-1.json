@@ -1,0 +1,1198 @@
+{
+  "id": 0,
+  "type": "column",
+  "x": 0,
+  "y": 0,
+  "left": 0,
+  "top": 0,
+  "width": 1148,
+  "height": 1160,
+  "border": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "padding": {
+    "top": 40,
+    "right": 40,
+    "bottom": 40,
+    "left": 40
+  },
+  "margin": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "children": [
+    {
+      "id": 1,
+      "type": "text",
+      "x": 40,
+      "y": 40,
+      "left": 40,
+      "top": 40,
+      "width": 1068,
+      "height": 39,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": []
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "x": 40,
+      "y": 103,
+      "left": 40,
+      "top": 103,
+      "width": 900,
+      "height": 45,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": []
+    },
+    {
+      "id": 3,
+      "type": "row",
+      "x": 40,
+      "y": 172,
+      "left": 40,
+      "top": 172,
+      "width": 1068,
+      "height": 198,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": [
+        {
+          "id": 4,
+          "type": "column",
+          "tag": "left-indent",
+          "x": 40,
+          "y": 172,
+          "left": 0,
+          "top": 0,
+          "width": 340,
+          "height": 198,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 5,
+              "type": "text",
+              "tag": "left-indent-title",
+              "x": 62,
+              "y": 194,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 25,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 6,
+              "type": "text",
+              "x": 62,
+              "y": 229,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 119,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "type": "column",
+          "tag": "justify-greedy",
+          "x": 404,
+          "y": 172,
+          "left": 364,
+          "top": 0,
+          "width": 340,
+          "height": 198,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 8,
+              "type": "text",
+              "tag": "justify-greedy-title",
+              "x": 426,
+              "y": 194,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 25,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 9,
+              "type": "text",
+              "x": 426,
+              "y": 229,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 90,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "type": "column",
+          "tag": "justify-knuth-plass",
+          "x": 768,
+          "y": 172,
+          "left": 728,
+          "top": 0,
+          "width": 340,
+          "height": 198,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 11,
+              "type": "text",
+              "tag": "justify-knuth-plass-title",
+              "x": 790,
+              "y": 194,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 25,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 12,
+              "type": "text",
+              "x": 790,
+              "y": 229,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 90,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "type": "row",
+      "x": 40,
+      "y": 394,
+      "left": 40,
+      "top": 394,
+      "width": 1068,
+      "height": 187,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": [
+        {
+          "id": 14,
+          "type": "column",
+          "tag": "center-breaks",
+          "x": 40,
+          "y": 394,
+          "left": 0,
+          "top": 0,
+          "width": 340,
+          "height": 187,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 15,
+              "type": "text",
+              "tag": "center-breaks-title",
+              "x": 62,
+              "y": 416,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 24,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 16,
+              "type": "text",
+              "x": 62,
+              "y": 451,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 102,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "type": "column",
+          "tag": "nowrap",
+          "x": 404,
+          "y": 394,
+          "left": 364,
+          "top": 0,
+          "width": 340,
+          "height": 187,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 18,
+              "type": "text",
+              "tag": "nowrap-title",
+              "x": 426,
+              "y": 416,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 24,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 19,
+              "type": "text",
+              "x": 426,
+              "y": 451,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 32,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "type": "column",
+          "tag": "greedy-compare",
+          "x": 768,
+          "y": 394,
+          "left": 728,
+          "top": 0,
+          "width": 340,
+          "height": 187,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 21,
+              "type": "text",
+              "tag": "greedy-compare-title",
+              "x": 790,
+              "y": 416,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 24,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 22,
+              "type": "text",
+              "x": 790,
+              "y": 451,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 108,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "type": "row",
+      "x": 40,
+      "y": 605,
+      "left": 40,
+      "top": 605,
+      "width": 1068,
+      "height": 188,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": [
+        {
+          "id": 24,
+          "type": "column",
+          "tag": "knuth-plass-compare",
+          "x": 40,
+          "y": 605,
+          "left": 0,
+          "top": 0,
+          "width": 340,
+          "height": 188,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 25,
+              "type": "text",
+              "tag": "knuth-plass-compare-title",
+              "x": 62,
+              "y": 627,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 24,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 26,
+              "type": "text",
+              "x": 62,
+              "y": 662,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 108,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "type": "column",
+          "tag": "mixed-spans-knuth-plass",
+          "x": 404,
+          "y": 605,
+          "left": 364,
+          "top": 0,
+          "width": 340,
+          "height": 188,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 28,
+              "type": "text",
+              "tag": "mixed-spans-knuth-plass-title",
+              "x": 426,
+              "y": 627,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 24,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 29,
+              "type": "text",
+              "x": 426,
+              "y": 662,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 90,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "type": "column",
+          "tag": "tabs-fallback",
+          "x": 768,
+          "y": 605,
+          "left": 728,
+          "top": 0,
+          "width": 340,
+          "height": 188,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 31,
+              "type": "text",
+              "tag": "tabs-fallback-title",
+              "x": 790,
+              "y": 627,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 24,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 32,
+              "type": "text",
+              "x": 790,
+              "y": 662,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 30,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "type": "row",
+      "x": 40,
+      "y": 817,
+      "left": 40,
+      "top": 817,
+      "width": 1068,
+      "height": 303,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": [
+        {
+          "id": 34,
+          "type": "column",
+          "tag": "khmer-justify-greedy",
+          "x": 40,
+          "y": 817,
+          "left": 0,
+          "top": 0,
+          "width": 340,
+          "height": 303,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 35,
+              "type": "text",
+              "tag": "khmer-justify-greedy-title",
+              "x": 62,
+              "y": 839,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 25,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 36,
+              "type": "text",
+              "x": 62,
+              "y": 874,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 224,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "type": "column",
+          "tag": "khmer-justify-knuth-plass",
+          "x": 404,
+          "y": 817,
+          "left": 364,
+          "top": 0,
+          "width": 340,
+          "height": 303,
+          "border": {
+            "top": 2,
+            "right": 2,
+            "bottom": 2,
+            "left": 2
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 38,
+              "type": "text",
+              "tag": "khmer-justify-knuth-plass-title",
+              "x": 426,
+              "y": 839,
+              "left": 22,
+              "top": 22,
+              "width": 296,
+              "height": 25,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 39,
+              "type": "text",
+              "x": 426,
+              "y": 874,
+              "left": 22,
+              "top": 57,
+              "width": 300,
+              "height": 224,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "id": 0,
+  "type": "column",
+  "x": 0,
+  "y": 0,
+  "left": 0,
+  "top": 0,
+  "width": 1040,
+  "height": 766,
+  "border": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "padding": {
+    "top": 30,
+    "right": 30,
+    "bottom": 30,
+    "left": 30
+  },
+  "margin": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "children": [
+    {
+      "id": 1,
+      "type": "row",
+      "x": 30,
+      "y": 30,
+      "left": 30,
+      "top": 30,
+      "width": 980,
+      "height": 78,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": [
+        {
+          "id": 2,
+          "type": "column",
+          "x": 30,
+          "y": 30,
+          "left": 0,
+          "top": 0,
+          "width": 500,
+          "height": 78,
+          "border": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 3,
+              "type": "text",
+              "x": 30,
+              "y": 30,
+              "left": 0,
+              "top": 0,
+              "width": 500,
+              "height": 16,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 4,
+              "type": "text",
+              "x": 30,
+              "y": 55,
+              "left": 0,
+              "top": 25,
+              "width": 500,
+              "height": 53,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "x": 690,
+          "y": 30,
+          "left": 660,
+          "top": 0,
+          "width": 320,
+          "height": 78,
+          "border": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "grid",
+      "x": 30,
+      "y": 133,
+      "left": 30,
+      "top": 133,
+      "width": 980,
+      "height": 602,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": []
+    }
+  ]
+}

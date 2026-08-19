@@ -1,0 +1,1530 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "width": 850,
+      "height": "auto",
+      "background": [
+        "white"
+      ],
+      "borderColor": "#e9ecef",
+      "borderWidth": 1,
+      "cornerRadius": [
+        8
+      ]
+    },
+    "children": [
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)"
+          ],
+          "paddingTop": 40,
+          "paddingRight": 30,
+          "paddingBottom": 40,
+          "paddingLeft": 30,
+          "borderTopWidth": 0,
+          "borderRightWidth": 0,
+          "borderBottomWidth": 2,
+          "borderLeftWidth": 0,
+          "borderColor": "#e9ecef"
+        },
+        "children": [
+          {
+            "type": "photo",
+            "props": {
+              "src": "../../image/kouprey.jpg",
+              "width": 120,
+              "height": 120,
+              "scaleType": "cover",
+              "cornerRadius": [
+                60
+              ],
+              "borderColor": "#2c3e50",
+              "borderWidth": 3,
+              "alignSelf": "center",
+              "marginBottom": 20,
+              "shadows": [
+                "0px 4px 8px rgba(0,0,0,0.2)"
+              ]
+            }
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 48,
+              "weight": "bold",
+              "font": [
+                "Inter Khmer"
+              ],
+              "color": "#2c3e50",
+              "align": "center",
+              "marginBottom": 8
+            },
+            "inline": [
+              "សារ៉ា ចាន់"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 20,
+              "weight": "500",
+              "font": [
+                "Inter Khmer"
+              ],
+              "color": "#34495e",
+              "align": "center",
+              "marginBottom": 20
+            },
+            "inline": [
+              "វិស្វកម្មកម្មវិធីជាន់ខ្ពស់"
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "justifyContent": "center",
+              "alignItems": "center",
+              "flexWrap": "wrap",
+              "gap": 4
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#7f8c8d",
+                  "font": [
+                    "Inter Khmer"
+                  ]
+                },
+                "inline": [
+                  "📧 sarah.chan@email.com"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#bdc3c7",
+                  "marginTop": 0,
+                  "marginRight": 8,
+                  "marginBottom": 0,
+                  "marginLeft": 8
+                },
+                "inline": [
+                  "•"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#7f8c8d",
+                  "font": [
+                    "Inter Khmer"
+                  ]
+                },
+                "inline": [
+                  "📱 (855) 123-4567"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#bdc3c7",
+                  "marginTop": 0,
+                  "marginRight": 8,
+                  "marginBottom": 0,
+                  "marginLeft": 8
+                },
+                "inline": [
+                  "•"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#7f8c8d",
+                  "font": [
+                    "Inter Khmer"
+                  ]
+                },
+                "inline": [
+                  "🔗 linkedin.com/in/sarachan"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#bdc3c7",
+                  "marginTop": 0,
+                  "marginRight": 8,
+                  "marginBottom": 0,
+                  "marginLeft": 8
+                },
+                "inline": [
+                  "•"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#7f8c8d",
+                  "font": [
+                    "Inter Khmer"
+                  ]
+                },
+                "inline": [
+                  "🌐 github.com/sarachan"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "gap": 24,
+          "padding": 30
+        },
+        "children": [
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "marginBottom": 16
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 18,
+                      "weight": "bold",
+                      "font": [
+                        "Inter Khmer"
+                      ],
+                      "color": "#2c3e50",
+                      "marginBottom": 4
+                    },
+                    "inline": [
+                      "សង្ខេបវិជ្ជាជីវៈ"
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "height": 3,
+                      "background": [
+                        "linear-gradient(90deg, #3498db, #2980b9)"
+                      ],
+                      "width": 60,
+                      "cornerRadius": [
+                        2
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 15,
+                  "font": [
+                    "Inter Khmer"
+                  ],
+                  "color": "#34495e",
+                  "lineHeight": 1.6,
+                  "align": "justify"
+                },
+                "inline": [
+                  "វិស្វករកម្មវិធីដែលមានចំណង់ចំណូលចិត្ត និងផ្តោតលើលទ្ធផលជា ",
+                  {
+                    "type": "span",
+                    "props": {
+                      "weight": "bold",
+                      "color": "#2980b9"
+                    },
+                    "inline": [
+                      "វិស្វកម្មកម្មវិធីជាន់ខ្ពស់"
+                    ]
+                  },
+                  " ដែលមានបទពិសោធន៍ ",
+                  {
+                    "type": "span",
+                    "props": {
+                      "weight": "bold",
+                      "color": "#e74c3c"
+                    },
+                    "inline": [
+                      "៨+ ឆ្នាំ"
+                    ]
+                  },
+                  " ក្នុងការអភិវឌ្ឍន៍ពេញលេញ, ស្ថាបត្យកម្ម cloud និងការដឹកនាំក្រុម។ ",
+                  "មានកំណត់ត្រាបង្ហាញពីការផ្តល់ដំណោះស្រាយដែលអាចពង្រីកបានដែលជំរុញការលូតលាស់ពាណិជ្ជកម្ម និងកែលម្អបទពិសោធន៍អ្នកប្រើប្រាស់។ ",
+                  "ជំនាញក្នុងបច្ចេកវិទ្យាបណ្តាញទំនើបជាមួយនឹងមូលដ្ឋានរឹងមាំក្នុង ",
+                  {
+                    "type": "span",
+                    "props": {
+                      "weight": "bold",
+                      "color": "#27ae60"
+                    },
+                    "inline": [
+                      "ស្ថាបត្យកម្ម microservices"
+                    ]
+                  },
+                  " និង ",
+                  {
+                    "type": "span",
+                    "props": {
+                      "weight": "bold",
+                      "color": "#27ae60"
+                    },
+                    "inline": [
+                      "ការអនុវត្ត DevOps"
+                    ]
+                  },
+                  "។"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "marginBottom": 16
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 18,
+                      "weight": "bold",
+                      "font": [
+                        "Inter Khmer"
+                      ],
+                      "color": "#2c3e50",
+                      "marginBottom": 4
+                    },
+                    "inline": [
+                      "ជំនាញបច្ចេកទេស"
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "height": 3,
+                      "background": [
+                        "linear-gradient(90deg, #3498db, #2980b9)"
+                      ],
+                      "width": 60,
+                      "cornerRadius": [
+                        2
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 30
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "weight": "bold",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#2c3e50",
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "ភាសា និង Framework"
+                        ]
+                      },
+                      {
+                        "type": "column",
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "marginBottom": 4,
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• JavaScript, TypeScript, Python"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "marginBottom": 4,
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• React, Vue.js, Node.js, Express"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "marginBottom": 4,
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• Next.js, Nuxt.js, Django"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• GraphQL, REST APIs"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "weight": "bold",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#2c3e50",
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "Cloud និង DevOps"
+                        ]
+                      },
+                      {
+                        "type": "column",
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "marginBottom": 4,
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• AWS, Azure, Google Cloud"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "marginBottom": 4,
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• Docker, Kubernetes, Terraform"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "marginBottom": 4,
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• CI/CD, Jenkins, GitHub Actions"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• Monitoring: Datadog, New Relic"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "weight": "bold",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#2c3e50",
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "មូលដ្ឋានទិន្នន័យ និងឧបករណ៍"
+                        ]
+                      },
+                      {
+                        "type": "column",
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "marginBottom": 4,
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• PostgreSQL, MongoDB, Redis"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "marginBottom": 4,
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• Git, Jira, Figma"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "marginBottom": 4,
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• Testing: Jest, Cypress, Playwright"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 13,
+                              "color": "#34495e",
+                              "font": [
+                                "Inter Khmer"
+                              ]
+                            },
+                            "inline": [
+                              "• Agile, Scrum, Code Review"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "marginBottom": 16
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 18,
+                      "weight": "bold",
+                      "font": [
+                        "Inter Khmer"
+                      ],
+                      "color": "#2c3e50",
+                      "marginBottom": 4
+                    },
+                    "inline": [
+                      "បទពិសោធន៍ការងារ"
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "height": 3,
+                      "background": [
+                        "linear-gradient(90deg, #3498db, #2980b9)"
+                      ],
+                      "width": 60,
+                      "cornerRadius": [
+                        2
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "marginBottom": 20
+                },
+                "children": [
+                  {
+                    "type": "row",
+                    "props": {
+                      "alignItems": "flex-start",
+                      "marginBottom": 12
+                    },
+                    "children": [
+                      {
+                        "type": "column",
+                        "props": {
+                          "flex": 1
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 16,
+                              "weight": "bold",
+                              "font": [
+                                "Inter Khmer"
+                              ],
+                              "color": "#2c3e50"
+                            },
+                            "inline": [
+                              "វិស្វកម្មកម្មវិធីជាន់ខ្ពស់"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 14,
+                              "weight": "500",
+                              "font": [
+                                "Inter Khmer"
+                              ],
+                              "color": "#7f8c8d"
+                            },
+                            "inline": [
+                              "ក្រុមហុន TechFlow Solutions"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#7f8c8d",
+                          "style": "italic"
+                        },
+                        "inline": [
+                          "មករា 2022 - ស្ទាប់នោះ"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• ដឹកនាំការអភិវឌ្ឍន៍ស្ថាបត្យកម្ម microservices ដែលមានអ្នកប្រើប្រាស់ពិសេស 2 លាននាក់ក្នុងមួយថ្ងៃ"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• កម្ហយពេលវេលាដំណោះរង់របស់ API ដល់ 40% តាមរយៈការបង្ហាញប្រសិទ្ធផាពមូលដ្ឋានទិន្នន័យ និងយុទ្ធសាស្ត្រ caching"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• ការបន្តុះបន្ធាលវិស្វករកំណត់ទាប 5 នាក់ និងបង្កើតវិធីសាស្ត្ររង់ទ្ធពិនិត្យកោដ"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• អនុវត្ត CI/CD pipeline ប្រំកម្ហយពេលវេលា deployment ពី 2 ម៉ោងទៅដល់ 15 នាទី"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "marginBottom": 20
+                },
+                "children": [
+                  {
+                    "type": "row",
+                    "props": {
+                      "alignItems": "flex-start",
+                      "marginBottom": 12
+                    },
+                    "children": [
+                      {
+                        "type": "column",
+                        "props": {
+                          "flex": 1
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 16,
+                              "weight": "bold",
+                              "font": [
+                                "Inter Khmer"
+                              ],
+                              "color": "#2c3e50"
+                            },
+                            "inline": [
+                              "វិស្វករ Full Stack"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 14,
+                              "weight": "500",
+                              "font": [
+                                "Inter Khmer"
+                              ],
+                              "color": "#7f8c8d"
+                            },
+                            "inline": [
+                              "ក្រុមហុន Digital Innovations Inc."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#7f8c8d",
+                          "style": "italic"
+                        },
+                        "inline": [
+                          "មីនា 2020 - ធ្នូ 2021"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• បង្កើតវំបប្រើប្រាស់វ៉ែប responsive ដោយប្រើ React និង Node.js សម្រាប់អទិធជនទៅជាង 50+ រំទាម"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• សរបរការជាមួយក្រុម UX ដើម្បីកែលម្អការចូលរួមរបស់អ្នកប្រើប្រាស់ដល់ 35%"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• អភិវឌ្ឍន៍ RESTful APIs និងទំនាក់ទំនងរបវត្ថបន្តុប្រាក់របស់រៀបាស់ទីបី"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• ចូលរួមក្នុងបិធី Agile និងការត្រាប់ទ្រង់ sprint សម្រាប់ក្រុមផ្ងេរជំនាញជ្រះរាល"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "children": [
+                  {
+                    "type": "row",
+                    "props": {
+                      "alignItems": "flex-start",
+                      "marginBottom": 12
+                    },
+                    "children": [
+                      {
+                        "type": "column",
+                        "props": {
+                          "flex": 1
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 16,
+                              "weight": "bold",
+                              "font": [
+                                "Inter Khmer"
+                              ],
+                              "color": "#2c3e50"
+                            },
+                            "inline": [
+                              "វិស្វករកម្មវិធី"
+                            ]
+                          },
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 14,
+                              "weight": "500",
+                              "font": [
+                                "Inter Khmer"
+                              ],
+                              "color": "#7f8c8d"
+                            },
+                            "inline": [
+                              "ក្រុមហុន StartupVenture Labs"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#7f8c8d",
+                          "style": "italic"
+                        },
+                        "inline": [
+                          "មិថុនា 2018 - កុម្ភះ 2020"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• អភិវឌ្ឍន៍ MVP សម្រាប់ម៉ន្ត platform ទិញដែលប្រើ Vue.js និង Python/Django"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• អនុវត្តការផ្ទាត់ព្រះអត្តសញ្ញាណអ្នកប្រើ ការឋាក់ប្រាក់ និងបាកាបែលពេលវេលាពិត"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• បង្ហាញប្រសិទ្ធផាព query មូលដ្ឋានទិន្នន័យដែលផ្តល់កែលម្អពេលផ្ទាត់ទំព័រដល់ 60%"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "gap": 40
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "marginBottom": 16
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 18,
+                          "weight": "bold",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#2c3e50",
+                          "marginBottom": 4
+                        },
+                        "inline": [
+                          "ការសិក្សា"
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 3,
+                          "background": [
+                            "linear-gradient(90deg, #3498db, #2980b9)"
+                          ],
+                          "width": 60,
+                          "cornerRadius": [
+                            2
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "marginBottom": 16
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "weight": "bold",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#2c3e50",
+                          "marginBottom": 4
+                        },
+                        "inline": [
+                          "ម៉ាស្ធ័រវិទ្យាសាស្ត្រក្នុងខេតវិទ្យាសាស្ត្រកំភ្យូទ័រ"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#7f8c8d",
+                          "marginBottom": 4
+                        },
+                        "inline": [
+                          "សកលវិទ្យាល័យ Stanford"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#95a5a6",
+                          "style": "italic"
+                        },
+                        "inline": [
+                          "2016 - 2018"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "weight": "bold",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#2c3e50",
+                          "marginBottom": 4
+                        },
+                        "inline": [
+                          "បក្កាលោរីគេវិទ្យាសាស្ត្រក្នុងខេតវិស្វកម្មកម្មវិធី"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#7f8c8d",
+                          "marginBottom": 4
+                        },
+                        "inline": [
+                          "សកលវិទ្យាល័យ California, Berkeley"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#95a5a6",
+                          "style": "italic"
+                        },
+                        "inline": [
+                          "2012 - 2016"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "marginBottom": 16
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 18,
+                          "weight": "bold",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#2c3e50",
+                          "marginBottom": 4
+                        },
+                        "inline": [
+                          "វិណ្ណបត្រ"
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 3,
+                          "background": [
+                            "linear-gradient(90deg, #3498db, #2980b9)"
+                          ],
+                          "width": 60,
+                          "cornerRadius": [
+                            2
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• AWS Solutions Architect Professional"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• វិណ្ណបត្រអ្នកគ្រប់គ្រង់ Kubernetes (CKA)"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "marginBottom": 6,
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• Google Cloud Professional Developer"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "color": "#34495e",
+                          "font": [
+                            "Inter Khmer"
+                          ]
+                        },
+                        "inline": [
+                          "• វិណ្ណបត្រ Scrum Master (SMC)"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "marginBottom": 16
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 18,
+                      "weight": "bold",
+                      "font": [
+                        "Inter Khmer"
+                      ],
+                      "color": "#2c3e50",
+                      "marginBottom": 4
+                    },
+                    "inline": [
+                      "សម្រេចកម្មសំខាន់"
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "height": 3,
+                      "background": [
+                        "linear-gradient(90deg, #3498db, #2980b9)"
+                      ],
+                      "width": 60,
+                      "cornerRadius": [
+                        2
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "alignItems": "flex-start",
+                  "marginBottom": 12
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "width": 40
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 24,
+                          "alignSelf": "center"
+                        },
+                        "inline": [
+                          "🏆"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "weight": "bold",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#2c3e50",
+                          "marginBottom": 4
+                        },
+                        "inline": [
+                          "រង្វាន់នួគររម្ម 2023"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#34495e"
+                        },
+                        "inline": [
+                          "ដឹកនាំការអភិវឌ្ឍន៍ប្រព័ន្ធបក្តិភ្ញាបសំណើរដោយ AI ដែលកែលម្អការរក្សាទុកអ្នកប្រើប្រាស់ដល់ 45%"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "alignItems": "flex-start",
+                  "marginBottom": 12
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "width": 40
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 24,
+                          "alignSelf": "center"
+                        },
+                        "inline": [
+                          "🚀"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "weight": "bold",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#2c3e50",
+                          "marginBottom": 4
+                        },
+                        "inline": [
+                          "ទ្ធផលប្រសិទ្ធផាពល្អអង់ 2022"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#34495e"
+                        },
+                        "inline": [
+                          "រចនាស្ថាបត្យកម្មយុទ្ធសាស្ត្រប្តិនៅ cloud ដែលសេចក្តីប្រាក់ក្រុមហុនដល់ $200K ក្នុងមួយឆ្នាំសម្រាប់ចំណាយវិញទើសកម្ម"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "alignItems": "flex-start"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "width": 40
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 24,
+                          "alignSelf": "center"
+                        },
+                        "inline": [
+                          "👥"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "weight": "bold",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#2c3e50",
+                          "marginBottom": 4
+                        },
+                        "inline": [
+                          "ស្ងាណ់សម្រាប់ការដឹកនាំក្រុម 2021"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 13,
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "color": "#34495e"
+                        },
+                        "inline": [
+                          "គ្រប់គ្រង់ក្រុមផ្ងេរជំនាញជ្រះរាលដោយជោគជ័យ 12 នាក់នៅក្រសួងពេលវេលាច្រើន 3 តំបន់"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

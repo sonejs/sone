@@ -1,0 +1,80 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "#eee"
+      ],
+      "justifyContent": "center",
+      "padding": 28,
+      "position": "relative"
+    },
+    "children": [
+      {
+        "type": "path",
+        "props": {
+          "d": "M 250 100\n       A 45 45, 0, 1, 0, 295 145\n       L 295 100 Z",
+          "fill": "orange",
+          "stroke": "#000",
+          "strokeDashArray": [
+            14
+          ],
+          "strokeWidth": 4,
+          "strokeDashOffset": 0,
+          "scalePath": 3.5
+        }
+      },
+      {
+        "type": "text",
+        "props": {
+          "weight": "bold",
+          "color": "#000",
+          "size": 64,
+          "position": "absolute",
+          "alignSelf": "center"
+        },
+        "inline": [
+          "Path"
+        ]
+      }
+    ]
+  }
+}

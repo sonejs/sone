@@ -1,0 +1,355 @@
+{
+  "id": 0,
+  "type": "column",
+  "x": 0,
+  "y": 0,
+  "left": 0,
+  "top": 0,
+  "width": 550,
+  "height": 380,
+  "border": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "padding": {
+    "top": 30,
+    "right": 30,
+    "bottom": 30,
+    "left": 30
+  },
+  "margin": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "children": [
+    {
+      "id": 1,
+      "type": "row",
+      "x": 30,
+      "y": 30,
+      "left": 30,
+      "top": 30,
+      "width": 490,
+      "height": 150,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": [
+        {
+          "id": 2,
+          "type": "clip-group",
+          "x": 30,
+          "y": 30,
+          "left": 0,
+          "top": 0,
+          "width": 150,
+          "height": 150,
+          "border": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 3,
+              "type": "photo",
+              "x": 30,
+              "y": 30,
+              "left": 0,
+              "top": 0,
+              "width": 150,
+              "height": 150,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "type": "clip-group",
+          "x": 200,
+          "y": 30,
+          "left": 170,
+          "top": 0,
+          "width": 150,
+          "height": 150,
+          "border": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 5,
+              "type": "photo",
+              "x": 200,
+              "y": 30,
+              "left": 0,
+              "top": 0,
+              "width": 150,
+              "height": 150,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "type": "clip-group",
+          "x": 370,
+          "y": 30,
+          "left": 340,
+          "top": 0,
+          "width": 150,
+          "height": 150,
+          "border": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 7,
+              "type": "photo",
+              "x": 370,
+              "y": 30,
+              "left": 0,
+              "top": 0,
+              "width": 150,
+              "height": 150,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "row",
+      "x": 30,
+      "y": 200,
+      "left": 30,
+      "top": 200,
+      "width": 490,
+      "height": 150,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": [
+        {
+          "id": 9,
+          "type": "clip-group",
+          "x": 30,
+          "y": 200,
+          "left": 0,
+          "top": 0,
+          "width": 150,
+          "height": 150,
+          "border": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "padding": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": [
+            {
+              "id": 10,
+              "type": "photo",
+              "x": 30,
+              "y": 200,
+              "left": 0,
+              "top": 0,
+              "width": 150,
+              "height": 150,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            },
+            {
+              "id": 11,
+              "type": "text",
+              "x": 30,
+              "y": 350,
+              "left": 0,
+              "top": 150,
+              "width": 150,
+              "height": 16,
+              "border": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "padding": {
+                "top": 8,
+                "right": 8,
+                "bottom": 8,
+                "left": 8
+              },
+              "margin": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

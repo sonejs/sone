@@ -1,0 +1,226 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "width": 600,
+      "padding": 30,
+      "background": [
+        "white"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 18,
+          "weight": "bold",
+          "color": "#333",
+          "marginBottom": 20
+        },
+        "inline": [
+          "Arabic (RTL) Bidi Rendering Test"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 32,
+          "baseDir": "auto",
+          "align": "right",
+          "color": "#1a1a1a",
+          "marginBottom": 8
+        },
+        "inline": [
+          "مرحبا بالعالم"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 24,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#2563eb",
+          "marginBottom": 8
+        },
+        "inline": [
+          "هذا مثال على النص العربي"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 18,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#374151",
+          "lineHeight": 1.6,
+          "marginBottom": 16
+        },
+        "inline": [
+          "اللغة العربية هي لغة سامية تنتمي إلى مجموعة اللغات الأفريقية الآسيوية"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 22,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#059669",
+          "marginBottom": 8
+        },
+        "inline": [
+          "السعر: ١٢٣ دولار"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 22,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#7c3aed",
+          "marginBottom": 8
+        },
+        "inline": [
+          "السعر: 100 دولار"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 28,
+          "baseDir": "rtl",
+          "align": "center",
+          "color": "#dc2626",
+          "marginBottom": 16
+        },
+        "inline": [
+          "مرحباً بكم"
+        ]
+      },
+      {
+        "type": "text-default",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ]
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "font": [
+                "NotoSansArabic"
+              ],
+              "baseDir": "rtl",
+              "align": "right"
+            },
+            "inline": [
+              {
+                "type": "span",
+                "props": {
+                  "size": 32,
+                  "color": "#1a1a1a"
+                },
+                "inline": [
+                  "مرحبا"
+                ]
+              },
+              {
+                "type": "span",
+                "inline": [
+                  " "
+                ]
+              },
+              {
+                "type": "span",
+                "props": {
+                  "size": 24,
+                  "color": "#6b7280"
+                },
+                "inline": [
+                  "بالعالم"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 22,
+          "baseDir": "rtl",
+          "align": "right",
+          "highlightColor": "#fef08a",
+          "color": "#111827",
+          "marginTop": 8
+        },
+        "inline": [
+          "النص المميز باللون"
+        ]
+      }
+    ]
+  }
+}

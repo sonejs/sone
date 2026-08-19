@@ -1,0 +1,238 @@
+{
+  "id": 0,
+  "type": "column",
+  "x": 0,
+  "y": 0,
+  "left": 0,
+  "top": 0,
+  "width": 771,
+  "height": 368,
+  "border": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "padding": {
+    "top": 40,
+    "right": 40,
+    "bottom": 40,
+    "left": 40
+  },
+  "margin": {
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0
+  },
+  "children": [
+    {
+      "id": 1,
+      "type": "text",
+      "x": 40,
+      "y": 40,
+      "left": 40,
+      "top": 40,
+      "width": 692,
+      "height": 39,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": []
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "x": 40,
+      "y": 101,
+      "left": 40,
+      "top": 101,
+      "width": 692,
+      "height": 45,
+      "border": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "padding": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": []
+    },
+    {
+      "id": 3,
+      "type": "row",
+      "x": 40,
+      "y": 168,
+      "left": 40,
+      "top": 168,
+      "width": 691,
+      "height": 160,
+      "border": {
+        "top": 2,
+        "right": 2,
+        "bottom": 2,
+        "left": 2
+      },
+      "padding": {
+        "top": 28,
+        "right": 28,
+        "bottom": 28,
+        "left": 28
+      },
+      "margin": {
+        "top": 0,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "children": [
+        {
+          "id": 4,
+          "type": "text",
+          "tag": "orientation-0",
+          "x": 70,
+          "y": 212,
+          "left": 30,
+          "top": 44,
+          "width": 124,
+          "height": 72,
+          "border": {
+            "top": 3,
+            "right": 3,
+            "bottom": 3,
+            "left": 3
+          },
+          "padding": {
+            "top": 16,
+            "right": 20,
+            "bottom": 16,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": []
+        },
+        {
+          "id": 5,
+          "type": "text",
+          "tag": "orientation-90",
+          "x": 222,
+          "y": 198,
+          "left": 182,
+          "top": 30,
+          "width": 80,
+          "height": 102,
+          "border": {
+            "top": 3,
+            "right": 3,
+            "bottom": 3,
+            "left": 3
+          },
+          "padding": {
+            "top": 16,
+            "right": 20,
+            "bottom": 16,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": []
+        },
+        {
+          "id": 6,
+          "type": "text",
+          "tag": "orientation-180",
+          "x": 329,
+          "y": 212,
+          "left": 289,
+          "top": 44,
+          "width": 124,
+          "height": 72,
+          "border": {
+            "top": 3,
+            "right": 3,
+            "bottom": 3,
+            "left": 3
+          },
+          "padding": {
+            "top": 16,
+            "right": 20,
+            "bottom": 16,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": []
+        },
+        {
+          "id": 7,
+          "type": "text",
+          "tag": "orientation-270",
+          "x": 481,
+          "y": 198,
+          "left": 441,
+          "top": 30,
+          "width": 81,
+          "height": 102,
+          "border": {
+            "top": 3,
+            "right": 3,
+            "bottom": 3,
+            "left": 3
+          },
+          "padding": {
+            "top": 16,
+            "right": 20,
+            "bottom": 16,
+            "left": 20
+          },
+          "margin": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

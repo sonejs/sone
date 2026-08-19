@@ -1,0 +1,28 @@
+[build-system]
+requires = ["maturin>=1.7,<2"]
+build-backend = "maturin"
+
+[project]
+name = "sone"
+description = "Declarative canvas layout engine — Skia rendering with rich international text"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Seanghay Yath" }]
+readme = "README.md"
+keywords = ["canvas", "layout", "skia", "pdf", "svg", "text", "khmer"]
+classifiers = [
+  "Programming Language :: Rust",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Topic :: Multimedia :: Graphics",
+]
+dynamic = ["version"]
+
+[project.urls]
+Repository = "https://github.com/seanghay/sone"
+
+[tool.maturin]
+include = ["python/sone/py.typed", "python/sone/_engine.pyi"]
+module-name = "sone._engine"
+python-source = "python"
+features = ["pyo3/extension-module"]
+strip = true

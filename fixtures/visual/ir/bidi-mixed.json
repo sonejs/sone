@@ -1,0 +1,361 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "width": 620,
+      "padding": 30,
+      "background": [
+        "white"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 18,
+          "weight": "bold",
+          "color": "#333",
+          "marginBottom": 20
+        },
+        "inline": [
+          "Mixed Bidi Text Rendering"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 13,
+          "color": "#6b7280",
+          "weight": "bold",
+          "marginBottom": 6
+        },
+        "inline": [
+          "LTR Paragraphs"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 18,
+          "color": "#1a1a1a",
+          "marginBottom": 4
+        },
+        "inline": [
+          "Hello World - standard left-to-right text"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 18,
+          "color": "#059669",
+          "marginBottom": 16
+        },
+        "inline": [
+          "Price: 1,234.56 USD"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 13,
+          "color": "#6b7280",
+          "weight": "bold",
+          "marginBottom": 6
+        },
+        "inline": [
+          "RTL Arabic Paragraphs"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 24,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#1a1a1a",
+          "marginBottom": 4
+        },
+        "inline": [
+          "مرحبا بالعالم"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 20,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#059669",
+          "marginBottom": 4
+        },
+        "inline": [
+          "السعر: 1,234.56 دولار"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 18,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#7c3aed",
+          "marginBottom": 16
+        },
+        "inline": [
+          "هذا النص يحتوي على أرقام 123 وكلمات عربية"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 13,
+          "color": "#6b7280",
+          "weight": "bold",
+          "marginBottom": 6
+        },
+        "inline": [
+          "RTL Hebrew Paragraphs"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansHebrew"
+          ],
+          "size": 24,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#1a1a1a",
+          "marginBottom": 4
+        },
+        "inline": [
+          "שלום עולם"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansHebrew"
+          ],
+          "size": 20,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#059669",
+          "marginBottom": 16
+        },
+        "inline": [
+          "המחיר: 1,234.56 שקל"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 13,
+          "color": "#6b7280",
+          "weight": "bold",
+          "marginBottom": 6
+        },
+        "inline": [
+          "Auto-detected Direction"
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 20,
+          "marginBottom": 16
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "flex": 1,
+              "alignItems": "flex-start"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "color": "#6b7280",
+                  "marginBottom": 4
+                },
+                "inline": [
+                  "Auto LTR:"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "baseDir": "auto",
+                  "marginBottom": 0
+                },
+                "inline": [
+                  "Hello World"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "flex": 1,
+              "alignItems": "flex-end"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "color": "#6b7280",
+                  "marginBottom": 4,
+                  "align": "right"
+                },
+                "inline": [
+                  "Auto RTL:"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "NotoSansArabic"
+                  ],
+                  "size": 18,
+                  "baseDir": "auto",
+                  "align": "right",
+                  "marginBottom": 0
+                },
+                "inline": [
+                  "مرحبا بالعالم"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 13,
+          "color": "#6b7280",
+          "weight": "bold",
+          "marginBottom": 6
+        },
+        "inline": [
+          "Alignment Comparison (RTL Arabic)"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 20,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#1a1a1a",
+          "background": [
+            "#f9fafb"
+          ],
+          "padding": 8,
+          "marginBottom": 4
+        },
+        "inline": [
+          "align: right (natural RTL)"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 20,
+          "baseDir": "rtl",
+          "align": "center",
+          "color": "#1a1a1a",
+          "background": [
+            "#f9fafb"
+          ],
+          "padding": 8,
+          "marginBottom": 4
+        },
+        "inline": [
+          "align: center"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansArabic"
+          ],
+          "size": 20,
+          "baseDir": "rtl",
+          "align": "left",
+          "color": "#1a1a1a",
+          "background": [
+            "#f9fafb"
+          ],
+          "padding": 8
+        },
+        "inline": [
+          "align: left"
+        ]
+      }
+    ]
+  }
+}

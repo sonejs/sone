@@ -1,0 +1,407 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "width": 1200,
+      "height": 800,
+      "background": [
+        "#ffffff"
+      ]
+    },
+    "children": [
+      {
+        "type": "row",
+        "props": {
+          "padding": 24,
+          "justifyContent": "space-between",
+          "background": [
+            "#f8fafc"
+          ],
+          "borderTopWidth": 0,
+          "borderRightWidth": 0,
+          "borderBottomWidth": 1,
+          "borderLeftWidth": 0,
+          "borderColor": "#e5e7eb"
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "size": 32,
+              "weight": "bold",
+              "color": "#2563eb"
+            },
+            "inline": [
+              "Dashboard"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 16,
+              "color": "#6b7280"
+            },
+            "inline": [
+              "Analytics Overview"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "flex": 1
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "width": 200,
+              "padding": 24,
+              "background": [
+                "#f9fafb"
+              ],
+              "borderTopWidth": 0,
+              "borderRightWidth": 1,
+              "borderBottomWidth": 0,
+              "borderLeftWidth": 0,
+              "borderColor": "#e5e7eb"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "600",
+                  "color": "#374151"
+                },
+                "inline": [
+                  "Navigation"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#6b7280",
+                  "paddingTop": 8,
+                  "paddingRight": 0,
+                  "paddingBottom": 8,
+                  "paddingLeft": 0
+                },
+                "inline": [
+                  "• Dashboard"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#2563eb",
+                  "paddingTop": 8,
+                  "paddingRight": 0,
+                  "paddingBottom": 8,
+                  "paddingLeft": 0
+                },
+                "inline": [
+                  "• Analytics"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#6b7280",
+                  "paddingTop": 8,
+                  "paddingRight": 0,
+                  "paddingBottom": 8,
+                  "paddingLeft": 0
+                },
+                "inline": [
+                  "• Reports"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 14,
+                  "color": "#6b7280",
+                  "paddingTop": 8,
+                  "paddingRight": 0,
+                  "paddingBottom": 8,
+                  "paddingLeft": 0
+                },
+                "inline": [
+                  "• Settings"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 24,
+              "gap": 24,
+              "flex": 1
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "gap": 16
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "padding": 20,
+                      "background": [
+                        "white"
+                      ],
+                      "cornerRadius": [
+                        8
+                      ],
+                      "borderWidth": 1,
+                      "borderColor": "#e5e7eb",
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "color": "#6b7280"
+                        },
+                        "inline": [
+                          "Users"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 28,
+                          "weight": "bold",
+                          "color": "#111827"
+                        },
+                        "inline": [
+                          "1,234"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#10b981"
+                        },
+                        "inline": [
+                          "+12%"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "padding": 20,
+                      "background": [
+                        "white"
+                      ],
+                      "cornerRadius": [
+                        8
+                      ],
+                      "borderWidth": 1,
+                      "borderColor": "#e5e7eb",
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "color": "#6b7280"
+                        },
+                        "inline": [
+                          "Revenue"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 28,
+                          "weight": "bold",
+                          "color": "#111827"
+                        },
+                        "inline": [
+                          "$45,678"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#10b981"
+                        },
+                        "inline": [
+                          "+8%"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "padding": 20,
+                      "background": [
+                        "white"
+                      ],
+                      "cornerRadius": [
+                        8
+                      ],
+                      "borderWidth": 1,
+                      "borderColor": "#e5e7eb",
+                      "flex": 1
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 14,
+                          "color": "#6b7280"
+                        },
+                        "inline": [
+                          "Orders"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 28,
+                          "weight": "bold",
+                          "color": "#111827"
+                        },
+                        "inline": [
+                          "567"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 12,
+                          "color": "#ef4444"
+                        },
+                        "inline": [
+                          "-3%"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "padding": 24,
+                  "background": [
+                    "white"
+                  ],
+                  "cornerRadius": [
+                    8
+                  ],
+                  "borderWidth": 1,
+                  "borderColor": "#e5e7eb"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 20,
+                      "weight": "600",
+                      "color": "#374151"
+                    },
+                    "inline": [
+                      "Sales Chart"
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "height": 200,
+                      "background": [
+                        "#f3f4f6"
+                      ],
+                      "cornerRadius": [
+                        4
+                      ],
+                      "borderTopWidth": 2,
+                      "borderRightWidth": 2,
+                      "borderBottomWidth": 2,
+                      "borderLeftWidth": 2,
+                      "borderColor": "#d1d5db"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 12,
+          "color": "#9ca3af",
+          "padding": 16,
+          "background": [
+            "#f8fafc"
+          ],
+          "borderTopWidth": 1,
+          "borderRightWidth": 0,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderColor": "#e5e7eb"
+        },
+        "inline": [
+          "© 2024 Dashboard. All rights reserved."
+        ]
+      }
+    ]
+  }
+}

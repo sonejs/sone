@@ -1,0 +1,684 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "gap": 24,
+      "padding": 40,
+      "background": [
+        "#f5eee6"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 30,
+          "weight": "bold",
+          "color": "#2f241f"
+        },
+        "inline": [
+          "Text layout regression board"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 16,
+          "maxWidth": 900,
+          "color": "#6d4c41",
+          "lineHeight": 1.4
+        },
+        "inline": [
+          "Focused visual checks for alignment, justification, first-line indent, hanging indent, explicit line breaks, nowrap, and Khmer justified line breaking."
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 24,
+          "flexWrap": "wrap"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "left-indent"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "left-indent-title"
+                },
+                "inline": [
+                  "left-indent"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 22,
+                  "width": 300,
+                  "indentSize": 28,
+                  "hangingIndentSize": 52,
+                  "lineHeight": 1.35,
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "AAAA aaaa AAAA aaaa AAAA aaaa AAAA aaaa AAAA aaaa AAAA aaaa."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "justify-greedy"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "justify-greedy-title"
+                },
+                "inline": [
+                  "justify-greedy"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 22,
+                  "width": 300,
+                  "align": "justify",
+                  "lineBreak": "greedy",
+                  "lineHeight": 1.35,
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "AAAA aaaa AAAA aaaa AAAA aaaa AAAA aaaa AAAA aaaa AAAA aaaa."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "justify-knuth-plass"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "justify-knuth-plass-title"
+                },
+                "inline": [
+                  "justify-knuth-plass"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 22,
+                  "width": 300,
+                  "align": "justify",
+                  "lineBreak": "knuth-plass",
+                  "lineHeight": 1.35,
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "AAAA aaaa AAAA aaaa AAAA aaaa AAAA aaaa AAAA aaaa AAAA aaaa."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 24,
+          "flexWrap": "wrap"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "center-breaks"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "center-breaks-title"
+                },
+                "inline": [
+                  "center-breaks"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 24,
+                  "width": 300,
+                  "align": "center",
+                  "lineHeight": 1.4,
+                  "color": "#1f3c88"
+                },
+                "inline": [
+                  "Line one\nLine two\nLine three"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "nowrap"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "nowrap-title"
+                },
+                "inline": [
+                  "nowrap"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 24,
+                  "width": 300,
+                  "nowrap": true,
+                  "color": "#8a2d3b"
+                },
+                "inline": [
+                  "NOWRAP NOWRAP NOWRAP NOWRAP"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "greedy-compare"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "greedy-compare-title"
+                },
+                "inline": [
+                  "greedy-compare"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "width": 300,
+                  "lineBreak": "greedy",
+                  "lineHeight": 1.35,
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 24,
+          "flexWrap": "wrap"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "knuth-plass-compare"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "knuth-plass-compare-title"
+                },
+                "inline": [
+                  "knuth-plass-compare"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "width": 300,
+                  "lineBreak": "knuth-plass",
+                  "lineHeight": 1.35,
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "mixed-spans-knuth-plass"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "mixed-spans-knuth-plass-title"
+                },
+                "inline": [
+                  "mixed-spans-knuth-plass"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 22,
+                  "width": 300,
+                  "lineHeight": 1.35,
+                  "lineBreak": "knuth-plass",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "lorem ",
+                  {
+                    "type": "span",
+                    "props": {
+                      "color": "#a62121"
+                    },
+                    "inline": [
+                      "ipsum dolor "
+                    ]
+                  },
+                  "sit amet consectetur adipiscing"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "tabs-fallback"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "tabs-fallback-title"
+                },
+                "inline": [
+                  "tabs-fallback"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 22,
+                  "width": 300,
+                  "tabStops": [
+                    140,
+                    220
+                  ],
+                  "lineBreak": "knuth-plass",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Label\tValue\tTail"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 24,
+          "flexWrap": "wrap"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "khmer-justify-greedy"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "khmer-justify-greedy-title"
+                },
+                "inline": [
+                  "khmer-justify-greedy"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "NotoSansKhmer"
+                  ],
+                  "size": 22,
+                  "width": 300,
+                  "align": "justify",
+                  "lineBreak": "greedy",
+                  "lineHeight": 1.45,
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "ក្រសួងការពារជាតិកម្ពុជា បានគូសបញ្ជាក់ថា ការប្រើប្រាស់សព្វាវុធធុនធ្ងន់គ្រប់ប្រភេទ និងការដាក់ពង្រាយទាហានយ៉ាងច្រើនលើសលុប គឺជាការរំលោភច្បាស់លាស់លើធម្មនុញ្ញអង្គការសហប្រជាជាតិ និងធម្មនុញ្ញអាស៊ាន។"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 12,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "khmer-justify-knuth-plass"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "khmer-justify-knuth-plass-title"
+                },
+                "inline": [
+                  "khmer-justify-knuth-plass"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "NotoSansKhmer"
+                  ],
+                  "size": 22,
+                  "width": 300,
+                  "align": "justify",
+                  "lineBreak": "knuth-plass",
+                  "lineHeight": 1.45,
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "ក្រសួងការពារជាតិកម្ពុជា បានគូសបញ្ជាក់ថា ការប្រើប្រាស់សព្វាវុធធុនធ្ងន់គ្រប់ប្រភេទ និងការដាក់ពង្រាយទាហានយ៉ាងច្រើនលើសលុប គឺជាការរំលោភច្បាស់លាស់លើធម្មនុញ្ញអង្គការសហប្រជាជាតិ និងធម្មនុញ្ញអាស៊ាន។"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

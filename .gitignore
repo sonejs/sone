@@ -1,0 +1,21 @@
+# Rust
+/target/
+**/target/
+
+# Python binding
+__pycache__/
+*.pyc
+*.so
+*.pyd
+.pytest_cache/
+dist/
+*.egg-info/
+
+# Node / npm workspaces (the sone package lands in packages/)
+node_modules/
+*.tsbuildinfo
+
+# Local render output from `cargo run -p sone-goldens --bin render-all`
+/target/renders/
+
+.DS_Store

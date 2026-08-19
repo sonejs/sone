@@ -1,0 +1,696 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "padding": 32,
+      "width": 480,
+      "background": [
+        "white"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 32,
+          "weight": "bold",
+          "marginBottom": 16
+        },
+        "inline": [
+          "List Demo"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 14,
+          "weight": "bold",
+          "color": "gray"
+        },
+        "inline": [
+          "Unordered — disc"
+        ]
+      },
+      {
+        "type": "list",
+        "props": {
+          "marginTop": 10,
+          "listStyle": "disc",
+          "markerGap": 8,
+          "gap": 4,
+          "marginBottom": 16
+        },
+        "children": [
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "First item"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Second item with longer text that should wrap nicely Second item with longer text that should wrap nicely Second item with longer text that should wrap nicely"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Third item"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Item with ",
+                  {
+                    "type": "span",
+                    "props": {
+                      "color": "royalblue",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "styled"
+                    ]
+                  },
+                  " content"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 14,
+          "weight": "bold",
+          "color": "gray"
+        },
+        "inline": [
+          "Unordered — circle"
+        ]
+      },
+      {
+        "type": "list",
+        "props": {
+          "listStyle": "circle",
+          "markerGap": 8,
+          "gap": 4,
+          "marginTop": 10,
+          "marginBottom": 16
+        },
+        "children": [
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Alpha"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Beta"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Gamma"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 14,
+          "weight": "bold",
+          "color": "gray"
+        },
+        "inline": [
+          "Ordered — decimal"
+        ]
+      },
+      {
+        "type": "list",
+        "props": {
+          "marginTop": 10,
+          "listStyle": "decimal",
+          "startIndex": 1,
+          "markerGap": 10,
+          "gap": 6,
+          "marginBottom": 16
+        },
+        "children": [
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Step one: Install the package"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Step two: Import and configure"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Step three: Render your first layout"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 14,
+          "weight": "bold",
+          "color": "gray"
+        },
+        "inline": [
+          "Span marker — Span(\"+\")"
+        ]
+      },
+      {
+        "type": "text-default",
+        "props": {
+          "lineHeight": 1
+        },
+        "children": [
+          {
+            "type": "list",
+            "props": {
+              "marginTop": 10,
+              "listStyle": {
+                "type": "span",
+                "props": {
+                  "color": "mediumseagreen",
+                  "weight": "bold",
+                  "size": 16
+                },
+                "inline": [
+                  "-"
+                ]
+              },
+              "markerOffset": -3,
+              "markerGap": 12,
+              "gap": 6,
+              "marginBottom": 16
+            },
+            "children": [
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Click the button"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Fill in the form"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Submit and wait"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 14,
+          "weight": "bold",
+          "color": "gray"
+        },
+        "inline": [
+          "Arrow function marker — dynamic labels"
+        ]
+      },
+      {
+        "type": "list",
+        "props": {
+          "marginTop": 10,
+          "markerGap": 10,
+          "gap": 6,
+          "marginBottom": 16
+        },
+        "children": [
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Install dependencies"
+                ]
+              }
+            ],
+            "props": {
+              "marker": {
+                "type": "span",
+                "props": {
+                  "color": "royalblue"
+                },
+                "inline": [
+                  "a."
+                ]
+              }
+            }
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Configure the environment"
+                ]
+              }
+            ],
+            "props": {
+              "marker": {
+                "type": "span",
+                "props": {
+                  "color": "royalblue"
+                },
+                "inline": [
+                  "b."
+                ]
+              }
+            }
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Run the build step"
+                ]
+              }
+            ],
+            "props": {
+              "marker": {
+                "type": "span",
+                "props": {
+                  "color": "royalblue"
+                },
+                "inline": [
+                  "c."
+                ]
+              }
+            }
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Deploy to production"
+                ]
+              }
+            ],
+            "props": {
+              "marker": {
+                "type": "span",
+                "props": {
+                  "color": "royalblue"
+                },
+                "inline": [
+                  "d."
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 14,
+          "weight": "bold",
+          "color": "gray"
+        },
+        "inline": [
+          "Arrow function marker — array values"
+        ]
+      },
+      {
+        "type": "list",
+        "props": {
+          "marginTop": 10,
+          "markerGap": 8,
+          "gap": 6,
+          "marginBottom": 16
+        },
+        "children": [
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "First priority task"
+                ]
+              }
+            ],
+            "props": {
+              "marker": {
+                "type": "span",
+                "props": {
+                  "color": "#e53e3e",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "1."
+                ]
+              }
+            }
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Second priority task"
+                ]
+              }
+            ],
+            "props": {
+              "marker": {
+                "type": "span",
+                "props": {
+                  "color": "#dd6b20",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "2."
+                ]
+              }
+            }
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Third priority task"
+                ]
+              }
+            ],
+            "props": {
+              "marker": {
+                "type": "span",
+                "props": {
+                  "color": "#38a169",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "3."
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 14,
+          "weight": "bold",
+          "color": "gray"
+        },
+        "inline": [
+          "Arrow function marker — TextDefault inheritance"
+        ]
+      },
+      {
+        "type": "text-default",
+        "props": {
+          "size": 16,
+          "color": "slateblue",
+          "weight": "bold"
+        },
+        "children": [
+          {
+            "type": "list",
+            "props": {
+              "marginTop": 10,
+              "markerGap": 8,
+              "gap": 6,
+              "marginBottom": 16
+            },
+            "children": [
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "First step"
+                    ]
+                  }
+                ],
+                "props": {
+                  "marker": {
+                    "type": "span",
+                    "inline": [
+                      "1."
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Second step"
+                    ]
+                  }
+                ],
+                "props": {
+                  "marker": {
+                    "type": "span",
+                    "inline": [
+                      "2."
+                    ]
+                  }
+                }
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Third step"
+                    ]
+                  }
+                ],
+                "props": {
+                  "marker": {
+                    "type": "span",
+                    "inline": [
+                      "3."
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 14,
+          "weight": "bold",
+          "color": "gray"
+        },
+        "inline": [
+          "Nested list"
+        ]
+      },
+      {
+        "type": "list",
+        "props": {
+          "listStyle": "disc",
+          "markerGap": 8,
+          "gap": 6,
+          "marginTop": 10
+        },
+        "children": [
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Parent item one"
+                ]
+              },
+              {
+                "type": "list",
+                "props": {
+                  "listStyle": "circle",
+                  "markerGap": 6,
+                  "gap": 2,
+                  "marginTop": 4
+                },
+                "children": [
+                  {
+                    "type": "list-item",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Child A"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Child B"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "inline": [
+                  "Parent item two"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

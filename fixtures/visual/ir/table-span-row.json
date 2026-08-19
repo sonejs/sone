@@ -1,0 +1,292 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "#f0f0f0"
+      ],
+      "padding": 30
+    },
+    "children": [
+      {
+        "type": "table",
+        "props": {
+          "background": [
+            "white"
+          ],
+          "borderWidth": 1,
+          "borderColor": "#ccc",
+          "spacing": [
+            16,
+            10
+          ]
+        },
+        "children": [
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "props": {
+                  "rowspan": 2,
+                  "background": [
+                    "#4a90d9"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold",
+                      "color": "white"
+                    },
+                    "inline": [
+                      "Q1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "January"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "$12,400"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "February"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "$14,200"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "props": {
+                  "rowspan": 2,
+                  "background": [
+                    "#5a9e5a"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold",
+                      "color": "white"
+                    },
+                    "inline": [
+                      "Q2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "March"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "$13,800"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "April"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "$15,600"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "props": {
+                  "rowspan": 2,
+                  "background": [
+                    "#d9844a"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold",
+                      "color": "white"
+                    },
+                    "inline": [
+                      "Q3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "May"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "$11,900"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "June"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "$16,300"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,509 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "linear-gradient(180deg, #020617 0%, #0f172a 100%)"
+      ],
+      "padding": 36,
+      "gap": 0
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 30,
+          "weight": "bold",
+          "color": "#f8fafc"
+        },
+        "inline": [
+          "CSS Filters"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 13,
+          "color": "#94a3b8",
+          "marginTop": 4
+        },
+        "inline": [
+          "Every supported filter function, applied to one photo."
+        ]
+      },
+      {
+        "type": "grid",
+        "props": {
+          "columns": [
+            "1fr",
+            "1fr",
+            "1fr",
+            "1fr",
+            "1fr"
+          ],
+          "columnGap": 16,
+          "rowGap": 16,
+          "marginTop": 24
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "padding": 12,
+              "cornerRadius": [
+                14
+              ],
+              "background": [
+                "#111827"
+              ],
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/kouprey.jpg",
+                  "width": 200,
+                  "height": 200,
+                  "scaleType": "cover"
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "color": "#e2e8f0",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "none"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 12,
+              "cornerRadius": [
+                14
+              ],
+              "background": [
+                "#111827"
+              ],
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/kouprey.jpg",
+                  "width": 200,
+                  "height": 200,
+                  "scaleType": "cover",
+                  "filters": [
+                    "blur(4px)"
+                  ]
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "color": "#e2e8f0",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "blur(4)"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 12,
+              "cornerRadius": [
+                14
+              ],
+              "background": [
+                "#111827"
+              ],
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/kouprey.jpg",
+                  "width": 200,
+                  "height": 200,
+                  "scaleType": "cover",
+                  "filters": [
+                    "grayscale(1)"
+                  ]
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "color": "#e2e8f0",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "grayscale(1)"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 12,
+              "cornerRadius": [
+                14
+              ],
+              "background": [
+                "#111827"
+              ],
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/kouprey.jpg",
+                  "width": 200,
+                  "height": 200,
+                  "scaleType": "cover",
+                  "filters": [
+                    "sepia(1)"
+                  ]
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "color": "#e2e8f0",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "sepia(1)"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 12,
+              "cornerRadius": [
+                14
+              ],
+              "background": [
+                "#111827"
+              ],
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/kouprey.jpg",
+                  "width": 200,
+                  "height": 200,
+                  "scaleType": "cover",
+                  "filters": [
+                    "invert(1)"
+                  ]
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "color": "#e2e8f0",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "invert(1)"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 12,
+              "cornerRadius": [
+                14
+              ],
+              "background": [
+                "#111827"
+              ],
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/kouprey.jpg",
+                  "width": 200,
+                  "height": 200,
+                  "scaleType": "cover",
+                  "filters": [
+                    "brightness(1.6)"
+                  ]
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "color": "#e2e8f0",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "brightness(1.6)"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 12,
+              "cornerRadius": [
+                14
+              ],
+              "background": [
+                "#111827"
+              ],
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/kouprey.jpg",
+                  "width": 200,
+                  "height": 200,
+                  "scaleType": "cover",
+                  "filters": [
+                    "contrast(1.8)"
+                  ]
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "color": "#e2e8f0",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "contrast(1.8)"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 12,
+              "cornerRadius": [
+                14
+              ],
+              "background": [
+                "#111827"
+              ],
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/kouprey.jpg",
+                  "width": 200,
+                  "height": 200,
+                  "scaleType": "cover",
+                  "filters": [
+                    "saturate(2.5)"
+                  ]
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "color": "#e2e8f0",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "saturate(2.5)"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 12,
+              "cornerRadius": [
+                14
+              ],
+              "background": [
+                "#111827"
+              ],
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/kouprey.jpg",
+                  "width": 200,
+                  "height": 200,
+                  "scaleType": "cover",
+                  "filters": [
+                    "hue-rotate(120)"
+                  ]
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "color": "#e2e8f0",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "hueRotate(120)"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 12,
+              "cornerRadius": [
+                14
+              ],
+              "background": [
+                "#111827"
+              ],
+              "alignItems": "center"
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/kouprey.jpg",
+                  "width": 200,
+                  "height": 200,
+                  "scaleType": "cover",
+                  "filters": [
+                    "grayscale(1)",
+                    "contrast(1.4)"
+                  ]
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "weight": "bold",
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "color": "#e2e8f0",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "grayscale + contrast"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

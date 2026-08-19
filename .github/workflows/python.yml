@@ -1,0 +1,42 @@
+name: python
+
+on:
+  push:
+    branches: [main]
+    paths: ["crates/**", "bindings/python/**", "fixtures/**", ".github/workflows/python.yml"]
+  pull_request:
+    paths: ["crates/**", "bindings/python/**", "fixtures/**", ".github/workflows/python.yml"]
+
+defaults:
+  run:
+    working-directory: bindings/python
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-24.04, windows-2022]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: bindings/python
+      - name: Install Linux build dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev
+      - run: pip install maturin pytest
+      # abi3 means one wheel covers every supported interpreter.
+      - run: maturin build --release --out dist
+      - run: pip install --find-links dist sone
+      - run: pytest tests -q
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wheel-${{ matrix.os }}
+          path: bindings/python/dist/*.whl

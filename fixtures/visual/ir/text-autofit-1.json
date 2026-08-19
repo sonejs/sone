@@ -1,0 +1,398 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "gap": 24,
+      "padding": 40,
+      "background": [
+        "#f5eee6"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 26,
+          "weight": "bold",
+          "color": "#2f241f"
+        },
+        "inline": [
+          "nowrap + autofit visual regression"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 14,
+          "maxWidth": 800,
+          "color": "#6d4c41",
+          "lineHeight": 1.4
+        },
+        "inline": [
+          "Each card shows text fitted to exactly one line within the card width."
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 24,
+          "flexWrap": "wrap"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                20
+              ],
+              "tag": "nowrap-autofit-short"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 14,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "nowrap-autofit-short-title"
+                },
+                "inline": [
+                  "nowrap-autofit-short"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "width": 300,
+                  "nowrap": true,
+                  "autofit": true,
+                  "color": "#1a3c5e"
+                },
+                "inline": [
+                  "Hello World"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                20
+              ],
+              "tag": "nowrap-autofit-long"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 14,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "nowrap-autofit-long-title"
+                },
+                "inline": [
+                  "nowrap-autofit-long"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "width": 300,
+                  "nowrap": true,
+                  "autofit": true,
+                  "color": "#1a3c5e"
+                },
+                "inline": [
+                  "The quick brown fox jumps over the lazy dog"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                20
+              ],
+              "tag": "nowrap-autofit-very-long"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 14,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "nowrap-autofit-very-long-title"
+                },
+                "inline": [
+                  "nowrap-autofit-very-long"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "width": 300,
+                  "nowrap": true,
+                  "autofit": true,
+                  "color": "#1a3c5e"
+                },
+                "inline": [
+                  "AAAA AAAA AAAA AAAA AAAA AAAA AAAA AAAA AAAA AAAA"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 24,
+          "flexWrap": "wrap"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                20
+              ],
+              "tag": "nowrap-only (overflows)"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 14,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "nowrap-only (overflows)-title"
+                },
+                "inline": [
+                  "nowrap-only (overflows)"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 22,
+                  "width": 300,
+                  "nowrap": true,
+                  "color": "#8a2d3b"
+                },
+                "inline": [
+                  "NOWRAP NOWRAP NOWRAP NOWRAP NOWRAP"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                20
+              ],
+              "tag": "autofit-height (no nowrap)"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 14,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "autofit-height (no nowrap)-title"
+                },
+                "inline": [
+                  "autofit-height (no nowrap)"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 22,
+                  "height": 80,
+                  "autofit": true,
+                  "alignSelf": "flex-start",
+                  "color": "#2d5e3b"
+                },
+                "inline": [
+                  "This text fits into a fixed height box by shrinking the font size automatically."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 340,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                20
+              ],
+              "tag": "nowrap-autofit-narrow"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 14,
+                  "weight": "bold",
+                  "color": "#6d4c41",
+                  "tag": "nowrap-autofit-narrow-title"
+                },
+                "inline": [
+                  "nowrap-autofit-narrow"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "width": 160,
+                  "nowrap": true,
+                  "autofit": true,
+                  "color": "#1a3c5e"
+                },
+                "inline": [
+                  "Wide text in a narrow box"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

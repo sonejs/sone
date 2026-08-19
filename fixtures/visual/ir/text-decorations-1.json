@@ -1,0 +1,214 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%)"
+      ],
+      "padding": 40,
+      "gap": 10
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 30,
+          "weight": "bold",
+          "color": "#0f172a"
+        },
+        "inline": [
+          "Text Decorations"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 13,
+          "color": "#475569",
+          "marginTop": 4,
+          "marginBottom": 20
+        },
+        "inline": [
+          "Underline, overline, strike, highlight, tracking, and outline."
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 26,
+          "lineHeight": 1.9,
+          "color": "#0f172a"
+        },
+        "inline": [
+          {
+            "type": "span",
+            "props": {
+              "underline": 2,
+              "underlineColor": "#2563eb"
+            },
+            "inline": [
+              "underline "
+            ]
+          },
+          {
+            "type": "span",
+            "props": {
+              "overline": 2,
+              "overlineColor": "#16a34a"
+            },
+            "inline": [
+              "overline "
+            ]
+          },
+          {
+            "type": "span",
+            "props": {
+              "lineThrough": 2,
+              "lineThroughColor": "#dc2626"
+            },
+            "inline": [
+              "strike"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 26,
+          "lineHeight": 1.9,
+          "color": "#0f172a"
+        },
+        "inline": [
+          "a ",
+          {
+            "type": "span",
+            "props": {
+              "highlightColor": "#fde047"
+            },
+            "inline": [
+              "highlighted"
+            ]
+          },
+          " and ",
+          {
+            "type": "span",
+            "props": {
+              "color": "#7c3aed",
+              "weight": "bold"
+            },
+            "inline": [
+              "coloured"
+            ]
+          },
+          " run"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 26,
+          "lineHeight": 1.9,
+          "color": "#0f172a"
+        },
+        "inline": [
+          {
+            "type": "span",
+            "props": {
+              "letterSpacing": -1
+            },
+            "inline": [
+              "tight"
+            ]
+          },
+          "  normal  ",
+          {
+            "type": "span",
+            "props": {
+              "letterSpacing": 4
+            },
+            "inline": [
+              "l o o s e"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 26,
+          "wordSpacing": 14,
+          "color": "#0f172a"
+        },
+        "inline": [
+          "wide  word  spacing  demo"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 72,
+          "weight": "bold",
+          "color": "transparent",
+          "strokeColor": "#0ea5e9",
+          "strokeWidth": 2,
+          "marginTop": 10
+        },
+        "inline": [
+          "OUTLINE"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 56,
+          "weight": "bold",
+          "color": "#f8fafc",
+          "strokeColor": "#0f172a",
+          "strokeWidth": 3
+        },
+        "inline": [
+          "FILL + STROKE"
+        ]
+      }
+    ]
+  }
+}

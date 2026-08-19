@@ -1,0 +1,1011 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "gap": 32,
+      "background": [
+        "#f9fafb"
+      ],
+      "padding": 40
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "sans-serif"
+          ],
+          "size": 13,
+          "weight": "bold",
+          "color": "#888",
+          "alignSelf": "flex-start"
+        },
+        "inline": [
+          "Balance across font sizes & container widths"
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "gap": 10
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "font": [
+                "sans-serif"
+              ],
+              "size": 11,
+              "weight": "bold",
+              "color": "#d1d5db"
+            },
+            "inline": [
+              "varying font size  (container = 360px)"
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "gap": 16,
+              "alignItems": "flex-start"
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "gap": 12,
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#9ca3af",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "12px — greedy"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 12,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 360
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 360,
+                          "background": [
+                            "#e5e7eb"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#6366f1",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "12px — balanced"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 12,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 360,
+                          "textWrap": "balance"
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 360,
+                          "background": [
+                            "#6366f1"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "gap": 12,
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#9ca3af",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "16px — greedy"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 16,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 360
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 360,
+                          "background": [
+                            "#e5e7eb"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#6366f1",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "16px — balanced"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 16,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 360,
+                          "textWrap": "balance"
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 360,
+                          "background": [
+                            "#6366f1"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "gap": 12,
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#9ca3af",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "22px — greedy"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 22,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 360
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 360,
+                          "background": [
+                            "#e5e7eb"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#6366f1",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "22px — balanced"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 22,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 360,
+                          "textWrap": "balance"
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 360,
+                          "background": [
+                            "#6366f1"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "gap": 12,
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#9ca3af",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "30px — greedy"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 30,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 360
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 360,
+                          "background": [
+                            "#e5e7eb"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#6366f1",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "30px — balanced"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 30,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 360,
+                          "textWrap": "balance"
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 360,
+                          "background": [
+                            "#6366f1"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "gap": 10
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "font": [
+                "sans-serif"
+              ],
+              "size": 11,
+              "weight": "bold",
+              "color": "#d1d5db"
+            },
+            "inline": [
+              "varying container width  (font = 18px)"
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "gap": 16,
+              "alignItems": "flex-start"
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "gap": 12,
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#9ca3af",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "200px — greedy"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 18,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 200
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 200,
+                          "background": [
+                            "#e5e7eb"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#10b981",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "200px — balanced"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 18,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 200,
+                          "textWrap": "balance"
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 200,
+                          "background": [
+                            "#10b981"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "gap": 12,
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#9ca3af",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "340px — greedy"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 18,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 340
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 340,
+                          "background": [
+                            "#e5e7eb"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#10b981",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "340px — balanced"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 18,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 340,
+                          "textWrap": "balance"
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 340,
+                          "background": [
+                            "#10b981"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "gap": 12,
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#9ca3af",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "500px — greedy"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 18,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 500
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 500,
+                          "background": [
+                            "#e5e7eb"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "gap": 8,
+                      "background": [
+                        "white"
+                      ],
+                      "padding": 20,
+                      "cornerRadius": [
+                        12
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#10b981",
+                          "letterSpacing": 1
+                        },
+                        "inline": [
+                          "500px — balanced"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "font": [
+                            "sans-serif"
+                          ],
+                          "size": 18,
+                          "lineHeight": 1.45,
+                          "color": "#1f2937",
+                          "maxWidth": 500,
+                          "textWrap": "balance"
+                        },
+                        "inline": [
+                          "Typography shapes how readers experience content — balance makes it look intentional."
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "height": 2,
+                          "width": 500,
+                          "background": [
+                            "#10b981"
+                          ],
+                          "cornerRadius": [
+                            1
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

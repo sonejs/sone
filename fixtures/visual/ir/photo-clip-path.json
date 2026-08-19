@@ -1,0 +1,86 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "#dfe6e9"
+      ],
+      "padding": 30
+    },
+    "children": [
+      {
+        "type": "row",
+        "props": {
+          "gap": 20
+        },
+        "children": [
+          {
+            "type": "photo",
+            "props": {
+              "src": "../../image/kouprey.jpg",
+              "width": 150,
+              "height": 150,
+              "clipPath": "M 75 0 L 150 150 L 0 150 Z"
+            }
+          },
+          {
+            "type": "photo",
+            "props": {
+              "src": "../../image/kouprey.jpg",
+              "width": 150,
+              "height": 150,
+              "clipPath": "M 75 5 L 95 65 L 150 65 L 105 100 L 120 150 L 75 115 L 30 150 L 45 100 L 0 65 L 55 65 Z"
+            }
+          },
+          {
+            "type": "photo",
+            "props": {
+              "src": "../../image/kouprey.jpg",
+              "width": 150,
+              "height": 150,
+              "clipPath": "M 75 0 L 150 75 L 75 150 L 0 75 Z"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

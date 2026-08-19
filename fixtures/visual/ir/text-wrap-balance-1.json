@@ -1,0 +1,334 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "gap": 20,
+      "background": [
+        "#f4f4f4"
+      ],
+      "padding": 40
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "sans-serif"
+          ],
+          "size": 13,
+          "weight": "bold",
+          "color": "#888",
+          "alignSelf": "flex-start"
+        },
+        "inline": [
+          "text-wrap: balance demo"
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 20
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 8,
+              "flex": 1,
+              "background": [
+                "white"
+              ],
+              "padding": 20,
+              "cornerRadius": [
+                12
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "sans-serif"
+                  ],
+                  "size": 11,
+                  "color": "#aaa",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "default (greedy)"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "sans-serif"
+                  ],
+                  "size": 16,
+                  "lineHeight": 1.5,
+                  "color": "#111",
+                  "maxWidth": 480
+                },
+                "inline": [
+                  "The quick brown fox jumps over the lazy dog near the river bank on a sunny afternoon."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 8,
+              "flex": 1,
+              "background": [
+                "white"
+              ],
+              "padding": 20,
+              "cornerRadius": [
+                12
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "sans-serif"
+                  ],
+                  "size": 11,
+                  "color": "#aaa",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "textWrap('balance')"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "sans-serif"
+                  ],
+                  "size": 16,
+                  "lineHeight": 1.5,
+                  "color": "#111",
+                  "maxWidth": 480,
+                  "textWrap": "balance"
+                },
+                "inline": [
+                  "The quick brown fox jumps over the lazy dog near the river bank on a sunny afternoon."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 20
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 8,
+              "flex": 1,
+              "background": [
+                "white"
+              ],
+              "padding": 20,
+              "cornerRadius": [
+                12
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "sans-serif"
+                  ],
+                  "size": 11,
+                  "color": "#aaa",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "default (greedy)"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "sans-serif"
+                  ],
+                  "size": 28,
+                  "weight": "bold",
+                  "lineHeight": 1.3,
+                  "color": "#111",
+                  "maxWidth": 480
+                },
+                "inline": [
+                  "Breaking News: Scientists Discover New Species in the Amazon Rainforest"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 8,
+              "flex": 1,
+              "background": [
+                "white"
+              ],
+              "padding": 20,
+              "cornerRadius": [
+                12
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "sans-serif"
+                  ],
+                  "size": 11,
+                  "color": "#aaa",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "textWrap('balance')"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "sans-serif"
+                  ],
+                  "size": 28,
+                  "weight": "bold",
+                  "lineHeight": 1.3,
+                  "color": "#111",
+                  "maxWidth": 480,
+                  "textWrap": "balance"
+                },
+                "inline": [
+                  "Breaking News: Scientists Discover New Species in the Amazon Rainforest"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "gap": 8,
+          "background": [
+            "white"
+          ],
+          "padding": 20,
+          "cornerRadius": [
+            12
+          ]
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "font": [
+                "sans-serif"
+              ],
+              "size": 11,
+              "color": "#aaa",
+              "weight": "bold"
+            },
+            "inline": [
+              "balanced with mixed spans"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "font": [
+                "sans-serif"
+              ],
+              "size": 20,
+              "lineHeight": 1.6,
+              "color": "#222",
+              "maxWidth": 980,
+              "textWrap": "balance"
+            },
+            "inline": [
+              "A ",
+              {
+                "type": "span",
+                "props": {
+                  "color": "royalblue",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "balanced"
+                ]
+              },
+              " layout distributes text evenly across lines, reducing the ",
+              {
+                "type": "span",
+                "props": {
+                  "color": "tomato",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "ragged-right"
+                ]
+              },
+              " effect common in typesetting."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

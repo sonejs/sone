@@ -1,0 +1,48 @@
+name: rust
+
+on:
+  push:
+    branches: [main]
+    paths: ["crates/**", "include/**", "fixtures/**", "Cargo.*", ".github/workflows/rust.yml"]
+  pull_request:
+    paths: ["crates/**", "include/**", "fixtures/**", "Cargo.*", ".github/workflows/rust.yml"]
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-24.04, windows-2022]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: Install Linux build dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev
+      - run: cargo fmt --all --check
+      - run: cargo clippy --workspace --all-targets -- -D warnings
+      - run: cargo test --workspace
+
+  goldens:
+    name: goldens
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev poppler-utils
+      # `embed-freetype` makes glyph rasterization host-independent, so the
+      # vendored JPEGs are comparable on any runner.
+      - run: cargo run --release -p sone-goldens --bin sone-goldens
+      - run: cargo run --release -p sone-goldens --bin layout-diff
+        continue-on-error: true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: goldens-report
+          path: target/goldens

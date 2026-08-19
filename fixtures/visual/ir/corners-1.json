@@ -1,0 +1,397 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "linear-gradient(180deg, #020617 0%, #0f172a 100%)"
+      ],
+      "padding": 36,
+      "gap": 0
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 30,
+          "weight": "bold",
+          "color": "#f8fafc"
+        },
+        "inline": [
+          "Corners & Smoothing"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 13,
+          "color": "#94a3b8",
+          "marginTop": 4
+        },
+        "inline": [
+          "Uniform and per-corner radius, iOS-style squircles, and cut corners."
+        ]
+      },
+      {
+        "type": "grid",
+        "props": {
+          "columns": [
+            "1fr",
+            "1fr",
+            "1fr",
+            "1fr"
+          ],
+          "columnGap": 20,
+          "rowGap": 20,
+          "marginTop": 24
+        },
+        "children": [
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 120,
+                  "background": [
+                    "linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%)"
+                  ],
+                  "borderWidth": 2,
+                  "borderColor": "#047857",
+                  "padding": 12,
+                  "justifyContent": "flex-end"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0f172a"
+                    },
+                    "inline": [
+                      "radius 0"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 120,
+                  "background": [
+                    "linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%)"
+                  ],
+                  "borderWidth": 2,
+                  "borderColor": "#047857",
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "cornerRadius": [
+                    24
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0f172a"
+                    },
+                    "inline": [
+                      "radius 24"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 120,
+                  "background": [
+                    "linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%)"
+                  ],
+                  "borderWidth": 2,
+                  "borderColor": "#047857",
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "cornerRadius": [
+                    60
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0f172a"
+                    },
+                    "inline": [
+                      "radius 60"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 120,
+                  "background": [
+                    "linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%)"
+                  ],
+                  "borderWidth": 2,
+                  "borderColor": "#047857",
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "cornerRadius": [
+                    40,
+                    4,
+                    40,
+                    4
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0f172a"
+                    },
+                    "inline": [
+                      "per-corner"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 120,
+                  "background": [
+                    "linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%)"
+                  ],
+                  "borderWidth": 2,
+                  "borderColor": "#047857",
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "cornerRadius": [
+                    36
+                  ],
+                  "cornerSmoothing": 0.6
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0f172a"
+                    },
+                    "inline": [
+                      "smoothing 0.6"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 120,
+                  "background": [
+                    "linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%)"
+                  ],
+                  "borderWidth": 2,
+                  "borderColor": "#047857",
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "cornerRadius": [
+                    36
+                  ],
+                  "cornerSmoothing": 1
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0f172a"
+                    },
+                    "inline": [
+                      "smoothing 1.0"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 120,
+                  "background": [
+                    "linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%)"
+                  ],
+                  "borderWidth": 2,
+                  "borderColor": "#047857",
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "cornerRadius": [
+                    28
+                  ],
+                  "corner": "cut"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0f172a"
+                    },
+                    "inline": [
+                      "cut corners"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "width": 180,
+                  "height": 120,
+                  "background": [
+                    "linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%)"
+                  ],
+                  "borderWidth": 2,
+                  "borderColor": "#047857",
+                  "padding": 12,
+                  "justifyContent": "flex-end",
+                  "cornerRadius": [
+                    999
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0f172a"
+                    },
+                    "inline": [
+                      "pill"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

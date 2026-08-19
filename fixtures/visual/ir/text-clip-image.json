@@ -1,0 +1,88 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "#2d3436"
+      ],
+      "padding": 40,
+      "gap": 30,
+      "width": 600
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 90,
+          "weight": "bold",
+          "clipImage": {
+            "type": "photo",
+            "props": {
+              "src": "../../image/kouprey.jpg",
+              "scaleType": "cover"
+            }
+          }
+        },
+        "inline": [
+          "SONE"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 60,
+          "weight": "bold",
+          "align": "center",
+          "clipImage": {
+            "type": "photo",
+            "props": {
+              "src": "../../image/kouprey.jpg",
+              "scaleType": "cover"
+            }
+          }
+        },
+        "inline": [
+          "HELLO WORLD"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "tan"
+      ],
+      "padding": 20,
+      "gap": 20
+    },
+    "children": [
+      {
+        "type": "column",
+        "props": {
+          "gap": 20,
+          "padding": 20,
+          "width": 420,
+          "height": 300,
+          "background": [
+            "khaki"
+          ],
+          "cornerRadius": [
+            28
+          ],
+          "borderColor": "chocolate",
+          "borderWidth": 4,
+          "rotation": 20
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "flex": 1,
+              "cornerRadius": [
+                20
+              ],
+              "cornerSmoothing": 0.7,
+              "background": [
+                "white"
+              ]
+            }
+          },
+          {
+            "type": "row",
+            "props": {
+              "gap": 10
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "background": [
+                    "lightgreen"
+                  ],
+                  "width": 50,
+                  "height": 50,
+                  "cornerRadius": [
+                    14
+                  ],
+                  "borderColor": "teal",
+                  "borderWidth": 2
+                }
+              },
+              {
+                "type": "column",
+                "props": {
+                  "background": [
+                    "salmon"
+                  ],
+                  "height": 50,
+                  "cornerRadius": [
+                    14
+                  ],
+                  "flex": 1
+                }
+              },
+              {
+                "type": "column",
+                "props": {
+                  "background": [
+                    "orange"
+                  ],
+                  "width": 50,
+                  "height": 50,
+                  "cornerRadius": [
+                    14
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "photo",
+        "props": {
+          "src": "../../image/kouprey.jpg",
+          "width": 300,
+          "preserveAspectRatio": true,
+          "cornerRadius": [
+            30
+          ],
+          "cornerSmoothing": 0.7,
+          "flipVertical": true,
+          "flipHorizontal": true,
+          "borderColor": "tomato",
+          "borderWidth": 4
+        }
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 20
+        },
+        "children": [
+          {
+            "type": "photo",
+            "props": {
+              "src": "../../image/kouprey.jpg",
+              "width": 200,
+              "height": 200,
+              "scaleType": "contain",
+              "cornerRadius": [
+                40
+              ],
+              "cornerSmoothing": 0.7,
+              "background": [
+                "thistle"
+              ]
+            }
+          },
+          {
+            "type": "photo",
+            "props": {
+              "src": "../../image/kouprey.jpg",
+              "width": 300,
+              "height": 200,
+              "scaleType": "cover"
+            }
+          }
+        ]
+      },
+      {
+        "type": "photo",
+        "props": {
+          "src": "../../image/kouprey.jpg",
+          "width": 150,
+          "height": 220,
+          "scaleType": "cover"
+        }
+      },
+      {
+        "type": "photo",
+        "props": {
+          "src": "../../image/tiger.svg",
+          "width": 400,
+          "preserveAspectRatio": true
+        }
+      },
+      {
+        "type": "photo",
+        "props": {
+          "src": "data:application/octet-stream;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMzAgMjMwIiB3aWR0aD0iMjMwIiBoZWlnaHQ9IjIzMCI+PHJlY3QgZmlsbD0id2hpdGUiIHdpZHRoPSIyMzAiIGhlaWdodD0iMjMwIi8+PHBhdGggZmlsbD0iYmxhY2siIGQ9Ik0xMCwxMGgxMHYxMGgtMTB6TTIwLDEwaDEwdjEwaC0xMHpNMzAsMTBoMTB2MTBoLTEwek00MCwxMGgxMHYxMGgtMTB6TTUwLDEwaDEwdjEwaC0xMHpNNjAsMTBoMTB2MTBoLTEwek03MCwxMGgxMHYxMGgtMTB6TTEwMCwxMGgxMHYxMGgtMTB6TTEyMCwxMGgxMHYxMGgtMTB6TTEzMCwxMGgxMHYxMGgtMTB6TTE1MCwxMGgxMHYxMGgtMTB6TTE2MCwxMGgxMHYxMGgtMTB6TTE3MCwxMGgxMHYxMGgtMTB6TTE4MCwxMGgxMHYxMGgtMTB6TTE5MCwxMGgxMHYxMGgtMTB6TTIwMCwxMGgxMHYxMGgtMTB6TTIxMCwxMGgxMHYxMGgtMTB6TTEwLDIwaDEwdjEwaC0xMHpNNzAsMjBoMTB2MTBoLTEwek05MCwyMGgxMHYxMGgtMTB6TTEwMCwyMGgxMHYxMGgtMTB6TTEyMCwyMGgxMHYxMGgtMTB6TTE1MCwyMGgxMHYxMGgtMTB6TTIxMCwyMGgxMHYxMGgtMTB6TTEwLDMwaDEwdjEwaC0xMHpNMzAsMzBoMTB2MTBoLTEwek00MCwzMGgxMHYxMGgtMTB6TTUwLDMwaDEwdjEwaC0xMHpNNzAsMzBoMTB2MTBoLTEwek05MCwzMGgxMHYxMGgtMTB6TTEwMCwzMGgxMHYxMGgtMTB6TTEzMCwzMGgxMHYxMGgtMTB6TTE1MCwzMGgxMHYxMGgtMTB6TTE3MCwzMGgxMHYxMGgtMTB6TTE4MCwzMGgxMHYxMGgtMTB6TTE5MCwzMGgxMHYxMGgtMTB6TTIxMCwzMGgxMHYxMGgtMTB6TTEwLDQwaDEwdjEwaC0xMHpNMzAsNDBoMTB2MTBoLTEwek00MCw0MGgxMHYxMGgtMTB6TTUwLDQwaDEwdjEwaC0xMHpNNzAsNDBoMTB2MTBoLTEwek0xMDAsNDBoMTB2MTBoLTEwek0xMjAsNDBoMTB2MTBoLTEwek0xNTAsNDBoMTB2MTBoLTEwek0xNzAsNDBoMTB2MTBoLTEwek0xODAsNDBoMTB2MTBoLTEwek0xOTAsNDBoMTB2MTBoLTEwek0yMTAsNDBoMTB2MTBoLTEwek0xMCw1MGgxMHYxMGgtMTB6TTMwLDUwaDEwdjEwaC0xMHpNNDAsNTBoMTB2MTBoLTEwek01MCw1MGgxMHYxMGgtMTB6TTcwLDUwaDEwdjEwaC0xMHpNOTAsNTBoMTB2MTBoLTEwek0xMzAsNTBoMTB2MTBoLTEwek0xNTAsNTBoMTB2MTBoLTEwek0xNzAsNTBoMTB2MTBoLTEwek0xODAsNTBoMTB2MTBoLTEwek0xOTAsNTBoMTB2MTBoLTEwek0yMTAsNTBoMTB2MTBoLTEwek0xMCw2MGgxMHYxMGgtMTB6TTcwLDYwaDEwdjEwaC0xMHpNOTAsNjBoMTB2MTBoLTEwek0xMjAsNjBoMTB2MTBoLTEwek0xMzAsNjBoMTB2MTBoLTEwek0xNTAsNjBoMTB2MTBoLTEwek0yMTAsNjBoMTB2MTBoLTEwek0xMCw3MGgxMHYxMGgtMTB6TTIwLDcwaDEwdjEwaC0xMHpNMzAsNzBoMTB2MTBoLTEwek00MCw3MGgxMHYxMGgtMTB6TTUwLDcwaDEwdjEwaC0xMHpNNjAsNzBoMTB2MTBoLTEwek03MCw3MGgxMHYxMGgtMTB6TTkwLDcwaDEwdjEwaC0xMHpNMTEwLDcwaDEwdjEwaC0xMHpNMTMwLDcwaDEwdjEwaC0xMHpNMTUwLDcwaDEwdjEwaC0xMHpNMTYwLDcwaDEwdjEwaC0xMHpNMTcwLDcwaDEwdjEwaC0xMHpNMTgwLDcwaDEwdjEwaC0xMHpNMTkwLDcwaDEwdjEwaC0xMHpNMjAwLDcwaDEwdjEwaC0xMHpNMjEwLDcwaDEwdjEwaC0xMHpNOTAsODBoMTB2MTBoLTEwek0xMDAsODBoMTB2MTBoLTEwek0xMTAsODBoMTB2MTBoLTEwek0xMjAsODBoMTB2MTBoLTEwek0xMzAsODBoMTB2MTBoLTEwek0xMCw5MGgxMHYxMGgtMTB6TTIwLDkwaDEwdjEwaC0xMHpNNDAsOTBoMTB2MTBoLTEwek03MCw5MGgxMHYxMGgtMTB6TTgwLDkwaDEwdjEwaC0xMHpNMTAwLDkwaDEwdjEwaC0xMHpNMTEwLDkwaDEwdjEwaC0xMHpNMTUwLDkwaDEwdjEwaC0xMHpNMTYwLDkwaDEwdjEwaC0xMHpNMTcwLDkwaDEwdjEwaC0xMHpNMTkwLDkwaDEwdjEwaC0xMHpNMjAwLDkwaDEwdjEwaC0xMHpNMjAsMTAwaDEwdjEwaC0xMHpNMzAsMTAwaDEwdjEwaC0xMHpNNDAsMTAwaDEwdjEwaC0xMHpNNTAsMTAwaDEwdjEwaC0xMHpNNjAsMTAwaDEwdjEwaC0xMHpNODAsMTAwaDEwdjEwaC0xMHpNOTAsMTAwaDEwdjEwaC0xMHpNMTAwLDEwMGgxMHYxMGgtMTB6TTE1MCwxMDBoMTB2MTBoLTEwek0yMDAsMTAwaDEwdjEwaC0xMHpNMjEwLDEwMGgxMHYxMGgtMTB6TTMwLDExMGgxMHYxMGgtMTB6TTQwLDExMGgxMHYxMGgtMTB6TTYwLDExMGgxMHYxMGgtMTB6TTcwLDExMGgxMHYxMGgtMTB6TTgwLDExMGgxMHYxMGgtMTB6TTkwLDExMGgxMHYxMGgtMTB6TTExMCwxMTBoMTB2MTBoLTEwek0xMzAsMTEwaDEwdjEwaC0xMHpNMTQwLDExMGgxMHYxMGgtMTB6TTE4MCwxMTBoMTB2MTBoLTEwek0xOTAsMTEwaDEwdjEwaC0xMHpNMjEwLDExMGgxMHYxMGgtMTB6TTQwLDEyMGgxMHYxMGgtMTB6TTYwLDEyMGgxMHYxMGgtMTB6TTkwLDEyMGgxMHYxMGgtMTB6TTEyMCwxMjBoMTB2MTBoLTEwek0xODAsMTIwaDEwdjEwaC0xMHpNMjAwLDEyMGgxMHYxMGgtMTB6TTIxMCwxMjBoMTB2MTBoLTEwek01MCwxMzBoMTB2MTBoLTEwek03MCwxMzBoMTB2MTBoLTEwek04MCwxMzBoMTB2MTBoLTEwek0xMDAsMTMwaDEwdjEwaC0xMHpNMTEwLDEzMGgxMHYxMGgtMTB6TTEzMCwxMzBoMTB2MTBoLTEwek0xNTAsMTMwaDEwdjEwaC0xMHpNMTcwLDEzMGgxMHYxMGgtMTB6TTkwLDE0MGgxMHYxMGgtMTB6TTEwMCwxNDBoMTB2MTBoLTEwek0xMTAsMTQwaDEwdjEwaC0xMHpNMTIwLDE0MGgxMHYxMGgtMTB6TTE2MCwxNDBoMTB2MTBoLTEwek0xNzAsMTQwaDEwdjEwaC0xMHpNMTkwLDE0MGgxMHYxMGgtMTB6TTIxMCwxNDBoMTB2MTBoLTEwek0xMCwxNTBoMTB2MTBoLTEwek0yMCwxNTBoMTB2MTBoLTEwek0zMCwxNTBoMTB2MTBoLTEwek00MCwxNTBoMTB2MTBoLTEwek01MCwxNTBoMTB2MTBoLTEwek02MCwxNTBoMTB2MTBoLTEwek03MCwxNTBoMTB2MTBoLTEwek05MCwxNTBoMTB2MTBoLTEwek0xMDAsMTUwaDEwdjEwaC0xMHpNMTEwLDE1MGgxMHYxMGgtMTB6TTE0MCwxNTBoMTB2MTBoLTEwek0xNjAsMTUwaDEwdjEwaC0xMHpNMTgwLDE1MGgxMHYxMGgtMTB6TTE5MCwxNTBoMTB2MTBoLTEwek0yMDAsMTUwaDEwdjEwaC0xMHpNMTAsMTYwaDEwdjEwaC0xMHpNNzAsMTYwaDEwdjEwaC0xMHpNMTAwLDE2MGgxMHYxMGgtMTB6TTExMCwxNjBoMTB2MTBoLTEwek0xMjAsMTYwaDEwdjEwaC0xMHpNMTMwLDE2MGgxMHYxMGgtMTB6TTE0MCwxNjBoMTB2MTBoLTEwek0xNjAsMTYwaDEwdjEwaC0xMHpNMTcwLDE2MGgxMHYxMGgtMTB6TTEwLDE3MGgxMHYxMGgtMTB6TTMwLDE3MGgxMHYxMGgtMTB6TTQwLDE3MGgxMHYxMGgtMTB6TTUwLDE3MGgxMHYxMGgtMTB6TTcwLDE3MGgxMHYxMGgtMTB6TTEwMCwxNzBoMTB2MTBoLTEwek0xMjAsMTcwaDEwdjEwaC0xMHpNMTUwLDE3MGgxMHYxMGgtMTB6TTE2MCwxNzBoMTB2MTBoLTEwek0xNzAsMTcwaDEwdjEwaC0xMHpNMjEwLDE3MGgxMHYxMGgtMTB6TTEwLDE4MGgxMHYxMGgtMTB6TTMwLDE4MGgxMHYxMGgtMTB6TTQwLDE4MGgxMHYxMGgtMTB6TTUwLDE4MGgxMHYxMGgtMTB6TTcwLDE4MGgxMHYxMGgtMTB6TTkwLDE4MGgxMHYxMGgtMTB6TTExMCwxODBoMTB2MTBoLTEwek0xMjAsMTgwaDEwdjEwaC0xMHpNMTYwLDE4MGgxMHYxMGgtMTB6TTE4MCwxODBoMTB2MTBoLTEwek0xOTAsMTgwaDEwdjEwaC0xMHpNMjAwLDE4MGgxMHYxMGgtMTB6TTIxMCwxODBoMTB2MTBoLTEwek0xMCwxOTBoMTB2MTBoLTEwek0zMCwxOTBoMTB2MTBoLTEwek00MCwxOTBoMTB2MTBoLTEwek01MCwxOTBoMTB2MTBoLTEwek03MCwxOTBoMTB2MTBoLTEwek0xMDAsMTkwaDEwdjEwaC0xMHpNMTEwLDE5MGgxMHYxMGgtMTB6TTEzMCwxOTBoMTB2MTBoLTEwek0xNzAsMTkwaDEwdjEwaC0xMHpNMTkwLDE5MGgxMHYxMGgtMTB6TTIxMCwxOTBoMTB2MTBoLTEwek0xMCwyMDBoMTB2MTBoLTEwek03MCwyMDBoMTB2MTBoLTEwek05MCwyMDBoMTB2MTBoLTEwek0xMDAsMjAwaDEwdjEwaC0xMHpNMTEwLDIwMGgxMHYxMGgtMTB6TTE0MCwyMDBoMTB2MTBoLTEwek0xNTAsMjAwaDEwdjEwaC0xMHpNMTAsMjEwaDEwdjEwaC0xMHpNMjAsMjEwaDEwdjEwaC0xMHpNMzAsMjEwaDEwdjEwaC0xMHpNNDAsMjEwaDEwdjEwaC0xMHpNNTAsMjEwaDEwdjEwaC0xMHpNNjAsMjEwaDEwdjEwaC0xMHpNNzAsMjEwaDEwdjEwaC0xMHpNOTAsMjEwaDEwdjEwaC0xMHpNMTEwLDIxMGgxMHYxMGgtMTB6TTEyMCwyMTBoMTB2MTBoLTEwek0xMzAsMjEwaDEwdjEwaC0xMHpNMTYwLDIxMGgxMHYxMGgtMTB6TTE4MCwyMTBoMTB2MTBoLTEwek0yMDAsMjEwaDEwdjEwaC0xMHoiLz48L3N2Zz4="
+        }
+      }
+    ]
+  }
+}

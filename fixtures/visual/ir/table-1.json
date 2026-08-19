@@ -1,0 +1,765 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "#fff"
+      ],
+      "padding": 40
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 56,
+          "font": [
+            "Inter Khmer"
+          ],
+          "weight": "bold"
+        },
+        "inline": [
+          "Sone.js ",
+          {
+            "type": "span",
+            "props": {
+              "highlightColor": "lightgray"
+            },
+            "inline": [
+              "Table"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 32,
+          "font": [
+            "Inter Khmer"
+          ],
+          "color": "slategray",
+          "marginBottom": 20
+        },
+        "inline": [
+          "Table កម្រិតខ្ពស់ដែលបានបង្កើតរួចហើយ។ ត្រៀមចំពោះការបង្កើត invoice!"
+        ]
+      },
+      {
+        "type": "text-default",
+        "props": {
+          "size": 22,
+          "font": [
+            "Inter Khmer"
+          ],
+          "color": "black"
+        },
+        "children": [
+          {
+            "type": "table",
+            "props": {
+              "background": [
+                "white"
+              ],
+              "borderWidth": 2,
+              "borderColor": "black",
+              "spacing": [
+                32,
+                12
+              ]
+            },
+            "children": [
+              {
+                "type": "table-row",
+                "props": {
+                  "background": [
+                    "brown"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text-default",
+                    "props": {
+                      "color": "white",
+                      "weight": "bold",
+                      "size": 22
+                    },
+                    "children": [
+                      {
+                        "type": "table-cell",
+                        "children": [
+                          {
+                            "type": "text",
+                            "inline": [
+                              "កិច្ចការ"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "table-cell",
+                        "children": [
+                          {
+                            "type": "text",
+                            "inline": [
+                              "Project"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "table-cell",
+                        "props": {
+                          "alignItems": "center"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "inline": [
+                              "អ្នកទទួលខុសត្រូវ"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "table-cell",
+                        "children": [
+                          {
+                            "type": "text",
+                            "inline": [
+                              "ការពិពណ៌នា"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "រៀបចំ CI/CD Pipeline"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "E-commerce Platform"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Alex Chen"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "maxWidth": 300,
+                          "lineHeight": 1.3
+                        },
+                        "inline": [
+                          "កំណត់រចនាសម្ព័ន្ធ automated testing និង deployment workflows"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "props": {
+                  "background": [
+                    "yellow"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "រចនា User Dashboard"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Analytics App"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Sarah Johnson"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "maxWidth": 300,
+                          "lineHeight": 1.3
+                        },
+                        "inline": [
+                          "បង្កើត wireframes និង mockups សម្រាប់ interface dashboard មេ"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Database ",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "white",
+                              "highlightColor": "black"
+                            },
+                            "inline": [
+                              "Migration"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Legacy System Upgrade"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Mike Rodriguez"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "maxWidth": 300,
+                          "lineHeight": 1.3
+                        },
+                        "inline": [
+                          "ផ្ទេរទិន្នន័យអតិថិជនពី MySQL ទៅ PostgreSQL"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "API Documentation"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Mobile SDK"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "background": [
+                        "pink"
+                      ],
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "color": "darkred",
+                          "style": "italic",
+                          "weight": "bold"
+                        },
+                        "inline": [
+                          "Emma Thompson"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "maxWidth": 300,
+                          "lineHeight": 1.3
+                        },
+                        "inline": [
+                          "សរសេរឯកសារ API ពេញលេញជាមួយឧទាហរណ៍ code"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Performance Testing"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Web Application"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "David Kim"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "maxWidth": 300,
+                          "lineHeight": 1.3
+                        },
+                        "inline": [
+                          "អនុវត្ត load testing និងបង្កើនប្រសិទ្ធភាព bottlenecks"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "User Authentication"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Social Media Platform"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Lisa Wang"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "maxWidth": 300,
+                          "lineHeight": 1.3
+                        },
+                        "inline": [
+                          "អនុវត្ត OAuth2 និង multi-factor authentication"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Mobile Responsive Design"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Corporate Website"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "James Miller"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "maxWidth": 300,
+                          "lineHeight": 1.3
+                        },
+                        "inline": [
+                          "ធានាថា website ដំណើរការយ៉ាងរលូននៅលើគ្រប់ទំហំឧបករណ៍"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "យុទ្ធសាស្ត្រ Data Backup"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Cloud Infrastructure"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Rachel Green"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "maxWidth": 300,
+                          "lineHeight": 1.3
+                        },
+                        "inline": [
+                          "រចនា automated backup និងផែនការស្ដារបន្ទាប់ពីគ្រោះមហន្តរាយ"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Security Audit"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Payment Gateway"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Tom Anderson"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "maxWidth": 300,
+                          "lineHeight": 1.3
+                        },
+                        "inline": [
+                          "អនុវត្ត penetration testing និងការវាយតម្លៃភាពងាយរងគ្រោះ"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Feature Testing"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Chat Application"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Nina Patel"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "maxWidth": 300,
+                          "lineHeight": 1.3
+                        },
+                        "inline": [
+                          "ធ្វើតេស្ត real-time messaging និងមុខងារចែករំលែកឯកសារ"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

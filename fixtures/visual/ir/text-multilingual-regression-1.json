@@ -1,0 +1,226 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "gap": 22,
+      "padding": 36,
+      "background": [
+        "#f8fafc"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 30,
+          "weight": "bold",
+          "color": "#0f172a"
+        },
+        "inline": [
+          "Multilingual text regression board"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 16,
+          "lineHeight": 1.45,
+          "color": "#475569",
+          "maxWidth": 980
+        },
+        "inline": [
+          "Khmer snapshots that highlight wrap boundaries, punctuation attachment, and symbol glue."
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 20,
+          "flexWrap": "wrap"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 340,
+              "padding": 18,
+              "background": [
+                "white"
+              ],
+              "borderWidth": 2,
+              "borderColor": "#cbd5e1",
+              "cornerRadius": [
+                22
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#1f2937"
+                },
+                "inline": [
+                  "khmer-wrap-punctuation"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "lineHeight": 1.4,
+                  "color": "#475569"
+                },
+                "inline": [
+                  "Khmer full stop should stay with the preceding phrase instead of leading a new line."
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "NotoSansKhmer"
+                  ],
+                  "size": 22,
+                  "width": 260,
+                  "lineHeight": 1.45,
+                  "background": [
+                    "#f8fafc"
+                  ],
+                  "padding": 14,
+                  "cornerRadius": [
+                    16
+                  ],
+                  "color": "#111827"
+                },
+                "inline": [
+                  "ក្រសួងការពារជាតិ កម្ពុជា ប្រកាសព័ត៌មានថ្មី។ សូមប្រុងប្រយ័ត្ន"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 340,
+              "padding": 18,
+              "background": [
+                "white"
+              ],
+              "borderWidth": 2,
+              "borderColor": "#cbd5e1",
+              "cornerRadius": [
+                22
+              ]
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#1f2937"
+                },
+                "inline": [
+                  "khmer-symbol-glue"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "lineHeight": 1.4,
+                  "color": "#475569"
+                },
+                "inline": [
+                  "Dollar and percent markers stay attached to Khmer numerals after wrapping."
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "NotoSansKhmer"
+                  ],
+                  "size": 22,
+                  "width": 260,
+                  "lineHeight": 1.45,
+                  "background": [
+                    "#f8fafc"
+                  ],
+                  "padding": 14,
+                  "cornerRadius": [
+                    16
+                  ],
+                  "color": "#111827"
+                },
+                "inline": [
+                  "តម្លៃសំបុត្រ $៥០ ក្នុងម្នាក់ និង បញ្ចុះតម្លៃ ១០០% សម្រាប់សិស្ស"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

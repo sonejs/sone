@@ -1,0 +1,236 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "gap": 22,
+      "padding": 40,
+      "background": [
+        "#f7f3ec"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 30,
+          "weight": "bold",
+          "color": "#2f241f"
+        },
+        "inline": [
+          "Text styling regression board"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 30,
+          "padding": 24,
+          "background": [
+            "white"
+          ],
+          "borderColor": "#d7c4b6",
+          "borderWidth": 2,
+          "cornerRadius": [
+            24
+          ],
+          "color": "#1f1a17"
+        },
+        "inline": [
+          {
+            "type": "span",
+            "props": {
+              "underline": 1.4,
+              "underlineColor": "#1d3557"
+            },
+            "inline": [
+              "Underline"
+            ]
+          },
+          "  ",
+          {
+            "type": "span",
+            "props": {
+              "overline": 1.4,
+              "overlineColor": "#2d6a4f"
+            },
+            "inline": [
+              "Overline"
+            ]
+          },
+          "  ",
+          {
+            "type": "span",
+            "props": {
+              "lineThrough": 1.6,
+              "lineThroughColor": "#8a2d3b"
+            },
+            "inline": [
+              "Strike"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 34,
+          "padding": 24,
+          "background": [
+            "white"
+          ],
+          "borderColor": "#d7c4b6",
+          "borderWidth": 2,
+          "cornerRadius": [
+            24
+          ],
+          "color": "#2f241f"
+        },
+        "inline": [
+          {
+            "type": "span",
+            "props": {
+              "highlightColor": "#ffe08a"
+            },
+            "inline": [
+              "Highlight"
+            ]
+          },
+          "  ",
+          {
+            "type": "span",
+            "props": {
+              "strokeColor": "#1d3557",
+              "strokeWidth": 2,
+              "color": "white"
+            },
+            "inline": [
+              "Stroke"
+            ]
+          },
+          "  ",
+          {
+            "type": "span",
+            "props": {
+              "dropShadows": [
+                "3px 3px 0px rgba(29,53,87,0.45)"
+              ]
+            },
+            "inline": [
+              "Shadow"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 28,
+          "lineHeight": 1.5,
+          "padding": 24,
+          "background": [
+            "white"
+          ],
+          "borderColor": "#d7c4b6",
+          "borderWidth": 2,
+          "cornerRadius": [
+            24
+          ],
+          "color": "#2f241f"
+        },
+        "inline": [
+          {
+            "type": "span",
+            "props": {
+              "offsetY": -10,
+              "color": "#1d3557"
+            },
+            "inline": [
+              "Raised"
+            ]
+          },
+          " baseline ",
+          {
+            "type": "span",
+            "props": {
+              "offsetY": 10,
+              "color": "#8a2d3b"
+            },
+            "inline": [
+              "Lowered"
+            ]
+          },
+          "\n",
+          {
+            "type": "span",
+            "props": {
+              "letterSpacing": 2.4
+            },
+            "inline": [
+              "Wide tracking"
+            ]
+          },
+          " / ",
+          {
+            "type": "span",
+            "props": {
+              "wordSpacing": 8
+            },
+            "inline": [
+              "wide words"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

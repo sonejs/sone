@@ -1,0 +1,35 @@
+[package]
+name = "sone-skia"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+sone-core = { path = "../sone-core" }
+# Pinned explicitly rather than through skia-safe's defaults, so a new default
+# feature cannot silently grow the binary. `textlayout` unconditionally links
+# Skia's ICU table (~10 MB); there is no build flag to drop it in 0.99.
+skia-safe = { version = "0.99", default-features = false, features = [
+  "binary-cache",
+  "pdf",
+  "jpeg",
+  "textlayout",
+  "svg",
+  "webp-encode",
+  "webp-decode",
+  "embed-freetype",
+] }
+thiserror.workspace = true
+lru.workspace = true
+kurbo.workspace = true
+
+[dev-dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[features]
+default = []
+gpu-metal = ["skia-safe/metal"]
+gpu-gl = ["skia-safe/gl"]
+gpu-vulkan = ["skia-safe/vulkan"]
+gpu-d3d = ["skia-safe/d3d"]

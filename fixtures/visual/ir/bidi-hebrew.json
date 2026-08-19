@@ -1,0 +1,227 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "width": 600,
+      "padding": 30,
+      "background": [
+        "white"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 18,
+          "weight": "bold",
+          "color": "#333",
+          "marginBottom": 20
+        },
+        "inline": [
+          "Hebrew (RTL) Bidi Rendering Test"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansHebrew"
+          ],
+          "size": 36,
+          "baseDir": "auto",
+          "align": "right",
+          "color": "#1a1a1a",
+          "marginBottom": 8
+        },
+        "inline": [
+          "שָׁלוֹם עוֹלָם"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansHebrew"
+          ],
+          "size": 32,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#2563eb",
+          "marginBottom": 8
+        },
+        "inline": [
+          "שלום עולם"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansHebrew"
+          ],
+          "size": 20,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#374151",
+          "lineHeight": 1.6,
+          "marginBottom": 16
+        },
+        "inline": [
+          "עברית היא שפה שמית ממשפחת השפות האפרו-אסיאתיות"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansHebrew"
+          ],
+          "size": 24,
+          "baseDir": "rtl",
+          "align": "right",
+          "color": "#059669",
+          "marginBottom": 8
+        },
+        "inline": [
+          "המחיר: 100 שקל"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansHebrew"
+          ],
+          "size": 28,
+          "baseDir": "rtl",
+          "align": "center",
+          "color": "#dc2626",
+          "marginBottom": 16
+        },
+        "inline": [
+          "ברוכים הבאים"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansHebrew"
+          ],
+          "size": 18,
+          "baseDir": "rtl",
+          "align": "right",
+          "lineHeight": 1.5,
+          "color": "#111827",
+          "marginBottom": 12
+        },
+        "inline": [
+          "ישראל הוא מדינה במזרח התיכון הממוקמת בחלקה המזרחי של חוף הים התיכון"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "NotoSansHebrew"
+          ],
+          "size": 22,
+          "baseDir": "rtl",
+          "align": "right",
+          "underline": 1,
+          "color": "#7c3aed",
+          "marginBottom": 8
+        },
+        "inline": [
+          "טקסט עם קו תחתון"
+        ]
+      },
+      {
+        "type": "text-default",
+        "props": {
+          "font": [
+            "NotoSansHebrew"
+          ]
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "font": [
+                "NotoSansHebrew"
+              ],
+              "baseDir": "rtl",
+              "align": "right"
+            },
+            "inline": [
+              {
+                "type": "span",
+                "props": {
+                  "size": 32,
+                  "color": "#1a1a1a"
+                },
+                "inline": [
+                  "שלום"
+                ]
+              },
+              {
+                "type": "span",
+                "inline": [
+                  " "
+                ]
+              },
+              {
+                "type": "span",
+                "props": {
+                  "size": 22,
+                  "color": "#6b7280"
+                },
+                "inline": [
+                  "עולם"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

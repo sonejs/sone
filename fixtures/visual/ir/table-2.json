@@ -1,0 +1,339 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "#eee"
+      ],
+      "padding": 40
+    },
+    "children": [
+      {
+        "type": "text-default",
+        "props": {
+          "size": 32,
+          "font": [
+            "Arial"
+          ],
+          "color": "#333"
+        },
+        "children": [
+          {
+            "type": "table",
+            "props": {
+              "background": [
+                "white"
+              ],
+              "borderWidth": 2,
+              "borderColor": "#333",
+              "spacing": [
+                30,
+                20
+              ]
+            },
+            "children": [
+              {
+                "type": "table-row",
+                "props": {
+                  "background": [
+                    "lime"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text-default",
+                    "props": {
+                      "weight": "bold",
+                      "color": "black"
+                    },
+                    "children": [
+                      {
+                        "type": "table-cell",
+                        "children": [
+                          {
+                            "type": "text",
+                            "inline": [
+                              "ID"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "table-cell",
+                        "children": [
+                          {
+                            "type": "text",
+                            "inline": [
+                              "Name"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "table-cell",
+                        "children": [
+                          {
+                            "type": "text",
+                            "inline": [
+                              "Gender"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "001"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Alice ",
+                          {
+                            "type": "span",
+                            "props": {
+                              "highlightColor": "yellow",
+                              "weight": "bold",
+                              "font": [
+                                "monospace"
+                              ]
+                            },
+                            "inline": [
+                              "Johnson"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Female"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "002"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "props": {
+                      "background": [
+                        "aquamarine"
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Bob Smith"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Male"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "003"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Carol Davis"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Female"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "004"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "David Wilson"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Male"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-row",
+                "children": [
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "005"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Eva Martinez"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "table-cell",
+                    "children": [
+                      {
+                        "type": "text",
+                        "inline": [
+                          "Female"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

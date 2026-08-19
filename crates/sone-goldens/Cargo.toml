@@ -1,0 +1,30 @@
+[package]
+name = "sone-goldens"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[[bin]]
+name = "sone-goldens"
+path = "src/main.rs"
+
+[[bin]]
+name = "layout-diff"
+path = "src/bin/layout-diff.rs"
+
+[[bin]]
+name = "render-all"
+path = "src/bin/render-all.rs"
+
+[dependencies]
+sone-core = { path = "../sone-core" }
+sone-skia = { path = "../sone-skia" }
+serde = { workspace = true }
+serde_json.workspace = true
+dssim-core = "3.2"
+imgref = "1"
+rgb = "0.8"
+image = { version = "0.25", default-features = false, features = ["jpeg", "png"] }
+toml = "0.8"
+rayon = "1"

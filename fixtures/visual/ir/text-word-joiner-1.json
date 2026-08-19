@@ -1,0 +1,834 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "gap": 24,
+      "padding": 40,
+      "background": [
+        "#f5eee6"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 30,
+          "weight": "bold",
+          "color": "#2f241f"
+        },
+        "inline": [
+          "Glue character regression board"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 16,
+          "maxWidth": 900,
+          "lineHeight": 1.4,
+          "color": "#6d4c41"
+        },
+        "inline": [
+          "The control cards wrap at normal spaces. The word-joiner and NBSP cards should keep the glued span on the first line and push only Gamma to the second line."
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 24,
+          "flexWrap": "wrap"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 101,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "control-space"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "Control / Greedy"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "control-space"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 61,
+                  "lineBreak": "greedy",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 161,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "control-space-knuth"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "Control / Knuth-Plass"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "control-space-knuth"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 121,
+                  "lineBreak": "knuth-plass",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 161,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "joiner-before-space"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "WJ Before Space / Greedy"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "joiner-before-space"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 121,
+                  "lineBreak": "greedy",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha⁠ Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 161,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "joiner-before-space-knuth"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "WJ Before Space / Knuth-Plass"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "joiner-before-space-knuth"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 121,
+                  "lineBreak": "knuth-plass",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha⁠ Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 161,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "joiner-after-space"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "WJ After Space / Greedy"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "joiner-after-space"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 121,
+                  "lineBreak": "greedy",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha ⁠Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 161,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "joiner-after-space-knuth"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "WJ After Space / Knuth-Plass"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "joiner-after-space-knuth"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 121,
+                  "lineBreak": "knuth-plass",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha ⁠Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 173,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "joiner-around-space"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "WJ Around Space / Greedy"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "joiner-around-space"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 133,
+                  "lineBreak": "greedy",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha ⁠ Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 173,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "joiner-around-space-knuth"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "WJ Around Space / Knuth-Plass"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "joiner-around-space-knuth"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 133,
+                  "lineBreak": "knuth-plass",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha ⁠ Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 161,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "nbsp"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "NBSP / Greedy"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "nbsp"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 121,
+                  "lineBreak": "greedy",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 161,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "nbsp-knuth"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "NBSP / Knuth-Plass"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "nbsp-knuth"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 121,
+                  "lineBreak": "knuth-plass",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 173,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "nbsp-after-space"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "NBSP After Space / Greedy"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "nbsp-after-space"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 133,
+                  "lineBreak": "greedy",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha  Beta Gamma"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 10,
+              "width": 173,
+              "padding": 20,
+              "background": [
+                "white"
+              ],
+              "borderColor": "#d7c4b6",
+              "borderWidth": 2,
+              "cornerRadius": [
+                24
+              ],
+              "tag": "nbsp-after-space-knuth"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 16,
+                  "weight": "bold",
+                  "color": "#6d4c41"
+                },
+                "inline": [
+                  "NBSP After Space / Knuth-Plass"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 12,
+                  "color": "#8b6b5a"
+                },
+                "inline": [
+                  "nbsp-after-space-knuth"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "GeistMono"
+                  ],
+                  "size": 20,
+                  "lineHeight": 1.35,
+                  "width": 133,
+                  "lineBreak": "knuth-plass",
+                  "color": "#201a17"
+                },
+                "inline": [
+                  "Alpha  Beta Gamma"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

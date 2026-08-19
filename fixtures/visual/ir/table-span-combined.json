@@ -1,0 +1,398 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "#f5f6fa"
+      ],
+      "padding": 30
+    },
+    "children": [
+      {
+        "type": "table",
+        "props": {
+          "background": [
+            "white"
+          ],
+          "borderWidth": 1,
+          "borderColor": "#bdc3c7",
+          "spacing": [
+            16,
+            10
+          ]
+        },
+        "children": [
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "props": {
+                  "colspan": 4,
+                  "background": [
+                    "#2c3e50"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold",
+                      "color": "white"
+                    },
+                    "inline": [
+                      "INVOICE"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "props": {
+              "background": [
+                "#ecf0f1"
+              ]
+            },
+            "children": [
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "Item"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "Qty"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "Unit Price"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "Amount"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "props": {
+                  "rowspan": 2,
+                  "background": [
+                    "#3498db"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold",
+                      "color": "white"
+                    },
+                    "inline": [
+                      "Services"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Consulting"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "5"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "$500"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Design"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "3"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "$750"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "props": {
+                  "rowspan": 2,
+                  "background": [
+                    "#e67e22"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "nowrap": true,
+                      "weight": "bold",
+                      "color": "white"
+                    },
+                    "inline": [
+                      "Products"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Laptop"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "1"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "$1,200"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Mouse"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "2"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "$45"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "props": {
+                  "colspan": 3,
+                  "background": [
+                    "#f8f9fa"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "Total"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "props": {
+                  "background": [
+                    "#f8f9fa"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "$3,290"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

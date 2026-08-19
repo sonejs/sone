@@ -1,0 +1,207 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "gap": 22,
+      "padding": 40,
+      "background": [
+        "#eef1f4"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 30,
+          "weight": "bold",
+          "color": "#2f241f"
+        },
+        "inline": [
+          "Orientation regression board"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "font": [
+            "GeistMono"
+          ],
+          "size": 16,
+          "maxWidth": 760,
+          "lineHeight": 1.4,
+          "color": "#6d4c41"
+        },
+        "inline": [
+          "The same short label is rendered at 0, 90, 180, and 270 degrees to catch footprint and drawing regressions."
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "gap": 28,
+          "alignItems": "center",
+          "padding": 28,
+          "background": [
+            "white"
+          ],
+          "borderColor": "#d7c4b6",
+          "borderWidth": 2,
+          "cornerRadius": [
+            24
+          ]
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "font": [
+                "GeistMono"
+              ],
+              "size": 26,
+              "orientation": 0,
+              "paddingTop": 16,
+              "paddingRight": 20,
+              "paddingBottom": 16,
+              "paddingLeft": 20,
+              "borderColor": "#2d6a4f",
+              "borderWidth": 3,
+              "color": "#2d6a4f",
+              "background": [
+                "white"
+              ],
+              "cornerRadius": [
+                18
+              ],
+              "tag": "orientation-0"
+            },
+            "inline": [
+              "NORTH"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "font": [
+                "GeistMono"
+              ],
+              "size": 26,
+              "orientation": 90,
+              "paddingTop": 16,
+              "paddingRight": 20,
+              "paddingBottom": 16,
+              "paddingLeft": 20,
+              "borderColor": "#1d3557",
+              "borderWidth": 3,
+              "color": "#1d3557",
+              "background": [
+                "white"
+              ],
+              "cornerRadius": [
+                18
+              ],
+              "tag": "orientation-90"
+            },
+            "inline": [
+              "EAST"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "font": [
+                "GeistMono"
+              ],
+              "size": 26,
+              "orientation": 180,
+              "paddingTop": 16,
+              "paddingRight": 20,
+              "paddingBottom": 16,
+              "paddingLeft": 20,
+              "borderColor": "#8a2d3b",
+              "borderWidth": 3,
+              "color": "#8a2d3b",
+              "background": [
+                "white"
+              ],
+              "cornerRadius": [
+                18
+              ],
+              "tag": "orientation-180"
+            },
+            "inline": [
+              "SOUTH"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "font": [
+                "GeistMono"
+              ],
+              "size": 26,
+              "orientation": 270,
+              "paddingTop": 16,
+              "paddingRight": 20,
+              "paddingBottom": 16,
+              "paddingLeft": 20,
+              "borderColor": "#7c5c1d",
+              "borderWidth": 3,
+              "color": "#7c5c1d",
+              "background": [
+                "white"
+              ],
+              "cornerRadius": [
+                18
+              ],
+              "tag": "orientation-270"
+            },
+            "inline": [
+              "WEST"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

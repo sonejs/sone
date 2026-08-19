@@ -1,0 +1,1619 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "width": 680,
+      "background": [
+        "white"
+      ],
+      "borderWidth": 1,
+      "borderColor": "#e2e8f0",
+      "cornerRadius": [
+        6
+      ],
+      "shadows": [
+        "0 4px 24px rgba(0,0,0,0.10)"
+      ]
+    },
+    "children": [
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#1e3a5f"
+          ],
+          "paddingTop": 28,
+          "paddingRight": 32,
+          "paddingBottom": 28,
+          "paddingLeft": 32
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "size": 22,
+              "weight": "bold",
+              "color": "white",
+              "letterSpacing": 1
+            },
+            "inline": [
+              "ATLAS MERIDIAN CORPORATION"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 13,
+              "color": "rgba(255,255,255,0.75)",
+              "marginTop": 4
+            },
+            "inline": [
+              "Consolidated Income Statement  ·  Years ended December 31"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 11,
+              "color": "rgba(255,255,255,0.5)",
+              "marginTop": 2
+            },
+            "inline": [
+              "Amounts in USD thousands  ·  Unaudited"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#1e3a5f"
+          ],
+          "paddingTop": 6,
+          "paddingRight": 32,
+          "paddingBottom": 8,
+          "paddingLeft": 32
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "size": 11,
+              "weight": "bold",
+              "color": "white",
+              "tabStops": [
+                340,
+                460,
+                560
+              ]
+            },
+            "inline": [
+              "Account\tFY 2023\tFY 2024\tYoY Change"
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "height": 1,
+              "background": [
+                "rgba(255,255,255,0.25)"
+              ],
+              "alignSelf": "stretch"
+            }
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "paddingTop": 16,
+          "paddingRight": 32,
+          "paddingBottom": 20,
+          "paddingLeft": 32,
+          "background": [
+            "white"
+          ],
+          "gap": 3
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "weight": "bold",
+              "color": "#1d4ed8",
+              "marginTop": 10,
+              "marginBottom": 2
+            },
+            "inline": [
+              "REVENUE"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Software subscriptions",
+              "\t",
+              "84,210",
+              "\t",
+              "103,450",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+22.8%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Professional services",
+              "\t",
+              "12,880",
+              "\t",
+              " 15,320",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+18.9%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Hardware & other",
+              "\t",
+              " 6,740",
+              "\t",
+              "  7,090",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d",
+                  "weight": "normal"
+                },
+                "inline": [
+                  " +5.2%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Contra revenue / refunds",
+              "\t",
+              "(1,205)",
+              "\t",
+              "(1,380)",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c",
+                  "weight": "normal"
+                },
+                "inline": [
+                  " +14.5%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 4
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#cbd5e1"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "tabStops": [
+                    340,
+                    460,
+                    560
+                  ],
+                  "size": 13,
+                  "color": "#0f172a",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "Total Revenue",
+                  "\t",
+                  "102,625",
+                  "\t",
+                  "124,480",
+                  "\t",
+                  {
+                    "type": "span",
+                    "props": {
+                      "color": "#15803d",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "+21.3%"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "weight": "bold",
+              "color": "#1d4ed8",
+              "marginTop": 10,
+              "marginBottom": 2
+            },
+            "inline": [
+              "COST OF REVENUE"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Cloud infrastructure",
+              "\t",
+              "18,320",
+              "\t",
+              " 21,900",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+19.5%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Support & operations",
+              "\t",
+              " 7,460",
+              "\t",
+              "  8,110",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c",
+                  "weight": "normal"
+                },
+                "inline": [
+                  " +8.7%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Third-party licenses",
+              "\t",
+              " 3,210",
+              "\t",
+              "  3,580",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+11.5%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 4
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#cbd5e1"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "tabStops": [
+                    340,
+                    460,
+                    560
+                  ],
+                  "size": 13,
+                  "color": "#0f172a",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "Total Cost of Revenue",
+                  "\t",
+                  "28,990",
+                  "\t",
+                  "33,590",
+                  "\t",
+                  {
+                    "type": "span",
+                    "props": {
+                      "color": "#b91c1c",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "+15.9%"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "height": 4
+            }
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 5
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "height": 2,
+                  "background": [
+                    "#1d4ed8"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "tabStops": [
+                    340,
+                    460,
+                    560
+                  ],
+                  "size": 13,
+                  "color": "#0f172a",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "Gross Profit",
+                  "\t",
+                  " 73,635",
+                  "\t",
+                  " 90,890",
+                  "\t",
+                  {
+                    "type": "span",
+                    "props": {
+                      "color": "#15803d",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "+23.4%"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#1d4ed8"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "weight": "bold",
+              "color": "#1d4ed8",
+              "marginTop": 10,
+              "marginBottom": 2
+            },
+            "inline": [
+              "OPERATING EXPENSES"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Sales & marketing",
+              "\t",
+              "22,180",
+              "\t",
+              " 26,340",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+18.7%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Research & development",
+              "\t",
+              "18,950",
+              "\t",
+              " 24,610",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+29.9%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  General & administrative",
+              "\t",
+              " 9,320",
+              "\t",
+              " 10,050",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c",
+                  "weight": "normal"
+                },
+                "inline": [
+                  " +7.8%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Restructuring charges",
+              "\t",
+              "    —",
+              "\t",
+              "  1,200",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "  n/m"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Stock-based compensation",
+              "\t",
+              " 6,840",
+              "\t",
+              "  8,120",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+18.7%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 4
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#cbd5e1"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "tabStops": [
+                    340,
+                    460,
+                    560
+                  ],
+                  "size": 13,
+                  "color": "#0f172a",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "Total OpEx",
+                  "\t",
+                  "57,290",
+                  "\t",
+                  " 70,320",
+                  "\t",
+                  {
+                    "type": "span",
+                    "props": {
+                      "color": "#b91c1c",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "+22.7%"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "height": 4
+            }
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 5
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "height": 2,
+                  "background": [
+                    "#1d4ed8"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "tabStops": [
+                    340,
+                    460,
+                    560
+                  ],
+                  "size": 13,
+                  "color": "#0f172a",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "Operating Income (EBIT)",
+                  "\t",
+                  "16,345",
+                  "\t",
+                  " 20,570",
+                  "\t",
+                  {
+                    "type": "span",
+                    "props": {
+                      "color": "#15803d",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "+25.9%"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#1d4ed8"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  D&A add-back",
+              "\t",
+              " 4,210",
+              "\t",
+              "  5,330",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+26.6%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 4
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#cbd5e1"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "tabStops": [
+                    340,
+                    460,
+                    560
+                  ],
+                  "size": 13,
+                  "color": "#0f172a",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "EBITDA",
+                  "\t",
+                  "20,555",
+                  "\t",
+                  " 25,900",
+                  "\t",
+                  {
+                    "type": "span",
+                    "props": {
+                      "color": "#15803d",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "+26.0%"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "weight": "bold",
+              "color": "#1d4ed8",
+              "marginTop": 10,
+              "marginBottom": 2
+            },
+            "inline": [
+              "BELOW THE LINE"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Interest income",
+              "\t",
+              "   620",
+              "\t",
+              "  1,140",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+83.9%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Interest expense",
+              "\t",
+              "(2,450)",
+              "\t",
+              "(2,280)",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d",
+                  "weight": "normal"
+                },
+                "inline": [
+                  " −7.3%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  FX gain / (loss)",
+              "\t",
+              "  (340)",
+              "\t",
+              "    280",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "n/m"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Other income",
+              "\t",
+              "   180",
+              "\t",
+              "    220",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+22.2%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "height": 4
+            }
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 5
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "height": 2,
+                  "background": [
+                    "#1d4ed8"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "tabStops": [
+                    340,
+                    460,
+                    560
+                  ],
+                  "size": 13,
+                  "color": "#0f172a",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "Pre-tax Income",
+                  "\t",
+                  "14,355",
+                  "\t",
+                  " 19,930",
+                  "\t",
+                  {
+                    "type": "span",
+                    "props": {
+                      "color": "#15803d",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "+38.8%"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#1d4ed8"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Income tax provision",
+              "\t",
+              "(3,230)",
+              "\t",
+              "(4,630)",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+43.3%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "height": 4
+            }
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 5
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "height": 2,
+                  "background": [
+                    "#1d4ed8"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "tabStops": [
+                    340,
+                    460,
+                    560
+                  ],
+                  "size": 13,
+                  "color": "#0f172a",
+                  "weight": "bold"
+                },
+                "inline": [
+                  "Net Income",
+                  "\t",
+                  "11,125",
+                  "\t",
+                  " 15,300",
+                  "\t",
+                  {
+                    "type": "span",
+                    "props": {
+                      "color": "#15803d",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "+37.5%"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#1d4ed8"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "height": 6
+            }
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "weight": "bold",
+              "color": "#1d4ed8",
+              "marginTop": 10,
+              "marginBottom": 2
+            },
+            "inline": [
+              "PER SHARE DATA"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Basic EPS",
+              "\t",
+              "  $2.41",
+              "\t",
+              "  $3.29",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+36.5%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Diluted EPS",
+              "\t",
+              "  $2.37",
+              "\t",
+              "  $3.23",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+36.3%"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                340,
+                460,
+                560
+              ],
+              "size": 13,
+              "color": "#334155",
+              "weight": "normal"
+            },
+            "inline": [
+              "  Weighted avg shares (M)",
+              "\t",
+              "  46.2",
+              "\t",
+              "  46.5",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#64748b",
+                  "weight": "normal"
+                },
+                "inline": [
+                  "+0.6%"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#1e3a5f"
+          ],
+          "paddingTop": 12,
+          "paddingRight": 32,
+          "paddingBottom": 8,
+          "paddingLeft": 32,
+          "gap": 6
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "size": 11,
+              "weight": "bold",
+              "color": "white",
+              "letterSpacing": 0.5
+            },
+            "inline": [
+              "KEY MARGIN ANALYSIS"
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "height": 1,
+              "background": [
+                "rgba(255,255,255,0.2)"
+              ],
+              "alignSelf": "stretch"
+            }
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 11,
+              "weight": "bold",
+              "color": "rgba(255,255,255,0.7)",
+              "tabStops": [
+                280,
+                380,
+                480
+              ]
+            },
+            "inline": [
+              "Metric\tFY 2023\tFY 2024\tChange"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "paddingTop": 10,
+          "paddingRight": 32,
+          "paddingBottom": 16,
+          "paddingLeft": 32,
+          "background": [
+            "#f8fafc"
+          ],
+          "gap": 5
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                280,
+                380,
+                480
+              ],
+              "size": 13,
+              "color": "#334155"
+            },
+            "inline": [
+              "Gross Margin",
+              "\t",
+              "71.8%",
+              "\t",
+              "73.0%",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d"
+                },
+                "inline": [
+                  "+1.2 pp"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                280,
+                380,
+                480
+              ],
+              "size": 13,
+              "color": "#334155"
+            },
+            "inline": [
+              "EBITDA Margin",
+              "\t",
+              "20.0%",
+              "\t",
+              "20.8%",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d"
+                },
+                "inline": [
+                  "+0.8 pp"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                280,
+                380,
+                480
+              ],
+              "size": 13,
+              "color": "#334155"
+            },
+            "inline": [
+              "Operating Margin",
+              "\t",
+              "15.9%",
+              "\t",
+              "16.5%",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d"
+                },
+                "inline": [
+                  "+0.6 pp"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                280,
+                380,
+                480
+              ],
+              "size": 13,
+              "color": "#334155"
+            },
+            "inline": [
+              "Net Margin",
+              "\t",
+              "10.8%",
+              "\t",
+              "12.3%",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d"
+                },
+                "inline": [
+                  "+1.4 pp"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                280,
+                380,
+                480
+              ],
+              "size": 13,
+              "color": "#334155"
+            },
+            "inline": [
+              "R&D as % of Revenue",
+              "\t",
+              "18.5%",
+              "\t",
+              "19.8%",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#b91c1c"
+                },
+                "inline": [
+                  "+1.3 pp"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "tabStops": [
+                280,
+                380,
+                480
+              ],
+              "size": 13,
+              "color": "#334155"
+            },
+            "inline": [
+              "S&M as % of Revenue",
+              "\t",
+              "21.6%",
+              "\t",
+              "21.2%",
+              "\t",
+              {
+                "type": "span",
+                "props": {
+                  "color": "#15803d"
+                },
+                "inline": [
+                  "−0.4 pp"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "row",
+        "props": {
+          "paddingTop": 10,
+          "paddingRight": 32,
+          "paddingBottom": 10,
+          "paddingLeft": 32,
+          "background": [
+            "#f1f5f9"
+          ],
+          "justifyContent": "space-between",
+          "alignItems": "center"
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "size": 10,
+              "color": "#64748b"
+            },
+            "inline": [
+              "This statement is for illustrative purposes only."
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 10,
+              "color": "#64748b",
+              "alignSelf": "flex-end"
+            },
+            "inline": [
+              "Prepared with Sone canvas engine"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

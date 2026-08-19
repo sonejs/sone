@@ -1,0 +1,611 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "padding": 40,
+      "width": 520,
+      "gap": 4,
+      "background": [
+        "white"
+      ]
+    },
+    "children": [
+      {
+        "type": "column",
+        "props": {
+          "marginBottom": 24
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "size": 22,
+              "weight": "bold",
+              "color": "#1a1a2e"
+            },
+            "inline": [
+              "The Art of Quiet Design"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "color": "#555555",
+              "marginTop": 2
+            },
+            "inline": [
+              "A Practitioner's Handbook"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 14,
+          "weight": "bold",
+          "color": "#000",
+          "letterSpacing": 3,
+          "marginBottom": 12
+        },
+        "inline": [
+          "CONTENTS"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 11,
+          "weight": "bold",
+          "color": "#888888",
+          "marginTop": 14,
+          "marginBottom": 2
+        },
+        "inline": [
+          "FRONT MATTER"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Foreword\t7"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Preface\t9"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   How to Use This Book\t11"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 11,
+          "weight": "bold",
+          "color": "#888888",
+          "marginTop": 14,
+          "marginBottom": 2
+        },
+        "inline": [
+          "PART I — FOUNDATIONS"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13,
+          "weight": "bold"
+        },
+        "inline": [
+          "1. The Principle of Reduction\t15"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Less as a Strategy\t18"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   The Cost of Complexity\t22"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Quiet vs. Minimal\t26"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13,
+          "weight": "bold"
+        },
+        "inline": [
+          "2. Visual Hierarchy\t31"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Type Scale and Rhythm\t34"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Spacing as Structure\t38"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Colour and Weight\t43"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13,
+          "weight": "bold"
+        },
+        "inline": [
+          "3. Typography at Rest\t49"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Choosing a Typeface\t52"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Line Length and Leading\t57"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Punctuation and Detail\t62"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 11,
+          "weight": "bold",
+          "color": "#888888",
+          "marginTop": 14,
+          "marginBottom": 2
+        },
+        "inline": [
+          "PART II — PROCESS"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13,
+          "weight": "bold"
+        },
+        "inline": [
+          "4. Constraints as Creativity\t69"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   The Brief as Canvas\t72"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Working Within Limits\t76"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13,
+          "weight": "bold"
+        },
+        "inline": [
+          "5. Iteration and Restraint\t83"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   When to Stop\t86"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Editing for Silence\t91"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 11,
+          "weight": "bold",
+          "color": "#888888",
+          "marginTop": 14,
+          "marginBottom": 2
+        },
+        "inline": [
+          "PART III — PRACTICE"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13,
+          "weight": "bold"
+        },
+        "inline": [
+          "6. Print and Page\t99"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Grids and White Space\t102"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Paper and Ink\t108"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13,
+          "weight": "bold"
+        },
+        "inline": [
+          "7. Screen and Motion\t115"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Density and Scroll\t118"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Animation with Purpose\t124"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13,
+          "weight": "bold"
+        },
+        "inline": [
+          "8. Systems and Tokens\t131"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Design Tokens in Practice\t135"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Consistency Without Rigidity\t141"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 11,
+          "weight": "bold",
+          "color": "#888888",
+          "marginTop": 14,
+          "marginBottom": 2
+        },
+        "inline": [
+          "BACK MATTER"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Notes\t149"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Bibliography\t153"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   Index\t159"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            380
+          ],
+          "tabLeader": ".",
+          "size": 13
+        },
+        "inline": [
+          "   About the Author\t163"
+        ]
+      }
+    ]
+  }
+}

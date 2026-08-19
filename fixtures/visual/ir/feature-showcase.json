@@ -1,0 +1,4360 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2,
+    "width": 816,
+    "pageHeight": 1056,
+    "margin": {
+      "top": 16,
+      "bottom": 16
+    },
+    "lastPageHeight": "content",
+    "header": {
+      "type": "row",
+      "props": {
+        "background": [
+          "#ffffff"
+        ],
+        "paddingTop": 6,
+        "paddingRight": 20,
+        "paddingBottom": 6,
+        "paddingLeft": 20,
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "borderTopWidth": 0,
+        "borderRightWidth": 0,
+        "borderBottomWidth": 1,
+        "borderLeftWidth": 0,
+        "borderColor": "#e5e5e5"
+      },
+      "children": [
+        {
+          "type": "row",
+          "props": {
+            "gap": 8,
+            "alignItems": "center"
+          },
+          "children": [
+            {
+              "type": "photo",
+              "props": {
+                "src": "../../image/sone.svg",
+                "width": 18,
+                "height": 21,
+                "flexShrink": 0
+              }
+            },
+            {
+              "type": "text",
+              "props": {
+                "size": 10,
+                "weight": "bold",
+                "color": "#0a0a0a"
+              },
+              "inline": [
+                "Sone"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "props": {
+            "size": 9,
+            "color": "#737373"
+          },
+          "inline": [
+            "Feature Showcase"
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "row",
+      "props": {
+        "background": [
+          "#ffffff"
+        ],
+        "paddingTop": 6,
+        "paddingRight": 20,
+        "paddingBottom": 6,
+        "paddingLeft": 20,
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "borderTopWidth": 1,
+        "borderRightWidth": 0,
+        "borderBottomWidth": 0,
+        "borderLeftWidth": 0,
+        "borderColor": "#e5e5e5"
+      },
+      "children": [
+        {
+          "type": "text",
+          "props": {
+            "size": 9,
+            "color": "#737373"
+          },
+          "inline": [
+            "Sone Feature Showcase"
+          ]
+        },
+        {
+          "type": "text",
+          "props": {
+            "size": 10,
+            "color": "#737373"
+          },
+          "inline": [
+            {
+              "type": "span",
+              "props": {
+                "weight": "bold",
+                "color": "#0a0a0a"
+              },
+              "inline": [
+                "{pageNumber}"
+              ]
+            },
+            " / {totalPages}"
+          ]
+        }
+      ]
+    }
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "width": 816,
+      "background": [
+        "#ffffff"
+      ],
+      "gap": 0
+    },
+    "children": [
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "linear-gradient(160deg, #f0f0f0 0%, #ffffff 60%)"
+          ],
+          "height": 963,
+          "gap": 0,
+          "pageBreak": "avoid"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "paddingTop": 44,
+              "paddingRight": 52,
+              "paddingBottom": 0,
+              "paddingLeft": 52,
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#737373",
+                  "font": [
+                    "GeistMono"
+                  ]
+                },
+                "inline": [
+                  "FEATURE SHOWCASE"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 20,
+                  "alignItems": "center",
+                  "marginTop": 16
+                },
+                "children": [
+                  {
+                    "type": "photo",
+                    "props": {
+                      "src": "../../image/sone.svg",
+                      "width": 60,
+                      "height": 70,
+                      "flexShrink": 0
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 80,
+                      "weight": "bold",
+                      "color": "#0a0a0a",
+                      "lineHeight": 1
+                    },
+                    "inline": [
+                      "Sone"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 20,
+                  "color": "#404040",
+                  "marginTop": 8
+                },
+                "inline": [
+                  "Canvas Layout Engine"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "color": "#737373",
+                  "lineHeight": 1.6,
+                  "marginTop": 16
+                },
+                "inline": [
+                  "Declarative. Multi-page. Node.js & browser."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "paddingTop": 32,
+              "paddingRight": 52,
+              "paddingBottom": 32,
+              "paddingLeft": 52,
+              "gap": 0,
+              "marginTop": "auto"
+            },
+            "children": [
+              {
+                "type": "row",
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ]
+                    },
+                    "inline": [
+                      "TOPICS"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 20,
+                  "flexWrap": "wrap",
+                  "marginTop": 8
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Page Layout"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Multi-Page PDF"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Tab Stops"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Text Orientation"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Lists"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Borders"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "paddingTop": 24,
+              "paddingRight": 52,
+              "paddingBottom": 24,
+              "paddingLeft": 52
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 10,
+                  "color": "#737373"
+                },
+                "inline": [
+                  "March 2026"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#ffffff"
+          ],
+          "paddingTop": 32,
+          "paddingRight": 40,
+          "paddingBottom": 32,
+          "paddingLeft": 40,
+          "gap": 0
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ]
+                    },
+                    "inline": [
+                      "01 — PAGE LAYOUT"
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "flex": 1,
+                      "height": 1,
+                      "background": [
+                        "#e5e5e5"
+                      ],
+                      "alignSelf": "center",
+                      "marginLeft": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#0a0a0a",
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Multi-Page PDF Engine"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#404040",
+                  "lineHeight": 1.5,
+                  "marginTop": 3
+                },
+                "inline": [
+                  "Automatic page breaking, repeating headers and footers, margins, and explicit page breaks."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "gap": 0,
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "padding": 16,
+                  "background": [
+                    "#ffffff"
+                  ],
+                  "borderWidth": 1,
+                  "borderColor": "#e5e5e5",
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ]
+                    },
+                    "inline": [
+                      "AUTOMATIC BREAKING"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 13,
+                      "weight": "bold",
+                      "color": "#0a0a0a",
+                      "marginTop": 6
+                    },
+                    "inline": [
+                      "Smart page splitting"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "lineHeight": 1.5,
+                      "marginTop": 6
+                    },
+                    "inline": [
+                      {
+                        "type": "span",
+                        "props": {
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "color": "#0a0a0a"
+                        },
+                        "inline": [
+                          "computePageBreaks()"
+                        ]
+                      },
+                      " walks the Yoga layout tree to find clean split points at block boundaries. Leaf nodes and ",
+                      {
+                        "type": "span",
+                        "props": {
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "color": "#0a0a0a"
+                        },
+                        "inline": [
+                          "avoid"
+                        ]
+                      },
+                      "-marked elements are kept atomic — no mid-element cuts."
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "padding": 16,
+                  "background": [
+                    "#ffffff"
+                  ],
+                  "borderWidth": 1,
+                  "borderColor": "#e5e5e5",
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ]
+                    },
+                    "inline": [
+                      "PAGEBREAK() NODE"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 13,
+                      "weight": "bold",
+                      "color": "#0a0a0a",
+                      "marginTop": 4
+                    },
+                    "inline": [
+                      "Explicit breaks"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "lineHeight": 1.5,
+                      "marginTop": 6
+                    },
+                    "inline": [
+                      "A zero-height Column with ",
+                      {
+                        "type": "span",
+                        "props": {
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "color": "#0a0a0a"
+                        },
+                        "inline": [
+                          "pageBreak(\"before\")"
+                        ]
+                      },
+                      " that forces a new page at any position in the layout tree. Use wherever a hard break is needed."
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "gap": 0,
+              "borderTopWidth": 0,
+              "borderRightWidth": 1,
+              "borderBottomWidth": 1,
+              "borderLeftWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "padding": 16,
+                  "background": [
+                    "#ffffff"
+                  ],
+                  "borderWidth": 1,
+                  "borderColor": "#e5e5e5",
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ]
+                    },
+                    "inline": [
+                      "HEADER & FOOTER"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 13,
+                      "weight": "bold",
+                      "color": "#0a0a0a",
+                      "marginTop": 4
+                    },
+                    "inline": [
+                      "Repeating bands"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "lineHeight": 1.5,
+                      "marginTop": 6
+                    },
+                    "inline": [
+                      "Pass a static ",
+                      {
+                        "type": "span",
+                        "props": {
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "color": "#0a0a0a"
+                        },
+                        "inline": [
+                          "SoneNode"
+                        ]
+                      },
+                      " or a function ",
+                      {
+                        "type": "span",
+                        "props": {
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "color": "#0a0a0a"
+                        },
+                        "inline": [
+                          "(info: SonePageInfo) => SoneNode"
+                        ]
+                      },
+                      ". Each band is clipped to its own vertical slice and composited onto every page canvas."
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "padding": 16,
+                  "background": [
+                    "#ffffff"
+                  ],
+                  "borderWidth": 1,
+                  "borderColor": "#e5e5e5",
+                  "flex": 1
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ]
+                    },
+                    "inline": [
+                      "MARGINS"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 13,
+                      "weight": "bold",
+                      "color": "#0a0a0a",
+                      "marginTop": 4
+                    },
+                    "inline": [
+                      "Per-side control"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "lineHeight": 1.5,
+                      "marginTop": 6
+                    },
+                    "inline": [
+                      {
+                        "type": "span",
+                        "props": {
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "color": "#0a0a0a"
+                        },
+                        "inline": [
+                          "margin"
+                        ]
+                      },
+                      " accepts a uniform number or an object ",
+                      {
+                        "type": "span",
+                        "props": {
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "color": "#0a0a0a"
+                        },
+                        "inline": [
+                          "{ top, right, bottom, left }"
+                        ]
+                      },
+                      ". Left and right expand the canvas; top and bottom inset the content band."
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#737373",
+                  "font": [
+                    "GeistMono"
+                  ]
+                },
+                "inline": [
+                  "PAGEBREAK PROP"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 8,
+                  "paddingLeft": 0,
+                  "marginTop": 8
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "width": 120,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Value"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Effect"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#e5e5e5"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 8,
+                  "paddingRight": 0,
+                  "paddingBottom": 8,
+                  "paddingLeft": 0,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "color": "#0a0a0a",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "width": 140,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "\"before\""
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Force a page break before this element"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#e5e5e5"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 8,
+                  "paddingRight": 0,
+                  "paddingBottom": 8,
+                  "paddingLeft": 0,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "color": "#0a0a0a",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "width": 140,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "\"after\""
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Force a page break after this element"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#e5e5e5"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 8,
+                  "paddingRight": 0,
+                  "paddingBottom": 8,
+                  "paddingLeft": 0,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "color": "#0a0a0a",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "width": 140,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "\"avoid\""
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#404040",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Keep the element on a single page — atomic"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#e5e5e5"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#737373",
+                  "font": [
+                    "GeistMono"
+                  ]
+                },
+                "inline": [
+                  "LASTPAGEHEIGHT"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 0,
+                  "marginTop": 10,
+                  "borderWidth": 1,
+                  "borderColor": "#e5e5e5"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "padding": 12,
+                      "background": [
+                        "#f7f7f7"
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "weight": "bold",
+                          "color": "#0a0a0a",
+                          "font": [
+                            "GeistMono"
+                          ]
+                        },
+                        "inline": [
+                          "\"uniform\""
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.5,
+                          "marginTop": 4
+                        },
+                        "inline": [
+                          "Default. All page canvases share the same height — ideal for PDF where consistent dimensions are required."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "padding": 12,
+                      "background": [
+                        "#f7f7f7"
+                      ],
+                      "borderTopWidth": 0,
+                      "borderRightWidth": 0,
+                      "borderBottomWidth": 0,
+                      "borderLeftWidth": 1,
+                      "borderColor": "#e5e5e5"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "weight": "bold",
+                          "color": "#0a0a0a",
+                          "font": [
+                            "GeistMono"
+                          ]
+                        },
+                        "inline": [
+                          "\"content\""
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.5,
+                          "marginTop": 4
+                        },
+                        "inline": [
+                          "The last page canvas is trimmed to its actual content height — useful when generating individual page images."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#ffffff"
+          ],
+          "paddingTop": 32,
+          "paddingRight": 40,
+          "paddingBottom": 32,
+          "paddingLeft": 40,
+          "gap": 0
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ]
+                    },
+                    "inline": [
+                      "02 — TYPOGRAPHY"
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "flex": 1,
+                      "height": 1,
+                      "background": [
+                        "#e5e5e5"
+                      ],
+                      "alignSelf": "center",
+                      "marginLeft": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#0a0a0a",
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Text Layout Features"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#404040",
+                  "lineHeight": 1.5,
+                  "marginTop": 3
+                },
+                "inline": [
+                  "Tab stops, text orientation, whitespace preservation, and custom fonts."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#737373",
+                  "font": [
+                    "GeistMono"
+                  ]
+                },
+                "inline": [
+                  "TAB STOPS"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "weight": "bold",
+                  "color": "#0a0a0a",
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Column alignment without a Table node"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#404040",
+                  "lineHeight": 1.6,
+                  "marginTop": 6
+                },
+                "inline": [
+                  {
+                    "type": "span",
+                    "props": {
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0a0a0a"
+                    },
+                    "inline": [
+                      "\\t"
+                    ]
+                  },
+                  " characters snap to predefined x positions via ",
+                  {
+                    "type": "span",
+                    "props": {
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0a0a0a"
+                    },
+                    "inline": [
+                      ".tabStops()"
+                    ]
+                  },
+                  ". Useful for financial statements, receipts, and aligned data."
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "gap": 0
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "marginBottom": 6,
+                      "marginTop": 12
+                    },
+                    "inline": [
+                      "INCOME STATEMENT — Q1 2026"
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 10,
+                          "weight": "bold",
+                          "color": "#737373",
+                          "tabStops": [
+                            240,
+                            340,
+                            420
+                          ],
+                          "font": [
+                            "GeistMono"
+                          ]
+                        },
+                        "inline": [
+                          "Account\tQ1 2026\tQ4 2025\tΔ%"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "height": 1,
+                      "background": [
+                        "#e5e5e5"
+                      ],
+                      "alignSelf": "stretch"
+                    }
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "paddingTop": 7,
+                      "paddingRight": 0,
+                      "paddingBottom": 7,
+                      "paddingLeft": 0
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "tabStops": [
+                            240,
+                            340,
+                            420
+                          ],
+                          "font": [
+                            "GeistMono"
+                          ]
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Revenue"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "$9.4 M"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#737373"
+                            },
+                            "inline": [
+                              "$7.2 M"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "weight": "bold",
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "+31%"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "height": 1,
+                      "background": [
+                        "#e5e5e5"
+                      ],
+                      "alignSelf": "stretch"
+                    }
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "paddingTop": 7,
+                      "paddingRight": 0,
+                      "paddingBottom": 7,
+                      "paddingLeft": 0
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "tabStops": [
+                            240,
+                            340,
+                            420
+                          ],
+                          "font": [
+                            "GeistMono"
+                          ]
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Cost of Revenue"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "$2.1 M"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#737373"
+                            },
+                            "inline": [
+                              "$1.8 M"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "weight": "bold",
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "+17%"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "height": 1,
+                      "background": [
+                        "#e5e5e5"
+                      ],
+                      "alignSelf": "stretch"
+                    }
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "paddingTop": 7,
+                      "paddingRight": 0,
+                      "paddingBottom": 7,
+                      "paddingLeft": 0
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "tabStops": [
+                            240,
+                            340,
+                            420
+                          ],
+                          "font": [
+                            "GeistMono"
+                          ]
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Gross Profit"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "$7.3 M"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#737373"
+                            },
+                            "inline": [
+                              "$5.4 M"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "weight": "bold",
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "+35%"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "height": 1,
+                      "background": [
+                        "#e5e5e5"
+                      ],
+                      "alignSelf": "stretch"
+                    }
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "paddingTop": 7,
+                      "paddingRight": 0,
+                      "paddingBottom": 7,
+                      "paddingLeft": 0
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "tabStops": [
+                            240,
+                            340,
+                            420
+                          ],
+                          "font": [
+                            "GeistMono"
+                          ]
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Operating Expenses"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "$4.6 M"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#737373"
+                            },
+                            "inline": [
+                              "$4.1 M"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "weight": "bold",
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "+12%"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "height": 1,
+                      "background": [
+                        "#e5e5e5"
+                      ],
+                      "alignSelf": "stretch"
+                    }
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "paddingTop": 7,
+                      "paddingRight": 0,
+                      "paddingBottom": 7,
+                      "paddingLeft": 0
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "tabStops": [
+                            240,
+                            340,
+                            420
+                          ],
+                          "font": [
+                            "GeistMono"
+                          ]
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Net Income"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "$2.7 M"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#737373"
+                            },
+                            "inline": [
+                              "$1.3 M"
+                            ]
+                          },
+                          "\t",
+                          {
+                            "type": "span",
+                            "props": {
+                              "weight": "bold",
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "+108%"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "height": 1,
+                      "background": [
+                        "#e5e5e5"
+                      ],
+                      "alignSelf": "stretch"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#737373",
+                  "font": [
+                    "GeistMono"
+                  ]
+                },
+                "inline": [
+                  "ORIENTATION"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "weight": "bold",
+                  "color": "#0a0a0a",
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Layout-aware text rotation"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#404040",
+                  "lineHeight": 1.6,
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Text can be rotated 0°/90°/180°/270°. At 90° and 270° the Yoga footprint swaps width and height so surrounding elements flow naturally around the rotated block."
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 0,
+                  "marginTop": 12,
+                  "borderWidth": 1,
+                  "borderColor": "#e5e5e5"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                      "padding": 14,
+                      "background": [
+                        "#f7f7f7"
+                      ],
+                      "borderTopWidth": 0,
+                      "borderRightWidth": 1,
+                      "borderBottomWidth": 0,
+                      "borderLeftWidth": 0,
+                      "borderColor": "#e5e5e5"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 18,
+                          "weight": "bold",
+                          "color": "#0a0a0a",
+                          "orientation": 0
+                        },
+                        "inline": [
+                          "0°"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginTop": 6
+                        },
+                        "inline": [
+                          "Normal"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                      "padding": 14,
+                      "background": [
+                        "#f7f7f7"
+                      ],
+                      "borderTopWidth": 0,
+                      "borderRightWidth": 1,
+                      "borderBottomWidth": 0,
+                      "borderLeftWidth": 0,
+                      "borderColor": "#e5e5e5"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 18,
+                          "weight": "bold",
+                          "color": "#0a0a0a",
+                          "orientation": 90
+                        },
+                        "inline": [
+                          "90°"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginTop": 6
+                        },
+                        "inline": [
+                          "Clockwise"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                      "padding": 14,
+                      "background": [
+                        "#f7f7f7"
+                      ],
+                      "borderTopWidth": 0,
+                      "borderRightWidth": 1,
+                      "borderBottomWidth": 0,
+                      "borderLeftWidth": 0,
+                      "borderColor": "#e5e5e5"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 18,
+                          "weight": "bold",
+                          "color": "#0a0a0a",
+                          "orientation": 180
+                        },
+                        "inline": [
+                          "180°"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginTop": 6
+                        },
+                        "inline": [
+                          "Flipped"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                      "padding": 14,
+                      "background": [
+                        "#f7f7f7"
+                      ],
+                      "borderTopWidth": 0,
+                      "borderRightWidth": 1,
+                      "borderBottomWidth": 0,
+                      "borderLeftWidth": 0,
+                      "borderColor": "#e5e5e5"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 18,
+                          "weight": "bold",
+                          "color": "#0a0a0a",
+                          "orientation": 270
+                        },
+                        "inline": [
+                          "270°"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginTop": 6
+                        },
+                        "inline": [
+                          "Counter-CW"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#737373",
+                  "font": [
+                    "GeistMono"
+                  ]
+                },
+                "inline": [
+                  "WHITESPACE"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "weight": "bold",
+                  "color": "#0a0a0a",
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Preserve leading & trailing spaces"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#404040",
+                  "lineHeight": 1.6,
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Text nodes no longer trim whitespace at wrap boundaries. Intentional spacing within Span sequences is faithfully preserved."
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 0,
+                  "marginTop": 12,
+                  "borderWidth": 1,
+                  "borderColor": "#e5e5e5"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "padding": 14,
+                      "background": [
+                        "#f7f7f7"
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "weight": "bold",
+                          "color": "#737373",
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "BEFORE"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 15,
+                          "weight": "bold"
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Hello"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#737373"
+                            },
+                            "inline": [
+                              "  ·  "
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "World"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginTop": 6
+                        },
+                        "inline": [
+                          "Spaces trimmed at wrap points"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "padding": 14,
+                      "background": [
+                        "#f7f7f7"
+                      ],
+                      "borderTopWidth": 0,
+                      "borderRightWidth": 0,
+                      "borderBottomWidth": 0,
+                      "borderLeftWidth": 1,
+                      "borderColor": "#e5e5e5"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "weight": "bold",
+                          "color": "#737373",
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "AFTER"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 15,
+                          "weight": "bold"
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Hello"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              "  ·  "
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "World"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginTop": 6
+                        },
+                        "inline": [
+                          "Whitespace preserved as written"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#737373",
+                  "font": [
+                    "GeistMono"
+                  ]
+                },
+                "inline": [
+                  "CUSTOM FONT — KHMER"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "weight": "bold",
+                  "color": "#0a0a0a",
+                  "marginTop": 6,
+                  "font": [
+                    "Inter Khmer"
+                  ]
+                },
+                "inline": [
+                  "ភាសាខ្មែរ"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#404040",
+                  "lineHeight": 1.6,
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Sone supports custom font loading via ",
+                  {
+                    "type": "span",
+                    "props": {
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0a0a0a"
+                    },
+                    "inline": [
+                      "Font.load()"
+                    ]
+                  },
+                  ". Any language or script can be rendered by registering the appropriate typeface."
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 0,
+                  "marginTop": 12,
+                  "borderWidth": 1,
+                  "borderColor": "#e5e5e5"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "padding": 14,
+                      "background": [
+                        "#f7f7f7"
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "weight": "bold",
+                          "color": "#737373",
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "HEADLINE"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 20,
+                          "weight": "bold",
+                          "color": "#0a0a0a",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "lineHeight": 1.4
+                        },
+                        "inline": [
+                          "ប្រព័ន្ធរចនា Canvas"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#737373",
+                          "marginTop": 4
+                        },
+                        "inline": [
+                          "Canvas Layout Engine"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "padding": 14,
+                      "background": [
+                        "#f7f7f7"
+                      ],
+                      "borderTopWidth": 0,
+                      "borderRightWidth": 0,
+                      "borderBottomWidth": 0,
+                      "borderLeftWidth": 1,
+                      "borderColor": "#e5e5e5"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "weight": "bold",
+                          "color": "#737373",
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "BODY"
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "font": [
+                            "Inter Khmer"
+                          ],
+                          "lineHeight": 1.8
+                        },
+                        "inline": [
+                          "សូននៅជាម៉ាស៊ីនរចនាប្លង់ Canvas សម្រាប់ Node.js និង Browser ដែលអនុញ្ញាតឱ្យបង្កើត PDF ច្រើនទំព័រ។"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#ffffff"
+          ],
+          "paddingTop": 32,
+          "paddingRight": 40,
+          "paddingBottom": 32,
+          "paddingLeft": 40,
+          "gap": 0
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ]
+                    },
+                    "inline": [
+                      "03 — LISTS & BORDERS"
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "flex": 1,
+                      "height": 1,
+                      "background": [
+                        "#e5e5e5"
+                      ],
+                      "alignSelf": "center",
+                      "marginLeft": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#0a0a0a",
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Smart Lists & Per-Side Borders"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#404040",
+                  "lineHeight": 1.5,
+                  "marginTop": 3
+                },
+                "inline": [
+                  "Full Span styling for list markers, and precise per-side border widths."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#737373",
+                  "font": [
+                    "GeistMono"
+                  ]
+                },
+                "inline": [
+                  "LIST STYLE"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "weight": "bold",
+                  "color": "#0a0a0a",
+                  "marginTop": 6
+                },
+                "inline": [
+                  "SpanNode markers"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#404040",
+                  "lineHeight": 1.6,
+                  "marginTop": 6
+                },
+                "inline": [
+                  {
+                    "type": "span",
+                    "props": {
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0a0a0a"
+                    },
+                    "inline": [
+                      "listStyle()"
+                    ]
+                  },
+                  " now accepts a ",
+                  {
+                    "type": "span",
+                    "props": {
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0a0a0a"
+                    },
+                    "inline": [
+                      "Span(...)"
+                    ]
+                  },
+                  " node for full typographic control over the marker — color, weight, size, and font."
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 0,
+                  "marginTop": 12,
+                  "borderWidth": 1,
+                  "borderColor": "#e5e5e5"
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "padding": 16,
+                      "background": [
+                        "#f7f7f7"
+                      ]
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "weight": "bold",
+                          "color": "#737373",
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "marginBottom": 10
+                        },
+                        "inline": [
+                          "DISC (built-in)"
+                        ]
+                      },
+                      {
+                        "type": "list",
+                        "props": {
+                          "listStyle": "disc",
+                          "markerGap": 10,
+                          "gap": 8
+                        },
+                        "children": [
+                          {
+                            "type": "list-item",
+                            "props": {
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "props": {
+                                  "size": 11,
+                                  "color": "#404040",
+                                  "lineHeight": 1.5
+                                },
+                                "inline": [
+                                  "Automatic page breaking"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "list-item",
+                            "props": {
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "props": {
+                                  "size": 11,
+                                  "color": "#404040",
+                                  "lineHeight": 1.5
+                                },
+                                "inline": [
+                                  "Dynamic header & footer"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "list-item",
+                            "props": {
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "props": {
+                                  "size": 11,
+                                  "color": "#404040",
+                                  "lineHeight": 1.5
+                                },
+                                "inline": [
+                                  "Per-page SonePageInfo"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "list-item",
+                            "props": {
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "props": {
+                                  "size": 11,
+                                  "color": "#404040",
+                                  "lineHeight": 1.5
+                                },
+                                "inline": [
+                                  "lastPageHeight option"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "padding": 16,
+                      "background": [
+                        "#f7f7f7"
+                      ],
+                      "borderTopWidth": 0,
+                      "borderRightWidth": 0,
+                      "borderBottomWidth": 0,
+                      "borderLeftWidth": 1,
+                      "borderColor": "#e5e5e5"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "weight": "bold",
+                          "color": "#737373",
+                          "font": [
+                            "GeistMono"
+                          ],
+                          "marginBottom": 10
+                        },
+                        "inline": [
+                          "SPAN (custom)"
+                        ]
+                      },
+                      {
+                        "type": "list",
+                        "props": {
+                          "listStyle": {
+                            "type": "span",
+                            "props": {
+                              "color": "#0a0a0a",
+                              "weight": "bold"
+                            },
+                            "inline": [
+                              "→"
+                            ]
+                          },
+                          "markerGap": 10,
+                          "gap": 8
+                        },
+                        "children": [
+                          {
+                            "type": "list-item",
+                            "props": {
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "props": {
+                                  "size": 11,
+                                  "color": "#404040",
+                                  "lineHeight": 1.5
+                                },
+                                "inline": [
+                                  "Tab stops alignment"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "list-item",
+                            "props": {
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "props": {
+                                  "size": 11,
+                                  "color": "#404040",
+                                  "lineHeight": 1.5
+                                },
+                                "inline": [
+                                  "Text orientation 90°/270°"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "list-item",
+                            "props": {
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "props": {
+                                  "size": 11,
+                                  "color": "#404040",
+                                  "lineHeight": 1.5
+                                },
+                                "inline": [
+                                  "Whitespace preservation"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "type": "list-item",
+                            "props": {
+                              "alignItems": "center"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "props": {
+                                  "size": 11,
+                                  "color": "#404040",
+                                  "lineHeight": 1.5
+                                },
+                                "inline": [
+                                  "Span-styled markers"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "padding": 16,
+                  "background": [
+                    "#f7f7f7"
+                  ],
+                  "marginTop": 0,
+                  "borderTopWidth": 0,
+                  "borderRightWidth": 1,
+                  "borderBottomWidth": 1,
+                  "borderLeftWidth": 1,
+                  "borderColor": "#e5e5e5"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "marginBottom": 10
+                    },
+                    "inline": [
+                      "NUMBERED WITH SPAN"
+                    ]
+                  },
+                  {
+                    "type": "list",
+                    "props": {
+                      "listStyle": {
+                        "type": "span",
+                        "props": {
+                          "color": "#0a0a0a",
+                          "weight": "bold"
+                        },
+                        "inline": [
+                          "{}."
+                        ]
+                      },
+                      "startIndex": 1,
+                      "markerGap": 12,
+                      "gap": 10
+                    },
+                    "children": [
+                      {
+                        "type": "list-item",
+                        "props": {
+                          "alignItems": "center"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "color": "#404040",
+                              "font": [
+                                "GeistMono"
+                              ]
+                            },
+                            "inline": [
+                              "npm install sone"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "list-item",
+                        "props": {
+                          "alignItems": "center"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "color": "#404040",
+                              "font": [
+                                "GeistMono"
+                              ]
+                            },
+                            "inline": [
+                              "import { Column, Row, Text, sone } from 'sone'"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "list-item",
+                        "props": {
+                          "alignItems": "center"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 11,
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              "Compose your node tree declaratively"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "list-item",
+                        "props": {
+                          "alignItems": "center"
+                        },
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 10,
+                              "color": "#404040",
+                              "font": [
+                                "GeistMono"
+                              ]
+                            },
+                            "inline": [
+                              "sone(root, { pageHeight }).pdf()"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "padding": 16,
+                  "background": [
+                    "#f7f7f7"
+                  ],
+                  "marginTop": 0,
+                  "borderTopWidth": 0,
+                  "borderRightWidth": 1,
+                  "borderBottomWidth": 1,
+                  "borderLeftWidth": 1,
+                  "borderColor": "#e5e5e5"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "marginBottom": 10
+                    },
+                    "inline": [
+                      "NESTED LISTS"
+                    ]
+                  },
+                  {
+                    "type": "list",
+                    "props": {
+                      "listStyle": {
+                        "type": "span",
+                        "props": {
+                          "color": "#0a0a0a",
+                          "weight": "bold"
+                        },
+                        "inline": [
+                          "→"
+                        ]
+                      },
+                      "markerGap": 10,
+                      "gap": 14
+                    },
+                    "children": [
+                      {
+                        "type": "list-item",
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 11,
+                              "color": "#0a0a0a",
+                              "weight": "bold"
+                            },
+                            "inline": [
+                              "Page Layout"
+                            ]
+                          },
+                          {
+                            "type": "list",
+                            "props": {
+                              "listStyle": {
+                                "type": "span",
+                                "props": {
+                                  "color": "#737373"
+                                },
+                                "inline": [
+                                  "·"
+                                ]
+                              },
+                              "markerGap": 8,
+                              "gap": 4,
+                              "marginTop": 4
+                            },
+                            "children": [
+                              {
+                                "type": "list-item",
+                                "props": {
+                                  "alignItems": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "props": {
+                                      "size": 11,
+                                      "color": "#404040",
+                                      "lineHeight": 1.5
+                                    },
+                                    "inline": [
+                                      {
+                                        "type": "span",
+                                        "props": {
+                                          "font": [
+                                            "GeistMono"
+                                          ],
+                                          "color": "#0a0a0a"
+                                        },
+                                        "inline": [
+                                          "pageHeight"
+                                        ]
+                                      },
+                                      " — enables multi-page output"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "list-item",
+                                "props": {
+                                  "alignItems": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "props": {
+                                      "size": 11,
+                                      "color": "#404040",
+                                      "lineHeight": 1.5
+                                    },
+                                    "inline": [
+                                      {
+                                        "type": "span",
+                                        "props": {
+                                          "font": [
+                                            "GeistMono"
+                                          ],
+                                          "color": "#0a0a0a"
+                                        },
+                                        "inline": [
+                                          "header"
+                                        ]
+                                      },
+                                      " / ",
+                                      {
+                                        "type": "span",
+                                        "props": {
+                                          "font": [
+                                            "GeistMono"
+                                          ],
+                                          "color": "#0a0a0a"
+                                        },
+                                        "inline": [
+                                          "footer"
+                                        ]
+                                      },
+                                      " — repeating bands"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "list-item",
+                                "props": {
+                                  "alignItems": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "props": {
+                                      "size": 11,
+                                      "color": "#404040",
+                                      "lineHeight": 1.5
+                                    },
+                                    "inline": [
+                                      {
+                                        "type": "span",
+                                        "props": {
+                                          "font": [
+                                            "GeistMono"
+                                          ],
+                                          "color": "#0a0a0a"
+                                        },
+                                        "inline": [
+                                          "PageBreak()"
+                                        ]
+                                      },
+                                      " — explicit page break node"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "list-item",
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 11,
+                              "color": "#0a0a0a",
+                              "weight": "bold"
+                            },
+                            "inline": [
+                              "Typography"
+                            ]
+                          },
+                          {
+                            "type": "list",
+                            "props": {
+                              "listStyle": {
+                                "type": "span",
+                                "props": {
+                                  "color": "#737373"
+                                },
+                                "inline": [
+                                  "·"
+                                ]
+                              },
+                              "markerGap": 8,
+                              "gap": 4,
+                              "marginTop": 4
+                            },
+                            "children": [
+                              {
+                                "type": "list-item",
+                                "props": {
+                                  "alignItems": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "props": {
+                                      "size": 11,
+                                      "color": "#404040",
+                                      "lineHeight": 1.5
+                                    },
+                                    "inline": [
+                                      {
+                                        "type": "span",
+                                        "props": {
+                                          "font": [
+                                            "GeistMono"
+                                          ],
+                                          "color": "#0a0a0a"
+                                        },
+                                        "inline": [
+                                          "tabStops()"
+                                        ]
+                                      },
+                                      " — column alignment via ",
+                                      {
+                                        "type": "span",
+                                        "props": {
+                                          "font": [
+                                            "GeistMono"
+                                          ],
+                                          "color": "#0a0a0a"
+                                        },
+                                        "inline": [
+                                          "\\t"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "list-item",
+                                "props": {
+                                  "alignItems": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "props": {
+                                      "size": 11,
+                                      "color": "#404040",
+                                      "lineHeight": 1.5
+                                    },
+                                    "inline": [
+                                      {
+                                        "type": "span",
+                                        "props": {
+                                          "font": [
+                                            "GeistMono"
+                                          ],
+                                          "color": "#0a0a0a"
+                                        },
+                                        "inline": [
+                                          "orientation()"
+                                        ]
+                                      },
+                                      " — 0 / 90 / 180 / 270°"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "list-item",
+                        "children": [
+                          {
+                            "type": "text",
+                            "props": {
+                              "size": 11,
+                              "color": "#0a0a0a",
+                              "weight": "bold"
+                            },
+                            "inline": [
+                              "Lists & Borders"
+                            ]
+                          },
+                          {
+                            "type": "list",
+                            "props": {
+                              "listStyle": {
+                                "type": "span",
+                                "props": {
+                                  "color": "#737373"
+                                },
+                                "inline": [
+                                  "·"
+                                ]
+                              },
+                              "markerGap": 8,
+                              "gap": 4,
+                              "marginTop": 4
+                            },
+                            "children": [
+                              {
+                                "type": "list-item",
+                                "props": {
+                                  "alignItems": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "props": {
+                                      "size": 11,
+                                      "color": "#404040",
+                                      "lineHeight": 1.5
+                                    },
+                                    "inline": [
+                                      {
+                                        "type": "span",
+                                        "props": {
+                                          "font": [
+                                            "GeistMono"
+                                          ],
+                                          "color": "#0a0a0a"
+                                        },
+                                        "inline": [
+                                          "listStyle(Span(...))"
+                                        ]
+                                      },
+                                      " — full marker styling"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "type": "list-item",
+                                "props": {
+                                  "alignItems": "center"
+                                },
+                                "children": [
+                                  {
+                                    "type": "text",
+                                    "props": {
+                                      "size": 11,
+                                      "color": "#404040",
+                                      "lineHeight": 1.5
+                                    },
+                                    "inline": [
+                                      {
+                                        "type": "span",
+                                        "props": {
+                                          "font": [
+                                            "GeistMono"
+                                          ],
+                                          "color": "#0a0a0a"
+                                        },
+                                        "inline": [
+                                          "borderWidth(top, right, bottom, left)"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#737373",
+                  "font": [
+                    "GeistMono"
+                  ]
+                },
+                "inline": [
+                  "PER-SIDE BORDERS"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "weight": "bold",
+                  "color": "#0a0a0a",
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Independent border widths per side"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#404040",
+                  "lineHeight": 1.6,
+                  "marginTop": 6
+                },
+                "inline": [
+                  {
+                    "type": "span",
+                    "props": {
+                      "font": [
+                        "GeistMono"
+                      ],
+                      "color": "#0a0a0a"
+                    },
+                    "inline": [
+                      "borderWidth(top, right, bottom, left)"
+                    ]
+                  },
+                  " now correctly applies each side independently. Previously, only uniform borders were rendered."
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "gap": 12,
+                  "marginTop": 16
+                },
+                "children": [
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "gap": 0,
+                      "alignItems": "stretch"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "Top"
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "flex": 1,
+                          "height": 44,
+                          "background": [
+                            "#f7f7f7"
+                          ],
+                          "borderTopWidth": 3,
+                          "borderRightWidth": 0,
+                          "borderBottomWidth": 0,
+                          "borderLeftWidth": 0,
+                          "borderColor": "#0a0a0a"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "gap": 0,
+                      "alignItems": "stretch"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "Right"
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "flex": 1,
+                          "height": 44,
+                          "background": [
+                            "#f7f7f7"
+                          ],
+                          "borderTopWidth": 0,
+                          "borderRightWidth": 3,
+                          "borderBottomWidth": 0,
+                          "borderLeftWidth": 0,
+                          "borderColor": "#0a0a0a"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "gap": 0,
+                      "alignItems": "stretch"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "Bottom"
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "flex": 1,
+                          "height": 44,
+                          "background": [
+                            "#f7f7f7"
+                          ],
+                          "borderTopWidth": 0,
+                          "borderRightWidth": 0,
+                          "borderBottomWidth": 3,
+                          "borderLeftWidth": 0,
+                          "borderColor": "#0a0a0a"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "gap": 0,
+                      "alignItems": "stretch"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "Left"
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "flex": 1,
+                          "height": 44,
+                          "background": [
+                            "#f7f7f7"
+                          ],
+                          "borderTopWidth": 0,
+                          "borderRightWidth": 0,
+                          "borderBottomWidth": 0,
+                          "borderLeftWidth": 3,
+                          "borderColor": "#0a0a0a"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "column",
+                    "props": {
+                      "flex": 1,
+                      "gap": 0,
+                      "alignItems": "stretch"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 9,
+                          "color": "#737373",
+                          "marginBottom": 8
+                        },
+                        "inline": [
+                          "T + B"
+                        ]
+                      },
+                      {
+                        "type": "row",
+                        "props": {
+                          "flex": 1,
+                          "height": 44,
+                          "background": [
+                            "#f7f7f7"
+                          ],
+                          "borderTopWidth": 3,
+                          "borderRightWidth": 0,
+                          "borderBottomWidth": 3,
+                          "borderLeftWidth": 0,
+                          "borderColor": "#0a0a0a"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#ffffff"
+          ],
+          "paddingTop": 32,
+          "paddingRight": 40,
+          "paddingBottom": 32,
+          "paddingLeft": 40,
+          "gap": 0
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#737373",
+                      "font": [
+                        "GeistMono"
+                      ]
+                    },
+                    "inline": [
+                      "04 — SUMMARY"
+                    ]
+                  },
+                  {
+                    "type": "row",
+                    "props": {
+                      "flex": 1,
+                      "height": 1,
+                      "background": [
+                        "#e5e5e5"
+                      ],
+                      "alignSelf": "center",
+                      "marginLeft": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#0a0a0a",
+                  "marginTop": 6
+                },
+                "inline": [
+                  "Quick Reference"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#404040",
+                  "lineHeight": 1.5,
+                  "marginTop": 3
+                },
+                "inline": [
+                  "All features shipped in this release, grouped by area."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "weight": "bold",
+                  "color": "#0a0a0a"
+                },
+                "inline": [
+                  "Page Layout"
+                ]
+              },
+              {
+                "type": "list",
+                "props": {
+                  "listStyle": {
+                    "type": "span",
+                    "props": {
+                      "color": "#737373",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "·"
+                    ]
+                  },
+                  "markerGap": 10,
+                  "gap": 5,
+                  "marginTop": 10
+                },
+                "children": [
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "pageHeight"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              " in SoneRenderConfig — enables multi-page output"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "pageBreak"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              " prop: \"before\" | \"after\" | \"avoid\""
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "PageBreak()"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              " — explicit break node"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "header / footer"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              " — static node or (SonePageInfo) => SoneNode"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "margin"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              " — number or { top, right, bottom, left }"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "lastPageHeight"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              ": \"uniform\" | \"content\""
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "pdf()"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              " uses drawCanvas — no rasterisation artefacts"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "weight": "bold",
+                  "color": "#0a0a0a"
+                },
+                "inline": [
+                  "Typography"
+                ]
+              },
+              {
+                "type": "list",
+                "props": {
+                  "listStyle": {
+                    "type": "span",
+                    "props": {
+                      "color": "#737373",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "·"
+                    ]
+                  },
+                  "markerGap": 10,
+                  "gap": 5,
+                  "marginTop": 10
+                },
+                "children": [
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              ".tabStops(...values)"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              " — \\t snaps to x positions"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              ".orientation(0 | 90 | 180 | 270)"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              " — layout-aware rotation"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Yoga footprint swaps at 90°/270° for natural element flow"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Whitespace preserved at line-wrap boundaries"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "weight": "bold",
+                  "color": "#0a0a0a"
+                },
+                "inline": [
+                  "Lists"
+                ]
+              },
+              {
+                "type": "list",
+                "props": {
+                  "listStyle": {
+                    "type": "span",
+                    "props": {
+                      "color": "#737373",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "·"
+                    ]
+                  },
+                  "markerGap": 10,
+                  "gap": 5,
+                  "marginTop": 10
+                },
+                "children": [
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "listStyle(Span(...))"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              " — full marker typography control"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Removed: markerColor, markerSize, markerFont, markerWeight, markerStyle"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "Retained: markerGap, startIndex"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "padding": 16,
+              "background": [
+                "#ffffff"
+              ],
+              "borderWidth": 1,
+              "borderColor": "#e5e5e5"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 13,
+                  "weight": "bold",
+                  "color": "#0a0a0a"
+                },
+                "inline": [
+                  "Borders"
+                ]
+              },
+              {
+                "type": "list",
+                "props": {
+                  "listStyle": {
+                    "type": "span",
+                    "props": {
+                      "color": "#737373",
+                      "weight": "bold"
+                    },
+                    "inline": [
+                      "·"
+                    ]
+                  },
+                  "markerGap": 10,
+                  "gap": 5,
+                  "marginTop": 10
+                },
+                "children": [
+                  {
+                    "type": "list-item",
+                    "props": {
+                      "alignItems": "center"
+                    },
+                    "children": [
+                      {
+                        "type": "text",
+                        "props": {
+                          "size": 11,
+                          "color": "#404040",
+                          "lineHeight": 1.55
+                        },
+                        "inline": [
+                          {
+                            "type": "span",
+                            "props": {
+                              "font": [
+                                "GeistMono"
+                              ],
+                              "color": "#0a0a0a"
+                            },
+                            "inline": [
+                              "borderWidth(top, right, bottom, left)"
+                            ]
+                          },
+                          {
+                            "type": "span",
+                            "props": {
+                              "color": "#404040"
+                            },
+                            "inline": [
+                              " — truly per-side"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 10,
+              "color": "#737373",
+              "alignSelf": "center",
+              "marginTop": 16
+            },
+            "inline": [
+              "Sone — Declarative canvas layout for Node.js & the browser"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

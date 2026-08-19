@@ -1,0 +1,267 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "padding": 32,
+      "width": 480,
+      "background": [
+        "white"
+      ]
+    },
+    "children": [
+      {
+        "type": "text",
+        "props": {
+          "size": 20,
+          "weight": "bold",
+          "marginBottom": 4
+        },
+        "inline": [
+          "Table of Contents"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            360
+          ],
+          "tabLeader": ".",
+          "size": 14
+        },
+        "inline": [
+          "Introduction\t1"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            360
+          ],
+          "tabLeader": ".",
+          "size": 14
+        },
+        "inline": [
+          "Chapter 1: Getting Started\t12"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            360
+          ],
+          "tabLeader": ".",
+          "size": 14
+        },
+        "inline": [
+          "Chapter 2: Advanced Usage\t34"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            360
+          ],
+          "tabLeader": ".",
+          "size": 14
+        },
+        "inline": [
+          "Chapter 3: Customization\t56"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            360
+          ],
+          "tabLeader": ".",
+          "size": 14,
+          "marginBottom": 20
+        },
+        "inline": [
+          "Appendix\t78"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 16,
+          "weight": "bold",
+          "marginBottom": 4
+        },
+        "inline": [
+          "Dash leader (—)"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            300
+          ],
+          "tabLeader": "-",
+          "size": 14
+        },
+        "inline": [
+          "Revenue\t$1,200,000"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            300
+          ],
+          "tabLeader": "-",
+          "size": 14
+        },
+        "inline": [
+          "Expenses\t$840,000"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            300
+          ],
+          "tabLeader": "-",
+          "size": 14,
+          "weight": "bold",
+          "marginBottom": 20
+        },
+        "inline": [
+          "Net Profit\t$360,000"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 16,
+          "weight": "bold",
+          "marginBottom": 4
+        },
+        "inline": [
+          "Underscore leader (_)"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            240
+          ],
+          "tabLeader": "_",
+          "size": 14
+        },
+        "inline": [
+          "Name:\t___"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            240
+          ],
+          "tabLeader": "_",
+          "size": 14
+        },
+        "inline": [
+          "Date:\t___"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            240
+          ],
+          "tabLeader": "_",
+          "size": 14,
+          "marginBottom": 20
+        },
+        "inline": [
+          "Signature:\t___"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "size": 16,
+          "weight": "bold",
+          "marginBottom": 4
+        },
+        "inline": [
+          "No leader (default)"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            300
+          ],
+          "size": 14
+        },
+        "inline": [
+          "Item A\t100"
+        ]
+      },
+      {
+        "type": "text",
+        "props": {
+          "tabStops": [
+            300
+          ],
+          "size": 14
+        },
+        "inline": [
+          "Item B\t200"
+        ]
+      }
+    ]
+  }
+}

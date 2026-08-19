@@ -1,0 +1,299 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "#f5f5f5"
+      ],
+      "padding": 30
+    },
+    "children": [
+      {
+        "type": "table",
+        "props": {
+          "background": [
+            "white"
+          ],
+          "borderWidth": 1,
+          "borderColor": "#ccc",
+          "spacing": [
+            16,
+            10
+          ]
+        },
+        "children": [
+          {
+            "type": "table-row",
+            "props": {
+              "background": [
+                "#4a90d9"
+              ]
+            },
+            "children": [
+              {
+                "type": "table-cell",
+                "props": {
+                  "colspan": 2
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold",
+                      "color": "white"
+                    },
+                    "inline": [
+                      "Full Name"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold",
+                      "color": "white"
+                    },
+                    "inline": [
+                      "Score"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "weight": "bold",
+                      "color": "white"
+                    },
+                    "inline": [
+                      "Grade"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Alice"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Johnson"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "95"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "A"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Bob"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Smith"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "82"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "B"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "props": {
+                  "colspan": 2,
+                  "background": [
+                    "#f0f0f0"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Summary"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "props": {
+                  "background": [
+                    "#f0f0f0"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "88.5"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "table-cell",
+                "props": {
+                  "background": [
+                    "#f0f0f0"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "B+"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "table-row",
+            "children": [
+              {
+                "type": "table-cell",
+                "props": {
+                  "colspan": 4,
+                  "background": [
+                    "#e8f4e8"
+                  ]
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "inline": [
+                      "Grand Total"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

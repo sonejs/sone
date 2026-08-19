@@ -1,0 +1,270 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "background": [
+        "linear-gradient(to top, white, #fff3d8ff 100%)"
+      ],
+      "width": 750,
+      "height": 1334
+    },
+    "children": [
+      {
+        "type": "column",
+        "props": {
+          "flex": 1
+        }
+      },
+      {
+        "type": "photo",
+        "props": {
+          "src": "../../image/kouprey.jpg",
+          "width": 200,
+          "height": 200,
+          "scaleType": "cover",
+          "borderColor": "orange",
+          "borderWidth": 4,
+          "alignSelf": "center",
+          "cornerRadius": [
+            100
+          ],
+          "marginTop": 44
+        }
+      },
+      {
+        "type": "text-default",
+        "props": {
+          "size": 40,
+          "align": "center",
+          "font": [
+            "Inter Khmer"
+          ]
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "weight": "bold",
+              "size": 50,
+              "marginTop": 44
+            },
+            "inline": [
+              "Choose Language"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "color": "gray",
+              "marginTop": 14
+            },
+            "inline": [
+              "សូមជ្រើសរើសភាសារបស់អ្នក"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "marginTop": 44,
+          "gap": 22
+        },
+        "children": [
+          {
+            "type": "row",
+            "props": {
+              "alignItems": "center",
+              "gap": 18,
+              "paddingTop": 18,
+              "paddingBottom": 18,
+              "paddingLeft": 22,
+              "paddingRight": 24,
+              "background": [
+                "#eee"
+              ],
+              "marginTop": 0,
+              "marginRight": 44,
+              "marginBottom": 0,
+              "marginLeft": 44,
+              "cornerRadius": [
+                20
+              ],
+              "cornerSmoothing": 0.7,
+              "borderColor": "orange",
+              "borderWidth": 0
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/cambodia.svg",
+                  "preserveAspectRatio": true,
+                  "width": 64
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "Inter Khmer"
+                  ],
+                  "size": 40,
+                  "weight": 500,
+                  "flex": 1
+                },
+                "inline": [
+                  "ភាសាខ្មែរ"
+                ]
+              },
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/check.svg",
+                  "preserveAspectRatio": true,
+                  "width": 44,
+                  "fill": "blue"
+                }
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "alignItems": "center",
+              "gap": 18,
+              "paddingTop": 18,
+              "paddingBottom": 18,
+              "paddingLeft": 22,
+              "paddingRight": 24,
+              "background": [
+                "#eee"
+              ],
+              "marginTop": 0,
+              "marginRight": 44,
+              "marginBottom": 0,
+              "marginLeft": 44,
+              "cornerRadius": [
+                20
+              ],
+              "cornerSmoothing": 0.7,
+              "borderColor": "orange",
+              "borderWidth": 4
+            },
+            "children": [
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/english.svg",
+                  "preserveAspectRatio": true,
+                  "width": 64
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "font": [
+                    "Inter Khmer"
+                  ],
+                  "size": 40,
+                  "weight": 500,
+                  "flex": 1
+                },
+                "inline": [
+                  "English"
+                ]
+              },
+              {
+                "type": "photo",
+                "props": {
+                  "src": "../../image/check-orange.svg",
+                  "preserveAspectRatio": true,
+                  "width": 44,
+                  "fill": "blue"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "flex": 1
+        }
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "orange"
+          ],
+          "margin": 44,
+          "padding": 28,
+          "cornerRadius": [
+            20
+          ],
+          "corner": "cut",
+          "shadows": [
+            "6px 6px 0px black"
+          ]
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "size": 32,
+              "color": "black",
+              "align": "center",
+              "weight": "bold",
+              "font": [
+                "Inter Khmer"
+              ]
+            },
+            "inline": [
+              "Get Started"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

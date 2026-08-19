@@ -1,0 +1,2007 @@
+{
+  "sone": 1,
+  "config": {
+    "density": 2,
+    "pageHeight": 1123,
+    "margin": {
+      "top": 77,
+      "right": 77,
+      "bottom": 77,
+      "left": 77
+    },
+    "header": {
+      "type": "row",
+      "props": {
+        "background": [
+          "#ffffff"
+        ],
+        "paddingTop": 10,
+        "paddingRight": 16,
+        "paddingBottom": 10,
+        "paddingLeft": 16,
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "borderTopWidth": 0,
+        "borderRightWidth": 0,
+        "borderBottomWidth": 1,
+        "borderLeftWidth": 0,
+        "borderColor": "#c7c7cc"
+      },
+      "children": [
+        {
+          "type": "row",
+          "props": {
+            "gap": 8,
+            "alignItems": "center"
+          },
+          "children": [
+            {
+              "type": "row",
+              "props": {
+                "background": [
+                  "black"
+                ],
+                "width": 20,
+                "height": 20,
+                "cornerRadius": [
+                  100
+                ],
+                "alignItems": "center",
+                "justifyContent": "center",
+                "flexShrink": 0
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "props": {
+                    "size": 8,
+                    "weight": "bold",
+                    "color": "#ffffff"
+                  },
+                  "inline": [
+                    "AM"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "column",
+              "props": {
+                "gap": 1
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "props": {
+                    "size": 9,
+                    "weight": "bold",
+                    "color": "#1d1d1f"
+                  },
+                  "inline": [
+                    "Atlas Meridian"
+                  ]
+                },
+                {
+                  "type": "text",
+                  "props": {
+                    "size": 8,
+                    "color": "#86868b"
+                  },
+                  "inline": [
+                    "Q1 2025 Product Report"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "row",
+          "props": {
+            "paddingTop": 3,
+            "paddingRight": 7,
+            "paddingBottom": 3,
+            "paddingLeft": 7,
+            "cornerRadius": [
+              3
+            ],
+            "background": [
+              "orange"
+            ],
+            "alignSelf": "center"
+          },
+          "children": [
+            {
+              "type": "text",
+              "props": {
+                "size": 8,
+                "weight": "bold",
+                "color": "white"
+              },
+              "inline": [
+                "CONFIDENTIAL"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "row",
+      "props": {
+        "background": [
+          "#ffffff"
+        ],
+        "paddingTop": 10,
+        "paddingRight": 16,
+        "paddingBottom": 10,
+        "paddingLeft": 16,
+        "justifyContent": "space-between",
+        "alignItems": "center",
+        "borderTopWidth": 1,
+        "borderRightWidth": 0,
+        "borderBottomWidth": 0,
+        "borderLeftWidth": 0,
+        "borderColor": "#c7c7cc"
+      },
+      "children": [
+        {
+          "type": "column",
+          "props": {
+            "gap": 2
+          },
+          "children": [
+            {
+              "type": "text",
+              "props": {
+                "size": 9,
+                "weight": "bold",
+                "color": "#1d1d1f"
+              },
+              "inline": [
+                "Atlas Meridian Corporation"
+              ]
+            },
+            {
+              "type": "text",
+              "props": {
+                "size": 8,
+                "color": "#86868b"
+              },
+              "inline": [
+                "Internal — Do Not Distribute"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "inline": [
+            {
+              "type": "span",
+              "props": {
+                "weight": "bold",
+                "color": "#1d1d1f"
+              },
+              "inline": [
+                "{pageNumber}"
+              ]
+            },
+            " of {totalPages}"
+          ]
+        }
+      ]
+    }
+  },
+  "fonts": [
+    {
+      "name": "GoogleSans",
+      "src": "../../font/GoogleSans-VariableFont_GRAD,opsz,wght.ttf"
+    },
+    {
+      "name": "Geist",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono",
+      "src": "../../font/GeistMono-Regular.ttf"
+    },
+    {
+      "name": "GeistMono-Bold",
+      "src": "../../font/GeistMono-Bold.ttf"
+    },
+    {
+      "name": "Moul",
+      "src": "../../font/Moul-Regular.ttf"
+    },
+    {
+      "name": "NotoSansKhmer",
+      "src": "../../font/NotoSansKhmer.ttf"
+    },
+    {
+      "name": "NotoSansArabic",
+      "src": "../../font/NotoSansArabic.ttf"
+    },
+    {
+      "name": "NotoSansHebrew",
+      "src": "../../font/NotoSansHebrew.ttf"
+    }
+  ],
+  "root": {
+    "type": "column",
+    "props": {
+      "width": 640,
+      "background": [
+        "#ffffff"
+      ],
+      "gap": 0
+    },
+    "children": [
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#1c1c1e"
+          ],
+          "paddingTop": 44,
+          "paddingRight": 40,
+          "paddingBottom": 40,
+          "paddingLeft": 40,
+          "gap": 14
+        },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "size": 9,
+              "weight": "bold",
+              "color": "rgba(255,255,255,0.4)"
+            },
+            "inline": [
+              "ATLAS MERIDIAN CORPORATION"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 32,
+              "weight": "bold",
+              "color": "#ffffff",
+              "lineHeight": 1.15
+            },
+            "inline": [
+              "Q1 2025\nProduct Report"
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "color": "rgba(255,255,255,0.45)",
+              "marginTop": 6
+            },
+            "inline": [
+              "Engineering & Product Division  ·  March 28, 2025"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#ffffff"
+          ],
+          "paddingTop": 36,
+          "paddingRight": 40,
+          "paddingBottom": 36,
+          "paddingLeft": 40,
+          "gap": 12
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#86868b"
+                },
+                "inline": [
+                  "01"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch",
+                  "marginTop": 8,
+                  "marginBottom": 10
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#1d1d1f"
+                },
+                "inline": [
+                  "Executive Summary"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "color": "#6e6e73",
+              "lineHeight": 1.7,
+              "align": "justify",
+              "lineBreak": "knuth-plass"
+            },
+            "inline": [
+              "Q1 2025 demonstrated strong momentum across all product lines. Monthly active users grew 18% quarter-over-quarter to 1.24 million, driven by accelerated enterprise onboarding in EMEA and sustained organic growth in the SMB segment. The platform processed 4.7 billion API calls during the quarter, maintaining 99.97% uptime against a 99.9% SLA target."
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "color": "#6e6e73",
+              "lineHeight": 1.7,
+              "align": "justify",
+              "lineBreak": "knuth-plass"
+            },
+            "inline": [
+              "The engineering team shipped 14 major releases and resolved 312 customer-reported issues — a 23% improvement in resolution velocity compared to Q4 2024. Migration to the new event-streaming architecture, completed in February, reduced median API latency from 38 ms to 11 ms for read-heavy workloads."
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "color": "#6e6e73",
+              "lineHeight": 1.7,
+              "align": "justify",
+              "lineBreak": "knuth-plass"
+            },
+            "inline": [
+              "Revenue contribution grew to $9.4 M for the quarter, up 31% year-over-year. Net Revenue Retention held at 118%, indicating strong expansion within the existing customer base despite intensifying competition."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#ffffff"
+          ],
+          "paddingTop": 36,
+          "paddingRight": 40,
+          "paddingBottom": 36,
+          "paddingLeft": 40,
+          "gap": 20,
+          "borderTopWidth": 1,
+          "borderRightWidth": 0,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderColor": "#d2d2d7"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#86868b"
+                },
+                "inline": [
+                  "02"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch",
+                  "marginTop": 8,
+                  "marginBottom": 10
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#1d1d1f"
+                },
+                "inline": [
+                  "Key Metrics"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "children": [
+              {
+                "type": "column",
+                "props": {
+                  "flex": 1,
+                  "paddingTop": 0,
+                  "paddingRight": 20,
+                  "paddingBottom": 0,
+                  "paddingLeft": 0,
+                  "borderTopWidth": 0,
+                  "borderRightWidth": 1,
+                  "borderBottomWidth": 0,
+                  "borderLeftWidth": 0,
+                  "borderColor": "#d2d2d7"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#86868b",
+                      "marginBottom": 6
+                    },
+                    "inline": [
+                      "MAU"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 28,
+                      "weight": "bold",
+                      "color": "#0071e3"
+                    },
+                    "inline": [
+                      "1.24 M"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "color": "#1a7f37",
+                      "marginTop": 3
+                    },
+                    "inline": [
+                      "+18% QoQ"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "flex": 1,
+                  "paddingTop": 0,
+                  "paddingRight": 20,
+                  "paddingBottom": 0,
+                  "paddingLeft": 20,
+                  "borderTopWidth": 0,
+                  "borderRightWidth": 1,
+                  "borderBottomWidth": 0,
+                  "borderLeftWidth": 0,
+                  "borderColor": "#d2d2d7"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#86868b",
+                      "marginBottom": 6
+                    },
+                    "inline": [
+                      "Uptime"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 28,
+                      "weight": "bold",
+                      "color": "#1a7f37"
+                    },
+                    "inline": [
+                      "99.97%"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "color": "#1a7f37",
+                      "marginTop": 3
+                    },
+                    "inline": [
+                      "SLA 99.9%"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "flex": 1,
+                  "paddingTop": 0,
+                  "paddingRight": 20,
+                  "paddingBottom": 0,
+                  "paddingLeft": 20,
+                  "borderTopWidth": 0,
+                  "borderRightWidth": 1,
+                  "borderBottomWidth": 0,
+                  "borderLeftWidth": 0,
+                  "borderColor": "#d2d2d7"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#86868b",
+                      "marginBottom": 6
+                    },
+                    "inline": [
+                      "p50 Latency"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 28,
+                      "weight": "bold",
+                      "color": "#1a7f37"
+                    },
+                    "inline": [
+                      "11 ms"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "color": "#1a7f37",
+                      "marginTop": 3
+                    },
+                    "inline": [
+                      "↓ from 38 ms"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "column",
+                "props": {
+                  "flex": 1,
+                  "paddingTop": 0,
+                  "paddingRight": 20,
+                  "paddingBottom": 0,
+                  "paddingLeft": 20,
+                  "borderTopWidth": 0,
+                  "borderRightWidth": 0,
+                  "borderBottomWidth": 0,
+                  "borderLeftWidth": 0,
+                  "borderColor": "#d2d2d7"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 9,
+                      "weight": "bold",
+                      "color": "#86868b",
+                      "marginBottom": 6
+                    },
+                    "inline": [
+                      "NRR"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 28,
+                      "weight": "bold",
+                      "color": "#1d1d1f"
+                    },
+                    "inline": [
+                      "118%"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "color": "#1a7f37",
+                      "marginTop": 3
+                    },
+                    "inline": [
+                      "Target 110%"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#ffffff"
+          ],
+          "paddingTop": 36,
+          "paddingRight": 40,
+          "paddingBottom": 36,
+          "paddingLeft": 40,
+          "gap": 20,
+          "borderTopWidth": 1,
+          "borderRightWidth": 0,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderColor": "#d2d2d7"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#86868b"
+                },
+                "inline": [
+                  "03"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch",
+                  "marginTop": 8,
+                  "marginBottom": 10
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#1d1d1f"
+                },
+                "inline": [
+                  "Engineering Highlights"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 0,
+                  "paddingRight": 0,
+                  "paddingBottom": 8,
+                  "paddingLeft": 0
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#86868b",
+                      "flex": 1
+                    },
+                    "inline": [
+                      "Initiative"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#86868b",
+                      "width": 100,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Status"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#86868b",
+                      "width": 130,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Impact"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#1d1d1f",
+                      "flex": 1,
+                      "lineHeight": 1.45
+                    },
+                    "inline": [
+                      "Event-Streaming Architecture Migration"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#1a7f37",
+                      "width": 100,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Shipped"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#6e6e73",
+                      "width": 130,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "−71% read latency"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#1d1d1f",
+                      "flex": 1,
+                      "lineHeight": 1.45
+                    },
+                    "inline": [
+                      "Multi-Region Failover (EU-West + AP-South)"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#1a7f37",
+                      "width": 100,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Shipped"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#6e6e73",
+                      "width": 130,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "RPO < 30 s"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#1d1d1f",
+                      "flex": 1,
+                      "lineHeight": 1.45
+                    },
+                    "inline": [
+                      "Zero-Downtime Schema Migrations"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#1a7f37",
+                      "width": 100,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Shipped"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#6e6e73",
+                      "width": 130,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "0 maintenance windows"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#1d1d1f",
+                      "flex": 1,
+                      "lineHeight": 1.45
+                    },
+                    "inline": [
+                      "Automated Canary Rollout Pipeline"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#1a7f37",
+                      "width": 100,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Shipped"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#6e6e73",
+                      "width": 130,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Error budget preserved"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#1d1d1f",
+                      "flex": 1,
+                      "lineHeight": 1.45
+                    },
+                    "inline": [
+                      "WebAssembly Compute Layer (Beta)"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#b45309",
+                      "width": 100,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "In Progress"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#6e6e73",
+                      "width": 130,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Target Q2 2025"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#1d1d1f",
+                      "flex": 1,
+                      "lineHeight": 1.45
+                    },
+                    "inline": [
+                      "Federated Search Index v2"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#b45309",
+                      "width": 100,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "In Progress"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#6e6e73",
+                      "width": 130,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Target Q2 2025"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "center"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#1d1d1f",
+                      "flex": 1,
+                      "lineHeight": 1.45
+                    },
+                    "inline": [
+                      "FIPS 140-2 Compliant Encryption"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 10,
+                      "weight": "bold",
+                      "color": "#86868b",
+                      "width": 100,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Planned"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#6e6e73",
+                      "width": 130,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Target Q3 2025"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#ffffff"
+          ],
+          "paddingTop": 36,
+          "paddingRight": 40,
+          "paddingBottom": 36,
+          "paddingLeft": 40,
+          "gap": 20,
+          "borderTopWidth": 1,
+          "borderRightWidth": 0,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderColor": "#d2d2d7"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#86868b"
+                },
+                "inline": [
+                  "04"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch",
+                  "marginTop": 8,
+                  "marginBottom": 10
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#1d1d1f"
+                },
+                "inline": [
+                  "Reliability & Incident Summary"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "color": "#6e6e73",
+              "lineHeight": 1.7
+            },
+            "inline": [
+              "Three severity-2 incidents occurred during the quarter, all resolved within the 4-hour response SLA. No severity-1 (customer-impacting) incidents were recorded. MTTR for S2 incidents improved to 52 minutes, down from 1h 41m in Q4 2024."
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "flex-start"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#86868b",
+                      "width": 200,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Total incidents (S1 / S2 / S3)"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "color": "#1d1d1f"
+                    },
+                    "inline": [
+                      "0 / 3 / 11"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "flex-start"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#86868b",
+                      "width": 200,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "MTTR — S2 incidents"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "color": "#1a7f37"
+                    },
+                    "inline": [
+                      "52 min"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "flex-start"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#86868b",
+                      "width": 200,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Error budget consumed"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "color": "#1a7f37"
+                    },
+                    "inline": [
+                      "14 % of 30-day window"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "flex-start"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#86868b",
+                      "width": 200,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Change failure rate"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "color": "#1a7f37"
+                    },
+                    "inline": [
+                      "0.8 %"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "flex-start"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#86868b",
+                      "width": 200,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Deployment frequency"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "color": "#0071e3"
+                    },
+                    "inline": [
+                      "3.2 per day"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 10,
+              "color": "#86868b",
+              "lineHeight": 1.5
+            },
+            "inline": [
+              "Error budget represents 100 % minus achieved uptime over a 30-day rolling window. A result below 50 % consumed indicates a healthy release cadence."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#ffffff"
+          ],
+          "paddingTop": 36,
+          "paddingRight": 40,
+          "paddingBottom": 36,
+          "paddingLeft": 40,
+          "gap": 0,
+          "borderTopWidth": 1,
+          "borderRightWidth": 0,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderColor": "#d2d2d7"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#86868b"
+                },
+                "inline": [
+                  "05"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch",
+                  "marginTop": 8,
+                  "marginBottom": 10
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#1d1d1f"
+                },
+                "inline": [
+                  "Q2 2025 Roadmap Commitments"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "props": {
+              "size": 12,
+              "color": "#6e6e73",
+              "lineHeight": 1.7
+            },
+            "inline": [
+              "The following commitments have been reviewed by engineering leads and approved by the product steering committee. Scope adjustments require VP-level sign-off."
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 6,
+              "paddingTop": 16,
+              "paddingRight": 0,
+              "paddingBottom": 16,
+              "paddingLeft": 0,
+              "borderTopWidth": 0,
+              "borderRightWidth": 0,
+              "borderBottomWidth": 1,
+              "borderLeftWidth": 0,
+              "borderColor": "#d2d2d7"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "weight": "bold",
+                  "color": "#1d1d1f"
+                },
+                "inline": [
+                  "WebAssembly Compute Layer — GA"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "color": "#6e6e73",
+                  "lineHeight": 1.7
+                },
+                "inline": [
+                  "Enables sandboxed edge compute with sub-millisecond cold-start. 12 design partners in beta. GA gated on compliance attestation and a 72-hour soak."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 6,
+              "paddingTop": 16,
+              "paddingRight": 0,
+              "paddingBottom": 16,
+              "paddingLeft": 0,
+              "borderTopWidth": 0,
+              "borderRightWidth": 0,
+              "borderBottomWidth": 1,
+              "borderLeftWidth": 0,
+              "borderColor": "#d2d2d7"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "weight": "bold",
+                  "color": "#1d1d1f"
+                },
+                "inline": [
+                  "Federated Search Index v2"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "color": "#6e6e73",
+                  "lineHeight": 1.7
+                },
+                "inline": [
+                  "Purpose-built inverted index with cross-tenant queries and row-level security. Expected 5× throughput improvement for large-catalogue customers."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 6,
+              "paddingTop": 16,
+              "paddingRight": 0,
+              "paddingBottom": 16,
+              "paddingLeft": 0,
+              "borderTopWidth": 0,
+              "borderRightWidth": 0,
+              "borderBottomWidth": 1,
+              "borderLeftWidth": 0,
+              "borderColor": "#d2d2d7"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "weight": "bold",
+                  "color": "#1d1d1f"
+                },
+                "inline": [
+                  "SOC 2 Type II Recertification"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "color": "#6e6e73",
+                  "lineHeight": 1.7
+                },
+                "inline": [
+                  "Audit window opens April 7. Evidence collection automated via Vanta. No scope changes vs. the prior-year audit."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 6,
+              "paddingTop": 16,
+              "paddingRight": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "borderTopWidth": 0,
+              "borderRightWidth": 0,
+              "borderBottomWidth": 0,
+              "borderLeftWidth": 0,
+              "borderColor": "#d2d2d7"
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "weight": "bold",
+                  "color": "#1d1d1f"
+                },
+                "inline": [
+                  "Self-Serve Usage Analytics"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 12,
+                  "color": "#6e6e73",
+                  "lineHeight": 1.7
+                },
+                "inline": [
+                  "Customer-facing dashboard for API usage, error rates, and latency percentiles. Targets a 20 % reduction in support tickets."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "column",
+        "props": {
+          "background": [
+            "#ffffff"
+          ],
+          "paddingTop": 36,
+          "paddingRight": 40,
+          "paddingBottom": 36,
+          "paddingLeft": 40,
+          "gap": 20,
+          "borderTopWidth": 1,
+          "borderRightWidth": 0,
+          "borderBottomWidth": 0,
+          "borderLeftWidth": 0,
+          "borderColor": "#d2d2d7"
+        },
+        "children": [
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 9,
+                  "weight": "bold",
+                  "color": "#86868b"
+                },
+                "inline": [
+                  "06"
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch",
+                  "marginTop": 8,
+                  "marginBottom": 10
+                }
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 18,
+                  "weight": "bold",
+                  "color": "#1d1d1f"
+                },
+                "inline": [
+                  "Approvals & Distribution"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "props": {
+              "gap": 0
+            },
+            "children": [
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "flex-start"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#86868b",
+                      "width": 200,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Prepared by"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "color": "#1d1d1f"
+                    },
+                    "inline": [
+                      "Platform Engineering · Product Division"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "flex-start"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#86868b",
+                      "width": 200,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Reviewed by"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "color": "#1d1d1f"
+                    },
+                    "inline": [
+                      "VP Engineering, VP Product"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "flex-start"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#86868b",
+                      "width": 200,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Report date"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "color": "#1d1d1f"
+                    },
+                    "inline": [
+                      "March 28, 2025"
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "row",
+                "props": {
+                  "height": 1,
+                  "background": [
+                    "#d2d2d7"
+                  ],
+                  "alignSelf": "stretch"
+                }
+              },
+              {
+                "type": "row",
+                "props": {
+                  "paddingTop": 10,
+                  "paddingRight": 0,
+                  "paddingBottom": 10,
+                  "paddingLeft": 0,
+                  "alignItems": "flex-start"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "color": "#86868b",
+                      "width": 200,
+                      "flexShrink": 0
+                    },
+                    "inline": [
+                      "Classification"
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "props": {
+                      "size": 11,
+                      "weight": "bold",
+                      "color": "#1d1d1f"
+                    },
+                    "inline": [
+                      "Internal — Do Not Distribute"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "row",
+            "props": {
+              "marginTop": 28
+            },
+            "children": [
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#86868b",
+                  "flex": 1
+                },
+                "inline": [
+                  "Authorised signatory: _________________________"
+                ]
+              },
+              {
+                "type": "text",
+                "props": {
+                  "size": 11,
+                  "color": "#86868b",
+                  "width": 170,
+                  "flexShrink": 0
+                },
+                "inline": [
+                  "Date: ____________________"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
