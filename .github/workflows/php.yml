@@ -1,0 +1,47 @@
+name: php
+
+on:
+  push:
+    branches: [main]
+    paths: ["bindings/php/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/php.yml"]
+  pull_request:
+    paths: ["bindings/php/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/php.yml"]
+
+jobs:
+  test:
+    name: ${{ matrix.os }} · php ${{ matrix.php }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-24.04, windows-2022]
+        php: ["8.3"]
+        include:
+          # composer.json claims >= 8.1, so hold one job to the floor.
+          - os: ubuntu-24.04
+            php: "8.1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Install Linux build dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev
+
+      - name: Build the native library
+        run: cargo build -p sone-ffi
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          # FFI is compiled in but off by default outside CLI; the runner's
+          # php.ini needs it on explicitly.
+          extensions: ffi
+          ini-values: ffi.enable=1
+      # Linux only, for the same line-ending reason as the Dart generator check.
+      - name: Check the generated header is current
+        if: runner.os == 'Linux'
+        run: php bindings/php/tools/generate-header.php && git diff --exit-code bindings/php/sone.h
+      - name: Test
+        working-directory: bindings/php
+        run: php tests/run.php

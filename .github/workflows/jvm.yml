@@ -1,0 +1,39 @@
+name: jvm
+
+on:
+  push:
+    branches: [main]
+    paths: ["bindings/jvm/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/jvm.yml"]
+  pull_request:
+    paths: ["bindings/jvm/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/jvm.yml"]
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-24.04, windows-2022]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Install Linux build dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev
+
+      - name: Build the native library
+        run: cargo build -p sone-ffi
+
+      - uses: actions/setup-java@v4
+        with:
+          # 22 is the floor for sone-panama; the core and JNA modules target 17.
+          distribution: temurin
+          java-version: "22"
+          cache: maven
+      # Runs the suite against both backends: Panama and JNA. The JNA half is
+      # the Android call path, exercised here without an Android device.
+      - name: Test
+        working-directory: bindings/jvm
+        run: mvn --batch-mode test

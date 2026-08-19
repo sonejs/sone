@@ -1,0 +1,57 @@
+name: swift
+
+on:
+  push:
+    branches: [main]
+    paths: ["bindings/swift/**", "crates/**", "include/**", "Cargo.*", "tools/build-apple.sh", ".github/workflows/swift.yml"]
+  pull_request:
+    paths: ["bindings/swift/**", "crates/**", "include/**", "Cargo.*", "tools/build-apple.sh", ".github/workflows/swift.yml"]
+
+# macOS only. The package links an XCFramework of Apple slices, so there is
+# nothing for a Linux or Windows runner to build — swift-corelibs exists, but
+# the native library it would need is not part of this package.
+jobs:
+  test:
+    name: macOS
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,aarch64-apple-ios,aarch64-apple-ios-sim
+      - uses: Swatinem/rust-cache@v2
+
+      # Builds all three slices. The feature set is chosen to match a published
+      # prebuilt — see the header of the script before changing it, because the
+      # fallback is compiling Skia from source.
+      - name: Build the XCFramework
+        run: tools/build-apple.sh
+
+      - name: Test on macOS
+        working-directory: bindings/swift
+        run: swift test
+
+      # No simulator run: a GitHub runner has no iOS runtime installed by
+      # default. Compiling the Swift layer against the iOS SDK and linking the
+      # device slice is what can be checked here, and it catches the failures
+      # that matter — a missing symbol or an API that does not exist on iOS.
+      - name: Typecheck for iOS
+        working-directory: bindings/swift
+        run: |
+          xcrun --sdk iphoneos swiftc -target arm64-apple-ios13.0 -typecheck \
+            -I Sone.xcframework/ios-arm64/Headers Sources/Sone/*.swift
+
+      - name: Link an iOS binary
+        working-directory: bindings/swift
+        run: |
+          cat > /tmp/main.c <<'EOF'
+          extern const char *sone_version(void);
+          extern void *sone_engine_new(const char *);
+          int main(void) { return sone_engine_new(".") && sone_version() ? 0 : 1; }
+          EOF
+          xcrun --sdk iphoneos clang -target arm64-apple-ios13.0 /tmp/main.c \
+            Sone.xcframework/ios-arm64/libsone.a \
+            -framework CoreFoundation -framework CoreGraphics -framework CoreText \
+            -framework ImageIO -framework UIKit -framework Foundation -lc++ \
+            -o /tmp/sone-ios-link-test
+          file /tmp/sone-ios-link-test | grep -q arm64

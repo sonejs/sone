@@ -1,0 +1,42 @@
+name: ruby
+
+on:
+  push:
+    branches: [main]
+    paths: ["bindings/ruby/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/ruby.yml"]
+  pull_request:
+    paths: ["bindings/ruby/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/ruby.yml"]
+
+jobs:
+  test:
+    name: ${{ matrix.os }} · ruby ${{ matrix.ruby }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-24.04, windows-2022]
+        ruby: ["3.3"]
+        include:
+          # The gem claims >= 2.6, so hold one job near the floor. 22.04 rather
+          # than 24.04 because setup-ruby ships no 2.7 for the newer image.
+          - os: ubuntu-22.04
+            ruby: "2.7"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Install Linux build dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev
+
+      - name: Build the native library
+        run: cargo build -p sone-ffi
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+          working-directory: bindings/ruby
+      - name: Test
+        working-directory: bindings/ruby
+        run: bundle exec rake test

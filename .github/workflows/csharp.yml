@@ -1,0 +1,36 @@
+name: csharp
+
+on:
+  push:
+    branches: [main]
+    paths: ["bindings/csharp/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/csharp.yml"]
+  pull_request:
+    paths: ["bindings/csharp/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/csharp.yml"]
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-24.04, windows-2022]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Install Linux build dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev
+
+      # Debug, so the binding and the CLI its parity test spawns come from the
+      # same profile.
+      - name: Build the native library
+        run: cargo build -p sone-ffi
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Test
+        working-directory: bindings/csharp
+        run: dotnet test tests/Sone.Tests/Sone.Tests.csproj --logger "console;verbosity=normal"

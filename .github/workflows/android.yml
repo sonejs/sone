@@ -1,0 +1,111 @@
+name: android
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "bindings/flutter/**"
+      - "bindings/dart/**"
+      - "bindings/jvm/**"
+      - "crates/**"
+      - "include/**"
+      - "Cargo.*"
+      - "tools/build-android.sh"
+      - ".github/workflows/android.yml"
+  pull_request:
+    paths:
+      - "bindings/flutter/**"
+      - "bindings/dart/**"
+      - "bindings/jvm/**"
+      - "crates/**"
+      - "include/**"
+      - "Cargo.*"
+      - "tools/build-android.sh"
+      - ".github/workflows/android.yml"
+
+jobs:
+  natives:
+    name: cross-compile
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android,x86_64-linux-android
+      - uses: Swatinem/rust-cache@v2
+      - uses: nttld/setup-ndk@v1
+        id: ndk
+        with:
+          ndk-version: r28
+
+      # The feature set here is not the desktop one: it names a prebuilt that
+      # rust-skia publishes, which is the difference between a minute and an
+      # hour. The script explains which and why.
+      - name: Build libsone.so
+        env:
+          ANDROID_NDK_HOME: ${{ steps.ndk.outputs.ndk-path }}
+        run: tools/build-android.sh jniLibs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-natives
+          path: jniLibs
+          retention-days: 7
+
+  flutter:
+    name: flutter apk
+    runs-on: ubuntu-24.04
+    needs: natives
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: android-natives
+          path: bindings/flutter/android/src/main/jniLibs
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Build the example APK
+        working-directory: bindings/flutter/example
+        run: flutter build apk --debug
+      - name: The native library has to be in the APK
+        working-directory: bindings/flutter/example
+        run: unzip -l build/app/outputs/flutter-apk/app-debug.apk | grep -q 'lib/arm64-v8a/libsone.so'
+
+  dex:
+    name: jvm dexes for android
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "22"
+          cache: maven
+      - uses: android-actions/setup-android@v3
+
+      - name: Build the artifacts
+        working-directory: bindings/jvm
+        run: mvn --batch-mode -DskipTests package
+
+      # The point of the module split: sone-core and sone-jna have to dex at the
+      # minSdk the natives target. sone-panama deliberately does not ship here —
+      # Android has no java.lang.foreign.
+      - name: Dex sone-core and sone-jna
+        working-directory: bindings/jvm
+        run: |
+          D8="$(ls "$ANDROID_HOME"/build-tools/*/d8 | sort -V | tail -1)"
+          ANDROID_JAR="$(ls -d "$ANDROID_HOME"/platforms/android-*/android.jar | sort -V | tail -1)"
+          KOTLIN="$(find ~/.m2 -name 'kotlin-stdlib-*.jar' | head -1)"
+          JNA="$(find ~/.m2 -name 'jna-5*.jar' | head -1)"
+          mkdir -p /tmp/dex
+          "$D8" --min-api 21 --lib "$ANDROID_JAR" \
+            --classpath "$KOTLIN" --classpath "$JNA" \
+            --output /tmp/dex \
+            sone-core/target/sone-core-*.jar sone-jna/target/sone-jna-*.jar
+          test -f /tmp/dex/classes.dex

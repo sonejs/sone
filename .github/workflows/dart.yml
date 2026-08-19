@@ -1,0 +1,47 @@
+name: dart
+
+on:
+  push:
+    branches: [main]
+    paths: ["bindings/dart/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/dart.yml"]
+  pull_request:
+    paths: ["bindings/dart/**", "crates/**", "include/**", "Cargo.*", ".github/workflows/dart.yml"]
+
+jobs:
+  test:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, ubuntu-24.04, windows-2022]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: Install Linux build dependencies
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libfontconfig1-dev
+
+      - name: Build the native library
+        run: cargo build -p sone-ffi
+
+      - uses: dart-lang/setup-dart@v1
+      - name: Resolve dependencies
+        working-directory: bindings/dart
+        run: dart pub get
+      # Linux only: the check is a byte comparison, and a Windows checkout
+      # would fail it on line endings alone.
+      - name: Check the generated builders are current
+        if: runner.os == 'Linux'
+        working-directory: bindings/dart
+        run: |
+          python3 tool/generate_nodes.py
+          dart format lib/src/nodes.dart
+          git diff --exit-code lib/src/nodes.dart
+      - name: Analyze
+        working-directory: bindings/dart
+        run: dart analyze
+      - name: Test
+        working-directory: bindings/dart
+        run: dart test
