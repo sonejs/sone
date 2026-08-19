@@ -26,6 +26,10 @@ public enum OutputFormat
     Svg = 5,
 }
 
+/// <summary>
+/// Passed by <c>in</c> reference, which is what the C ABI takes: struct-by-value
+/// is the one part of a C ABI that FFI layers disagree about.
+/// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal struct SoneRenderOptions
 {
@@ -101,10 +105,10 @@ internal static unsafe partial class Native
     internal static partial void ResetFonts(nint engine);
 
     [LibraryImport(Library, EntryPoint = "sone_render_json")]
-    internal static partial SoneStatus RenderJson(nint engine, byte* json, SoneRenderOptions options, out SoneBuffer buffer);
+    internal static partial SoneStatus RenderJson(nint engine, byte* json, in SoneRenderOptions options, out SoneBuffer buffer);
 
     [LibraryImport(Library, EntryPoint = "sone_render_pages")]
-    internal static partial SoneStatus RenderPages(nint engine, byte* json, SoneRenderOptions options, out SoneBufferList list);
+    internal static partial SoneStatus RenderPages(nint engine, byte* json, in SoneRenderOptions options, out SoneBufferList list);
 
     [LibraryImport(Library, EntryPoint = "sone_dump_layout")]
     internal static partial SoneStatus DumpLayout(nint engine, byte* json, out SoneBuffer buffer);

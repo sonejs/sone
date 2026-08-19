@@ -111,9 +111,11 @@ public final class Engine {
         strict: Bool = false
     ) throws -> Data {
         let handle = try live()
-        let options = self.options(format, density, quality, strict)
+        var options = self.options(format, density, quality, strict)
         return try buffer { out in
-            document.withCString { Native.renderJson(handle, $0, options, out) }
+            withUnsafePointer(to: &options) { optionsPointer in
+                document.withCString { Native.renderJson(handle, $0, optionsPointer, out) }
+            }
         }
     }
 
@@ -126,12 +128,14 @@ public final class Engine {
         strict: Bool = false
     ) throws -> [Data] {
         let handle = try live()
-        let options = self.options(format, density, quality, strict)
+        var options = self.options(format, density, quality, strict)
         lock.lock()
         defer { lock.unlock() }
 
         var list = SoneBufferList()
-        let status = document.withCString { Native.renderPages(handle, $0, options, &list) }
+        let status = withUnsafePointer(to: &options) { optionsPointer in
+            document.withCString { Native.renderPages(handle, $0, optionsPointer, &list) }
+        }
         defer { Native.bufferListFree(&list) }
         try check(status)
 

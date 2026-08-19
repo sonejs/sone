@@ -62,6 +62,12 @@ impl From<SoneFormat> for OutputFormat {
 
 /// Render options. Zero-initialize and set what you need; `density` and
 /// `quality` fall back to 1.0 when left at 0.
+///
+/// Always passed by pointer, never by value. Struct-by-value is the one part of
+/// a C ABI that FFI layers get wrong: PHP's segfaulted outright on Linux
+/// x86-64 while working on macOS and Windows, and every binding has to model the
+/// platform's own classification rules to pass one. A pointer has one meaning
+/// everywhere.
 #[repr(C)]
 #[derive(Debug, Clone, Copy)]
 pub struct SoneRenderOptions {
@@ -321,7 +327,7 @@ pub unsafe extern "C" fn sone_register_image(
 pub unsafe extern "C" fn sone_render_json(
     engine: *mut SoneEngine,
     json: *const c_char,
-    options: SoneRenderOptions,
+    options: *const SoneRenderOptions,
     out: *mut SoneBuffer,
 ) -> SoneStatus {
     guard(SoneStatus::RenderError, || {
@@ -333,6 +339,11 @@ pub unsafe extern "C" fn sone_render_json(
             return SoneStatus::InvalidArgument;
         }
         *out = SoneBuffer::empty();
+
+        let Some(options) = options.as_ref() else {
+            set_error(handle, "render options pointer is null");
+            return SoneStatus::InvalidArgument;
+        };
 
         let doc = match document_for(handle, json, options.strict != 0) {
             Ok(doc) => doc,
@@ -537,7 +548,7 @@ pub unsafe extern "C" fn sone_reset_fonts(engine: *mut SoneEngine) {
 pub unsafe extern "C" fn sone_render_pages(
     engine: *mut SoneEngine,
     json: *const c_char,
-    options: SoneRenderOptions,
+    options: *const SoneRenderOptions,
     out: *mut SoneBufferList,
 ) -> SoneStatus {
     guard(SoneStatus::RenderError, || {
@@ -549,6 +560,11 @@ pub unsafe extern "C" fn sone_render_pages(
             return SoneStatus::InvalidArgument;
         };
         *out = SoneBufferList::empty();
+
+        let Some(options) = options.as_ref() else {
+            set_error(handle, "render options pointer is null");
+            return SoneStatus::InvalidArgument;
+        };
 
         let doc = match document_for(handle, json, options.strict != 0) {
             Ok(doc) => doc,
@@ -696,7 +712,7 @@ mod tests {
             let json = CString::new(PAGED).unwrap();
             let mut pages = SoneBufferList::empty();
             let status =
-                sone_render_pages(engine, json.as_ptr(), options(SoneFormat::Png), &mut pages);
+                sone_render_pages(engine, json.as_ptr(), &options(SoneFormat::Png), &mut pages);
             assert_eq!(status, SoneStatus::Ok);
             assert_eq!(pages.len, 3, "one page per declared break");
             for index in 0..pages.len {
@@ -722,7 +738,7 @@ mod tests {
             let engine = sone_engine_new(ptr::null());
             let json = CString::new(PAGED).unwrap();
             let mut pages = SoneBufferList::empty();
-            sone_render_pages(engine, json.as_ptr(), options(SoneFormat::Png), &mut pages);
+            sone_render_pages(engine, json.as_ptr(), &options(SoneFormat::Png), &mut pages);
             sone_buffer_list_free(&mut pages);
             sone_buffer_list_free(&mut pages);
             sone_engine_free(engine);
@@ -810,7 +826,7 @@ mod tests {
                 quality: 1.0,
                 strict: 0,
             };
-            let status = sone_render_json(engine, json.as_ptr(), options, &mut out);
+            let status = sone_render_json(engine, json.as_ptr(), &options, &mut out);
             assert_eq!(status, SoneStatus::Ok);
             assert!(out.len > 8);
             let header = std::slice::from_raw_parts(out.data, 8);
@@ -834,7 +850,7 @@ mod tests {
                 strict: 0,
             };
             assert_eq!(
-                sone_render_json(engine, json.as_ptr(), options, &mut out),
+                sone_render_json(engine, json.as_ptr(), &options, &mut out),
                 SoneStatus::IrError
             );
             let message = CStr::from_ptr(sone_engine_last_error(engine))
@@ -856,7 +872,7 @@ mod tests {
                 strict: 0,
             };
             assert_eq!(
-                sone_render_json(ptr::null_mut(), ptr::null(), options, &mut out),
+                sone_render_json(ptr::null_mut(), ptr::null(), &options, &mut out),
                 SoneStatus::InvalidArgument
             );
         }

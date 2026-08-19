@@ -55,16 +55,20 @@ enum Native {
         sone_reset_fonts(engine)
     }
 
+    /// Options go over by pointer, never by value: struct-by-value is the one
+    /// part of a C ABI that FFI layers disagree about.
     static func renderJson(
         _ engine: OpaquePointer?, _ json: UnsafePointer<CChar>?,
-        _ options: SoneRenderOptions, _ out: UnsafeMutablePointer<SoneBuffer>?
+        _ options: UnsafePointer<SoneRenderOptions>?,
+        _ out: UnsafeMutablePointer<SoneBuffer>?
     ) -> SoneStatus {
         sone_render_json(engine, json, options, out)
     }
 
     static func renderPages(
         _ engine: OpaquePointer?, _ json: UnsafePointer<CChar>?,
-        _ options: SoneRenderOptions, _ out: UnsafeMutablePointer<SoneBufferList>?
+        _ options: UnsafePointer<SoneRenderOptions>?,
+        _ out: UnsafeMutablePointer<SoneBufferList>?
     ) -> SoneStatus {
         sone_render_pages(engine, json, options, out)
     }

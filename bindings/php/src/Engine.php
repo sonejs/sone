@@ -106,7 +106,7 @@ final class Engine
         $options = $this->options($format, $density, $quality, $strict);
 
         return $this->buffer(fn (\FFI\CData $out) =>
-            $this->ffi->sone_render_json($this->live(), $document, $options, $out));
+            $this->ffi->sone_render_json($this->live(), $document, \FFI::addr($options), $out));
     }
 
     /**
@@ -127,7 +127,7 @@ final class Engine
             $this->check($this->ffi->sone_render_pages(
                 $this->live(),
                 $document,
-                $options,
+                \FFI::addr($options),
                 \FFI::addr($list),
             ));
             $pages = [];
@@ -169,6 +169,12 @@ final class Engine
         return $this->handle;
     }
 
+    /**
+     * The options struct, always handed over as a pointer.
+     *
+     * It used to be passed by value, which segfaulted PHP on Linux x86-64 while
+     * working on macOS and Windows — the C ABI takes a pointer now.
+     */
     private function options(OutputFormat|string $format, ?float $density, float $quality, bool $strict): \FFI\CData
     {
         $name = strtolower($format instanceof OutputFormat ? $format->value : $format);

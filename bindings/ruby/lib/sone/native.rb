@@ -92,6 +92,8 @@ module Sone
       end
     end
 
+    # Handed to the engine by pointer, never by value: struct-by-value is the
+    # one part of a C ABI that FFI layers disagree about.
     class RenderOptions < FFI::Struct
       layout :format, :int, :density, :float, :quality, :float, :strict, :int
     end
@@ -105,8 +107,8 @@ module Sone
     attach_function :sone_has_font, %i[pointer string], :bool
     attach_function :sone_font_families, %i[pointer pointer], :int
     attach_function :sone_reset_fonts, [:pointer], :void
-    attach_function :sone_render_json, [:pointer, :string, RenderOptions.by_value, :pointer], :int
-    attach_function :sone_render_pages, [:pointer, :string, RenderOptions.by_value, :pointer], :int
+    attach_function :sone_render_json, %i[pointer string pointer pointer], :int
+    attach_function :sone_render_pages, %i[pointer string pointer pointer], :int
     attach_function :sone_dump_layout, %i[pointer string pointer], :int
     attach_function :sone_dump_metadata, %i[pointer string string pointer], :int
     attach_function :sone_buffer_free, [:pointer], :void

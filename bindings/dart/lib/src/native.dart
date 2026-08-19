@@ -87,14 +87,16 @@ typedef _FontFamiliesC = Int32 Function(Pointer<Void>, Pointer<SoneBuffer>);
 typedef _FontFamilies = int Function(Pointer<Void>, Pointer<SoneBuffer>);
 typedef _ResetFontsC = Void Function(Pointer<Void>);
 typedef _ResetFonts = void Function(Pointer<Void>);
-typedef _RenderC = Int32 Function(
-    Pointer<Void>, Pointer<Utf8>, SoneRenderOptions, Pointer<SoneBuffer>);
-typedef _Render = int Function(
-    Pointer<Void>, Pointer<Utf8>, SoneRenderOptions, Pointer<SoneBuffer>);
-typedef _RenderPagesC = Int32 Function(
-    Pointer<Void>, Pointer<Utf8>, SoneRenderOptions, Pointer<SoneBufferList>);
-typedef _RenderPages = int Function(
-    Pointer<Void>, Pointer<Utf8>, SoneRenderOptions, Pointer<SoneBufferList>);
+// Options go over by pointer, never by value: struct-by-value is the one part
+// of a C ABI that FFI layers disagree about.
+typedef _RenderC = Int32 Function(Pointer<Void>, Pointer<Utf8>,
+    Pointer<SoneRenderOptions>, Pointer<SoneBuffer>);
+typedef _Render = int Function(Pointer<Void>, Pointer<Utf8>,
+    Pointer<SoneRenderOptions>, Pointer<SoneBuffer>);
+typedef _RenderPagesC = Int32 Function(Pointer<Void>, Pointer<Utf8>,
+    Pointer<SoneRenderOptions>, Pointer<SoneBufferList>);
+typedef _RenderPages = int Function(Pointer<Void>, Pointer<Utf8>,
+    Pointer<SoneRenderOptions>, Pointer<SoneBufferList>);
 typedef _DumpLayoutC = Int32 Function(
     Pointer<Void>, Pointer<Utf8>, Pointer<SoneBuffer>);
 typedef _DumpLayout = int Function(

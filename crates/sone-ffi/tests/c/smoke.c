@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
   options.density = 2.0f;
 
   SoneBuffer out;
-  SoneStatus status = sone_render_json(engine, json, options, &out);
+  SoneStatus status = sone_render_json(engine, json, &options, &out);
   if (status != SoneStatus_Ok) {
     const char *message = sone_engine_last_error(engine);
     fprintf(stderr, "render failed (%d): %s\n", (int)status, message ? message : "unknown");

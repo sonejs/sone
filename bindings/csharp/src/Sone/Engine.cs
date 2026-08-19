@@ -149,7 +149,7 @@ public sealed class Engine : IDisposable
             fixed (byte* json = document)
             {
                 SoneBuffer buffer = default;
-                var status = Native.RenderJson(Live, json, options, out buffer);
+                var status = Native.RenderJson(Live, json, in options, out buffer);
                 return Collect(status, ref buffer);
             }
         }
@@ -163,7 +163,7 @@ public sealed class Engine : IDisposable
             fixed (byte* json = document)
             {
                 SoneBufferList list = default;
-                var status = Native.RenderPages(Live, json, options, out list);
+                var status = Native.RenderPages(Live, json, in options, out list);
                 try
                 {
                     Check(status);

@@ -57,9 +57,9 @@ public final class JnaBackend implements Backend {
 
         void sone_reset_fonts(Pointer engine);
 
-        int sone_render_json(Pointer engine, String json, SoneRenderOptions.ByValue options, SoneBuffer out);
+        int sone_render_json(Pointer engine, String json, SoneRenderOptions options, SoneBuffer out);
 
-        int sone_render_pages(Pointer engine, String json, SoneRenderOptions.ByValue options, SoneBufferList out);
+        int sone_render_pages(Pointer engine, String json, SoneRenderOptions options, SoneBufferList out);
 
         int sone_dump_layout(Pointer engine, String json, SoneBuffer out);
 
@@ -107,15 +107,16 @@ public final class JnaBackend implements Backend {
         public long capacity;
     }
 
+    /**
+     * Handed over by pointer, which is what JNA does with a plain Structure —
+     * struct-by-value is the one part of a C ABI that FFI layers disagree about.
+     */
     @Structure.FieldOrder({"format", "density", "quality", "strict"})
     public static class SoneRenderOptions extends Structure {
         public int format;
         public float density;
         public float quality;
         public int strict;
-
-        public static class ByValue extends SoneRenderOptions implements Structure.ByValue {
-        }
     }
 
     private static final int OK = 0;
@@ -266,9 +267,9 @@ public final class JnaBackend implements Backend {
         return buffer;
     }
 
-    private static SoneRenderOptions.ByValue options(OutputFormat format, Double density,
+    private static SoneRenderOptions options(OutputFormat format, Double density,
             double quality, boolean strict) {
-        SoneRenderOptions.ByValue options = new SoneRenderOptions.ByValue();
+        SoneRenderOptions options = new SoneRenderOptions();
         options.format = format.code();
         // Zero tells the engine to fall back to the document's own config.
         options.density = density == null ? 0f : density.floatValue();

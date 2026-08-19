@@ -86,10 +86,12 @@ public final class Native {
         FONT_FAMILIES = handle(linker, lookup, "sone_font_families",
                 FunctionDescriptor.of(i32, ptr, ptr));
         RESET_FONTS = handle(linker, lookup, "sone_reset_fonts", FunctionDescriptor.ofVoid(ptr));
+        // Options by pointer, not by value: struct-by-value is the one part of
+        // a C ABI that FFI layers disagree about.
         RENDER_JSON = handle(linker, lookup, "sone_render_json",
-                FunctionDescriptor.of(i32, ptr, ptr, RENDER_OPTIONS, ptr));
+                FunctionDescriptor.of(i32, ptr, ptr, ptr, ptr));
         RENDER_PAGES = handle(linker, lookup, "sone_render_pages",
-                FunctionDescriptor.of(i32, ptr, ptr, RENDER_OPTIONS, ptr));
+                FunctionDescriptor.of(i32, ptr, ptr, ptr, ptr));
         DUMP_LAYOUT = handle(linker, lookup, "sone_dump_layout",
                 FunctionDescriptor.of(i32, ptr, ptr, ptr));
         DUMP_METADATA = handle(linker, lookup, "sone_dump_metadata",

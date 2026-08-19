@@ -125,7 +125,7 @@ class Engine {
   }) =>
       _call(document, format, density, quality, strict, (json, options) {
         return _buffer(
-            (out) => _native.renderJson(_live, json, options.ref, out));
+            (out) => _native.renderJson(_live, json, options, out));
       });
 
   /// One raster image per page. Requires `pageHeight` in the document config.
@@ -139,7 +139,7 @@ class Engine {
       _call(document, format, density, quality, strict, (json, options) {
         final list = calloc<SoneBufferList>();
         try {
-          _check(_native.renderPages(_live, json, options.ref, list));
+          _check(_native.renderPages(_live, json, options, list));
           return List<Uint8List>.generate(list.ref.len, (index) {
             final page = list.ref.items[index];
             return Uint8List.fromList(page.data.asTypedList(page.len));

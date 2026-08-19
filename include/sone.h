@@ -54,6 +54,12 @@ typedef struct SoneEngine SoneEngine;
 /**
  * Render options. Zero-initialize and set what you need; `density` and
  * `quality` fall back to 1.0 when left at 0.
+ *
+ * Always passed by pointer, never by value. Struct-by-value is the one part of
+ * a C ABI that FFI layers get wrong: PHP's segfaulted outright on Linux
+ * x86-64 while working on macOS and Windows, and every binding has to model the
+ * platform's own classification rules to pass one. A pointer has one meaning
+ * everywhere.
  */
 typedef struct {
   SoneFormat format;
@@ -152,7 +158,7 @@ SoneStatus sone_register_image(SoneEngine *engine,
  */
 SoneStatus sone_render_json(SoneEngine *engine,
                             const char *json,
-                            SoneRenderOptions options,
+                            const SoneRenderOptions *options,
                             SoneBuffer *out);
 
 /**
@@ -200,7 +206,7 @@ void sone_reset_fonts(SoneEngine *engine);
  */
 SoneStatus sone_render_pages(SoneEngine *engine,
                              const char *json,
-                             SoneRenderOptions options,
+                             const SoneRenderOptions *options,
                              SoneBufferList *out);
 
 /**

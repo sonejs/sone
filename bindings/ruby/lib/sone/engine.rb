@@ -97,7 +97,7 @@ module Sone
     # Render an IR document to bytes.
     def render(document, format: :png, density: nil, quality: 1.0, strict: false)
       options = options_for(format, density, quality, strict)
-      buffer { |out| Native.sone_render_json(handle, document, options, out) }
+      buffer { |out| Native.sone_render_json(handle, document, options.pointer, out) }
     end
 
     # One raster image per page. Requires `pageHeight` in the document config.
@@ -106,7 +106,7 @@ module Sone
       list = Native::BufferList.new
       @lock.synchronize do
         begin
-          check(Native.sone_render_pages(handle, document, options, list))
+          check(Native.sone_render_pages(handle, document, options.pointer, list))
           list.pages
         ensure
           Native.sone_buffer_list_free(list)
