@@ -494,10 +494,13 @@ tested without a device — `BackendTest` asserts the two backends produce
 byte-identical PNGs and identical layout JSON. Both Android artifacts were
 checked through `d8 --min-api 21`.
 
-One limit worth knowing: on Windows a single JVM cannot map the same DLL through
-both loaders at once, so the cross-backend comparison skips there and CI pins one
-backend per JVM instead. Each passes the full suite on its own. Nothing ships
-both.
+One platform is missing: **Windows**. Laying out a text node through the C ABI
+crashes there with EXCEPTION_ACCESS_VIOLATION inside `msvcp140.dll` — a box
+renders, text does not. Both backends fail identically so it is not Panama or
+JNA; .NET makes the same call on the same machine and passes so it is not the
+engine; and `-Xss16m` changes nothing so it is not the JVM stack. That leaves the
+JVM's own Windows exception handling, which needs a debugger there to confirm.
+`dev.sone.Probe` reproduces it. macOS, Linux and Android are unaffected.
 
 `mvn test` runs 50 tests: 31 Java, 6 Kotlin, and 13 across both backends,
 including the parity gate.

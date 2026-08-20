@@ -166,6 +166,38 @@ one separately on Windows by pinning `-Dsone.backend=…` per JVM, and
 `BackendTest`'s cross-backend comparison skips there rather than pretending to
 cover it.
 
+## Windows
+
+The JVM binding does not work on Windows. Laying out a text node through the C
+ABI crashes there with `EXCEPTION_ACCESS_VIOLATION` inside `msvcp140.dll`, the
+MSVC C++ runtime. A box renders fine; the first call that touches text — layout,
+render or metadata, whichever comes first — is the one that dies.
+
+What that is *not*, each ruled out by evidence rather than reasoning:
+
+- **Not the FFI mechanism.** Panama and JNA fail identically, and they share
+  none of it.
+- **Not the engine.** The .NET binding makes the same call with the same
+  document on the same machine and passes all 38 of its tests.
+- **Not the JVM stack.** `-Xss16m` changes nothing.
+
+What is left is the JVM's own exception handling on Windows: `msvcp140` is where
+C++ exception unwinding lives, and the JVM installs a vectored exception handler
+there. Confirming that needs a debugger on Windows.
+
+`dev.sone.Probe` in `sone-tests` reproduces it in about ten lines — it walks the
+C ABI call by call, one backend per JVM, printing each step to stderr so a crash
+leaves a trail:
+
+```bash
+mvn -DskipTests install
+mvn -pl sone-tests dependency:build-classpath -Dmdep.outputFile=cp.txt
+java -cp "sone-tests/target/test-classes:$(cat sone-tests/cp.txt)" \
+  dev.sone.Probe dev.sone.panama.PanamaBackend
+```
+
+macOS, Linux and Android are unaffected.
+
 ## Installing
 
 Panama is bound by hand rather than through `jextract` — sixteen functions and

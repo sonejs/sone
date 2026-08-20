@@ -16,7 +16,7 @@ Where the port stands, and what the binary is made of. Architecture is in
 | M5 metadata | partial — `dump-metadata` emits the node tree and text boxes at node/line/word granularity; the YOLO/COCO exporters from `yolo.ts` are not ported |
 | M6 FFI + CLI | done — opaque `SoneEngine*`, committed `include/sone.h`, C smoke test asserting byte-identical output to the CLI |
 | M7 browser (emscripten) | not started |
-| M8 language bindings | Python (PyO3) shipped. C#, Ruby, PHP, Dart, JVM and Swift all build and pass their parity gates. Mobile: Dart runs on Android through the `sone_flutter` plugin, the JVM runs on Android through `sone-jna`, and Swift runs on iPhone and iPad through an XCFramework. Packaging (NuGet, gem, pub, Maven Central, SPM release) is the remaining work. |
+| M8 language bindings | Python (PyO3) shipped. C#, Ruby, PHP, Dart, JVM and Swift all build and pass their parity gates. Mobile: Dart runs on Android through the `sone_flutter` plugin, the JVM runs on Android through `sone-jna`, and Swift runs on iPhone and iPad through an XCFramework. Packaging (NuGet, gem, pub, Maven Central, SPM release) is the remaining work. Known gap: the JVM binding crashes on Windows when laying out text — see bindings.md. |
 | GPU backend | not started — the cargo features exist, the surface path does not; `--backend gpu` warns and falls back to CPU |
 
 ### Verification gates
