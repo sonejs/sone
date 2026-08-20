@@ -494,6 +494,11 @@ tested without a device — `BackendTest` asserts the two backends produce
 byte-identical PNGs and identical layout JSON. Both Android artifacts were
 checked through `d8 --min-api 21`.
 
+One limit worth knowing: on Windows a single JVM cannot map the same DLL through
+both loaders at once, so the cross-backend comparison skips there and CI pins one
+backend per JVM instead. Each passes the full suite on its own. Nothing ships
+both.
+
 `mvn test` runs 50 tests: 31 Java, 6 Kotlin, and 13 across both backends,
 including the parity gate.
 

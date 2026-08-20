@@ -61,12 +61,16 @@ public final class LibraryPath {
         }
         Path root = checkoutRoot();
         if (root != null) {
-            candidates.add(root.resolve("target/release/" + name));
-            candidates.add(root.resolve("target/debug/" + name));
+            // Built element by element rather than from a "/"-joined string:
+            // Path.resolve keeps the slashes it is given, which on Windows
+            // produces D:\a\sone/target/debug/sone.dll — one spelling of the
+            // library for one loader and a different one for the next.
+            candidates.add(root.resolve(Path.of("target", "release", name)));
+            candidates.add(root.resolve(Path.of("target", "debug", name)));
         }
         for (Path candidate : candidates) {
             if (Files.isRegularFile(candidate)) {
-                return candidate.toString();
+                return candidate.toAbsolutePath().normalize().toString();
             }
         }
         return name;

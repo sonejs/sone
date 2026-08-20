@@ -158,6 +158,14 @@ The JNA backend is not Android-only; it runs on a desktop JVM too, which is how
 the Android call path is tested without a device. `BackendTest` asserts the two
 backends produce **byte-identical** PNGs and identical layout JSON.
 
+**One process loads one backend.** On Windows, mapping the same DLL through both
+Panama and JNA in a single JVM crashes — two loaders, two module handles, two
+copies of Skia's global state. That is not a configuration anything ships: a
+desktop app takes `sone-panama`, an Android app takes `sone-jna`. CI proves each
+one separately on Windows by pinning `-Dsone.backend=…` per JVM, and
+`BackendTest`'s cross-backend comparison skips there rather than pretending to
+cover it.
+
 ## Installing
 
 Panama is bound by hand rather than through `jextract` — sixteen functions and

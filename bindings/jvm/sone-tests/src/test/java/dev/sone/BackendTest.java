@@ -9,7 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.List;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -21,6 +23,22 @@ import org.junit.jupiter.params.provider.ValueSource;
  * same class, and the bytes have to match.
  */
 class BackendTest {
+
+    /**
+     * Windows cannot host both loaders at once.
+     *
+     * <p>Each backend passes the whole suite on Windows on its own — CI pins one
+     * per JVM and both are green. What crashes is loading the same DLL through
+     * Panama and JNA in a single process, which no consumer does: a desktop app
+     * ships sone-panama and an Android app ships sone-jna, never both. Rather
+     * than pretend the comparison covers Windows, it says so.
+     */
+    @BeforeAll
+    static void bothLoadersInOneProcess() {
+        Assumptions.assumeFalse(
+                System.getProperty("os.name", "").toLowerCase(java.util.Locale.ROOT).contains("win"),
+                "Panama and JNA cannot both map the same DLL in one JVM on Windows");
+    }
 
     static final Path ROOT = LibraryPath.checkoutRoot();
     static final String FAMILY = "Geist Mono";
