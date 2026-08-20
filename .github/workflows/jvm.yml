@@ -100,6 +100,5 @@ jobs:
             bindings/jvm/**/*.dump
             bindings/jvm/**/*.dumpstream
             bindings/jvm/**/hs_err_pid*.log
-            bindings/jvm/**/hs_err_pid*.mdmp
             bindings/jvm/**/replay_pid*.log
           retention-days: 7
