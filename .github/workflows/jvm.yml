@@ -83,9 +83,18 @@ jobs:
           # Windows java wants ';' between classpath entries even under bash.
           SEP=":"
           case "$OSTYPE" in msys*|cygwin*|win*) SEP=";" ;; esac
-          java --enable-native-access=ALL-UNNAMED \
-            -cp "sone-tests/target/test-classes$SEP$(cat sone-tests/cp.txt)" \
-            dev.sone.Probe dev.sone.panama.PanamaBackend
+          CP="sone-tests/target/test-classes$SEP$(cat sone-tests/cp.txt)"
+
+          # Both backends died at the same call — rendering a text node — while
+          # C# renders text happily on the same platform through the same C ABI.
+          # What Panama and JNA share is not the FFI mechanism but the JVM: the
+          # launcher gives main a smaller stack than a native process gets, and
+          # Skia's shaping is stack-hungry. If the second run survives where the
+          # first dies, that is the answer.
+          echo "=== default stack ==="
+          java --enable-native-access=ALL-UNNAMED -cp "$CP" dev.sone.Probe dev.sone.panama.PanamaBackend || true
+          echo "=== 16m stack ==="
+          java -Xss16m --enable-native-access=ALL-UNNAMED -cp "$CP" dev.sone.Probe dev.sone.panama.PanamaBackend || true
 
       - name: Probe the JNA backend
         working-directory: bindings/jvm
@@ -96,9 +105,18 @@ jobs:
           # Windows java wants ';' between classpath entries even under bash.
           SEP=":"
           case "$OSTYPE" in msys*|cygwin*|win*) SEP=";" ;; esac
-          java --enable-native-access=ALL-UNNAMED \
-            -cp "sone-tests/target/test-classes$SEP$(cat sone-tests/cp.txt)" \
-            dev.sone.Probe dev.sone.jna.JnaBackend
+          CP="sone-tests/target/test-classes$SEP$(cat sone-tests/cp.txt)"
+
+          # Both backends died at the same call — rendering a text node — while
+          # C# renders text happily on the same platform through the same C ABI.
+          # What Panama and JNA share is not the FFI mechanism but the JVM: the
+          # launcher gives main a smaller stack than a native process gets, and
+          # Skia's shaping is stack-hungry. If the second run survives where the
+          # first dies, that is the answer.
+          echo "=== default stack ==="
+          java --enable-native-access=ALL-UNNAMED -cp "$CP" dev.sone.Probe dev.sone.jna.JnaBackend || true
+          echo "=== 16m stack ==="
+          java -Xss16m --enable-native-access=ALL-UNNAMED -cp "$CP" dev.sone.Probe dev.sone.jna.JnaBackend || true
 
       # Then the whole suite, including the cross-backend comparison.
       - name: Test
