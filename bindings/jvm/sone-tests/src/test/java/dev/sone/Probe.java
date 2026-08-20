@@ -31,18 +31,31 @@ public final class Probe {
 
             say(name, "fontFamilies = " + backend.fontFamilies());
 
+            // The exact bytes, so a difference from another binding's document
+            // is visible rather than assumed.
             String shape = Sone.render(new Column().size(16, 16).bg("red")).toJson();
+            String bare = Sone.render(new Text("hello world").font(family).size(12)).toJson();
+            String sized = Sone.render(
+                    new Column(new Text("hello world").font(family).size(12))
+                            .size(200, 100).bg("white")).toJson();
+            say(name, "bare  = " + bare);
+            say(name, "sized = " + sized);
+
             say(name, "render(shape) = " + backend.render(shape, OutputFormat.PNG, null, 1.0, false).length);
-
-            String text = Sone.render(new Text("hello world").font(family).size(12)).toJson();
-            say(name, "render(text) = " + backend.render(text, OutputFormat.PNG, null, 1.0, false).length);
-
             say(name, "dumpLayout(shape) = " + backend.dumpLayout(shape).length());
-            say(name, "dumpLayout(text) = " + backend.dumpLayout(text).length());
+            say(name, "dumpMetadata(shape) = " + backend.dumpMetadata(shape, Granularity.NODE).length());
 
-            say(name, "dumpMetadata(shape, NODE) = " + backend.dumpMetadata(shape, Granularity.NODE).length());
-            say(name, "dumpMetadata(text, NODE) = " + backend.dumpMetadata(text, Granularity.NODE).length());
-            say(name, "dumpMetadata(text, WORD) = " + backend.dumpMetadata(text, Granularity.WORD).length());
+            // A text node inside a sized box — the shape every other binding's
+            // passing tests use.
+            say(name, "dumpLayout(sized) = " + backend.dumpLayout(sized).length());
+            say(name, "render(sized) = " + backend.render(sized, OutputFormat.PNG, null, 1.0, false).length);
+            say(name, "dumpMetadata(sized) = " + backend.dumpMetadata(sized, Granularity.NODE).length());
+
+            // A bare, width-less text root — what the crashing test uses.
+            say(name, "dumpLayout(bare) = " + backend.dumpLayout(bare).length());
+            say(name, "render(bare) = " + backend.render(bare, OutputFormat.PNG, null, 1.0, false).length);
+            say(name, "dumpMetadata(bare) = " + backend.dumpMetadata(bare, Granularity.NODE).length());
+
         } catch (Throwable e) {
             say(name, "threw " + e);
             e.printStackTrace();
