@@ -28,22 +28,36 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - name: Install Linux build dependencies
         if: runner.os == 'Linux'
+        # Bounded three ways, because this step has now hung twice: once on the
+        # dpkg lock and once on an apt mirror that stopped responding mid-fetch.
+        # The step timeout is the one that matters — without it a stalled
+        # download eats the whole job budget and the run reports as cancelled
+        # with no clue why.
+        timeout-minutes: 10
         run: |
-          # noninteractive and a lock timeout: the plain form hung for
-          # hours on a runner waiting for the dpkg lock.
-          sudo apt-get update -o Acquire::Retries=3
+          set -euo pipefail
+          if dpkg -s libfontconfig1-dev >/dev/null 2>&1; then
+            echo "already installed"
+            exit 0
+          fi
+          sudo apt-get update \
+            -o Acquire::Retries=3 \
+            -o Acquire::http::Timeout=30 \
+            -o Acquire::https::Timeout=30
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y \
-            --no-install-recommends -o DPkg::Lock::Timeout=180 \
+            --no-install-recommends -o DPkg::Lock::Timeout=120 \
             libfontconfig1-dev
 
       # Debug, so the binding and the CLI its parity test spawns come from the
       # same profile.
       - name: Build the native library
+        timeout-minutes: 30
         run: cargo build -p sone-ffi
 
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
       - name: Test
+        timeout-minutes: 15
         working-directory: bindings/csharp
         run: dotnet test tests/Sone.Tests/Sone.Tests.csproj --logger "console;verbosity=normal"

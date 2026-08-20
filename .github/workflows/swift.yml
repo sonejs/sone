@@ -32,9 +32,11 @@ jobs:
       # prebuilt — see the header of the script before changing it, because the
       # fallback is compiling Skia from source.
       - name: Build the XCFramework
+        timeout-minutes: 40
         run: tools/build-apple.sh
 
       - name: Test on macOS
+        timeout-minutes: 15
         working-directory: bindings/swift
         run: swift test
 
