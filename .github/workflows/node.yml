@@ -33,7 +33,16 @@ jobs:
           node-version: 22
       - uses: Swatinem/rust-cache@v2
         with:
-          workspaces: bindings/node
+          # Two workspaces, not one: `bindings/node` is its own (it needs
+          # unwinding, the root sets panic = "abort"), so the addon builds into
+          # `bindings/node/target` while `sone-cli` — which the parity test
+          # shells out to — builds into the root `target`. Caching only the
+          # first meant the expensive half was rebuilt every single run.
+          workspaces: |
+            .
+            bindings/node
+          # A 7½-minute Skia build is worth keeping even when a later step fails.
+          cache-on-failure: true
       - name: Install Linux build dependencies
         if: runner.os == 'Linux'
         # Bounded three ways, because this step has now hung twice: once on the
@@ -75,6 +84,24 @@ jobs:
       - run: npm run build --workspace @sonejs/sone
       - run: npm run lint --workspace @sonejs/sone
 
+      # The parity test shells out to `sone-cli`, and builds it on demand if it
+      # is missing — which on Linux and Windows means a full Skia source build,
+      # because no published binary matches sone's feature set. That is some
+      # thirty fetches from codeload.github.com inside a `beforeAll`, and one of
+      # them flaking takes the run down with `skia/tools/git-sync-deps failed`
+      # reported as a test failure. Doing it here makes it retryable and legible;
+      # the build inside the test then finds its work already done.
+      - name: Build sone-cli, the parity reference
+        shell: bash
+        timeout-minutes: 30
+        run: |
+          for attempt in 1 2 3; do
+            if cargo build --release -p sone-cli; then exit 0; fi
+            echo "::warning::sone-cli build failed (attempt $attempt/3), retrying"
+            sleep 15
+          done
+          exit 1
+
       - name: vitest (Node)
         run: npm test --workspace @sonejs/sone
 
@@ -111,7 +138,12 @@ jobs:
           version: 4.0.7
       - uses: Swatinem/rust-cache@v2
         with:
-          workspaces: bindings/wasm
+          # Same split as the native job — this one also runs the node suite,
+          # whose parity test builds `sone-cli` out of the root workspace.
+          workspaces: |
+            .
+            bindings/wasm
+          cache-on-failure: true
       - run: |
           # noninteractive and a lock timeout: the plain form hung for
           # hours on a runner waiting for the dpkg lock.
