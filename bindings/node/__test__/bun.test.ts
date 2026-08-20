@@ -4,12 +4,17 @@
  * Run with `bun test __test__/bun.test.ts`. This deliberately imports the built
  * `dist/` bundle rather than `ts/`, so it exercises what a consumer installs.
  */
+import { fileURLToPath } from "node:url";
+
 import { expect, test } from "bun:test";
 
 // @ts-expect-error — resolved by Bun at runtime, not by this repo's tsconfig.
 import { Column, Font, Row, sone, Text, version } from "../dist/index.mjs";
 
-const FONT = new URL("../../../fixtures/font/GeistMono-Regular.ttf", import.meta.url).pathname;
+// `.pathname` on a file URL is not a path on Windows — it keeps the leading
+// slash, so `D:\...` arrives as `/D:/...`. On POSIX the two coincide, which is
+// why this only ever failed on the Windows runner.
+const FONT = fileURLToPath(new URL("../../../fixtures/font/GeistMono-Regular.ttf", import.meta.url));
 
 test("renders a PNG through the native addon", async () => {
   await Font.load("GeistMono", FONT);

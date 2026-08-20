@@ -10,9 +10,14 @@
  *   deno test --allow-read --allow-env --allow-ffi --node-modules-dir=auto \
  *     __test__/deno.test.ts
  */
+import { fileURLToPath } from "node:url";
+
 import { Column, Font, sone, Text, version } from "../dist/index.mjs";
 
-const FONT = new URL("../../../fixtures/font/GeistMono-Regular.ttf", import.meta.url).pathname;
+// `.pathname` on a file URL is not a path on Windows — it keeps the leading
+// slash, so `D:\...` arrives as `/D:/...`. On POSIX the two coincide, which is
+// why this only ever failed on the Windows runner.
+const FONT = fileURLToPath(new URL("../../../fixtures/font/GeistMono-Regular.ttf", import.meta.url));
 
 Deno.test("renders a PNG through the native addon", async () => {
   await Font.load("GeistMono", FONT);
