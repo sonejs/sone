@@ -57,6 +57,17 @@ jobs:
             libfontconfig1-dev
       - run: npm ci
 
+      # `ts/binding.browser.ts` imports `@sonejs/sone-wasm` for its types, and
+      # npm resolves that to the sibling workspace, whose `types` field points at
+      # `dist/index.d.ts` — a file that only exists once something has built it.
+      # Without this step `tsc --noEmit` fails with TS2307. It is the glue-only
+      # build: tsdown over `glue/index.ts`, no emscripten and no cargo, half a
+      # second. The `.wasm` itself stays unbuilt on purpose — `__test__/wasm.test.ts`
+      # keys its skip on `dist/sone.wasm`, so the cross-engine suite stays in the
+      # wasm job, which has an emsdk.
+      - name: Type declarations for the wasm backend
+        run: npm run build:ts --workspace @sonejs/sone-wasm
+
       # Only Apple targets have a published skia binary matching sone's feature
       # set, so the Linux and Windows legs compile Skia from source. That is
       # pre-existing, not something this binding introduced — but it is why

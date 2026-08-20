@@ -148,6 +148,11 @@ npm run test:bun  --workspace @sonejs/sone
 npm run test:deno --workspace @sonejs/sone
 ```
 
+Without emscripten, `npm run build:ts --workspace @sonejs/sone-wasm` is enough to
+work in this package: it emits the type declarations `ts/binding.browser.ts`
+imports, which `npm run lint` needs and nothing else here does. The cross-engine
+test skips itself while the real `dist/sone.wasm` is missing.
+
 The suites cover the builder, every output format, the error classes, byte
 equality with `sone-cli`, IR equality with the TypeScript engine (when a
 checkout is next door, or `SONE_TS_REPO` points at one), and agreement between
