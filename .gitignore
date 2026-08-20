@@ -69,3 +69,4 @@ deno.lock
 /target/renders/
 
 .DS_Store
+bindings/jvm/sone-tests/cp.txt

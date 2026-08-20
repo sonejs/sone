@@ -58,27 +58,47 @@ jobs:
           distribution: temurin
           java-version: "22"
           cache: maven
-      # One backend per JVM first. BackendTest exercises both in a single
-      # process, so when it crashes the log cannot say which half did it —
-      # these two steps can.
-      # bash on every platform: PowerShell is the default on windows runners and
-      # it split -Dsurefire.failIfNoSpecifiedTests=false into two arguments,
-      # which Maven then read as a lifecycle phase.
-      - name: Test with the Panama backend
+      # Walks the C ABI one call at a time, once per backend, each in its own
+      # JVM. continue-on-error here is deliberate and narrow: a crashing probe
+      # must not stop the other one from running, and what matters is the log,
+      # not the step's status. (It is not used on the real test step — masking a
+      # failure there is exactly how a broken run looked green earlier.)
+      - name: Build for probing
         working-directory: bindings/jvm
-        continue-on-error: true
         timeout-minutes: 15
         shell: bash
-        # surefire.timeout kills a hung fork and dumps its threads, which is the
-        # only way to see where a native call is stuck.
-        run: mvn --batch-mode test -Dtest=SoneTest "-Dsurefire.failIfNoSpecifiedTests=false" "-Dsurefire.timeout=300" "-Dsone.backend=dev.sone.panama.PanamaBackend"
+        run: |
+          # install, not test-compile: dependency:build-classpath resolves the
+          # sibling modules from the repository, not from the reactor.
+          mvn --batch-mode -q -DskipTests install
+          mvn --batch-mode -q -DskipTests test-compile
+          mvn --batch-mode -q -pl sone-tests dependency:build-classpath -Dmdep.outputFile=cp.txt
 
-      - name: Test with the JNA backend
+      - name: Probe the Panama backend
         working-directory: bindings/jvm
         continue-on-error: true
-        timeout-minutes: 15
+        timeout-minutes: 10
         shell: bash
-        run: mvn --batch-mode test -Dtest=SoneTest "-Dsurefire.failIfNoSpecifiedTests=false" "-Dsurefire.timeout=300" "-Dsone.backend=dev.sone.jna.JnaBackend"
+        run: |
+          # Windows java wants ';' between classpath entries even under bash.
+          SEP=":"
+          case "$OSTYPE" in msys*|cygwin*|win*) SEP=";" ;; esac
+          java --enable-native-access=ALL-UNNAMED \
+            -cp "sone-tests/target/test-classes$SEP$(cat sone-tests/cp.txt)" \
+            dev.sone.Probe dev.sone.panama.PanamaBackend
+
+      - name: Probe the JNA backend
+        working-directory: bindings/jvm
+        continue-on-error: true
+        timeout-minutes: 10
+        shell: bash
+        run: |
+          # Windows java wants ';' between classpath entries even under bash.
+          SEP=":"
+          case "$OSTYPE" in msys*|cygwin*|win*) SEP=";" ;; esac
+          java --enable-native-access=ALL-UNNAMED \
+            -cp "sone-tests/target/test-classes$SEP$(cat sone-tests/cp.txt)" \
+            dev.sone.Probe dev.sone.jna.JnaBackend
 
       # Then the whole suite, including the cross-backend comparison.
       - name: Test
