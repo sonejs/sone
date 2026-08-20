@@ -1,6 +1,6 @@
 import { mkdtemp, readdir, readFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 
 import { beforeAll, describe, expect, it } from "vitest";
 
@@ -112,7 +112,7 @@ describe("pagination", () => {
   it("writes one file per page", async () => {
     const dir = await mkdtemp(join(tmpdir(), "sone-pages-"));
     const written = await paged().savePages(join(dir, "p.png"));
-    expect(written.map((p) => p.split("/").pop())).toEqual([
+    expect(written.map((p) => basename(p))).toEqual([
       "p-1.png",
       "p-2.png",
       "p-3.png",

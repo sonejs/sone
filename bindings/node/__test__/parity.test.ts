@@ -36,8 +36,16 @@ function cargo(args: string[]): string {
 describe.skipIf(skip)("byte parity with sone-cli", () => {
   beforeAll(() => {
     cargo(["build", "--release", "-p", "sone-cli"]);
-    cli = join(REPO, "target", "release", "sone");
-    if (!existsSync(cli)) cli = join(REPO, "target", "release", "sone-cli");
+    // `.exe` on Windows, and the crate's binary has gone by both names.
+    const exe = process.platform === "win32" ? ".exe" : "";
+    const candidates = [`sone${exe}`, `sone-cli${exe}`].map((name) =>
+      join(REPO, "target", "release", name),
+    );
+    const found = candidates.find((path) => existsSync(path));
+    if (found == null) {
+      throw new Error(`cargo built sone-cli but none of these exist:\n  ${candidates.join("\n  ")}`);
+    }
+    cli = found;
   }, 900_000);
 
   it.each(CASES)("%s renders identically", async (name) => {
